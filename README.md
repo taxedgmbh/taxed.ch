@@ -1,42 +1,141 @@
-# Taxed.ch Website Copy
+# Taxed.ch Website - Complete Source Code
 
-This repository contains a copy of the website from [www.taxed.ch](https://www.taxed.ch).
+This repository contains the complete source code for the website from [www.taxed.ch](https://www.taxed.ch), exported from Hostinger Horizons.
 
-## Structure
+## 🚀 What's Included
 
-The website is a React application built with Vite and hosted on Hostinger Horizons. The main content is dynamically loaded through JavaScript.
+### Complete React Application
+- **Full source code** from Hostinger Horizons export
+- **React 18** with Vite build system
+- **Tailwind CSS** for styling
+- **React Router** for navigation
+- **Framer Motion** for animations
+- **Radix UI** components
+- **Shopping cart functionality**
+- **Blog system**
+- **E-commerce features**
 
-### Files
+### Pages & Components
+- **Landing Page** - Hero, Benefits, Packages, Contact, FAQ sections
+- **About Page** - Company information
+- **Services Page** - Service offerings
+- **Store Page** - Product catalog
+- **Product Detail Page** - Individual product views
+- **Contact Page** - Contact forms
+- **Blog Page** - Blog listing and individual posts
+- **Pricing Page** - Pricing information
+- **Legal Pages** - Privacy, Terms, Impressum
 
-- `index.html` - Main HTML file
-- `assets/` - Directory containing JavaScript and CSS assets
-  - `index-e4bf663f.js` - Main JavaScript bundle (React application)
-  - `index-6cecc679.css` - Main CSS styles
-- `vite.svg` - Vite logo/favicon
+### Features
+- **Responsive design** for all devices
+- **Shopping cart** with persistent state
+- **Toast notifications**
+- **SEO optimization** with React Helmet
+- **RSS feed generation**
+- **Modern UI components**
 
-## How to Run
+## 🛠️ Technology Stack
 
-Since this is a static copy of a React application, you can serve it using any static file server:
+- **Frontend**: React 18, Vite
+- **Styling**: Tailwind CSS, CSS Variables
+- **UI Components**: Radix UI, Lucide React icons
+- **Animations**: Framer Motion
+- **Routing**: React Router DOM
+- **State Management**: React Hooks
+- **Build Tool**: Vite
+- **Package Manager**: npm
 
-```bash
-# Using Python
-python -m http.server 8000
+## 📁 Project Structure
 
-# Using Node.js (if you have http-server installed)
-npx http-server
-
-# Using PHP
-php -S localhost:8000
+```
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── ui/             # Radix UI components
+│   │   ├── landing/        # Landing page sections
+│   │   └── ...
+│   ├── pages/              # Page components
+│   ├── hooks/              # Custom React hooks
+│   ├── data/               # Static data and content
+│   ├── lib/                # Utility functions
+│   └── api/                # API integration
+├── public/                 # Static assets
+├── tools/                  # Build tools and generators
+├── plugins/                # Vite plugins
+└── ...
 ```
 
-Then open your browser to `http://localhost:8000`
+## 🚀 Getting Started
 
-## Notes
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-- This is a static copy of the website as of the download date
-- The original website uses dynamic content loading, so some functionality may not work in this static copy
-- The JavaScript is minified and would need to be analyzed further to understand the full application structure
+### Installation
 
-## Original Website
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/taxedgmbh/homepage.git
+   cd homepage
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+## 🎨 Customization
+
+### Colors & Branding
+The website uses Swiss-themed colors:
+- **Steel Blue**: `#375A7F`
+- **Brand Red**: `#C7242E`
+- **Light Gray**: `#FAFAFA`
+
+### Styling
+- Tailwind CSS classes for styling
+- CSS custom properties for theming
+- Responsive design with mobile-first approach
+
+## 📦 Build & Deploy
+
+### Production Build
+```bash
+npm run build
+```
+
+### Deployment
+The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
+
+## 🔧 Development
+
+### Adding New Pages
+1. Create a new component in `src/pages/`
+2. Add the route in `src/App.jsx`
+3. Update navigation if needed
+
+### Adding New Components
+1. Create component in `src/components/`
+2. Import and use in your pages
+3. Follow the existing component patterns
+
+## 📄 License
+
+This project contains the source code for the Taxed GmbH website. All rights reserved.
+
+## 🌐 Original Website
 
 The original website can be found at: https://www.taxed.ch
