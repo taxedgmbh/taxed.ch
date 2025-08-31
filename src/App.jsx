@@ -19,9 +19,15 @@ import PricingPage from '@/pages/PricingPage';
 import CartPage from '@/pages/CartPage';
 import BlogPage from '@/pages/BlogPage';
 import BlogPostPage from '@/pages/BlogPostPage';
+import AdminPage from '@/pages/AdminPage';
 import { useCart } from '@/hooks/useCart';
+import { initializeDailyBlogScheduler } from '@/services/dailyBlogScheduler';
 
 function App() {
+  // Initialize daily blog scheduler
+  React.useEffect(() => {
+    initializeDailyBlogScheduler();
+  }, []);
   const { isCartOpen, setIsCartOpen } = useCart();
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
@@ -54,9 +60,10 @@ function App() {
           <Route path="/terms" element={<TermsOfServicePage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-        </Routes>
+                           <Route path="/blog" element={<BlogPage />} />
+                 <Route path="/blog/:slug" element={<BlogPostPage />} />
+                 <Route path="/admin" element={<AdminPage />} />
+               </Routes>
       </main>
       
       <Footer />

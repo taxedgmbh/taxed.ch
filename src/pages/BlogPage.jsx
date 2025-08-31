@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { blogPosts } from '@/data/blogPosts.jsx';
+import { getBlogPosts } from '@/data/blogPosts.jsx';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 
@@ -50,6 +50,8 @@ const BlogPostCard = ({ post, index }) => {
 };
 
 const BlogPage = () => {
+  const blogPosts = getBlogPosts();
+  
   return (
     <>
       <Helmet>

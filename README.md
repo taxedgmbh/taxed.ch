@@ -33,6 +33,10 @@ This repository contains the complete source code for the website from [www.taxe
 - **SEO optimization** with React Helmet
 - **RSS feed generation**
 - **Modern UI components**
+- **AI Blog Generation** - Automated content creation using OpenAI GPT-4
+- **Daily Auto-Generation** - Scheduled blog posts for consistent content
+- **Admin Panel** - Easy management of AI-generated content
+- **Content Management** - Manual and AI-generated posts integration
 
 ## 🛠️ Technology Stack
 
@@ -69,6 +73,7 @@ This repository contains the complete source code for the website from [www.taxe
 ### Prerequisites
 - Node.js 18+ 
 - npm or yarn
+- OpenAI API key (for AI blog generation feature)
 
 ### Installation
 
@@ -83,13 +88,38 @@ This repository contains the complete source code for the website from [www.taxe
    npm install
    ```
 
-3. **Start development server**
+3. **Set up environment variables**
+   ```bash
+   # Copy the example environment file
+   cp env.example .env.local
+   
+   # Add your OpenAI API key
+   echo "REACT_APP_OPENAI_API_KEY=your_api_key_here" >> .env.local
+   ```
+
+4. **Start development server**
    ```bash
    npm run dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to `http://localhost:5173`
+
+### AI Blog Generation Setup
+
+1. **Get OpenAI API Key**
+   - Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+   - Create a new API key
+   - Add it to your `.env.local` file
+
+2. **Access Admin Panel**
+   - Navigate to `http://localhost:5173/admin`
+   - Generate posts manually or enable auto-generation
+
+3. **Daily Auto-Generation**
+   - Enable auto-generation in the admin panel
+   - Posts will be generated automatically once per day
+   - Check the admin panel for generation status
 
 ### Available Scripts
 

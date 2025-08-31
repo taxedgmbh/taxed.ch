@@ -1,6 +1,8 @@
 import React from 'react';
+import { getAIGeneratedPosts } from '@/services/aiBlogGenerator';
 
-export const blogPosts = [
+// Manual blog posts
+const manualBlogPosts = [
   {
     slug: 'understanding-swiss-tax-at-source-quellensteuer',
     title: 'Understanding Swiss Tax at Source (Quellensteuer)',
@@ -113,3 +115,22 @@ export const blogPosts = [
     alt: 'A modern Swiss house, illustrating real estate tax for expats in Switzerland'
   }
 ];
+
+// Function to get all blog posts (manual + AI-generated)
+export const getBlogPosts = () => {
+  const aiPosts = getAIGeneratedPosts();
+  
+  // Convert AI posts to the same format as manual posts
+  const formattedAIPosts = aiPosts.map(post => ({
+    ...post,
+    content: () => (
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    )
+  }));
+  
+  // Combine manual and AI posts, with AI posts appearing first (newest)
+  return [...formattedAIPosts, ...manualBlogPosts];
+};
+
+// Export the combined blog posts for backward compatibility
+export const blogPosts = getBlogPosts();

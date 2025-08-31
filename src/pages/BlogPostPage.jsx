@@ -2,12 +2,13 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { blogPosts } from '@/data/blogPosts.jsx';
+import { getBlogPosts } from '@/data/blogPosts.jsx';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const BlogPostPage = () => {
   const { slug } = useParams();
+  const blogPosts = getBlogPosts();
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
