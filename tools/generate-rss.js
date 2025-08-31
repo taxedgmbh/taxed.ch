@@ -1,6 +1,6 @@
 import fs from 'fs';
 import RSS from 'rss';
-import { blogPosts } from '../src/data/blogPosts.js';
+import { blogPosts } from '../src/data/blogPosts.jsx';
 
 function generateRssFeed() {
   const feed = new RSS({

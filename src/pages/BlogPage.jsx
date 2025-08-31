@@ -17,7 +17,8 @@ const BlogPostCard = ({ post, index }) => {
         <div className="overflow-hidden">
           <img  
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-            alt={post.alt} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+            alt={post.imageAlt || post.alt} 
+            src={post.imageUrl || "https://images.unsplash.com/photo-1595872018818-97555653a011"} />
         </div>
         <CardHeader>
           <CardTitle className="text-xl font-bold text-dark-gray leading-tight">
@@ -37,7 +38,7 @@ const BlogPostCard = ({ post, index }) => {
             </div>
             <div className="flex items-center space-x-1">
               <Calendar size={14} />
-              <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              <span>{post.formattedDate || new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
             </div>
           </div>
           <Link to={`/blog/${post.slug}`} className="flex items-center text-steel-blue hover:underline">

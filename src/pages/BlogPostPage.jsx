@@ -56,7 +56,7 @@ const BlogPostPage = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Calendar size={14} />
-                  <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                  <span>{post.formattedDate || new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-2 mt-4">
@@ -72,7 +72,8 @@ const BlogPostPage = () => {
             <div className="aspect-w-16 aspect-h-9 mb-12 rounded-lg overflow-hidden shadow-xl">
               <img  
                 className="w-full h-full object-cover"
-                alt={post.alt} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+                alt={post.imageAlt || post.alt} 
+                src={post.imageUrl || "https://images.unsplash.com/photo-1595872018818-97555653a011"} />
             </div>
 
             <article className="prose prose-lg max-w-none text-dark-gray/90 prose-h2:text-dark-gray prose-h2:font-bold prose-a:text-steel-blue hover:prose-a:underline">

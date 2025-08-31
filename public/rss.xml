@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taxed GmbH - Swiss Tax Consulting</title>
+    <link>https://www.taxed.ch</link>
+    <description>Expert Swiss tax consulting services for expats and professionals. Latest news, insights, and tax tips.</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Jan 2025 20:00:00 +0100</lastBuildDate>
+    <atom:link href="https://www.taxed.ch/rss.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Welcome to Taxed GmbH - Your Swiss Tax Partner</title>
+      <link>https://www.taxed.ch/blog/welcome-to-taxed-gmbh</link>
+      <guid>https://www.taxed.ch/blog/welcome-to-taxed-gmbh</guid>
+      <pubDate>Thu, 30 Jan 2025 20:00:00 +0100</pubDate>
+      <description>Welcome to Taxed GmbH, your trusted partner for Swiss tax consulting. We specialize in helping expats and professionals navigate the complexities of Swiss taxation.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Swiss Quellensteuer (Withholding Tax)</title>
+      <link>https://www.taxed.ch/blog/swiss-quellensteuer-guide</link>
+      <guid>https://www.taxed.ch/blog/swiss-quellensteuer-guide</guid>
+      <pubDate>Thu, 30 Jan 2025 19:00:00 +0100</pubDate>
+      <description>A comprehensive guide to understanding Swiss withholding tax (Quellensteuer) for expats and international professionals working in Switzerland.</description>
+    </item>
+    
+    <item>
+      <title>Tax Planning Strategies for Expats in Switzerland</title>
+      <link>https://www.taxed.ch/blog/tax-planning-expats-switzerland</link>
+      <guid>https://www.taxed.ch/blog/tax-planning-expats-switzerland</guid>
+      <pubDate>Thu, 30 Jan 2025 18:00:00 +0100</pubDate>
+      <description>Essential tax planning strategies and tips for expats living and working in Switzerland. Learn how to optimize your tax situation.</description>
+    </item>
+    
+    <item>
+      <title>Digital Tax Filing in Switzerland: What You Need to Know</title>
+      <link>https://www.taxed.ch/blog/digital-tax-filing-switzerland</link>
+      <guid>https://www.taxed.ch/blog/digital-tax-filing-switzerland</guid>
+      <pubDate>Thu, 30 Jan 2025 17:00:00 +0100</pubDate>
+      <description>Everything you need to know about digital tax filing in Switzerland. From requirements to benefits and how to get started.</description>
+    </item>
+    
+    <item>
+      <title>Latest Swiss Tax Law Changes for 2025</title>
+      <link>https://www.taxed.ch/news/swiss-tax-law-changes-2025</link>
+      <guid>https://www.taxed.ch/news/swiss-tax-law-changes-2025</guid>
+      <pubDate>Thu, 30 Jan 2025 16:00:00 +0100</pubDate>
+      <description>Stay updated with the latest changes to Swiss tax laws and regulations for 2025. Important updates for individuals and businesses.</description>
+    </item>
+  </channel>
+</rss>

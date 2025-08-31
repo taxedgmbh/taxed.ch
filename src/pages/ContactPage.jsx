@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -35,6 +35,15 @@ const ContactPage = () => {
     });
   };
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '+41799107787';
+    const message = encodeURIComponent(
+      `Hello! I'm interested in your Swiss tax consulting services.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\n\nMessage: ${formData.message}`
+    );
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const contactInfo = [
     {
       icon: Phone,
@@ -42,6 +51,14 @@ const ContactPage = () => {
       details: '+41 79 910 77 87',
       description: 'Call us during business hours',
       color: 'bg-warm-red-tint text-brand-red'
+    },
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp',
+      details: '+41 79 910 77 87',
+      description: 'Chat with us instantly',
+      color: 'bg-green-100 text-green-600',
+      isWhatsApp: true
     },
     {
       icon: Mail,
@@ -117,6 +134,20 @@ const ContactPage = () => {
                     <CardDescription className="text-dark-gray/80">
                       {info.description}
                     </CardDescription>
+                    {info.isWhatsApp && (
+                      <button
+                        onClick={() => {
+                          const phoneNumber = '+41799107787';
+                          const message = encodeURIComponent("Hello! I'm interested in your Swiss tax consulting services. Could you please provide more information?");
+                          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                          window.open(whatsappUrl, '_blank');
+                        }}
+                        className="mt-3 w-full bg-green-500 hover:bg-green-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                      >
+                        <MessageCircle className="h-4 w-4" />
+                        <span>Start Chat</span>
+                      </button>
+                    )}
                   </CardContent>
                 </Card>
               </motion.div>
@@ -185,10 +216,21 @@ const ContactPage = () => {
                       />
                     </div>
                     
-                    <Button type="submit" className="w-full bg-steel-blue hover:bg-steel-blue/90 text-white" size="lg">
-                      Send Message
-                      <Send className="ml-2 h-4 w-4" />
-                    </Button>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Button type="submit" className="w-full bg-steel-blue hover:bg-steel-blue/90 text-white" size="lg">
+                        Send Message
+                        <Send className="ml-2 h-4 w-4" />
+                      </Button>
+                      <Button 
+                        type="button" 
+                        onClick={handleWhatsAppClick}
+                        className="w-full bg-green-500 hover:bg-green-600 text-white" 
+                        size="lg"
+                      >
+                        Send via WhatsApp
+                        <MessageCircle className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
                   </form>
                 </CardContent>
               </Card>
@@ -219,9 +261,23 @@ const ContactPage = () => {
                   <p className="text-dark-gray/80 mb-4">
                     If you have an urgent tax deadline approaching, don't hesitate to call us directly:
                   </p>
-                  <div className="flex items-center space-x-3 text-steel-blue font-semibold">
-                    <Phone className="h-5 w-5" />
-                    <span>+41 79 910 77 87</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3 text-steel-blue font-semibold">
+                      <Phone className="h-5 w-5" />
+                      <span>+41 79 910 77 87</span>
+                    </div>
+                    <button
+                      onClick={() => {
+                        const phoneNumber = '+41799107787';
+                        const message = encodeURIComponent("Hello! I have an urgent tax matter that needs immediate attention. Could you please help me?");
+                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                        window.open(whatsappUrl, '_blank');
+                      }}
+                      className="w-full bg-green-500 hover:bg-green-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                      <span>Urgent WhatsApp</span>
+                    </button>
                   </div>
                 </CardContent>
               </Card>
@@ -253,6 +309,18 @@ const ContactPage = () => {
                 onClick={() => window.location.href = 'tel:+41799107787'}
               >
                 Call Now: +41 79 910 77 87
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-green-500 text-white hover:bg-green-600 text-lg px-8 py-4"
+                onClick={() => {
+                  const phoneNumber = '+41799107787';
+                  const message = encodeURIComponent("Hello! I'm ready to simplify my Swiss taxes. Could you please help me get started?");
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                  window.open(whatsappUrl, '_blank');
+                }}
+              >
+                WhatsApp Chat
               </Button>
               <Button 
                 size="lg" 

@@ -1,6 +1,8 @@
 import React from 'react';
+import { getAIGeneratedPosts } from '@/services/aiBlogGenerator';
 
-export const blogPosts = [
+// Manual blog posts
+const manualBlogPosts = [
   {
     slug: 'understanding-swiss-tax-at-source-quellensteuer',
     title: 'Understanding Swiss Tax at Source (Quellensteuer)',
@@ -113,3 +115,37 @@ export const blogPosts = [
     alt: 'A modern Swiss house, illustrating real estate tax for expats in Switzerland'
   }
 ];
+
+// Function to get all blog posts (manual + AI-generated)
+export const getBlogPosts = () => {
+  const aiPosts = getAIGeneratedPosts();
+  
+  // Convert AI posts to the same format as manual posts
+  const formattedAIPosts = aiPosts.map(post => ({
+    ...post,
+    content: () => (
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    ),
+    // Ensure all required fields are present
+    slug: post.slug || post.title?.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-'),
+    title: post.title || 'Untitled Post',
+    author: post.author || 'AI Tax Assistant',
+    date: post.date || new Date().toISOString().split('T')[0],
+    summary: post.summary || 'AI-generated content about Swiss taxes and finance.',
+    tags: post.tags || ['Swiss Tax', 'AI Generated'],
+    image: post.image || 'Swiss tax documents and calculator',
+    alt: post.alt || 'Swiss tax preparation',
+    imageUrl: post.imageUrl,
+    imageAlt: post.imageAlt,
+    formattedDate: post.formattedDate,
+    formattedTime: post.formattedTime
+  }));
+  
+  // Combine manual and AI posts, with AI posts appearing first (newest)
+  const allPosts = [...formattedAIPosts, ...manualBlogPosts];
+  
+  return allPosts;
+};
+
+// Export the combined blog posts for backward compatibility
+export const blogPosts = getBlogPosts();
