@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --background: 0 0% 98%; /* Light Gray: #FAFAFA */
+  --foreground: 0 0% 13%; /* Dark Gray: #333333 */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 13%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 13%;
+  --primary: 210 29% 36%; /* Steel Blue: #375A7F */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 357 70% 48%; /* Brand Red: #C7242E */
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 95%; /* Slightly darker light gray: #F2F2F2 */
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 357 20% 96%; /* Warm Red Tint: #F5E9E6 */
+  --accent-foreground: 0 0% 13%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 210 20% 85%; /* A lighter steel blue for borders */
+  --input: 210 20% 90%;
+  --ring: 210 29% 36%; /* Steel Blue for focus rings */
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', sans-serif;
+}
+
+.swiss-gradient {
+  background: linear-gradient(135deg, #375A7F 0%, #C7242E 100%);
+}
+
+.hero-pattern {
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(255,255,255,0.08) 2px, transparent 0),
+    radial-gradient(circle at 75px 75px, rgba(255,255,255,0.04) 2px, transparent 0);
+  background-size: 100px 100px;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.pricing-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.pricing-card:hover::before {
+  left: 100%;
+}
