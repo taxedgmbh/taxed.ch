@@ -33,7 +33,8 @@ This repository contains the complete source code for the website from [www.taxe
 - **SEO optimization** with React Helmet
 - **RSS feed generation**
 - **Modern UI components**
-- **AI Blog Generation** - Automated content creation using OpenAI GPT-4
+- **AI Blog Generation** - Automated content creation using multiple AI providers
+- **Free AI Options** - Support for Google Gemini, Claude, and Hugging Face (all free!)
 - **Daily Auto-Generation** - Scheduled blog posts for consistent content
 - **Admin Panel** - Easy management of AI-generated content
 - **Content Management** - Manual and AI-generated posts integration
@@ -73,7 +74,7 @@ This repository contains the complete source code for the website from [www.taxe
 ### Prerequisites
 - Node.js 18+ 
 - npm or yarn
-- OpenAI API key (for AI blog generation feature)
+- AI API key (for AI blog generation feature) - **Free options available!**
 
 ### Installation
 
@@ -93,8 +94,19 @@ This repository contains the complete source code for the website from [www.taxe
    # Copy the example environment file
    cp env.example .env.local
    
-   # Add your OpenAI API key
-   echo "REACT_APP_OPENAI_API_KEY=your_api_key_here" >> .env.local
+   # Choose your AI provider and add the API key:
+   
+   # Option 1: Google Gemini (FREE - Recommended)
+   echo "REACT_APP_AI_PROVIDER=gemini" >> .env.local
+   echo "REACT_APP_GEMINI_API_KEY=your_gemini_api_key_here" >> .env.local
+   
+   # Option 2: OpenAI GPT-4 (PAID)
+   echo "REACT_APP_AI_PROVIDER=openai" >> .env.local
+   echo "REACT_APP_OPENAI_API_KEY=your_openai_api_key_here" >> .env.local
+   
+   # Option 3: Anthropic Claude (FREE tier)
+   echo "REACT_APP_AI_PROVIDER=claude" >> .env.local
+   echo "REACT_APP_CLAUDE_API_KEY=your_claude_api_key_here" >> .env.local
    ```
 
 4. **Start development server**
@@ -107,16 +119,42 @@ This repository contains the complete source code for the website from [www.taxe
 
 ### AI Blog Generation Setup
 
-1. **Get OpenAI API Key**
-   - Visit [OpenAI Platform](https://platform.openai.com/api-keys)
-   - Create a new API key
-   - Add it to your `.env.local` file
+#### 🆓 **Free AI Options (Recommended)**
 
-2. **Access Admin Panel**
+1. **Google Gemini (FREE)**
+   - Visit [Google AI Studio](https://aistudio.google.com/app/apikey)
+   - Create a free account
+   - Get your API key (15 requests/minute, 2M characters/minute)
+   - Set `REACT_APP_AI_PROVIDER=gemini` in `.env.local`
+
+2. **Anthropic Claude (FREE tier)**
+   - Visit [Anthropic Console](https://console.anthropic.com/)
+   - Create a free account
+   - Get your API key (5 messages per 4 hours)
+   - Set `REACT_APP_AI_PROVIDER=claude` in `.env.local`
+
+3. **Hugging Face (FREE)**
+   - Visit [Hugging Face](https://huggingface.co/settings/tokens)
+   - Create a free account
+   - Get your API key
+   - Set `REACT_APP_AI_PROVIDER=huggingface` in `.env.local`
+
+#### 💰 **Paid Option**
+
+4. **OpenAI GPT-4 (PAID)**
+   - Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+   - Create an account and add payment method
+   - Get your API key
+   - Set `REACT_APP_AI_PROVIDER=openai` in `.env.local`
+
+#### 🎛️ **Using the System**
+
+1. **Access Admin Panel**
    - Navigate to `http://localhost:5173/admin`
+   - Check your current AI provider in the "AI Provider" card
    - Generate posts manually or enable auto-generation
 
-3. **Daily Auto-Generation**
+2. **Daily Auto-Generation**
    - Enable auto-generation in the admin panel
    - Posts will be generated automatically once per day
    - Check the admin panel for generation status

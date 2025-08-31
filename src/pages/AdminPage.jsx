@@ -8,7 +8,8 @@ import {
   generateMultipleBlogPosts, 
   getAIGeneratedPosts, 
   saveBlogPost,
-  scheduleDailyBlogGeneration 
+  scheduleDailyBlogGeneration,
+  getAIProviderInfo
 } from '@/services/aiBlogGenerator';
 import { 
   Plus, 
@@ -28,10 +29,12 @@ const AdminPage = () => {
   const [lastGeneration, setLastGeneration] = useState(null);
   const [autoGenerationEnabled, setAutoGenerationEnabled] = useState(false);
   const [generationCount, setGenerationCount] = useState(1);
+  const [aiProviderInfo, setAiProviderInfo] = useState(null);
 
   useEffect(() => {
     loadGeneratedPosts();
     checkLastGeneration();
+    setAiProviderInfo(getAIProviderInfo());
   }, []);
 
   const loadGeneratedPosts = () => {
@@ -215,6 +218,45 @@ const AdminPage = () => {
                       <span>Last generated: {new Date(lastGeneration).toLocaleDateString()}</span>
                     </div>
                   </div>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* AI Provider Info */}
+            <Card className="border-steel-blue/20 shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Settings className="h-5 w-5 text-steel-blue" />
+                  <span>AI Provider</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {aiProviderInfo && (
+                  <>
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-steel-blue">
+                        {aiProviderInfo.name}
+                      </div>
+                      <div className="text-sm text-dark-gray/70">
+                        {aiProviderInfo.free ? '🆓 Free' : '💰 Paid'}
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="text-xs text-dark-gray/60">
+                        <strong>Limits:</strong> {aiProviderInfo.limits}
+                      </div>
+                      <div className="text-xs text-dark-gray/60">
+                        <strong>Setup:</strong> {aiProviderInfo.setup}
+                      </div>
+                    </div>
+
+                    <div className="pt-2 border-t border-gray-200">
+                      <div className="text-xs text-dark-gray/60">
+                        <strong>Current Provider:</strong> {process.env.REACT_APP_AI_PROVIDER || 'gemini'}
+                      </div>
+                    </div>
+                  </>
                 )}
               </CardContent>
             </Card>

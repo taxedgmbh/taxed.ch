@@ -1,9 +1,49 @@
-import OpenAI from 'openai';
+// AI Provider Configuration
+const AI_PROVIDERS = {
+  OPENAI: 'openai',
+  GEMINI: 'gemini',
+  CLAUDE: 'claude',
+  HUGGINGFACE: 'huggingface'
+};
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-});
+// Get the configured AI provider
+const getAIProvider = () => {
+  return process.env.REACT_APP_AI_PROVIDER || AI_PROVIDERS.GEMINI; // Default to Gemini (free)
+};
+
+// Initialize AI clients based on provider
+const initializeAIClient = () => {
+  const provider = getAIProvider();
+  
+  switch (provider) {
+    case AI_PROVIDERS.OPENAI:
+      if (!process.env.REACT_APP_OPENAI_API_KEY) {
+        throw new Error('OpenAI API key not configured');
+      }
+      return { provider: AI_PROVIDERS.OPENAI };
+      
+    case AI_PROVIDERS.GEMINI:
+      if (!process.env.REACT_APP_GEMINI_API_KEY) {
+        throw new Error('Google Gemini API key not configured');
+      }
+      return { provider: AI_PROVIDERS.GEMINI };
+      
+    case AI_PROVIDERS.CLAUDE:
+      if (!process.env.REACT_APP_CLAUDE_API_KEY) {
+        throw new Error('Anthropic Claude API key not configured');
+      }
+      return { provider: AI_PROVIDERS.CLAUDE };
+      
+    case AI_PROVIDERS.HUGGINGFACE:
+      if (!process.env.REACT_APP_HUGGINGFACE_API_KEY) {
+        throw new Error('Hugging Face API key not configured');
+      }
+      return { provider: AI_PROVIDERS.HUGGINGFACE };
+      
+    default:
+      throw new Error(`Unsupported AI provider: ${provider}`);
+  }
+};
 
 // Blog topics and themes for Swiss tax and expat finance
 const BLOG_TOPICS = [
@@ -91,12 +131,12 @@ const getRandomTopic = () => {
   return { category: category.category, topic };
 };
 
-// Generate blog post using AI
-export const generateBlogPost = async () => {
-  try {
-    const { category, topic } = getRandomTopic();
-    
-    const prompt = `Write a comprehensive blog post about "${topic}" for expats living in Switzerland. 
+// Generate blog post using Google Gemini (Free)
+const generateWithGemini = async (topic) => {
+  const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+  
+  const prompt = `Write a comprehensive blog post about "${topic}" for expats living in Switzerland. 
 
 Requirements:
 - Target audience: Expats living in Switzerland
@@ -121,23 +161,211 @@ Format the response as JSON with the following structure:
 
 Make sure the content is accurate, helpful, and provides real value to expats dealing with Swiss taxes and finance.`;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [
-        {
-          role: "system",
-          content: "You are a Swiss tax expert specializing in expat taxation. Write clear, accurate, and helpful content that provides real value to expats living in Switzerland."
-        },
-        {
-          role: "user",
-          content: prompt
-        }
-      ],
-      temperature: 0.7,
-      max_tokens: 3000
-    });
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      contents: [{
+        parts: [{
+          text: prompt
+        }]
+      }]
+    })
+  });
 
-    const response = completion.choices[0].message.content;
+  if (!response.ok) {
+    throw new Error(`Gemini API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.candidates[0].content.parts[0].text;
+};
+
+// Generate blog post using OpenAI
+const generateWithOpenAI = async (topic) => {
+  const OpenAI = require('openai');
+  const openai = new OpenAI({
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+  });
+
+  const prompt = `Write a comprehensive blog post about "${topic}" for expats living in Switzerland. 
+
+Requirements:
+- Target audience: Expats living in Switzerland
+- Tone: Professional but accessible, educational
+- Length: 800-1200 words
+- Structure: Include introduction, main sections with headings, and conclusion
+- Content: Focus on practical advice, tax implications, and actionable insights
+- Style: Use clear explanations, examples, and Swiss-specific information
+- Include relevant Swiss tax rates, deadlines, or regulations where applicable
+
+Format the response as JSON with the following structure:
+{
+  "title": "The blog post title",
+  "author": "AI Tax Assistant",
+  "date": "YYYY-MM-DD",
+  "tags": ["tag1", "tag2", "tag3"],
+  "summary": "A 2-3 sentence summary of the article",
+  "content": "The full HTML content with proper formatting",
+  "image": "A descriptive image prompt",
+  "alt": "Alt text for the image"
+}
+
+Make sure the content is accurate, helpful, and provides real value to expats dealing with Swiss taxes and finance.`;
+
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4",
+    messages: [
+      {
+        role: "system",
+        content: "You are a Swiss tax expert specializing in expat taxation. Write clear, accurate, and helpful content that provides real value to expats living in Switzerland."
+      },
+      {
+        role: "user",
+        content: prompt
+      }
+    ],
+    temperature: 0.7,
+    max_tokens: 3000
+  });
+
+  return completion.choices[0].message.content;
+};
+
+// Generate blog post using Anthropic Claude
+const generateWithClaude = async (topic) => {
+  const apiKey = process.env.REACT_APP_CLAUDE_API_KEY;
+  const url = 'https://api.anthropic.com/v1/messages';
+  
+  const prompt = `Write a comprehensive blog post about "${topic}" for expats living in Switzerland. 
+
+Requirements:
+- Target audience: Expats living in Switzerland
+- Tone: Professional but accessible, educational
+- Length: 800-1200 words
+- Structure: Include introduction, main sections with headings, and conclusion
+- Content: Focus on practical advice, tax implications, and actionable insights
+- Style: Use clear explanations, examples, and Swiss-specific information
+- Include relevant Swiss tax rates, deadlines, or regulations where applicable
+
+Format the response as JSON with the following structure:
+{
+  "title": "The blog post title",
+  "author": "AI Tax Assistant",
+  "date": "YYYY-MM-DD",
+  "tags": ["tag1", "tag2", "tag3"],
+  "summary": "A 2-3 sentence summary of the article",
+  "content": "The full HTML content with proper formatting",
+  "image": "A descriptive image prompt",
+  "alt": "Alt text for the image"
+}
+
+Make sure the content is accurate, helpful, and provides real value to expats dealing with Swiss taxes and finance.`;
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01'
+    },
+    body: JSON.stringify({
+      model: 'claude-3-sonnet-20240229',
+      max_tokens: 3000,
+      messages: [{
+        role: 'user',
+        content: prompt
+      }]
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error(`Claude API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.content[0].text;
+};
+
+// Generate blog post using Hugging Face
+const generateWithHuggingFace = async (topic) => {
+  const apiKey = process.env.REACT_APP_HUGGINGFACE_API_KEY;
+  const url = 'https://api-inference.huggingface.co/models/meta-llama/Llama-2-70b-chat-hf';
+  
+  const prompt = `Write a comprehensive blog post about "${topic}" for expats living in Switzerland. 
+
+Requirements:
+- Target audience: Expats living in Switzerland
+- Tone: Professional but accessible, educational
+- Length: 800-1200 words
+- Structure: Include introduction, main sections with headings, and conclusion
+- Content: Focus on practical advice, tax implications, and actionable insights
+- Style: Use clear explanations, examples, and Swiss-specific information
+- Include relevant Swiss tax rates, deadlines, or regulations where applicable
+
+Format the response as JSON with the following structure:
+{
+  "title": "The blog post title",
+  "author": "AI Tax Assistant",
+  "date": "YYYY-MM-DD",
+  "tags": ["tag1", "tag2", "tag3"],
+  "summary": "A 2-3 sentence summary of the article",
+  "content": "The full HTML content with proper formatting",
+  "image": "A descriptive image prompt",
+  "alt": "Alt text for the image"
+}
+
+Make sure the content is accurate, helpful, and provides real value to expats dealing with Swiss taxes and finance.`;
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      inputs: prompt,
+      parameters: {
+        max_new_tokens: 3000,
+        temperature: 0.7
+      }
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error(`Hugging Face API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data[0].generated_text;
+};
+
+// Generate blog post using AI
+export const generateBlogPost = async () => {
+  try {
+    const { category, topic } = getRandomTopic();
+    const aiClient = initializeAIClient();
+    
+    let response;
+    
+    switch (aiClient.provider) {
+      case AI_PROVIDERS.GEMINI:
+        response = await generateWithGemini(topic);
+        break;
+      case AI_PROVIDERS.OPENAI:
+        response = await generateWithOpenAI(topic);
+        break;
+      case AI_PROVIDERS.CLAUDE:
+        response = await generateWithClaude(topic);
+        break;
+      case AI_PROVIDERS.HUGGINGFACE:
+        response = await generateWithHuggingFace(topic);
+        break;
+      default:
+        throw new Error(`Unsupported AI provider: ${aiClient.provider}`);
+    }
     
     // Parse the JSON response
     let blogPost;
@@ -228,4 +456,37 @@ export const scheduleDailyBlogGeneration = () => {
         console.error('Failed to generate daily blog post:', error);
       });
   }
+};
+
+// Get current AI provider info
+export const getAIProviderInfo = () => {
+  const provider = getAIProvider();
+  const providerInfo = {
+    [AI_PROVIDERS.GEMINI]: {
+      name: 'Google Gemini',
+      free: true,
+      limits: '15 requests/minute, 2M characters/minute',
+      setup: 'Get free API key from Google AI Studio'
+    },
+    [AI_PROVIDERS.OPENAI]: {
+      name: 'OpenAI GPT-4',
+      free: false,
+      limits: 'Pay per use',
+      setup: 'Requires OpenAI API key'
+    },
+    [AI_PROVIDERS.CLAUDE]: {
+      name: 'Anthropic Claude',
+      free: true,
+      limits: '5 messages per 4 hours',
+      setup: 'Get free API key from Anthropic'
+    },
+    [AI_PROVIDERS.HUGGINGFACE]: {
+      name: 'Hugging Face',
+      free: true,
+      limits: 'Rate limited',
+      setup: 'Get free API key from Hugging Face'
+    }
+  };
+  
+  return providerInfo[provider] || providerInfo[AI_PROVIDERS.GEMINI];
 };
