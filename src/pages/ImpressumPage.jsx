@@ -48,7 +48,7 @@ const ImpressumPage = () => {
                       <Phone className="h-5 w-5 text-steel-blue mt-0.5" />
                       <div>
                         <p className="font-medium">Phone</p>
-                        <p>+41 79 910 77 87</p>
+                        <p>info@taxed.ch</p>
                         <p className="text-sm text-gray-500">Mon-Fri 9:00-18:00</p>
                       </div>
                     </div>

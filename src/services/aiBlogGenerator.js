@@ -178,37 +178,44 @@ const BLOG_TOPICS = [
 
 // Generate a random topic from the predefined list, avoiding recently used topics
 const getRandomTopic = () => {
-  // Get recently used topics from localStorage to avoid repetition
-  const usedTopics = JSON.parse(localStorage.getItem('aiBlogUsedTopics') || '[]');
-  const maxUsedTopics = 20; // Keep track of last 20 topics
-  
-  // Filter out recently used topics
-  const availableCategories = BLOG_TOPICS.filter(category => {
+  try {
+    // Get recently used topics from localStorage to avoid repetition
+    const usedTopics = JSON.parse(localStorage.getItem('aiBlogUsedTopics') || '[]');
+    const maxUsedTopics = 20; // Keep track of last 20 topics
+    
+    // Filter out recently used topics
+    const availableCategories = BLOG_TOPICS.filter(category => {
+      const availableTopics = category.topics.filter(topic => !usedTopics.includes(topic));
+      return availableTopics.length > 0;
+    });
+    
+    // If all topics have been used recently, reset the used topics list
+    if (availableCategories.length === 0) {
+      localStorage.setItem('aiBlogUsedTopics', '[]');
+      const category = BLOG_TOPICS[Math.floor(Math.random() * BLOG_TOPICS.length)];
+      const topic = category.topics[Math.floor(Math.random() * category.topics.length)];
+      return { category: category.category, topic };
+    }
+    
+    // Select a random category with available topics
+    const category = availableCategories[Math.floor(Math.random() * availableCategories.length)];
     const availableTopics = category.topics.filter(topic => !usedTopics.includes(topic));
-    return availableTopics.length > 0;
-  });
-  
-  // If all topics have been used recently, reset the used topics list
-  if (availableCategories.length === 0) {
-    localStorage.setItem('aiBlogUsedTopics', '[]');
+    const topic = availableTopics[Math.floor(Math.random() * availableTopics.length)];
+    
+    // Add the selected topic to used topics
+    usedTopics.push(topic);
+    if (usedTopics.length > maxUsedTopics) {
+      usedTopics.shift(); // Remove oldest topic
+    }
+    localStorage.setItem('aiBlogUsedTopics', JSON.stringify(usedTopics));
+    
+    return { category: category.category, topic };
+  } catch (error) {
+    console.warn('Error accessing localStorage for topics:', error);
     const category = BLOG_TOPICS[Math.floor(Math.random() * BLOG_TOPICS.length)];
     const topic = category.topics[Math.floor(Math.random() * category.topics.length)];
     return { category: category.category, topic };
   }
-  
-  // Select a random category with available topics
-  const category = availableCategories[Math.floor(Math.random() * availableCategories.length)];
-  const availableTopics = category.topics.filter(topic => !usedTopics.includes(topic));
-  const topic = availableTopics[Math.floor(Math.random() * availableTopics.length)];
-  
-  // Add the selected topic to used topics
-  usedTopics.push(topic);
-  if (usedTopics.length > maxUsedTopics) {
-    usedTopics.shift(); // Remove oldest topic
-  }
-  localStorage.setItem('aiBlogUsedTopics', JSON.stringify(usedTopics));
-  
-  return { category: category.category, topic };
 };
 
 // Generate a professional image prompt based on the topic and category

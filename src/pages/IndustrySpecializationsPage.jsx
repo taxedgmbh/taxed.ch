@@ -5,7 +5,7 @@ import {
   Building, 
   Code, 
   DollarSign, 
-  Flask, 
+  Beaker, 
   Factory, 
   Users, 
   TrendingUp,
@@ -521,13 +521,13 @@ const IndustrySpecializationsPage = () => {
                     variant="outline"
                     className="border-white text-white hover:bg-white hover:text-steel-blue"
                     onClick={() => {
-                      const phoneNumber = '+41799107787';
+                      const subject = encodeURIComponent("Inquiry");
+    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
                       const message = encodeURIComponent(`Hello! I'm interested in your ${selectedIndustryData?.name} tax expertise. Could you please provide more information about your specialized services?`);
-                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-                      window.open(whatsappUrl, '_blank');
+                      window.open(emailUrl, '_blank');
                     }}
                   >
-                    WhatsApp Industry Expert
+                    Email Industry Expert
                   </Button>
                 </div>
               </CardContent>

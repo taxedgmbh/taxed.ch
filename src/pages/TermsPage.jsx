@@ -321,7 +321,7 @@ const TermsPage = () => {
                     <h3 className="text-lg font-medium mb-3">Questions About Terms</h3>
                     <p className="mb-2">For questions about these terms or legal matters:</p>
                     <p className="font-medium">info@taxed.ch</p>
-                    <p className="text-sm mt-2">+41 79 910 77 87</p>
+                    <p className="text-sm mt-2">info@taxed.ch</p>
                   </div>
                   
                   <div>

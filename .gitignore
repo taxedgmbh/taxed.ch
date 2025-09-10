@@ -69,3 +69,12 @@ logs
 # Temporary files
 tmp/
 temp/
+
+# Environment variables (for AI features)
+.env
+.env.local
+.env.production
+.env.development
+
+# Production deployment packages
+hostinger-deploy-*

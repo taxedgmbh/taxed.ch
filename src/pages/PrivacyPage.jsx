@@ -62,7 +62,7 @@ const PrivacyPage = () => {
                     <div className="space-y-2 text-gray-700">
                       <p>Biel/Bienne, Switzerland</p>
                       <p>Email: info@taxed.ch</p>
-                      <p>Phone: +41 79 910 77 87</p>
+                      <p>Phone: info@taxed.ch</p>
                     </div>
                   </div>
                   
@@ -298,7 +298,7 @@ const PrivacyPage = () => {
                       </div>
                       <div className="flex items-center space-x-2">
                         <Phone className="h-4 w-4" />
-                        <span>+41 79 910 77 87</span>
+                        <span>info@taxed.ch</span>
                       </div>
                     </div>
                   </div>

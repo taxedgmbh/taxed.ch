@@ -2,20 +2,23 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { getBlogPosts } from '@/data/blogPosts.jsx';
-import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
+import { getPostBySlug, getRelatedPosts } from '@/data/blogPosts.js';
+import { ArrowLeft, Calendar, User, Tag, Clock, Share2, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const BlogPostPage = () => {
   const { slug } = useParams();
-  const blogPosts = getBlogPosts();
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = getPostBySlug(slug);
+  const relatedPosts = post ? getRelatedPosts(post, 3) : [];
 
   if (!post) {
     return (
       <div className="flex flex-col items-center justify-center text-center py-20">
-        <h1 className="text-4xl font-bold mb-4">Post not found</h1>
-        <p className="mb-8">Sorry, we couldn't find the blog post you're looking for.</p>
+        <BookOpen className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+        <h1 className="text-4xl font-bold mb-4">Article not found</h1>
+        <p className="mb-8 text-gray-600">Sorry, we couldn't find the blog post you're looking for.</p>
         <Button asChild>
           <Link to="/blog">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -26,6 +29,15 @@ const BlogPostPage = () => {
     );
   }
 
+  const getDifficultyColor = (difficulty) => {
+    switch (difficulty) {
+      case 'Beginner': return 'bg-green-100 text-green-800';
+      case 'Intermediate': return 'bg-yellow-100 text-yellow-800';
+      case 'Advanced': return 'bg-red-100 text-red-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -33,66 +45,175 @@ const BlogPostPage = () => {
         <meta name="description" content={post.summary} />
         <meta property="og:title" content={`${post.title} | Taxed GmbH Blog`} />
         <meta property="og:description" content={post.summary} />
+        <meta property="og:image" content={post.imageUrl} />
       </Helmet>
+      
       <div className="bg-white py-12 sm:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="mb-8">
-              <Link to="/blog" className="flex items-center text-steel-blue hover:underline mb-8">
-                <ArrowLeft size={16} className="mr-2" />
-                Back to all articles
-              </Link>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-dark-gray tracking-tight mb-4">
-                {post.title}
-              </h1>
-              <div className="flex flex-wrap items-center space-x-4 text-sm text-dark-gray/70">
-                <div className="flex items-center space-x-2">
-                  <User size={14} />
-                  <span>{post.author}</span>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Main Content */}
+            <div className="lg:w-2/3">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="mb-8">
+                  <Link to="/blog" className="flex items-center text-steel-blue hover:underline mb-8">
+                    <ArrowLeft size={16} className="mr-2" />
+                    Back to all articles
+                  </Link>
+                  
+                  {/* Article Meta */}
+                  <div className="flex items-center space-x-4 mb-4">
+                    <Badge variant="outline">{post.category}</Badge>
+                    <Badge className={getDifficultyColor(post.difficulty)}>
+                      {post.difficulty}
+                    </Badge>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {post.readTime}
+                    </div>
+                  </div>
+                  
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-dark-gray tracking-tight mb-6">
+                    {post.title}
+                  </h1>
+                  
+                  <div className="flex flex-wrap items-center justify-between mb-6">
+                    <div className="flex flex-wrap items-center space-x-6 text-sm text-dark-gray/70">
+                      <div className="flex items-center space-x-2">
+                        <User size={16} />
+                        <span>{post.author}</span>
+                        <span className="text-gray-400">•</span>
+                        <span className="text-sm">{post.authorTitle}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Calendar size={16} />
+                        <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                      </div>
+                    </div>
+                    <Button variant="outline" size="sm">
+                      <Share2 className="w-4 h-4 mr-2" />
+                      Share
+                    </Button>
+                  </div>
+                  
+                  <div className="flex flex-wrap items-center gap-2 mb-8">
+                    {post.tags.map(tag => (
+                      <Badge key={tag} variant="secondary" className="text-xs">
+                        <Tag size={12} className="mr-1" />
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Calendar size={14} />
-                  <span>{post.formattedDate || new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+
+                {/* Featured Image */}
+                <div className="mb-12 rounded-lg overflow-hidden shadow-xl">
+                  <img  
+                    className="w-full h-64 md:h-80 object-cover"
+                    alt={post.imageAlt} 
+                    src={post.imageUrl} />
                 </div>
+
+                {/* Article Content */}
+                <article 
+                  className="prose prose-lg max-w-none text-dark-gray/90 prose-h2:text-dark-gray prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-6 prose-a:text-steel-blue hover:prose-a:underline prose-ul:my-6 prose-li:my-2"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+
+                {/* CTA Section */}
+                <div className="mt-16 text-center bg-gradient-to-r from-steel-blue/5 to-blue-600/5 p-8 rounded-2xl border border-steel-blue/20">
+                  <h2 className="text-2xl font-bold text-dark-gray mb-4">Ready to Simplify Your Swiss Taxes?</h2>
+                  <p className="text-dark-gray/80 mb-6 max-w-2xl mx-auto">
+                    Let our experts handle the complexity. Choose a flat-rate package today and get peace of mind.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button asChild size="lg">
+                      <Link to="/store">
+                        View Our Packages
+                      </Link>
+                    </Button>
+                    <Button asChild variant="outline" size="lg">
+                      <Link to="/contact">
+                        Get Free Consultation
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:w-1/3">
+              <div className="sticky top-8 space-y-6">
+                {/* Author Card */}
+                <Card className="border-steel-blue/20 shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <User className="w-5 h-5 mr-2" />
+                      About the Author
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-steel-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <User className="w-8 h-8 text-steel-blue" />
+                      </div>
+                      <h3 className="font-semibold text-dark-gray">{post.author}</h3>
+                      <p className="text-sm text-gray-600 mb-3">{post.authorTitle}</p>
+                      <p className="text-sm text-gray-500">
+                        Expert in Swiss taxation with years of experience helping expats navigate complex tax situations.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Related Articles */}
+                {relatedPosts.length > 0 && (
+                  <Card className="border-steel-blue/20 shadow-lg">
+                    <CardHeader>
+                      <CardTitle className="flex items-center">
+                        <BookOpen className="w-5 h-5 mr-2" />
+                        Related Articles
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      {relatedPosts.map((relatedPost) => (
+                        <Link
+                          key={relatedPost.slug}
+                          to={`/blog/${relatedPost.slug}`}
+                          className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                        >
+                          <h4 className="font-medium text-dark-gray text-sm mb-1 line-clamp-2">
+                            {relatedPost.title}
+                          </h4>
+                          <div className="flex items-center text-xs text-gray-500">
+                            <Clock className="w-3 h-3 mr-1" />
+                            {relatedPost.readTime}
+                          </div>
+                        </Link>
+                      ))}
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Newsletter Signup */}
+                <Card className="border-green-200 shadow-lg bg-gradient-to-br from-green-50 to-blue-50">
+                  <CardContent className="p-6 text-center">
+                    <h3 className="font-semibold text-dark-gray mb-2">Stay Updated</h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Get the latest Swiss tax insights delivered to your inbox
+                    </p>
+                    <Button className="w-full bg-steel-blue hover:bg-blue-700 text-white">
+                      Subscribe to Newsletter
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="flex flex-wrap items-center gap-2 mt-4">
-                {post.tags.map(tag => (
-                  <span key={tag} className="bg-warm-red-tint text-brand-red text-xs font-semibold px-2.5 py-0.5 rounded-full flex items-center">
-                    <Tag size={12} className="mr-1" />
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
-
-            <div className="aspect-w-16 aspect-h-9 mb-12 rounded-lg overflow-hidden shadow-xl">
-              <img  
-                className="w-full h-full object-cover"
-                alt={post.imageAlt || post.alt} 
-                src={post.imageUrl || "https://images.unsplash.com/photo-1595872018818-97555653a011"} />
-            </div>
-
-            <article className="prose prose-lg max-w-none text-dark-gray/90 prose-h2:text-dark-gray prose-h2:font-bold prose-a:text-steel-blue hover:prose-a:underline">
-              {post.content()}
-            </article>
-
-            <div className="mt-16 text-center bg-light-gray-bg-1 p-8 rounded-lg border border-steel-blue/20">
-              <h2 className="text-2xl font-bold text-dark-gray mb-4">Ready to Simplify Your Swiss Taxes?</h2>
-              <p className="text-dark-gray/80 mb-6 max-w-2xl mx-auto">
-                Let our experts handle the complexity. Choose a flat-rate package today and get peace of mind.
-              </p>
-              <Button asChild size="lg">
-                <Link to="/store">
-                  View Our Packages
-                </Link>
-              </Button>
-            </div>
-
-          </motion.div>
+          </div>
         </div>
       </div>
     </>

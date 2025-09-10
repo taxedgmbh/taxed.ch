@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "node tools/generate-rss.js && node tools/generate-llms.js || true && vite build",
+    "build": "node tools/generate-rss.js && node tools/generate-llms.js && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.285.0",
     "openai": "^5.16.0",
     "react": "^18.2.0",

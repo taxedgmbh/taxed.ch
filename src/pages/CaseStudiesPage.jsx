@@ -572,13 +572,13 @@ const CaseStudiesPage = () => {
                     variant="outline"
                     className="border-white text-white hover:bg-white hover:text-steel-blue"
                     onClick={() => {
-                      const phoneNumber = '+41799107787';
+                      const subject = encodeURIComponent("Inquiry");
+    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
                       const message = encodeURIComponent("Hello! I'd like to discuss how you can help me optimize my Swiss tax situation. Could you please provide more information about your services?");
-                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-                      window.open(whatsappUrl, '_blank');
+                      window.open(emailUrl, '_blank');
                     }}
                   >
-                    WhatsApp Consultation
+                    Email Consultation
                   </Button>
                 </div>
               </CardContent>

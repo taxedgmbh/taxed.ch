@@ -28,7 +28,9 @@ import {
   Users,
   DollarSign,
   Calendar,
-  MapPin
+  MapPin,
+  Building,
+  Home
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -500,13 +502,13 @@ const AdvancedTaxToolsPage = () => {
                     variant="outline"
                     className="border-white text-white hover:bg-white hover:text-steel-blue"
                     onClick={() => {
-                      const phoneNumber = '+41799107787';
+                      const subject = encodeURIComponent("Inquiry");
+    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
                       const message = encodeURIComponent("Hello! I'd like to discuss advanced tax planning strategies. Could you please provide more information about your professional services?");
-                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-                      window.open(whatsappUrl, '_blank');
+                      window.open(emailUrl, '_blank');
                     }}
                   >
-                    WhatsApp Expert
+                    Email Expert
                   </Button>
                 </div>
               </CardContent>

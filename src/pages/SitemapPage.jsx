@@ -213,7 +213,7 @@ const SitemapPage = () => {
                   </div>
                   <div className="space-y-2 text-gray-700">
                     <p>Email: info@taxed.ch</p>
-                    <p>Phone: +41 79 910 77 87</p>
+                    <p>Phone: info@taxed.ch</p>
                     <p>Location: Biel/Bienne, Switzerland</p>
                   </div>
                 </div>

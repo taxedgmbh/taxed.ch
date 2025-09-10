@@ -236,7 +236,7 @@ const AccessibilityPage = () => {
                     <p className="text-sm text-gray-700 mb-2">If you encounter accessibility issues:</p>
                     <ul className="space-y-1 text-gray-700 text-sm">
                       <li>• Email: accessibility@taxed.ch</li>
-                      <li>• Phone: +41 79 910 77 87</li>
+                      <li>• Phone: info@taxed.ch</li>
                       <li>• Include specific details about the issue</li>
                       <li>• Mention your assistive technology</li>
                     </ul>
@@ -281,7 +281,7 @@ const AccessibilityPage = () => {
                     <h3 className="text-lg font-medium mb-3">Accessibility Support</h3>
                     <p className="mb-2">For accessibility questions or issues:</p>
                     <p className="font-medium">accessibility@taxed.ch</p>
-                    <p className="text-sm mt-2">+41 79 910 77 87</p>
+                    <p className="text-sm mt-2">info@taxed.ch</p>
                   </div>
                   
                   <div>

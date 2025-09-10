@@ -31,18 +31,23 @@ import ResourceCenterPage from '@/pages/ResourceCenterPage';
 import NewsPage from '@/pages/NewsPage';
 import ClientPortalPage from '@/pages/ClientPortalPage';
 import CaseStudiesPage from '@/pages/CaseStudiesPage';
-import TeamPage from '@/pages/TeamPage';
-import IndustrySpecializationsPage from '@/pages/IndustrySpecializationsPage';
-import AdvancedTaxToolsPage from '@/pages/AdvancedTaxToolsPage';
+// import TeamPage from '@/pages/TeamPage';
+// import IndustrySpecializationsPage from '@/pages/IndustrySpecializationsPage';
+// import AdvancedTaxToolsPage from '@/pages/AdvancedTaxToolsPage';
+import NotFoundPage from '@/pages/NotFoundPage';
 import { useCart } from '@/hooks/useCart';
 import { initializeDailyBlogScheduler } from '@/services/dailyBlogScheduler';
-import WhatsAppChat from '@/components/WhatsAppChat';
 
 function App() {
   // Initialize daily blog scheduler
   React.useEffect(() => {
-    initializeDailyBlogScheduler();
+    try {
+      initializeDailyBlogScheduler();
+    } catch (error) {
+      console.warn('Error initializing blog scheduler:', error);
+    }
   }, []);
+  
   const { isCartOpen, setIsCartOpen } = useCart();
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
@@ -59,7 +64,6 @@ function App() {
       
       <Header isLandingPage={isLandingPage} />
       <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
-      <WhatsAppChat />
       
       <main className="flex-grow">
         <Routes>
@@ -90,10 +94,13 @@ function App() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/client-portal" element={<ClientPortalPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
-          <Route path="/team" element={<TeamPage />} />
-          <Route path="/industry-specializations" element={<IndustrySpecializationsPage />} />
-          <Route path="/advanced-tax-tools" element={<AdvancedTaxToolsPage />} />
-               </Routes>
+          {/* <Route path="/team" element={<TeamPage />} /> */}
+          {/* <Route path="/industry-specializations" element={<IndustrySpecializationsPage />} /> */}
+          {/* <Route path="/advanced-tax-tools" element={<AdvancedTaxToolsPage />} /> */}
+          
+          {/* 404 - Catch all undefined routes */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
       
       <Footer />

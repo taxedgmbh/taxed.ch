@@ -88,8 +88,6 @@ const InteractiveMap = () => {
           className="absolute inset-0 opacity-20 transition-transform duration-300"
           style={{
             transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '40px 40px',
             background: 'linear-gradient(45deg, #2d3748 25%, transparent 25%), linear-gradient(-45deg, #2d3748 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #2d3748 75%), linear-gradient(-45deg, transparent 75%, #2d3748 75%)',
             backgroundSize: '20px 20px',
             backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
@@ -371,7 +369,7 @@ const Footer = () => {
                     <Phone className="h-4 w-4 text-steel-blue" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium">+41 79 910 77 87</div>
+                    <div className="text-sm font-medium">info@taxed.ch</div>
                     <div className="text-xs text-gray-500">Mon-Fri 9:00-18:00</div>
                   </div>
                 </div>
