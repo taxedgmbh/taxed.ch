@@ -1,0 +1,1 @@
+DEPLOY_DIR=deployment/hostinger-deploy-20250919-233645

@@ -29,7 +29,7 @@ FTP_USER="u497646184.taxed.ch"
 FTP_PASS="Hauskauf629!"
 
 # Check deployment directory
-DEPLOY_DIR="hostinger-deploy-20250910-205111"
+DEPLOY_DIR="hostinger-deploy-20250919-235407"
 if [ ! -d "$DEPLOY_DIR" ]; then
     print_error "Deployment directory not found. Run ./deploy-hostinger.sh first."
     exit 1

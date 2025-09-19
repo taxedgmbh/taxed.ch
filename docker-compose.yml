@@ -1,0 +1,103 @@
+services:
+  # Frontend React Application
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: taxed-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./logs/nginx:/var/log/nginx
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - taxed-network
+
+  # Backend API (if needed)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: taxed-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=db
+      - DB_USER=taxed_user
+      - DB_PASSWORD=taxed_password
+      - DB_NAME=taxed_db
+    volumes:
+      - ./backend/uploads:/app/uploads
+    restart: unless-stopped
+    depends_on:
+      - db
+    networks:
+      - taxed-network
+
+  # Database
+  db:
+    image: mysql:8.0
+    container_name: taxed-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=taxed_db
+      - MYSQL_USER=taxed_user
+      - MYSQL_PASSWORD=taxed_password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./backend/database-setup.sql:/docker-entrypoint-initdb.d/01-setup.sql
+      - ./backend/client-portal-schema.sql:/docker-entrypoint-initdb.d/02-schema.sql
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    networks:
+      - taxed-network
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: taxed-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - taxed-network
+
+  # SSL/TLS with Let's Encrypt (optional)
+  certbot:
+    image: certbot/certbot
+    container_name: taxed-certbot
+    volumes:
+      - certbot_certs:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
+    command: certonly --webroot --webroot-path=/var/www/certbot --email admin@taxed.ch --agree-tos --no-eff-email -d taxed.ch
+    depends_on:
+      - frontend
+    networks:
+      - taxed-network
+
+volumes:
+  db_data:
+    driver: local
+  redis_data:
+    driver: local
+  certbot_certs:
+    driver: local
+  certbot_www:
+    driver: local
+
+networks:
+  taxed-network:
+    driver: bridge
