@@ -3,6 +3,204 @@
 
 const blogPosts = [
   {
+    id: 'tax-deductible-expenses-guide-2025',
+    slug: 'tax-deductible-expenses-switzerland-2025-guide-individuals',
+    title: 'Tax-Deductible Expenses in Switzerland: 2025 Guide for Individuals',
+    author: 'Paritca',
+    authorTitle: 'Senior Tax Advisor',
+    date: '2025-01-20',
+    category: 'Tax Deductions',
+    tags: ['Tax Deductions', 'Switzerland', 'Individual Tax', 'Expenses', '2025'],
+    summary: 'A comprehensive guide to tax-deductible expenses for individuals in Switzerland. Learn about professional expenses, pension contributions, property costs, donations, and expat-specific deductions.',
+    readTime: '12 min read',
+    difficulty: 'Intermediate',
+    featured: true,
+    content: `
+      <p class="mb-6 text-lg leading-relaxed">Navigating Switzerland's tax system can be complex, but understanding deductible expenses is crucial for minimizing your tax burden. The Swiss Federal Tax Administration (ESTV) provides clear guidelines on what expenses qualify for deductions, potentially saving taxpayers thousands of francs annually. This comprehensive guide examines all major deductible categories for 2025, offering both Swiss residents and expatriates the knowledge needed to optimize their tax position while ensuring full compliance with Swiss tax law.</p>
+      
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop" alt="Swiss tax documents and calculator on modern desk" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 1: Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Overview of Swiss Tax Deductions</h2>
+      <p>The Swiss Federal Tax Administration (ESTV) establishes the legal framework for individual tax deductions under the Federal Act on Direct Federal Tax (DBG/FDTA) (Swiss Confederation, 2025). These deductions are specifically designed to account for necessary expenses that directly reduce taxable income, ensuring a fair and equitable tax system that recognizes the varying financial circumstances of taxpayers.</p>
+      
+      <p>For the 2025 tax year, the primary categories of deductible expenses encompass professional expenses, pension contributions, property-related costs, charitable donations, and specific benefits for expatriates. According to PwC's 2025 Swiss Tax Guide, understanding these categories and their specific limitations is essential for effective tax planning and compliance (PwC, 2025).</p>
+
+      <h2>Professional Expenses and Work-Related Deductions</h2>
+      <p>Professional expenses constitute one of the most substantial deduction categories for employed individuals in Switzerland. According to the Swiss Federal Tax Administration's guidelines, these expenses must be directly related to professional activities and not reimbursed by the employer (Swiss Federal Tax Administration, 2025).</p>
+      
+      <p>The following professional expenses are typically deductible:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Professional development courses and continuing education programs</li>
+        <li>Work-related travel expenses (excluding standard commuting costs)</li>
+        <li>Professional literature, journals, and industry subscriptions</li>
+        <li>Home office expenses (when working from home regularly)</li>
+        <li>Professional association memberships and certification fees</li>
+        <li>Work-related equipment, tools, and software licenses</li>
+      </ul>
+
+      <p>According to the Swiss Federal Tax Administration's 2025 guidelines, the standard deduction for professional expenses is CHF 2,300.– for employed individuals. However, taxpayers may claim higher amounts if they can provide proper receipts and documentation supporting their actual expenses (Swiss Federal Tax Administration, 2025).</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop" alt="Professional working at home office with documents" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 2: Photo by <a href="https://unsplash.com/@christinhumephoto" class="text-blue-600 hover:underline">Christin Hume</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Pension Contributions and Retirement Planning</h2>
+      <p>Switzerland's three-pillar pension system provides significant tax advantages for retirement planning. According to the Swiss Federal Social Insurance Office (BSV), Pillar 3a contributions are fully deductible up to CHF 7,056.– for employed individuals in 2025 (Swiss Federal Social Insurance Office, 2025).</p>
+      
+      <p>The following pension-related expenses are deductible:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Pillar 3a contributions (maximum CHF 7,056.– for employed individuals)</li>
+        <li>Additional voluntary pension contributions to occupational pension funds</li>
+        <li>Buying back pension years (Rückkauf von Pensionsjahren)</li>
+        <li>Pension fund contributions exceeding mandatory amounts</li>
+      </ul>
+
+      <p>For self-employed individuals, the deduction limits are significantly higher. According to Swisslife's 2025 pension guide, Pillar 3a contributions are deductible up to 20% of net income or CHF 35,280.–, whichever is lower (Swisslife, 2025).</p>
+
+      <h2>Property-Related Deductions</h2>
+      <p>Property ownership in Switzerland provides several tax advantages, particularly for maintenance and improvement costs. According to the Swiss Federal Tax Administration, these deductions can significantly reduce your tax burden while maintaining your property's value (Swiss Federal Tax Administration, 2025).</p>
+      
+      <p>The following property-related expenses are typically deductible:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Property maintenance and repair costs</li>
+        <li>Energy efficiency improvements and renovations</li>
+        <li>Property management and administration fees</li>
+        <li>Mortgage interest payments (for primary residence only)</li>
+        <li>Property insurance premiums</li>
+        <li>Garden and landscaping maintenance expenses</li>
+      </ul>
+
+      <p>It is crucial to distinguish between maintenance expenses (immediately deductible) and capital improvements (which may be depreciated over time). According to MME Legal's 2025 property tax guide, professional advice is strongly recommended for complex property-related deductions to ensure compliance (MME Legal, 2025).</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop" alt="Swiss house with maintenance work being done" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 3: Photo by <a href="https://unsplash.com/@jankolar" class="text-blue-600 hover:underline">Jan Kolar</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Charitable Donations and Social Contributions</h2>
+      <p>Charitable donations to recognized Swiss organizations are fully deductible, providing both tax benefits and social impact. The Swiss tax system encourages philanthropy through generous deduction rules (Effectiv Spenden, 2025).</p>
+      
+      <p>Eligible donations include:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Donations to recognized charitable organizations</li>
+        <li>Contributions to religious institutions</li>
+        <li>Political party donations (up to CHF 10,000.–)</li>
+        <li>Cultural and educational institution support</li>
+        <li>Environmental and conservation donations</li>
+      </ul>
+
+      <p>All donations must be to organizations with tax-exempt status in Switzerland. Keep receipts and certificates of donation for tax filing purposes.</p>
+
+      <h2>Expatriate-Specific Benefits</h2>
+      <p>Expatriates in Switzerland enjoy several unique tax advantages, particularly during their initial years in the country. These benefits are designed to facilitate international mobility and reduce the tax burden of relocation (Taxolution Advisory, 2025).</p>
+      
+      <p>Key expat deductions include:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Relocation and moving expenses</li>
+        <li>International school fees (in some cantons)</li>
+        <li>Language learning courses</li>
+        <li>Home leave travel expenses</li>
+        <li>Double taxation treaty benefits</li>
+        <li>Foreign tax credits</li>
+      </ul>
+
+      <p>Many cantons offer special tax regimes for qualifying expatriates, including lump-sum taxation options for high-net-worth individuals (The Poor Swiss, 2025).</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=400&fit=crop" alt="International business people in modern office" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 4: Photo by <a href="https://unsplash.com/@headwayio" class="text-blue-600 hover:underline">Headway</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Additional Deduction Opportunities</h2>
+      <p>Beyond the major categories, several other deduction opportunities exist for Swiss taxpayers. These include debt interest payments, insurance premiums, and specific family-related expenses (Moneyland, 2025).</p>
+      
+      <p>Other deductible expenses include:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Interest on consumer loans and mortgages</li>
+        <li>Health and accident insurance premiums</li>
+        <li>Childcare expenses</li>
+        <li>Alimony and child support payments</li>
+        <li>Medical expenses exceeding the franchise</li>
+        <li>Disability and long-term care insurance</li>
+      </ul>
+
+      <h2>Documentation and Record-Keeping</h2>
+      <p>Proper documentation is essential for claiming deductions. The Swiss tax authorities require receipts, invoices, and supporting documents for all claimed expenses. Digital record-keeping systems can streamline this process and ensure compliance.</p>
+      
+      <p>Key documentation requirements include:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Original receipts and invoices</li>
+        <li>Bank statements showing payments</li>
+        <li>Employer certificates for professional expenses</li>
+        <li>Insurance policy documents</li>
+        <li>Charitable organization receipts</li>
+        <li>Property maintenance invoices</li>
+      </ul>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop" alt="Organized tax documents and receipts on desk" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 5: Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Conclusion</h2>
+      <p>Maximizing your tax deductions in Switzerland requires understanding the various categories of deductible expenses and maintaining proper documentation. From professional expenses and pension contributions to property costs and charitable donations, the Swiss tax system offers numerous opportunities to reduce your tax burden legally and effectively.</p>
+      
+      <p>For expatriates, additional benefits and special regimes may apply, making professional tax advice particularly valuable. Regular review of your deduction opportunities and staying informed about changes in tax law can help optimize your tax position year after year.</p>
+      
+      <p>Remember that tax laws can vary by canton, and individual circumstances may affect eligibility for certain deductions. Consulting with a qualified tax advisor can help ensure you're taking advantage of all available opportunities while maintaining full compliance with Swiss tax regulations.</p>
+
+      <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+        <h3 class="text-lg font-semibold mb-4">References</h3>
+        <div class="space-y-2 text-sm">
+          <p>Swiss Confederation (2025) Federal Act on Direct Federal Tax (DBG/FDTA). Available at: <a href="https://www.fedlex.admin.ch/eli/cc/1991/1938_1938_1938/en" class="text-blue-600 hover:underline">https://www.fedlex.admin.ch/eli/cc/1991/1938_1938_1938/en</a> (Accessed 20 January 2025).</p>
+          
+          <p>Swiss Federal Tax Administration (2025) Federal Direct Tax Overview. Available at: <a href="https://www.estv.admin.ch/estv/en/home/federal-direct-tax.html" class="text-blue-600 hover:underline">https://www.estv.admin.ch/estv/en/home/federal-direct-tax.html</a> (Accessed 20 January 2025).</p>
+          
+          <p>Swiss Federal Tax Administration (2025) Swiss Tax System Overview. Available at: <a href="https://www.estv.admin.ch/estv/en/home/fta/swiss-tax-system/swiss-tax-system.html" class="text-blue-600 hover:underline">https://www.estv.admin.ch/estv/en/home/fta/swiss-tax-system/swiss-tax-system.html</a> (Accessed 20 January 2025).</p>
+          
+          <p>Swiss Federal Social Insurance Office (2025) Pillar 3a Contribution Limits. Available at: <a href="https://www.bsv.admin.ch/bsv/en/home/insurance/3-pillar/3a.html" class="text-blue-600 hover:underline">https://www.bsv.admin.ch/bsv/en/home/insurance/3-pillar/3a.html</a> (Accessed 20 January 2025).</p>
+          
+          <p>PwC (2025) Switzerland Individual Tax Deductions. Available at: <a href="https://taxsummaries.pwc.com/switzerland/individual/deductions" class="text-blue-600 hover:underline">https://taxsummaries.pwc.com/switzerland/individual/deductions</a> (Accessed 20 January 2025).</p>
+          
+          <p>Swisslife (2025) Guide to Tax-Deductible Expenses. Available at: <a href="https://www.swisslife.ch/en/individuals/future-provisions-assets/guide/how-can-i-save-on-tax.html" class="text-blue-600 hover:underline">https://www.swisslife.ch/en/individuals/future-provisions-assets/guide/how-can-i-save-on-tax.html</a> (Accessed 20 January 2025).</p>
+          
+          <p>AXA Switzerland (2025) Tax Deductions and Retirement Planning. Available at: <a href="https://www.axa.ch/en/privatkunden/blog/pension/retirement-provision/taxes-deductions.html" class="text-blue-600 hover:underline">https://www.axa.ch/en/privatkunden/blog/pension/retirement-provision/taxes-deductions.html</a> (Accessed 20 January 2025).</p>
+          
+          <p>Effectiv Spenden (2025) Tax-Deductible Donations in Switzerland. Available at: <a href="https://effektiv-spenden.org/en/blog/how-can-i-make-a-tax-deductible-donation-in-switzerland/" class="text-blue-600 hover:underline">https://effektiv-spenden.org/en/blog/how-can-i-make-a-tax-deductible-donation-in-switzerland/</a> (Accessed 20 January 2025).</p>
+          
+          <p>Smartetax (2025) Deductible Property Maintenance Costs. Available at: <a href="https://www.smartetax.ch/en_GB/blog/deductible-property-maintenance-costs-zurich-zug-thurgau-lucerne-aargau-stgallen-bern-schwyz-graubuenden-basel-maintenance-costs-tax-declaration-property-maintenance-deductible-tax-increase-value-real-estate-home-switzerland" class="text-blue-600 hover:underline">https://www.smartetax.ch/en_GB/blog/deductible-property-maintenance-costs-zurich-zug-thurgau-lucerne-aargau-stgallen-bern-schwyz-graubuenden-basel-maintenance-costs-tax-declaration-property-maintenance-deductible-tax-increase-value-real-estate-home-switzerland</a> (Accessed 20 January 2025).</p>
+          
+          <p>Taxolution Advisory (2025) Expat Tax Benefits in Switzerland. Available at: <a href="https://www.taxolution.ch/swiss-tax-guide/expat-tax-benefits/" class="text-blue-600 hover:underline">https://www.taxolution.ch/swiss-tax-guide/expat-tax-benefits/</a> (Accessed 20 January 2025).</p>
+          
+          <p>MME Legal (2025) Pension Contributions and Tax Benefits. Available at: <a href="https://www.mme.ch/en/magazine/articles/moving-to-switzerland-do-pension-instruments-serve-to-save-taxes" class="text-blue-600 hover:underline">https://www.mme.ch/en/magazine/articles/moving-to-switzerland-do-pension-instruments-serve-to-save-taxes</a> (Accessed 20 January 2025).</p>
+          
+          <p>The Poor Swiss (2025) Tax Deductions in Switzerland for 2025. Available at: <a href="https://thepoorswiss.com/tax-deductions-in-switzerland/" class="text-blue-600 hover:underline">https://thepoorswiss.com/tax-deductions-in-switzerland/</a> (Accessed 20 January 2025).</p>
+          
+          <p>Findea (2025) Deductible Professional Expenses. Available at: <a href="https://www.findea.ch/en/blog/deductible-professional-expenses-non-self-employed-gainful-activity" class="text-blue-600 hover:underline">https://www.findea.ch/en/blog/deductible-professional-expenses-non-self-employed-gainful-activity</a> (Accessed 20 January 2025).</p>
+          
+          <p>Moneyland (2025) Tax Deductions for Loans and Interest. Available at: <a href="https://www.moneyland.ch/en/credit-tax-deductions" class="text-blue-600 hover:underline">https://www.moneyland.ch/en/credit-tax-deductions</a> (Accessed 20 January 2025).</p>
+        </div>
+      </div>
+
+      <div class="mt-6 p-6 bg-blue-50 rounded-lg">
+        <h3 class="text-lg font-semibold mb-4">Image Attributions</h3>
+        <div class="space-y-2 text-sm">
+          <p><strong>Figure 1:</strong> Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></p>
+          <p><strong>Figure 2:</strong> Photo by <a href="https://unsplash.com/@christinhumephoto" class="text-blue-600 hover:underline">Christin Hume</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></p>
+          <p><strong>Figure 3:</strong> Photo by <a href="https://unsplash.com/@jankolar" class="text-blue-600 hover:underline">Jan Kolar</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></p>
+          <p><strong>Figure 4:</strong> Photo by <a href="https://unsplash.com/@headwayio" class="text-blue-600 hover:underline">Headway</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></p>
+          <p><strong>Figure 5:</strong> Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></p>
+        </div>
+      </div>
+    `,
+    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop',
+    imageAlt: 'Swiss tax documents and calculator on modern desk'
+  },
+  {
     id: 'quellensteuer-guide-2025',
     slug: 'understanding-swiss-tax-at-source-quellensteuer-2025',
     title: 'Understanding Swiss Tax at Source (Quellensteuer) in 2025',
@@ -1715,6 +1913,118 @@ const blogPosts = [
     `,
     imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
     imageAlt: 'Swiss Kita center and children playing'
+  },
+  {
+    id: 'swiss-tax-developments-2025-oecd-minimum-tax',
+    slug: 'swiss-tax-developments-2025-oecd-minimum-tax-implementation',
+    title: 'Swiss Tax Developments 2025: OECD Minimum Tax Implementation and Corporate Tax Reforms',
+    author: 'Paritca',
+    authorTitle: 'Senior Tax Advisor',
+    date: '2025-01-20',
+    category: 'Corporate Tax',
+    tags: ['OECD Minimum Tax', 'Pillar 2', 'Corporate Tax', 'Switzerland', '2025', 'Tax Reform'],
+    summary: 'Comprehensive analysis of Switzerland\'s implementation of the OECD minimum tax (Pillar 2), corporate tax rate developments, and their impact on Swiss businesses and international tax planning.',
+    readTime: '15 min read',
+    difficulty: 'Advanced',
+    featured: true,
+    content: `
+      <p class="mb-6 text-lg leading-relaxed">Switzerland's tax landscape is undergoing significant transformation in 2025, with the implementation of the OECD minimum tax (Pillar 2) representing one of the most substantial changes to the Swiss tax system in decades. This comprehensive analysis examines the practical implications of these reforms for Swiss businesses, multinational corporations, and tax professionals navigating the evolving regulatory environment.</p>
+      
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=400&fit=crop" alt="Swiss Federal Palace in Bern representing Swiss government and tax policy" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 1: Photo by <a href="https://unsplash.com/@davidemrich" class="text-blue-600 hover:underline">David Emrich</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Overview of OECD Minimum Tax Implementation</h2>
+      <p>The implementation of the OECD minimum tax (Pillar 2) in Switzerland represents a fundamental shift in international tax policy, requiring Swiss companies with consolidated revenues exceeding €750 million to comply with the 15% global minimum tax rate (Swiss Federal Council, 2024). This landmark reform, approved by Swiss voters in June 2023, positions Switzerland as a key participant in the global effort to combat tax base erosion and profit shifting.</p>
+      
+      <p>According to the Swiss Federal Council's decision of September 4, 2024, the Income Inclusion Rule (IIR) will come into force on January 1, 2025, allowing Switzerland to tax the profits of foreign subsidiaries of Swiss-based multinational enterprises (Swiss Federal Council, 2024). The Swiss Federal Tax Administration has established comprehensive guidance for affected companies, including registration requirements, filing obligations, and calculation methodologies for the top-up tax mechanism.</p>
+
+      <h2>Corporate Tax Rate Developments</h2>
+      <p>Switzerland's corporate tax landscape continues to evolve, with several cantons implementing strategic tax rate adjustments to maintain competitiveness while adapting to the new international tax environment. According to Deloitte's analysis of the 50 largest publicly listed companies in Switzerland, the actual additional tax revenue for 2024 was approximately CHF 243 million, with over three-quarters of this amount attributable to a single corporate group (Deloitte, 2025).</p>
+      
+      <p>The Federal Act on Direct Federal Tax (DBG/FDTA) provides the legal framework for these developments, with the federal corporate tax rate remaining at 8.5% while cantonal rates vary significantly (Swiss Confederation, 2025). This dual-level taxation system requires careful planning for multinational corporations operating in Switzerland.</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop" alt="Modern Swiss corporate headquarters building representing business and tax compliance" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 2: Photo by <a href="https://unsplash.com/@campaign_creators" class="text-blue-600 hover:underline">Campaign Creators</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Pillar 2 Registration and Compliance Requirements</h2>
+      <p>Companies subject to the OECD minimum tax must collect approximately 150 data points, including information on taxes, income, and internal structures (KPMG, 2024). This data is essential for calculating the effective tax rate and determining any top-up taxes owed. Companies should consider developing internal systems, licensing external software solutions, or outsourcing these calculations to ensure compliance.</p>
+      
+      <p>According to the Swiss Federal Council's consultation initiated on January 29, 2025, regarding the approval of the international legal basis for information exchange under the GloBE framework, affected companies must establish robust internal systems for Pillar 2 compliance (Swiss Federal Council, 2025). The complexity of these requirements necessitates significant investment in tax technology and professional expertise.</p>
+
+      <h2>US Tariffs and Swiss-US Trade Relations</h2>
+      <p>The implementation of new US tariffs on Swiss products, particularly in the steel and aluminum sectors, has created additional complexity for Swiss exporters and multinational corporations (SECO, 2025). These tariffs, combined with the OECD minimum tax implementation, require careful tax planning to optimize both direct and indirect tax positions.</p>
+      
+      <p>The Swiss-US Bilateral III agreement provides opportunities for Swiss SMEs to navigate these challenges, offering enhanced trade facilitation and reduced administrative burdens (S-GE, 2025). However, companies must carefully evaluate the interaction between tariff costs and tax optimization strategies.</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop" alt="International trade documents and business contracts representing Swiss-US trade relations" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 3: Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Cantonal Tax Incentive Packages</h2>
+      <p>The introduction of the global minimum tax has significant implications for existing Swiss tax incentives. Incentives such as the patent box, R&D super-deduction, and capital tax base deduction, introduced during the corporate tax reform in 2020, may reduce the Global Anti-Base Erosion (GloBE) effective tax rate below the 15% threshold (International Tax Review, 2025). This could result in additional top-up taxes under the GMT framework, potentially diminishing the effectiveness of these incentives.</p>
+      
+      <p>According to the International Tax Review analysis, companies that benefited from transitional measures following the abolition of certain privileged tax regimes in 2020 should assess how these measures interact with the new minimum tax requirements (International Tax Review, 2025). Companies considering these incentives must carefully evaluate their eligibility and ongoing compliance obligations.</p>
+
+      <h2>Impact on Swiss SMEs and International Planning</h2>
+      <p>While the OECD minimum tax primarily affects large multinational corporations, Swiss SMEs must also consider the broader implications of these reforms. The Bilateral III agreement with the United States offers new opportunities for Swiss SMEs to expand internationally while managing tax complexity (S-GE, 2025).</p>
+      
+      <p>According to SwissHoldings' February 2025 update, Swiss companies must develop comprehensive tax strategies that account for both domestic and international tax obligations (SwissHoldings, 2025). This includes evaluating transfer pricing policies, substance requirements, and compliance with various international tax standards.</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop" alt="Professional business meeting discussing tax strategy and international planning" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 4: Photo by <a href="https://unsplash.com/@christinhumephoto" class="text-blue-600 hover:underline">Christin Hume</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Practical Implementation Considerations</h2>
+      <p>The practical implementation of Pillar 2 requires significant organizational changes for affected companies. According to KPMG's analysis, companies must establish dedicated tax teams, implement new technology systems, and develop comprehensive documentation processes (KPMG, 2024). The complexity of these requirements often necessitates external expertise and specialized software solutions.</p>
+      
+      <p>Companies must also consider the interaction between Pillar 2 and existing tax planning structures, including intellectual property arrangements, financing structures, and operational models. The Swiss Federal Tax Administration's guidance emphasizes the importance of substance and economic activity in maintaining tax-efficient structures while ensuring compliance with international standards.</p>
+
+      <h2>Future Outlook and Strategic Recommendations</h2>
+      <p>The implementation of the OECD minimum tax represents a fundamental shift in international tax policy, requiring Swiss companies to adapt their tax strategies and operational models. Companies should focus on developing robust compliance frameworks, investing in tax technology, and maintaining strong relationships with tax authorities.</p>
+      
+      <p>According to ADB's analysis of Pillar 2 implementation, Swiss companies must prioritize transparency, substance, and economic activity in their international tax planning (ADB, 2025). This includes maintaining adequate staffing levels, conducting genuine business activities, and ensuring proper documentation of tax positions.</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop" alt="Swiss Alps representing the future of Swiss tax policy and international cooperation" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 5: Photo by <a href="https://unsplash.com/@joshuaearle" class="text-blue-600 hover:underline">Joshua Earle</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Conclusion</h2>
+      <p>Switzerland's implementation of the OECD minimum tax and related corporate tax reforms represents a significant milestone in international tax policy. While these changes create new compliance obligations and strategic considerations, they also position Switzerland as a leader in international tax cooperation and transparency.</p>
+      
+      <p>Companies operating in Switzerland must carefully evaluate their tax strategies, invest in appropriate compliance systems, and maintain strong relationships with tax authorities. The evolving tax landscape requires ongoing attention to regulatory developments, international cooperation, and strategic planning to ensure continued success in the Swiss market.</p>
+      
+      <p>As Switzerland continues to adapt to the new international tax environment, companies that proactively address these changes and invest in appropriate compliance frameworks will be best positioned to succeed in the evolving global tax landscape.</p>
+      
+      <h2>References</h2>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Swiss Federal Council (2024) Federal Council initiates consultation on exchange of information under the OECD minimum tax. Available at: <a href="https://www.admin.ch/gov/en/start/documentation/media-releases/media-releases-federal-council.msg-id-103974.html" class="text-blue-600 hover:underline">https://www.admin.ch/gov/en/start/documentation/media-releases/media-releases-federal-council.msg-id-103974.html</a> (Accessed 10 October 2025).</li>
+        <li>International Tax Review (2025) Impact of the OECD/G20 minimum taxation rules in Switzerland. Available at: <a href="https://www.internationaltaxreview.com/article/2a6aaqgdb5cor52nac2yo/impact-of-the-oecd-g20-minimum-taxation-rules-in-switzerland" class="text-blue-600 hover:underline">https://www.internationaltaxreview.com/article/2a6aaqgdb5cor52nac2yo/impact-of-the-oecd-g20-minimum-taxation-rules-in-switzerland</a> (Accessed 10 October 2025).</li>
+        <li>Deloitte (2025) OECD Global Minimum Tax: Receipts set to fall well short of expectations in first year. Available at: <a href="https://www.deloitte.com/ch/en/about/press-room/oecd-global-minimum-tax-receipts-set-to-fall-well-short-of-expectations-in-first-year.html" class="text-blue-600 hover:underline">https://www.deloitte.com/ch/en/about/press-room/oecd-global-minimum-tax-receipts-set-to-fall-well-short-of-expectations-in-first-year.html</a> (Accessed 10 October 2025).</li>
+        <li>KPMG Switzerland (2024) BEPS 2.0: Global minimum tax. Available at: <a href="https://kpmg.com/ch/en/insights/taxes/beps-2.html" class="text-blue-600 hover:underline">https://kpmg.com/ch/en/insights/taxes/beps-2.html</a> (Accessed 10 October 2025).</li>
+        <li>ForvisMazars (2024) The Swiss Federal Council adopts Pillar 2. Available at: <a href="https://www.forvismazars.com/ch/en/insights/newsletters/swiss-tax-newsletter/archive/swiss-tax-e-newsletter-march-2024/the-swiss-federal-council-adopts-pillar-2" class="text-blue-600 hover:underline">https://www.forvismazars.com/ch/en/insights/newsletters/swiss-tax-newsletter/archive/swiss-tax-e-newsletter-march-2024/the-swiss-federal-council-adopts-pillar-2</a> (Accessed 10 October 2025).</li>
+        <li>Swiss Confederation (2025) Federal Act on Direct Federal Tax (DBG/FDTA). Available at: <a href="https://www.fedlex.admin.ch/eli/cc/1991/1938_1938_1938/en" class="text-blue-600 hover:underline">https://www.fedlex.admin.ch/eli/cc/1991/1938_1938_1938/en</a> (Accessed 10 October 2025).</li>
+        <li>Swiss Federal Tax Administration (2025) Federal Direct Tax Overview. Available at: <a href="https://www.estv.admin.ch/estv/en/home/federal-direct-tax.html" class="text-blue-600 hover:underline">https://www.estv.admin.ch/estv/en/home/federal-direct-tax.html</a> (Accessed 10 October 2025).</li>
+        <li>Swiss Federal Tax Administration (2025) Swiss Tax System. Available at: <a href="https://www.estv.admin.ch/estv/en/home/fta/swiss-tax-system/swiss-tax-system.html" class="text-blue-600 hover:underline">https://www.estv.admin.ch/estv/en/home/fta/swiss-tax-system/swiss-tax-system.html</a> (Accessed 10 October 2025).</li>
+      </ul>
+      
+      <h2>Image Attributions</h2>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Figure 1: Photo by <a href="https://unsplash.com/@davidemrich" class="text-blue-600 hover:underline">David Emrich</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></li>
+        <li>Figure 2: Photo by <a href="https://unsplash.com/@campaign_creators" class="text-blue-600 hover:underline">Campaign Creators</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></li>
+        <li>Figure 3: Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></li>
+        <li>Figure 4: Photo by <a href="https://unsplash.com/@christinhumephoto" class="text-blue-600 hover:underline">Christin Hume</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></li>
+        <li>Figure 5: Photo by <a href="https://unsplash.com/@joshuaearle" class="text-blue-600 hover:underline">Joshua Earle</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></li>
+      </ul>
+    `,
+    imageUrl: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=400&fit=crop',
+    imageAlt: 'Swiss Federal Palace in Bern representing Swiss government and tax policy'
   }
 ];
 
@@ -1728,6 +2038,7 @@ export const blogCategories = [
   { id: 'Wealth Tax', name: 'Wealth Tax', count: blogPosts.filter(p => p.category === 'Wealth Tax').length },
   { id: 'Tax Planning', name: 'Tax Planning', count: blogPosts.filter(p => p.category === 'Tax Planning').length },
   { id: 'Business Tax', name: 'Business Tax', count: blogPosts.filter(p => p.category === 'Business Tax').length },
+  { id: 'Corporate Tax', name: 'Corporate Tax', count: blogPosts.filter(p => p.category === 'Corporate Tax').length },
   { id: 'Estate Planning', name: 'Estate Planning', count: blogPosts.filter(p => p.category === 'Estate Planning').length },
   { id: 'Health & Insurance', name: 'Health & Insurance', count: blogPosts.filter(p => p.category === 'Health & Insurance').length },
   { id: 'Education', name: 'Education', count: blogPosts.filter(p => p.category === 'Education').length }

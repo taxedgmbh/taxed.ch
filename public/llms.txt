@@ -12,10 +12,14 @@
 - [How It Works | Taxed GmbH - Simple 3-Step Swiss Tax Filing Process](/howitworks): Simple 3-step process: Book free consultation, upload documents securely, we file your return. Fast, secure, and stress-free Swiss tax filing.
 - [Our Service | Swiss Tax Returns for Expatriates | Taxed GmbH](/services): Taxed GmbH specializes in one service: filing Swiss tax returns for expatriates. We offer flat-rate pricing, digital submission, and expert handling of international income.
 - [Page Not Found - 404 | Taxed GmbH](/notfound): The page you
+- [Partnership Opportunities | Taxed GmbH - Strategic Tax Consulting Partnerships](/partnership): Join our network of strategic partners. Referral partnerships, strategic collaborations, and technology integrations. Grow your business with Taxed GmbH.
 - [Payment Successful | Taxed GmbH](/success): Your payment was successful. Thank you for your purchase.
 - [Privacy Policy - Taxed GmbH | GDPR & WhatsApp API Compliant](/privacypolicy): Comprehensive privacy policy for Taxed GmbH covering GDPR compliance, WhatsApp API usage, data protection, and your rights. Swiss tax consulting with full transparency.
 - [Sitemap - Taxed GmbH | Swiss Tax Consulting](/sitemap): Complete sitemap of Taxed GmbH website. Find all pages and sections of our Swiss tax consulting services.
 - [Swiss Tax Calculators | Taxed GmbH - Calculate Your Swiss Taxes](/taxcalculator): Free Swiss tax calculators for expats. Calculate income tax, wealth tax, Pillar 3a optimization, and more. Get accurate estimates for your Swiss tax obligations.
 - [Swiss Tax News & Updates | Taxed GmbH](/news): Stay updated with the latest Swiss tax news, policy changes, and regulatory updates. AI-powered news aggregation with expert analysis.
 - [Swiss Tax Return Packages | Taxed GmbH - Save up to CHF 400](/store): Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages. Limited time savings!
+- [Tax Audit Support Services | Taxed GmbH - Professional Swiss Tax Audit Assistance](/taxauditsupport): Expert Swiss tax audit support services. Professional representation, pre-audit preparation, and post-audit assistance. Protect your interests with our experienced tax audit specialists.
+- [Tax Compliance Services | Taxed GmbH - Swiss Tax Compliance Management](/taxcompliance): Professional Swiss tax compliance services. Comprehensive compliance management, monitoring, and reporting. Ensure full compliance with Swiss tax regulations.
+- [Tax Recovery Services | Taxed GmbH - Swiss Tax Recovery Specialists](/taxrecovery): Expert Swiss tax recovery services. Recover overpaid taxes, penalties, and withholding tax. Professional tax recovery specialists with proven track record.
 - [Your Cart | Taxed GmbH](/cart): Review and manage items in your shopping cart.
