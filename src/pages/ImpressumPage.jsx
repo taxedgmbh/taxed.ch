@@ -9,6 +9,7 @@ const ImpressumPage = () => {
         <title>Impressum - Taxed GmbH | Swiss Tax Consulting</title>
         <meta name="description" content="Legal information and company details for Taxed GmbH, Swiss tax consulting services for expats and professionals." />
         <meta name="keywords" content="impressum, legal, company information, Taxed GmbH, Swiss tax consulting" />
+        <link rel="canonical" href="https://taxed.ch/impressum" />
       </Helmet>
 
       <div className="min-h-screen bg-gray-50">

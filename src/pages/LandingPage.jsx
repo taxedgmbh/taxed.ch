@@ -165,6 +165,75 @@ const LandingPage = () => {
         <meta name="description" content="Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Professional client portal, advanced tools, and comprehensive tax solutions." />
         <meta property="og:title" content="Taxed GmbH | Professional Swiss Tax Services for Expats & Businesses" />
         <meta property="og:description" content="Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Professional client portal, advanced tools, and comprehensive tax solutions." />
+        <link rel="canonical" href="https://taxed.ch" />
+        
+        {/* Structured Data - Enhanced for Bing */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Taxed GmbH",
+            "alternateName": "Taxed Swiss Tax Consulting",
+            "description": "Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Specializing in Swiss tax returns, Quellensteuer adjustments, and international tax planning.",
+            "url": "https://taxed.ch",
+            "logo": "https://taxed.ch/images/logos/taxed-logo.png",
+            "image": "https://taxed.ch/images/og-taxed-logo.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Biel/Bienne",
+              "addressRegion": "Bern",
+              "addressCountry": "CH",
+              "postalCode": "2500"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "47.1368",
+              "longitude": "7.2476"
+            },
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+41-79-910-7787",
+                "email": "info@taxed.ch",
+                "contactType": "customer service",
+                "availableLanguage": ["German", "English", "French"]
+              }
+            ],
+            "serviceType": ["Tax Consulting", "Tax Preparation", "Tax Planning", "Quellensteuer Services"],
+            "areaServed": {
+              "@type": "Country",
+              "name": "Switzerland"
+            },
+            "priceRange": "CHF 249-799",
+            "openingHours": "Mo-Fr 09:00-17:00",
+            "sameAs": [
+              "https://www.linkedin.com/company/taxed-gmbh",
+              "https://www.facebook.com/taxedgmbh"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Tax Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Swiss Tax Return Preparation",
+                    "description": "Complete Swiss tax return preparation for individuals and businesses"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Quellensteuer Adjustment",
+                    "description": "Withholding tax adjustments for Swiss residents"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

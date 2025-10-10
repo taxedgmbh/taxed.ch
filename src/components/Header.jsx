@@ -348,6 +348,8 @@ const Header = ({ isLandingPage }) => {
             { name: 'Our Services', href: '/services', description: 'Comprehensive tax solutions' },
             { name: 'Pricing & Packages', href: '/pricing', description: 'Transparent pricing' },
             { name: 'Client Portal', href: '/client-portal', description: 'Secure client access' },
+            { name: 'Tax Support', href: '/support', description: 'Help center & support' },
+            { name: 'Tax Security', href: '/security', description: 'Data protection & security' },
           ]
         },
         {
@@ -355,8 +357,11 @@ const Header = ({ isLandingPage }) => {
           items: [
             { name: 'Case Studies', href: '/case-studies', description: 'Client success stories' },
             { name: 'About Our Team', href: '/about', description: 'Meet our tax experts' },
-            { name: 'Our Services', href: '/services', description: 'Comprehensive tax solutions' },
-            { name: 'Tax Calculators', href: '/calculators', description: 'Professional analysis tools' },
+            { name: 'Industry Specializations', href: '/industry-specializations', description: 'Sector-specific expertise' },
+            { name: 'Advanced Tax Tools', href: '/advanced-tax-tools', description: 'Professional analysis tools' },
+            { name: 'Client Testimonials', href: '/testimonials', description: 'Client success stories' },
+            { name: 'Business Tax Guide', href: '/business-tax-guide', description: 'Corporate tax guidance' },
+            { name: 'International Tax', href: '/international-tax', description: 'Cross-border tax services' },
           ]
         },
         {
@@ -366,6 +371,10 @@ const Header = ({ isLandingPage }) => {
             { name: 'Resource Center', href: '/resources', description: 'Guides, checklists & templates' },
             { name: 'News & Updates', href: '/news', description: 'Latest Swiss tax news' },
             { name: 'Law Section', href: '/law', description: 'Legal documents & regulations' },
+            { name: 'Tax Deadlines', href: '/tax-deadlines', description: 'Swiss tax deadline calendar' },
+            { name: 'Tax Forms', href: '/tax-forms', description: 'Downloadable tax forms' },
+            { name: 'Tax Technology', href: '/technology', description: 'Digital tax solutions' },
+            { name: 'Tax Glossary', href: '/tax-glossary', description: 'Swiss tax terminology' },
           ]
         },
         {

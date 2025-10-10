@@ -22,7 +22,8 @@ import {
   Building2,
   Calculator,
   FileText,
-  Headphones
+  Headphones,
+  Gift
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -432,100 +433,60 @@ const ContactPage = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name" className="text-dark-gray font-semibold">Full Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="Your full name"
-                          required
-                          className="bg-light-gray-bg-1/50 border-2 border-gray-200 focus:border-steel-blue"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email" className="text-dark-gray font-semibold">Email Address *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="your.email@example.com"
-                          required
-                          className="bg-light-gray-bg-1/50 border-2 border-gray-200 focus:border-steel-blue"
-                        />
+                  {/* HubSpot Embedded Form */}
+                  <div className="hubspot-form-container">
+                    <iframe 
+                      src="https://share-eu1.hsforms.com/1xA0NQrALToW5NH7CkatXWA2ds4ox"
+                      width="100%"
+                      height="800"
+                      frameBorder="0"
+                      scrolling="yes"
+                      title="Taxed GmbH Contact Form"
+                      className="border-0 rounded-lg"
+                      style={{ minHeight: '800px' }}
+                    />
+                  </div>
+                  
+                  {/* Security Notice */}
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-6">
+                    <div className="flex items-start space-x-3">
+                      <Shield className="h-5 w-5 text-blue-600 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-blue-900 mb-1">Your Information is Secure</h4>
+                        <p className="text-sm text-blue-700">
+                          We use bank-level encryption and never share your information with third parties. 
+                          Swiss privacy laws protect your data.
+                        </p>
                       </div>
                     </div>
-                    
-
-                    <div className="space-y-2">
-                      <Label htmlFor="subject" className="text-dark-gray font-semibold">Tax Situation *</Label>
-                      <select
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full p-3 border-2 border-gray-200 rounded-lg bg-light-gray-bg-1/50 focus:border-steel-blue focus:outline-none"
-                      >
-                        <option value="">Select your tax situation</option>
-                        <option value="Individual Tax Return">Individual Tax Return</option>
-                        <option value="Business Tax">Business Tax</option>
-                        <option value="Expat Tax Filing">Expat Tax Filing</option>
-                        <option value="Tax Optimization">Tax Optimization</option>
-                        <option value="Urgent Deadline">Urgent Deadline</option>
-                        <option value="Complex Situation">Complex Situation</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="message" className="text-dark-gray font-semibold">Tell Us More *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Describe your tax situation, deadlines, or specific questions. The more details you provide, the better we can help you."
-                        rows={6}
-                        required
-                        className="bg-light-gray-bg-1/50 border-2 border-gray-200 focus:border-steel-blue"
-                      />
-                    </div>
-                    
-                    <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                      <div className="flex items-start space-x-3">
-                        <Shield className="h-5 w-5 text-blue-600 mt-0.5" />
-                        <div>
-                          <h4 className="font-semibold text-blue-900 mb-1">Your Information is Secure</h4>
-                          <p className="text-sm text-blue-700">
-                            We use bank-level encryption and never share your information with third parties. 
-                            Swiss privacy laws protect your data.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <Button type="submit" className="w-full bg-steel-blue hover:bg-steel-blue/90 text-white text-lg py-4" size="lg">
-                        <Send className="mr-2 h-5 w-5" />
-                        Get Free Consultation
-                      </Button>
-                      <Button 
-                        type="button" 
-                        onClick={handleEmailClick}
-                        className="w-full bg-steel-blue hover:bg-blue-700 text-white text-lg py-4" 
-                        size="lg"
-                      >
-                        <Mail className="mr-2 h-5 w-5" />
-                        Email Expert
-                      </Button>
-                    </div>
-                  </form>
+                  </div>
+                  
+                  {/* Alternative Contact Methods */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <Button 
+                      type="button" 
+                      onClick={handleEmailClick}
+                      className="w-full bg-steel-blue hover:bg-blue-700 text-white text-lg py-4" 
+                      size="lg"
+                    >
+                      <Mail className="mr-2 h-5 w-5" />
+                      Email Expert
+                    </Button>
+                    <Button 
+                      type="button" 
+                      onClick={() => {
+                        const phoneNumber = '+41799107787';
+                        const message = encodeURIComponent("Hello! I'm interested in Swiss tax consulting services. Could you please help me?");
+                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                        window.open(whatsappUrl, '_blank');
+                      }}
+                      className="w-full bg-green-600 hover:bg-green-700 text-white text-lg py-4" 
+                      size="lg"
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      WhatsApp
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -629,6 +590,121 @@ const ContactPage = () => {
                   </div>
                 </div>
               </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Stay Updated with <span className="text-yellow-300">Tax Insights</span>
+            </h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              Get expert tax advice, Swiss law updates, and exclusive tips delivered to your inbox. 
+              Join our community of smart taxpayers.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Newsletter Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Card className="p-8 bg-white/10 backdrop-blur-sm border-white/20">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Subscribe to Our Newsletter
+                  </h3>
+                  <p className="text-blue-100">
+                    Get weekly tax tips and exclusive insights from our experts.
+                  </p>
+                </div>
+
+                {/* HubSpot Newsletter Signup Form */}
+                <div className="hubspot-newsletter-container">
+                  <iframe 
+                    src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
+                    width="100%"
+                    height="400"
+                    frameBorder="0"
+                    scrolling="no"
+                    title="Taxed GmbH Newsletter Signup - Contact Page"
+                    className="border-0 rounded-lg"
+                    style={{ minHeight: '400px', backgroundColor: 'transparent' }}
+                  />
+                </div>
+
+                <p className="text-sm text-blue-200 mt-4">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+              </Card>
+            </motion.div>
+
+            {/* Benefits */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center text-white">
+                  <TrendingUp className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">Tax Optimization Tips</h4>
+                  <p className="text-blue-100 text-sm">Monthly strategies to legally reduce your tax burden</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center text-white">
+                  <Shield className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">Compliance Updates</h4>
+                  <p className="text-blue-100 text-sm">Stay informed about Swiss tax law changes</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center text-white">
+                  <Gift className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">Exclusive Offers</h4>
+                  <p className="text-blue-100 text-sm">Special discounts and early access to new services</p>
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-2xl font-bold text-white">2,500+</div>
+                  <div className="text-blue-100 text-sm">Subscribers</div>
+                </div>
+                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-2xl font-bold text-white">95%</div>
+                  <div className="text-blue-100 text-sm">Satisfaction</div>
+                </div>
+                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-2xl font-bold text-white">Weekly</div>
+                  <div className="text-blue-100 text-sm">Updates</div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>

@@ -30,12 +30,10 @@ import {
   Users2,
   Trophy,
   Lightbulb,
-  Handshake,
   Lock,
   Eye,
   Scale,
   BookOpen,
-  ChartBar,
   Compass,
   Flag,
   Coffee,
@@ -86,16 +84,16 @@ const AboutPage = () => {
       achievements: ['Research Excellence Award', 'Compliance Specialist', 'Legal Expert']
     },
     {
-      name: 'Joyce Hernandez',
-      role: 'Sales & Marketing Lead',
-      description: 'Joyce Hernandez leads our sales and marketing initiatives, driving growth and expanding our client base across Switzerland. With expertise in digital marketing and client acquisition, Joyce ensures Taxed GmbH reaches and serves more expatriates and professionals seeking expert Swiss tax services.',
-      email: 'joycehernandez@taxed.ch',
-      image: 'Professional headshot of Joyce Hernandez, a woman in business attire',
-      experience: '12+ years',
-      expertise: ['Digital Marketing', 'Sales Strategy', 'Client Acquisition', 'Brand Development'],
-      education: 'MBA in Marketing',
-      languages: ['English', 'Spanish', 'German'],
-      achievements: ['Sales Excellence Award', 'Marketing Innovation', 'Growth Leader']
+      name: 'Generyan Depalubos',
+      role: 'Software Engineer',
+      description: 'Generyan Depalubos is our Software Engineer responsible for developing and maintaining our digital platforms and client portal systems. With expertise in modern web technologies and software development, Generyan ensures our clients have access to cutting-edge digital tools for their tax needs.',
+      email: 'generyandepalubos@taxed.ch',
+      image: 'Professional headshot of Generyan Depalubos, a software engineer in business attire',
+      experience: '8+ years',
+      expertise: ['Software Development', 'Web Technologies', 'System Architecture', 'Digital Solutions'],
+      education: 'Bachelor in Computer Science',
+      languages: ['English', 'Filipino', 'German'],
+      achievements: ['Technical Excellence Award', 'Innovation Leader', 'Digital Solutions Expert']
     }
   ];
 
@@ -132,9 +130,15 @@ const AboutPage = () => {
 
   const milestones = [
     {
+      year: '2025',
+      title: 'Customer Portal Implementation',
+      description: 'Successfully implemented the customer portal on taxed.ch, providing clients with secure access to their tax documents, real-time updates, and streamlined communication',
+      icon: Lock
+    },
+    {
       year: '2024',
       title: 'Expansion & Growth',
-      description: 'Added Joyce Hernandez to lead sales and marketing, expanded client base to 500+ happy clients',
+      description: 'Added Generyan Depalubos as Software Engineer, enhanced digital platforms and client base to 500+ happy clients',
       icon: TrendingUp
     },
     {

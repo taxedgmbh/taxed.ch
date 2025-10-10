@@ -3,15 +3,20 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { getPostBySlug, getRelatedPosts } from '@/data/blogPosts.js';
-import { ArrowLeft, Calendar, User, Tag, Clock, Share2, BookOpen } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Tag, Clock, BookOpen, Maximize2, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import ShareButton from '@/components/ui/ShareButton';
+import ImmersiveReader from '@/components/ui/ImmersiveReader';
+import ReadAloud from '@/components/ui/ReadAloud';
 
 const BlogPostPage = () => {
   const { slug } = useParams();
   const post = getPostBySlug(slug);
   const relatedPosts = post ? getRelatedPosts(post, 3) : [];
+  const [isImmersiveOpen, setIsImmersiveOpen] = React.useState(false);
+  const [isReadAloudOpen, setIsReadAloudOpen] = React.useState(false);
 
   if (!post) {
     return (
@@ -49,10 +54,10 @@ const BlogPostPage = () => {
       </Helmet>
       
       <div className="bg-white py-12 sm:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Main Content */}
-            <div className="lg:w-2/3">
+            <div className="lg:col-span-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -93,10 +98,27 @@ const BlogPostPage = () => {
                         <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                       </div>
                     </div>
-                    <Button variant="outline" size="sm">
-                      <Share2 className="w-4 h-4 mr-2" />
-                      Share
-                    </Button>
+                    <div className="flex items-center space-x-2">
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => setIsImmersiveOpen(true)}
+                        className="flex items-center"
+                      >
+                        <Maximize2 className="w-4 h-4 mr-2" />
+                        Immersive Reading
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => setIsReadAloudOpen(true)}
+                        className="flex items-center"
+                      >
+                        <Volume2 className="w-4 h-4 mr-2" />
+                        Read Aloud
+                      </Button>
+                      <ShareButton post={post} />
+                    </div>
                   </div>
                   
                   <div className="flex flex-wrap items-center gap-2 mb-8">
@@ -110,16 +132,28 @@ const BlogPostPage = () => {
                 </div>
 
                 {/* Featured Image */}
-                <div className="mb-12 rounded-lg overflow-hidden shadow-xl">
+                <div className="mb-12 rounded-lg overflow-hidden shadow-xl bg-gray-100">
                   <img  
                     className="w-full h-64 md:h-80 object-cover"
                     alt={post.imageAlt} 
-                    src={post.imageUrl} />
+                    src={post.imageUrl}
+                    onError={(e) => {
+                      e.target.src = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop';
+                    }} />
+                  <div className="magazine-caption">
+                    {post.imageAlt}
+                  </div>
+                </div>
+
+                {/* Article Summary */}
+                <div className="mb-8 p-6 bg-gradient-to-r from-steel-blue/5 to-blue-600/5 rounded-xl border border-steel-blue/20">
+                  <h3 className="text-lg font-semibold text-dark-gray mb-3">Article Summary</h3>
+                  <p className="text-dark-gray/80 leading-relaxed">{post.summary}</p>
                 </div>
 
                 {/* Article Content */}
                 <article 
-                  className="prose prose-lg max-w-none text-dark-gray/90 prose-h2:text-dark-gray prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-6 prose-a:text-steel-blue hover:prose-a:underline prose-ul:my-6 prose-li:my-2"
+                  className="magazine-article max-w-none"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
 
@@ -146,7 +180,7 @@ const BlogPostPage = () => {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/3">
+            <div className="lg:col-span-4">
               <div className="sticky top-8 space-y-6">
                 {/* Author Card */}
                 <Card className="border-steel-blue/20 shadow-lg">
@@ -184,14 +218,26 @@ const BlogPostPage = () => {
                         <Link
                           key={relatedPost.slug}
                           to={`/blog/${relatedPost.slug}`}
-                          className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          className="block p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-steel-blue/20"
                         >
-                          <h4 className="font-medium text-dark-gray text-sm mb-1 line-clamp-2">
-                            {relatedPost.title}
-                          </h4>
-                          <div className="flex items-center text-xs text-gray-500">
-                            <Clock className="w-3 h-3 mr-1" />
-                            {relatedPost.readTime}
+                          <div className="flex space-x-3">
+                            <img 
+                              src={relatedPost.imageUrl} 
+                              alt={relatedPost.imageAlt}
+                              className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
+                              onError={(e) => {
+                                e.target.src = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop';
+                              }}
+                            />
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-medium text-dark-gray text-sm mb-1 line-clamp-2">
+                                {relatedPost.title}
+                              </h4>
+                              <div className="flex items-center text-xs text-gray-500">
+                                <Clock className="w-3 h-3 mr-1" />
+                                {relatedPost.readTime}
+                              </div>
+                            </div>
                           </div>
                         </Link>
                       ))}
@@ -216,6 +262,20 @@ const BlogPostPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Immersive Reader */}
+      <ImmersiveReader 
+        post={post} 
+        isOpen={isImmersiveOpen} 
+        onClose={() => setIsImmersiveOpen(false)} 
+      />
+
+      {/* Read Aloud */}
+      <ReadAloud 
+        post={post} 
+        isOpen={isReadAloudOpen} 
+        onClose={() => setIsReadAloudOpen(false)} 
+      />
     </>
   );
 };

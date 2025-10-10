@@ -19,7 +19,26 @@ import {
   Calculator,
   FileText,
   MessageSquare,
-  Phone
+  Phone,
+  Star,
+  Target,
+  Zap,
+  BarChart3,
+  PieChart,
+  Lock,
+  Eye,
+  Download,
+  Calendar,
+  Play,
+  ExternalLink,
+  Briefcase,
+  Scale,
+  Heart,
+  Stethoscope,
+  Car,
+  Home,
+  Plane,
+  ShoppingCart
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -50,28 +69,28 @@ const IndustrySpecializationsPage = () => {
       ],
       caseStudies: [
         {
-          title: 'Tech Startup Tax Optimization',
-          description: 'Helped a Series B startup save CHF 150,000 through strategic tax planning',
-          savings: 'CHF 150,000'
+          title: 'Tech Startup IPO Preparation',
+          description: 'Helped a fintech startup optimize equity structures before IPO',
+          savings: 'CHF 2.5M in tax savings'
         },
         {
-          title: 'Google Switzerland Executive',
-          description: 'Optimized tax strategy for senior executive with complex RSU compensation',
-          savings: 'CHF 85,000'
+          title: 'International Tech Expansion',
+          description: 'Structured tax-efficient expansion for a SaaS company',
+          savings: 'CHF 1.8M in transfer pricing optimization'
         }
       ],
       services: [
-        'Equity Compensation Tax Planning',
-        'International Tax Strategy',
+        'Equity Compensation Planning',
+        'International Tax Structures',
         'R&D Tax Credit Optimization',
-        'Crypto Asset Taxation',
+        'Crypto Asset Compliance',
         'Tech Executive Tax Planning'
       ],
       stats: {
         clients: 150,
-        averageSavings: 'CHF 75,000',
+        averageSavings: 'CHF 85,000',
         satisfaction: 4.9,
-        yearsExperience: 8
+        yearsExperience: 12
       }
     },
     {
@@ -79,91 +98,91 @@ const IndustrySpecializationsPage = () => {
       name: 'Finance & Banking',
       icon: DollarSign,
       color: 'from-green-500 to-emerald-600',
-      description: 'Specialized tax services for financial institutions, investment professionals, and banking executives.',
+      description: 'Specialized tax consulting for financial institutions, investment firms, and banking professionals.',
       challenges: [
-        'Complex bonus and deferred compensation structures',
-        'Investment income and capital gains optimization',
+        'Complex investment structures and fund taxation',
         'Regulatory compliance and reporting requirements',
-        'International banking and cross-border transactions',
-        'Private banking and wealth management taxation'
+        'Cross-border financial transactions',
+        'Private banking and wealth management taxation',
+        'Fintech and digital banking compliance'
       ],
       solutions: [
-        'Bonus timing and structure optimization',
-        'Investment portfolio tax planning',
+        'Investment fund tax optimization',
         'Regulatory compliance frameworks',
-        'International banking tax strategy',
-        'Wealth management tax optimization'
+        'Cross-border transaction structuring',
+        'Private banking tax strategies',
+        'Fintech compliance and planning'
       ],
       caseStudies: [
         {
-          title: 'UBS Investment Manager',
-          description: 'Optimized tax strategy for high-earning investment professional',
-          savings: 'CHF 65,000'
+          title: 'Private Banking Optimization',
+          description: 'Restructured private banking operations for tax efficiency',
+          savings: 'CHF 3.2M in annual tax savings'
         },
         {
-          title: 'Private Banking Client',
-          description: 'Comprehensive wealth management tax planning',
-          savings: 'CHF 120,000'
+          title: 'Investment Fund Structure',
+          description: 'Optimized fund structure for international investors',
+          savings: 'CHF 1.5M in withholding tax optimization'
         }
       ],
       services: [
-        'Banking Executive Tax Planning',
-        'Investment Income Optimization',
+        'Investment Fund Taxation',
+        'Private Banking Optimization',
+        'Cross-border Finance Planning',
         'Regulatory Compliance',
-        'Private Banking Tax Strategy',
-        'Capital Gains Planning'
+        'Wealth Management Tax Strategies'
       ],
       stats: {
-        clients: 200,
-        averageSavings: 'CHF 90,000',
+        clients: 120,
+        averageSavings: 'CHF 95,000',
         satisfaction: 4.8,
-        yearsExperience: 12
+        yearsExperience: 15
       }
     },
     {
       id: 'pharmaceutical',
       name: 'Pharmaceutical & Life Sciences',
-      icon: Flask,
+      icon: Beaker,
       color: 'from-purple-500 to-pink-600',
-      description: 'Expert tax services for pharmaceutical companies, biotech firms, and life sciences professionals.',
+      description: 'Expert tax guidance for pharmaceutical companies, biotech firms, and healthcare organizations.',
       challenges: [
-        'Clinical trial and R&D tax incentives',
-        'International patent and licensing structures',
-        'Regulatory compliance and reporting',
-        'Cross-border clinical research taxation',
-        'Pharmaceutical executive compensation'
+        'R&D tax incentives and patent strategies',
+        'International clinical trial taxation',
+        'Pharmaceutical pricing and transfer pricing',
+        'Healthcare facility and medical device taxation',
+        'Regulatory compliance in multiple jurisdictions'
       ],
       solutions: [
-        'R&D tax credit maximization',
-        'International patent tax planning',
-        'Regulatory compliance frameworks',
-        'Clinical research tax optimization',
-        'Executive compensation planning'
+        'R&D tax incentive maximization',
+        'Patent and IP tax strategies',
+        'Clinical trial tax optimization',
+        'Healthcare facility planning',
+        'Multi-jurisdictional compliance'
       ],
       caseStudies: [
         {
-          title: 'Roche Clinical Director',
-          description: 'Optimized tax strategy for clinical research director',
-          savings: 'CHF 25,000'
+          title: 'Biotech R&D Optimization',
+          description: 'Maximized R&D tax credits for a biotech company',
+          savings: 'CHF 4.1M in R&D tax credits'
         },
         {
-          title: 'Biotech Startup',
-          description: 'R&D tax credit optimization for early-stage biotech',
-          savings: 'CHF 80,000'
+          title: 'International Clinical Trials',
+          description: 'Structured tax-efficient clinical trial operations',
+          savings: 'CHF 2.3M in operational tax savings'
         }
       ],
       services: [
         'R&D Tax Credit Optimization',
-        'Patent and Licensing Tax Planning',
-        'Clinical Research Tax Strategy',
-        'Pharmaceutical Executive Planning',
-        'Regulatory Compliance'
+        'Patent Tax Strategies',
+        'Clinical Trial Tax Planning',
+        'Healthcare Facility Planning',
+        'Multi-jurisdictional Compliance'
       ],
       stats: {
-        clients: 75,
-        averageSavings: 'CHF 45,000',
+        clients: 80,
+        averageSavings: 'CHF 120,000',
         satisfaction: 4.9,
-        yearsExperience: 10
+        yearsExperience: 18
       }
     },
     {
@@ -171,31 +190,31 @@ const IndustrySpecializationsPage = () => {
       name: 'Manufacturing & Industrial',
       icon: Factory,
       color: 'from-orange-500 to-red-600',
-      description: 'Comprehensive tax solutions for manufacturing companies, industrial firms, and supply chain operations.',
+      description: 'Tailored tax solutions for manufacturing companies, industrial firms, and production facilities.',
       challenges: [
-        'International supply chain and transfer pricing',
-        'Manufacturing incentives and tax credits',
-        'Cross-border operations and compliance',
-        'Industrial executive compensation',
+        'Transfer pricing for manufacturing operations',
+        'Industrial tax credits and incentives',
+        'International supply chain taxation',
+        'Manufacturing facility and equipment depreciation',
         'Environmental and sustainability tax incentives'
       ],
       solutions: [
         'Transfer pricing optimization',
         'Manufacturing tax credit maximization',
-        'International operations tax planning',
-        'Executive compensation planning',
+        'Supply chain tax planning',
+        'Equipment depreciation strategies',
         'Sustainability tax incentives'
       ],
       caseStudies: [
         {
-          title: 'ABB Operations Director',
-          description: 'Resolved complex international tax issues for manufacturing executive',
-          savings: 'CHF 40,000'
+          title: 'Manufacturing Transfer Pricing',
+          description: 'Optimized transfer pricing for global manufacturing operations',
+          savings: 'CHF 5.2M in transfer pricing optimization'
         },
         {
-          title: 'Manufacturing Company',
-          description: 'Transfer pricing optimization for international operations',
-          savings: 'CHF 200,000'
+          title: 'Industrial Tax Credits',
+          description: 'Maximized manufacturing tax credits and incentives',
+          savings: 'CHF 2.8M in tax credits'
         }
       ],
       services: [
@@ -214,48 +233,94 @@ const IndustrySpecializationsPage = () => {
     },
     {
       id: 'consulting',
-      name: 'Consulting & Professional Services',
+      name: 'Professional Services & Consulting',
       icon: Users,
-      color: 'from-indigo-500 to-blue-600',
-      description: 'Specialized tax services for consulting firms, professional service providers, and independent consultants.',
+      color: 'from-teal-500 to-cyan-600',
+      description: 'Specialized tax services for consulting firms, professional services, and advisory businesses.',
       challenges: [
-        'Partnership and LLP tax structures',
-        'International client work and cross-border income',
-        'Professional service executive compensation',
-        'Business development and expansion taxation',
-        'Independent consultant tax optimization'
+        'Partnership and LLP taxation',
+        'Professional services billing and VAT',
+        'International consulting operations',
+        'Professional liability and insurance taxation',
+        'Client billing and expense optimization'
       ],
       solutions: [
         'Partnership tax optimization',
-        'International income planning',
-        'Executive compensation strategies',
-        'Business expansion tax planning',
-        'Independent consultant optimization'
+        'Professional services VAT planning',
+        'International consulting structures',
+        'Professional liability tax strategies',
+        'Client billing optimization'
       ],
       caseStudies: [
         {
-          title: 'McKinsey Partner',
-          description: 'Comprehensive tax filing for consulting partner',
-          savings: 'CHF 30,000'
+          title: 'Consulting Partnership Optimization',
+          description: 'Restructured partnership for tax efficiency',
+          savings: 'CHF 1.8M in partnership tax savings'
         },
         {
-          title: 'Independent Consultant',
-          description: 'Tax optimization for international consultant',
-          savings: 'CHF 25,000'
+          title: 'International Consulting Structure',
+          description: 'Optimized international consulting operations',
+          savings: 'CHF 2.1M in operational tax savings'
         }
       ],
       services: [
         'Partnership Tax Planning',
-        'International Income Optimization',
-        'Professional Service Executive Planning',
-        'Business Expansion Tax Strategy',
-        'Independent Consultant Planning'
+        'Professional Services VAT',
+        'International Consulting Structures',
+        'Professional Liability Planning',
+        'Client Billing Optimization'
       ],
       stats: {
-        clients: 125,
-        averageSavings: 'CHF 35,000',
+        clients: 90,
+        averageSavings: 'CHF 45,000',
         satisfaction: 4.8,
-        yearsExperience: 9
+        yearsExperience: 12
+      }
+    },
+    {
+      id: 'healthcare',
+      name: 'Healthcare & Medical',
+      icon: Stethoscope,
+      color: 'from-red-500 to-pink-600',
+      description: 'Comprehensive tax solutions for healthcare providers, medical practices, and healthcare organizations.',
+      challenges: [
+        'Medical practice and clinic taxation',
+        'Healthcare facility and equipment depreciation',
+        'Medical professional tax planning',
+        'Healthcare insurance and billing taxation',
+        'International medical practice operations'
+      ],
+      solutions: [
+        'Medical practice tax optimization',
+        'Healthcare facility planning',
+        'Medical professional tax strategies',
+        'Healthcare billing optimization',
+        'International medical practice planning'
+      ],
+      caseStudies: [
+        {
+          title: 'Medical Practice Optimization',
+          description: 'Optimized tax structure for large medical practice',
+          savings: 'CHF 1.2M in practice tax savings'
+        },
+        {
+          title: 'Healthcare Facility Planning',
+          description: 'Structured tax-efficient healthcare facility expansion',
+          savings: 'CHF 3.5M in facility tax optimization'
+        }
+      ],
+      services: [
+        'Medical Practice Tax Planning',
+        'Healthcare Facility Optimization',
+        'Medical Professional Planning',
+        'Healthcare Billing Optimization',
+        'International Medical Practice Planning'
+      ],
+      stats: {
+        clients: 70,
+        averageSavings: 'CHF 55,000',
+        satisfaction: 4.9,
+        yearsExperience: 14
       }
     }
   ];
@@ -269,269 +334,304 @@ const IndustrySpecializationsPage = () => {
         <meta name="description" content="Deep industry expertise across technology, finance, pharmaceutical, manufacturing, and consulting sectors. Specialized tax solutions tailored to your industry." />
         <meta property="og:title" content="Industry Specializations - Sector Expertise | Taxed GmbH" />
         <meta property="og:description" content="Deep industry expertise across technology, finance, pharmaceutical, manufacturing, and consulting sectors. Specialized tax solutions tailored to your industry." />
+        <link rel="canonical" href="https://taxed.ch/industry-specializations" />
       </Helmet>
 
-      <section className="py-20 bg-light-gray-bg-1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-steel-blue to-blue-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
           >
-            <div className="w-16 h-16 rounded-full bg-warm-red-tint text-brand-red flex items-center justify-center mx-auto mb-6">
-              <Building className="h-8 w-8" />
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-dark-gray mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
               Industry Specializations
             </h1>
-            <p className="text-xl text-dark-gray max-w-3xl mx-auto">
-              Deep sector expertise across major industries. Our specialized knowledge ensures you get 
-              the most relevant and effective tax solutions for your specific industry challenges.
+            <p className="text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
+              Deep expertise across key sectors with specialized tax solutions tailored to your industry's unique challenges and opportunities.
             </p>
-          </motion.div>
-
-          {/* Industry Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
-          >
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Building className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">5</p>
-                <p className="text-sm text-gray-600">Industry Sectors</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Users className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">650+</p>
-                <p className="text-sm text-gray-600">Industry Clients</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <TrendingUp className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">CHF 25M+</p>
-                <p className="text-sm text-gray-600">Total Tax Savings</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Award className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">4.8/5</p>
-                <p className="text-sm text-gray-600">Industry Satisfaction</p>
-              </CardContent>
-            </Card>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild className="bg-white text-steel-blue hover:bg-gray-100 px-8 py-4 text-lg">
+                <a href="#industries">
+                  Explore Industries
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-steel-blue px-8 py-4 text-lg">
+                <a href="/contact">
+                  Get Industry Consultation
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 bg-light-gray-bg-2">
+      {/* Industry Selection */}
+      <section id="industries" className="py-20 bg-light-gray-bg-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Industry Navigation */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <div className="flex flex-wrap justify-center gap-4">
-              {industries.map((industry) => (
-                <button
-                  key={industry.id}
-                  onClick={() => setSelectedIndustry(industry.id)}
-                  className={`flex items-center space-x-3 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                    selectedIndustry === industry.id
-                      ? `bg-gradient-to-r ${industry.color} text-white shadow-lg`
-                      : 'bg-white text-gray-700 hover:bg-gray-50 shadow-sm'
-                  }`}
-                >
-                  <industry.icon className="h-5 w-5" />
-                  <span>{industry.name}</span>
-                </button>
-              ))}
-            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark-gray mb-6">
+              Choose Your Industry
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Select your industry to see our specialized expertise and solutions tailored to your sector's unique tax challenges.
+            </p>
           </motion.div>
 
-          {/* Selected Industry Content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {industries.map((industry, index) => (
+              <motion.div
+                  key={industry.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className={`cursor-pointer transition-all duration-300 hover:shadow-xl ${
+                    selectedIndustry === industry.id 
+                      ? 'ring-2 ring-steel-blue shadow-xl' 
+                      : 'hover:shadow-lg'
+                  }`}
+                  onClick={() => setSelectedIndustry(industry.id)}
+                >
+                  <CardHeader className="text-center">
+                    <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${industry.color} flex items-center justify-center mx-auto mb-4`}>
+                      <industry.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl text-dark-gray">{industry.name}</CardTitle>
+                    <p className="text-gray-600 text-sm">{industry.description}</p>
+                  </CardHeader>
+                </Card>
+              </motion.div>
+              ))}
+            </div>
+        </div>
+      </section>
+
+      {/* Selected Industry Details */}
           {selectedIndustryData && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              key={selectedIndustryData.id}
+              key={selectedIndustry}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-12"
+              className="text-center mb-16"
             >
-              {/* Industry Overview */}
-              <div className="text-center mb-12">
                 <div className={`w-20 h-20 rounded-full bg-gradient-to-r ${selectedIndustryData.color} flex items-center justify-center mx-auto mb-6`}>
                   <selectedIndustryData.icon className="h-10 w-10 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-dark-gray mb-4">
-                  {selectedIndustryData.name} Tax Expertise
+              <h2 className="text-3xl lg:text-4xl font-bold text-dark-gray mb-6">
+                {selectedIndustryData.name} Expertise
                 </h2>
-                <p className="text-xl text-dark-gray/80 max-w-4xl mx-auto">
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
                   {selectedIndustryData.description}
                 </p>
+            </motion.div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-center"
+              >
+                <div className="text-3xl font-bold text-steel-blue mb-2">{selectedIndustryData.stats.clients}+</div>
+                <div className="text-sm text-gray-600">Happy Clients</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-center"
+              >
+                <div className="text-3xl font-bold text-steel-blue mb-2">{selectedIndustryData.stats.averageSavings}</div>
+                <div className="text-sm text-gray-600">Average Savings</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-center"
+              >
+                <div className="text-3xl font-bold text-steel-blue mb-2">{selectedIndustryData.stats.satisfaction}/5</div>
+                <div className="text-sm text-gray-600">Client Rating</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-center"
+              >
+                <div className="text-3xl font-bold text-steel-blue mb-2">{selectedIndustryData.stats.yearsExperience}+</div>
+                <div className="text-sm text-gray-600">Years Experience</div>
+              </motion.div>
               </div>
 
-              {/* Industry Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-                <Card className="text-center">
-                  <CardContent className="p-6">
-                    <Users className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                    <p className="text-2xl font-bold text-gray-900">{selectedIndustryData.stats.clients}+</p>
-                    <p className="text-sm text-gray-600">Clients Served</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center">
-                  <CardContent className="p-6">
-                    <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                    <p className="text-2xl font-bold text-gray-900">{selectedIndustryData.stats.averageSavings}</p>
-                    <p className="text-sm text-gray-600">Average Savings</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center">
-                  <CardContent className="p-6">
-                    <Award className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                    <p className="text-2xl font-bold text-gray-900">{selectedIndustryData.stats.satisfaction}/5</p>
-                    <p className="text-sm text-gray-600">Client Satisfaction</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center">
-                  <CardContent className="p-6">
-                    <Clock className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-                    <p className="text-2xl font-bold text-gray-900">{selectedIndustryData.stats.yearsExperience}</p>
-                    <p className="text-sm text-gray-600">Years Experience</p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Challenges and Solutions */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <Card>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Challenges */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Card className="h-full">
                   <CardHeader>
-                    <CardTitle className="flex items-center space-x-2 text-red-600">
-                      <Shield className="h-5 w-5" />
-                      <span>Common Challenges</span>
+                    <CardTitle className="text-xl text-dark-gray flex items-center">
+                      <Target className="h-5 w-5 text-red-500 mr-2" />
+                      Industry Challenges
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
                       {selectedIndustryData.challenges.map((challenge, index) => (
-                        <li key={index} className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0" />
+                        <li key={index} className="flex items-start">
+                          <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                           <span className="text-gray-700">{challenge}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                 </Card>
+              </motion.div>
 
-                <Card>
+              {/* Solutions */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <Card className="h-full">
                   <CardHeader>
-                    <CardTitle className="flex items-center space-x-2 text-green-600">
-                      <CheckCircle className="h-5 w-5" />
-                      <span>Our Solutions</span>
+                    <CardTitle className="text-xl text-dark-gray flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      Our Solutions
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
                       {selectedIndustryData.solutions.map((solution, index) => (
-                        <li key={index} className="flex items-start space-x-3">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <li key={index} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                           <span className="text-gray-700">{solution}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                 </Card>
+              </motion.div>
               </div>
 
-              {/* Case Studies */}
-              <div>
-                <h3 className="text-2xl font-bold text-dark-gray mb-6">Success Stories</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {selectedIndustryData.caseStudies.map((study, index) => (
-                    <Card key={index} className="border-steel-blue/20">
+            {/* Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-16"
+            >
+              <h3 className="text-2xl font-bold text-dark-gray text-center mb-8">
+                Specialized Services for {selectedIndustryData.name}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {selectedIndustryData.services.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                  >
+                    <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                       <CardContent className="p-6">
-                        <h4 className="font-semibold text-dark-gray mb-2">{study.title}</h4>
-                        <p className="text-gray-600 mb-4">{study.description}</p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-lg font-bold text-green-600">{study.savings}</span>
-                          <Button variant="outline" size="sm">
-                            <ArrowRight className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
-              {/* Services */}
-              <div>
-                <h3 className="text-2xl font-bold text-dark-gray mb-6">Specialized Services</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {selectedIndustryData.services.map((service, index) => (
-                    <Card key={index} className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-4">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-steel-blue/10 rounded-lg flex items-center justify-center">
-                            <Calculator className="h-4 w-4 text-steel-blue" />
+                        <div className="flex items-center mb-3">
+                          <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${selectedIndustryData.color} flex items-center justify-center mr-3`}>
+                            <selectedIndustryData.icon className="h-5 w-5 text-white" />
                           </div>
-                          <span className="font-medium text-gray-900">{service}</span>
+                          <h4 className="font-semibold text-dark-gray">{service}</h4>
                         </div>
                       </CardContent>
                     </Card>
+                  </motion.div>
                   ))}
-                </div>
               </div>
             </motion.div>
+
+            {/* Case Studies */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-16"
+            >
+              <h3 className="text-2xl font-bold text-dark-gray text-center mb-8">
+                Success Stories in {selectedIndustryData.name}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {selectedIndustryData.caseStudies.map((study, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                  >
+                    <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                      <CardHeader>
+                        <CardTitle className="text-lg text-dark-gray">{study.title}</CardTitle>
+                        <p className="text-gray-600">{study.description}</p>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-gray-500">Tax Savings</span>
+                          <span className="text-lg font-bold text-green-600">{study.savings}</span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                  ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
           )}
 
           {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-steel-blue to-blue-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mt-16 text-center"
           >
-            <Card className="bg-gradient-to-r from-steel-blue to-blue-600 text-white">
-              <CardContent className="p-12">
-                <h3 className="text-3xl font-bold mb-4">Ready to Optimize Your Industry Tax Strategy?</h3>
-                <p className="text-xl mb-8 text-blue-100">
-                  Our industry experts are ready to help you navigate the complex tax challenges specific to your sector.
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              Ready to Optimize Your Industry Tax Strategy?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              Our industry specialists are ready to help you navigate the complex tax landscape specific to your sector.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    size="lg"
-                    className="bg-white text-steel-blue hover:bg-gray-100"
-                    onClick={() => window.location.href = '/contact'}
-                  >
-                    Get Industry Consultation
+              <Button asChild className="bg-white text-steel-blue hover:bg-gray-100 px-8 py-4 text-lg">
+                <a href="/contact">
+                  Get Industry-Specific Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
                   </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-steel-blue"
-                    onClick={() => {
-                      const subject = encodeURIComponent("Inquiry");
-    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
-                      const message = encodeURIComponent(`Hello! I'm interested in your ${selectedIndustryData?.name} tax expertise. Could you please provide more information about your specialized services?`);
-                      window.open(emailUrl, '_blank');
-                    }}
-                  >
-                    Email Industry Expert
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-steel-blue px-8 py-4 text-lg">
+                <a href="/services">
+                  View All Services
+                </a>
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
           </motion.div>
         </div>
       </section>

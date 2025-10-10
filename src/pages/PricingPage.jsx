@@ -37,7 +37,6 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import ProductsList from '@/components/ProductsList';
 
 const PricingPage = () => {
   const [selectedComplexity, setSelectedComplexity] = useState('standard');
@@ -58,8 +57,8 @@ const PricingPage = () => {
       id: 'basic',
       name: 'Basic Tax Return',
       subtitle: 'Perfect for simple tax situations',
-      price: 'CHF 299',
-      originalPrice: 'CHF 399',
+      price: 'CHF 249',
+      originalPrice: 'CHF 349',
       savings: 'CHF 100',
       popular: false,
       features: [
@@ -87,8 +86,8 @@ const PricingPage = () => {
       id: 'standard',
       name: 'Standard Tax Return',
       subtitle: 'Most popular for expats and professionals',
-      price: 'CHF 499',
-      originalPrice: 'CHF 699',
+      price: 'CHF 449',
+      originalPrice: 'CHF 649',
       savings: 'CHF 200',
       popular: true,
       features: [
@@ -152,7 +151,7 @@ const PricingPage = () => {
   const big4Comparison = [
     {
       service: 'Basic Tax Return',
-      taxedPrice: 'CHF 299',
+      taxedPrice: 'CHF 249',
       big4Price: 'CHF 800-1,200',
       savings: 'CHF 500-900',
       savingsPercent: '62-75%',
@@ -160,7 +159,7 @@ const PricingPage = () => {
     },
     {
       service: 'Standard Tax Return',
-      taxedPrice: 'CHF 499',
+      taxedPrice: 'CHF 449',
       big4Price: 'CHF 1,500-2,500',
       savings: 'CHF 1,000-2,000',
       savingsPercent: '67-80%',
@@ -246,9 +245,9 @@ const PricingPage = () => {
   ];
 
   const calculateCustomPrice = () => {
-    let basePrice = 299; // Basic package base
+    let basePrice = 249; // Basic package base
     
-    if (selectedComplexity === 'standard') basePrice = 499;
+    if (selectedComplexity === 'standard') basePrice = 449;
     if (selectedComplexity === 'premium') basePrice = 799;
     
     let additionalCost = 0;
@@ -477,7 +476,7 @@ const PricingPage = () => {
         </div>
       )}
 
-      {/* Big 4 Comparison */}
+      {/* Interactive Price Comparison Chart */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -488,63 +487,120 @@ const PricingPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-dark-gray mb-6">
-              See How Much You Save vs Big 4
+              Interactive Price Comparison Chart
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Compare our transparent pricing to Big 4 consulting firms. The savings are incredible.
+              See the dramatic savings with our transparent pricing compared to Big 4 firms. Hover over the bars to see detailed savings.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {big4Comparison.map((comparison, index) => (
-              <motion.div
-                key={comparison.service}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300"
-              >
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-dark-gray mb-4">{comparison.service}</h3>
-                  
-                  <div className="space-y-4">
-                    <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4">
-                      <div className="text-sm text-green-600 font-semibold mb-1">Taxed GmbH</div>
-                      <div className="text-3xl font-bold text-green-600">{comparison.taxedPrice}</div>
-                    </div>
-                    
-                    <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4">
-                      <div className="text-sm text-red-600 font-semibold mb-1">Big 4 Firms</div>
-                      <div className="text-2xl font-bold text-red-600">{comparison.big4Price}</div>
-                    </div>
-                    
-                    <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4">
-                      <div className="text-sm text-yellow-600 font-semibold mb-1">You Save</div>
-                      <div className="text-2xl font-bold text-yellow-600">{comparison.savings}</div>
-                      <div className="text-lg font-bold text-yellow-600">({comparison.savingsPercent} less)</div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
+          {/* Chart Container */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-center mt-12"
+            className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-8 shadow-xl"
           >
-            <div className="bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl p-8 border-2 border-green-200">
-              <h3 className="text-2xl font-bold text-dark-gray mb-4">
-                💰 Average Savings: CHF 1,400 per tax return
-              </h3>
-              <p className="text-lg text-gray-600">
-                That's <strong>CHF 1,400 more in your pocket</strong> every year compared to Big 4 rates!
-              </p>
+            {/* Chart Header */}
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                <span className="font-semibold text-dark-gray">Taxed GmbH</span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                <span className="font-semibold text-dark-gray">Big 4 Firms</span>
+              </div>
             </div>
+
+            {/* Chart Bars */}
+            <div className="space-y-8">
+              {big4Comparison.map((comparison, index) => {
+                const taxedPrice = parseInt(comparison.taxedPrice.replace('CHF ', '').replace(',', ''));
+                const big4MinPrice = parseInt(comparison.big4Price.split('-')[0].replace('CHF ', '').replace(',', ''));
+                const big4MaxPrice = parseInt(comparison.big4Price.split('-')[1].replace('CHF ', '').replace(',', ''));
+                const big4AvgPrice = (big4MinPrice + big4MaxPrice) / 2;
+                const maxPrice = Math.max(taxedPrice, big4MaxPrice);
+                const taxedWidth = (taxedPrice / maxPrice) * 100;
+                const big4Width = (big4AvgPrice / maxPrice) * 100;
+
+                return (
+                  <motion.div
+                    key={comparison.service}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative group"
+                  >
+                    <h3 className="text-lg font-semibold text-dark-gray mb-4">{comparison.service}</h3>
+                    
+                    <div className="relative h-20 bg-white rounded-xl shadow-inner overflow-hidden border-2 border-gray-200">
+                      {/* Taxed GmbH Bar */}
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${taxedWidth}%` }}
+                        transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
+                        viewport={{ once: true }}
+                        className="absolute left-0 top-0 h-full bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-end pr-4 group-hover:from-green-500 group-hover:to-green-700 transition-all duration-300"
+                      >
+                        <span className="text-white font-bold text-sm drop-shadow-lg">{comparison.taxedPrice}</span>
+                      </motion.div>
+                      
+                      {/* Big 4 Bar */}
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${big4Width}%` }}
+                        transition={{ duration: 1, delay: index * 0.1 + 0.7 }}
+                        viewport={{ once: true }}
+                        className="absolute right-0 top-0 h-full bg-gradient-to-l from-red-400 to-red-600 flex items-center justify-start pl-4 group-hover:from-red-500 group-hover:to-red-700 transition-all duration-300"
+                      >
+                        <span className="text-white font-bold text-sm drop-shadow-lg">{comparison.big4Price}</span>
+                      </motion.div>
+                    </div>
+                    
+                    {/* Savings Display */}
+                    <div className="mt-4 flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <TrendingUp className="h-5 w-5 text-green-600" />
+                        <span className="text-green-600 font-semibold">You Save: {comparison.savings}</span>
+                      </div>
+                      <div className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        {comparison.savingsPercent} Less
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Chart Summary */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+              className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 border-2 border-green-200"
+            >
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-dark-gray mb-2">Average Savings with Taxed GmbH</h3>
+                <div className="flex items-center justify-center space-x-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-green-600">CHF 1,400</div>
+                    <div className="text-sm text-gray-600">Average Savings</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-600">70%</div>
+                    <div className="text-sm text-gray-600">Less Than Big 4</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-blue-600">24h</div>
+                    <div className="text-sm text-gray-600">Response Time</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -884,7 +940,10 @@ const PricingPage = () => {
               Browse our additional tax services and tools
             </p>
           </motion.div>
-          <ProductsList />
+          <div className="text-center py-12">
+            <h3 className="text-xl font-semibold text-dark-gray mb-4">Additional Services Coming Soon</h3>
+            <p className="text-gray-600">We're working on expanding our service offerings. Contact us for custom tax solutions.</p>
+          </div>
         </div>
       </section>
 

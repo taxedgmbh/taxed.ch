@@ -86,5 +86,17 @@ for file in dist/*.xml dist/*.txt; do
     fi
 done
 
+# Upload .htaccess file
+if [ -f "public/.htaccess" ]; then
+    curl -T public/.htaccess ftp://$FTP_USER:$FTP_PASS@$FTP_HOST/
+    if [ $? -eq 0 ]; then
+        print_success "✅ .htaccess uploaded"
+    else
+        print_error "❌ Failed to upload .htaccess"
+    fi
+else
+    print_error "❌ .htaccess file not found in public/"
+fi
+
 print_success "🎉 Clean version successfully deployed online!"
 print_success "🌐 Website: https://taxed.ch"

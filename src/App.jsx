@@ -13,9 +13,7 @@ import StorePage from '@/pages/StorePage';
 import ProductDetailPage from '@/pages/ProductDetailPage';
 import SuccessPage from '@/pages/SuccessPage';
 import ImpressumPage from '@/pages/ImpressumPage';
-import PrivacyPage from '@/pages/PrivacyPage';
-import TermsPage from '@/pages/TermsPage';
-import CookiesPage from '@/pages/CookiesPage';
+import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import AccessibilityPage from '@/pages/AccessibilityPage';
 import SitemapPage from '@/pages/SitemapPage';
 import FAQPage from '@/pages/FAQPage';
@@ -31,20 +29,42 @@ import ResourceCenterPage from '@/pages/ResourceCenterPage';
 import NewsPage from '@/pages/NewsPage';
 import ClientPortalPage from '@/pages/ClientPortalPage';
 import CaseStudiesPage from '@/pages/CaseStudiesPage';
-// import TeamPage from '@/pages/TeamPage';
-// import IndustrySpecializationsPage from '@/pages/IndustrySpecializationsPage';
-// import AdvancedTaxToolsPage from '@/pages/AdvancedTaxToolsPage';
+import TeamPage from '@/pages/TeamPage';
+import IndustrySpecializationsPage from '@/pages/IndustrySpecializationsPage';
+import AdvancedTaxToolsPage from '@/pages/AdvancedTaxToolsPage';
+import TaxDeadlinesPage from '@/pages/TaxDeadlinesPage';
+import ExpatTaxGuidePage from '@/pages/ExpatTaxGuidePage';
+import ClientTestimonialsPage from '@/pages/ClientTestimonialsPage';
+import TaxPlanningGuidePage from '@/pages/TaxPlanningGuidePage';
+import BusinessTaxGuidePage from '@/pages/BusinessTaxGuidePage';
+import InternationalTaxPage from '@/pages/InternationalTaxPage';
+import TaxFormsPage from '@/pages/TaxFormsPage';
+import TaxUpdatesPage from '@/pages/TaxUpdatesPage';
+import TaxWebinarsPage from '@/pages/TaxWebinarsPage';
+import TaxTechnologyPage from '@/pages/TaxTechnologyPage';
+import TaxSecurityPage from '@/pages/TaxSecurityPage';
+import TaxSupportPage from '@/pages/TaxSupportPage';
+import TaxGlossaryPage from '@/pages/TaxGlossaryPage';
+import TaxReturnExplainedPage from '@/pages/TaxReturnExplainedPage';
+import TaxEventsPage from '@/pages/TaxEventsPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import { useCart } from '@/hooks/useCart';
 import { initializeDailyBlogScheduler } from '@/services/dailyBlogScheduler';
+import { initializeAnalytics, trackWebVitals } from '@/utils/analytics';
+import { initializePerformanceOptimizations } from '@/utils/performance';
+import { initializeBingOptimizations } from '@/utils/bing';
 
 function App() {
-  // Initialize daily blog scheduler
+  // Initialize services
   React.useEffect(() => {
     try {
       initializeDailyBlogScheduler();
+      initializeAnalytics();
+      trackWebVitals();
+      initializePerformanceOptimizations();
+      initializeBingOptimizations();
     } catch (error) {
-      console.warn('Error initializing blog scheduler:', error);
+      console.warn('Error initializing services:', error);
     }
   }, []);
   
@@ -76,9 +96,10 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/cookies" element={<CookiesPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<PrivacyPolicyPage />} />
+          <Route path="/cookies" element={<PrivacyPolicyPage />} />
           <Route path="/accessibility" element={<AccessibilityPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
           <Route path="/faq" element={<FAQPage />} />
@@ -94,9 +115,30 @@ function App() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/client-portal" element={<ClientPortalPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
-          {/* <Route path="/team" element={<TeamPage />} /> */}
-          {/* <Route path="/industry-specializations" element={<IndustrySpecializationsPage />} /> */}
-          {/* <Route path="/advanced-tax-tools" element={<AdvancedTaxToolsPage />} /> */}
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/industry-specializations" element={<IndustrySpecializationsPage />} />
+          <Route path="/advanced-tax-tools" element={<AdvancedTaxToolsPage />} />
+          
+          {/* Phase 1 Critical Pages */}
+          <Route path="/tax-deadlines" element={<TaxDeadlinesPage />} />
+          <Route path="/expat-tax-guide" element={<ExpatTaxGuidePage />} />
+          <Route path="/testimonials" element={<ClientTestimonialsPage />} />
+          <Route path="/tax-planning-guide" element={<TaxPlanningGuidePage />} />
+          
+          {/* Phase 2 Professional Pages */}
+          <Route path="/business-tax-guide" element={<BusinessTaxGuidePage />} />
+          <Route path="/international-tax" element={<InternationalTaxPage />} />
+          <Route path="/tax-forms" element={<TaxFormsPage />} />
+          <Route path="/tax-updates" element={<TaxUpdatesPage />} />
+          <Route path="/webinars" element={<TaxWebinarsPage />} />
+          
+          {/* Phase 3 Advanced Pages */}
+          <Route path="/technology" element={<TaxTechnologyPage />} />
+          <Route path="/security" element={<TaxSecurityPage />} />
+          <Route path="/support" element={<TaxSupportPage />} />
+          <Route path="/tax-glossary" element={<TaxGlossaryPage />} />
+          <Route path="/tax-return-explained" element={<TaxReturnExplainedPage />} />
+          <Route path="/events" element={<TaxEventsPage />} />
           
           {/* 404 - Catch all undefined routes */}
           <Route path="*" element={<NotFoundPage />} />

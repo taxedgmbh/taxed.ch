@@ -78,3 +78,7 @@ temp/
 
 # Production deployment packages
 hostinger-deploy-*
+
+# Build output
+dist/
+build/

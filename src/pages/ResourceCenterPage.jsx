@@ -329,38 +329,32 @@ const ResourceCenterPage = () => {
                 </p>
               </div>
               
-              <form onSubmit={handleEmailSignup} className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name" className="text-sm font-medium text-dark-gray">Name</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Your name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      required
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email" className="text-sm font-medium text-dark-gray">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="mt-1"
-                    />
-                  </div>
-                </div>
-                <Button type="submit" className="w-full bg-gradient-to-r from-steel-blue to-blue-600 hover:from-steel-blue/90 hover:to-blue-600/90 text-white font-semibold py-3">
-                  Subscribe to Updates
-                  <Mail className="w-4 h-4 ml-2" />
+              {/* HubSpot Newsletter Signup Form */}
+              <div className="hubspot-newsletter-container">
+                <iframe 
+                  src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
+                  width="100%"
+                  height="350"
+                  frameBorder="0"
+                  scrolling="no"
+                  title="Taxed GmbH Newsletter Signup - Resources"
+                  className="border-0 rounded-lg"
+                  style={{ minHeight: '350px' }}
+                />
+              </div>
+              <div className="text-center mt-4">
+                <Button 
+                  onClick={() => {
+                    const subject = encodeURIComponent('Resource Center Inquiry');
+                    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI'm interested in your tax resources and guides. Could you please send me more information?");
+                    const emailUrl = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
+                    window.open(emailUrl, '_blank');
+                  }}
+                  className="bg-gradient-to-r from-steel-blue to-blue-600 hover:from-steel-blue/90 hover:to-blue-600/90 text-white font-semibold py-3"
+                >
+                  Or Contact Us Directly
                 </Button>
-              </form>
+              </div>
             </CardContent>
           </Card>
 

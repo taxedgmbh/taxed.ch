@@ -53,24 +53,38 @@ const ContactSection = () => {
           >
             <Card className="border-steel-blue/20 shadow-xl bg-white">
               <CardContent className="p-8">
-                <form onSubmit={handleContactSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-name">Full Name *</Label>
-                    <Input id="contact-name" name="name" value={formData.name} onChange={handleInputChange} placeholder="Your full name" required className="bg-light-gray-bg-1/50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-email">Email Address *</Label>
-                    <Input id="contact-email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="your.email@example.com" required className="bg-light-gray-bg-1/50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-message">Message *</Label>
-                    <Textarea id="contact-message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell us how we can help..." rows={5} required className="bg-light-gray-bg-1/50" />
-                  </div>
-                  <Button type="submit" className="w-full bg-steel-blue hover:bg-steel-blue/90 text-white" size="lg">
-                    Send Message
-                    <Send className="ml-2 h-4 w-4" />
+                <h3 className="text-2xl font-bold text-dark-gray mb-6">Get Your Free Consultation</h3>
+                
+                {/* HubSpot Embedded Form */}
+                <div className="hubspot-form-container">
+                  <iframe 
+                    src="https://share-eu1.hsforms.com/1xA0NQrALToW5NH7CkatXWA2ds4ox"
+                    width="100%"
+                    height="600"
+                    frameBorder="0"
+                    scrolling="yes"
+                    title="Taxed GmbH Contact Form - Landing Page"
+                    className="border-0 rounded-lg"
+                    style={{ minHeight: '600px' }}
+                  />
+                </div>
+                
+                {/* Alternative Contact Method */}
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <Button
+                    onClick={() => {
+                      const subject = encodeURIComponent('Swiss Tax Consulting Inquiry');
+                      const body = encodeURIComponent("Hello Taxed GmbH,\n\nI'm interested in your Swiss tax consulting services. Can you help me?");
+                      const emailUrl = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
+                      window.open(emailUrl, '_blank');
+                    }}
+                    className="w-full bg-steel-blue hover:bg-steel-blue/90 text-white"
+                    size="lg"
+                  >
+                    <Mail className="mr-2 h-4 w-4" />
+                    Or Email Us Directly
                   </Button>
-                </form>
+                </div>
               </CardContent>
             </Card>
           </motion.div>

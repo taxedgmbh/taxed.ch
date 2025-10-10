@@ -248,6 +248,11 @@ const InteractiveMap = () => {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  // Function to scroll to top when navigating
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const footerSections = [
     {
       title: "Services",
@@ -269,6 +274,12 @@ const Footer = () => {
         { name: "Law Section", href: "/law", description: "Legal documents & regulations" },
         { name: "Blog", href: "/blog", description: "Expert insights & tips" },
         { name: "FAQ", href: "/faq", description: "Frequently asked questions" },
+        { name: "Tax Deadlines", href: "/tax-deadlines", description: "Swiss tax deadline calendar" },
+        { name: "Expat Tax Guide", href: "/expat-tax-guide", description: "Complete expat tax guide" },
+        { name: "Tax Planning Guide", href: "/tax-planning-guide", description: "Tax planning strategies" },
+        { name: "Tax Updates", href: "/tax-updates", description: "Latest tax law changes" },
+        { name: "Tax Webinars", href: "/webinars", description: "Educational tax webinars" },
+        { name: "Tax Events", href: "/events", description: "Tax seminars & workshops" },
       ]
     },
     {
@@ -278,6 +289,9 @@ const Footer = () => {
         { name: "Our Team", href: "/team", description: "Meet our tax experts" },
         { name: "Industry Specializations", href: "/industry-specializations", description: "Sector expertise" },
         { name: "Advanced Tax Tools", href: "/advanced-tax-tools", description: "Professional analysis tools" },
+        { name: "Client Testimonials", href: "/testimonials", description: "Client success stories" },
+        { name: "Business Tax Guide", href: "/business-tax-guide", description: "Corporate tax guidance" },
+        { name: "International Tax", href: "/international-tax", description: "Cross-border tax services" },
       ]
     },
     {
@@ -288,6 +302,11 @@ const Footer = () => {
         { name: "Pricing", href: "/pricing", description: "Transparent flat-rate pricing" },
         { name: "Contact", href: "/contact", description: "Get in touch with us" },
         { name: "Careers", href: "/careers", description: "Join our team" },
+        { name: "Tax Support", href: "/support", description: "Help center & support" },
+        { name: "Tax Security", href: "/security", description: "Data protection & security" },
+        { name: "Tax Technology", href: "/technology", description: "Digital tax solutions" },
+        { name: "Tax Forms", href: "/tax-forms", description: "Downloadable tax forms" },
+        { name: "Tax Glossary", href: "/tax-glossary", description: "Swiss tax terminology" },
       ]
     }
   ];
@@ -323,6 +342,7 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
+                onClick={handleLinkClick}
                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-steel-blue to-blue-600 hover:from-steel-blue/90 hover:to-blue-600/90 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Get Started Today
@@ -330,6 +350,7 @@ const Footer = () => {
               </Link>
               <Link
                 to="/pricing"
+                onClick={handleLinkClick}
                 className="inline-flex items-center px-6 py-3 border border-gray-600 hover:border-steel-blue text-gray-300 hover:text-white font-semibold rounded-lg transition-all duration-200"
               >
                 View Pricing
@@ -451,6 +472,7 @@ const Footer = () => {
                         <li key={link.name}>
                           <Link
                             to={link.href}
+                            onClick={handleLinkClick}
                             className="group flex items-start space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all duration-200"
                           >
                             <div className="flex items-center justify-center w-6 h-6 bg-steel-blue/20 rounded-md group-hover:bg-steel-blue group-hover:text-white transition-colors mt-0.5">
@@ -482,16 +504,16 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-400">
               <p>© {currentYear} Taxed GmbH. All rights reserved.</p>
               <div className="flex items-center space-x-4">
-                <Link to="/impressum" className="hover:text-white transition-colors">
+                <Link to="/impressum" onClick={handleLinkClick} className="hover:text-white transition-colors">
                   Impressum
                 </Link>
-                <Link to="/privacy" className="hover:text-white transition-colors">
+                <Link to="/privacy" onClick={handleLinkClick} className="hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
-                <Link to="/terms" className="hover:text-white transition-colors">
+                <Link to="/terms" onClick={handleLinkClick} className="hover:text-white transition-colors">
                   Terms of Service
                 </Link>
-                <Link to="/cookies" className="hover:text-white transition-colors">
+                <Link to="/cookies" onClick={handleLinkClick} className="hover:text-white transition-colors">
                   Cookie Policy
                 </Link>
               </div>
@@ -519,7 +541,7 @@ const Footer = () => {
                 <Globe className="h-4 w-4" />
                 <span>Sitemap</span>
               </a>
-              <Link to="/accessibility" className="flex items-center space-x-2 hover:text-white transition-colors">
+              <Link to="/accessibility" onClick={handleLinkClick} className="flex items-center space-x-2 hover:text-white transition-colors">
                 <Shield className="h-4 w-4" />
                 <span>Accessibility</span>
               </Link>

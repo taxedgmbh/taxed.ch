@@ -21,8 +21,9 @@ import {
   ChevronDown,
   X
 } from 'lucide-react';
+import ShareButton from '@/components/ui/ShareButton';
 
-const BlogPostCard = ({ post, index, featured = false }) => {
+const BlogPostCard = ({ post, index, featured = false, gridSize = 'normal' }) => {
   const getDifficultyColor = (difficulty) => {
     switch (difficulty) {
       case 'Beginner': return 'bg-green-100 text-green-800';
@@ -32,38 +33,55 @@ const BlogPostCard = ({ post, index, featured = false }) => {
     }
   };
 
+  const getGridClasses = () => {
+    if (featured) {
+      return 'md:col-span-2';
+    }
+    if (gridSize === 'large') {
+      return 'md:col-span-2';
+    }
+    return 'md:col-span-1';
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={featured ? 'md:col-span-2' : ''}
+      className={`${getGridClasses()} ${featured ? 'lg:row-span-2' : ''}`}
     >
-      <Card className={`h-full flex flex-col overflow-hidden card-hover border-steel-blue/20 shadow-lg bg-white group ${
+      <Card className={`h-full flex flex-col overflow-hidden card-hover border-steel-blue/20 shadow-lg bg-white group transition-all duration-300 hover:shadow-xl hover:border-steel-blue/40 ${
         featured ? 'border-2 border-steel-blue/30' : ''
       }`}>
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden bg-gray-100">
           <img  
-            className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+            className={`w-full object-cover transition-transform duration-300 group-hover:scale-105 ${
+              featured ? 'h-64 lg:h-80' : 'h-56'
+            }`}
             alt={post.imageAlt} 
-            src={post.imageUrl} />
+            src={post.imageUrl}
+            onError={(e) => {
+              e.target.src = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop';
+            }} />
           {featured && (
             <div className="absolute top-4 left-4">
-              <Badge className="bg-steel-blue text-white">
+              <Badge className="bg-steel-blue text-white shadow-lg">
                 <Star className="w-3 h-3 mr-1" />
                 Featured
               </Badge>
             </div>
           )}
           <div className="absolute top-4 right-4">
-            <Badge className={getDifficultyColor(post.difficulty)}>
+            <Badge className={`${getDifficultyColor(post.difficulty)} shadow-lg`}>
               {post.difficulty}
             </Badge>
           </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
-        <CardHeader>
-          <div className="flex items-center space-x-2 mb-2">
-            <Badge variant="outline" className="text-xs">
+        
+        <CardHeader className={`${featured ? 'pb-4' : 'pb-3'}`}>
+          <div className="flex items-center space-x-2 mb-3">
+            <Badge variant="outline" className="text-xs font-medium">
               {post.category}
             </Badge>
             <div className="flex items-center text-xs text-gray-500">
@@ -72,43 +90,50 @@ const BlogPostCard = ({ post, index, featured = false }) => {
             </div>
           </div>
           <CardTitle className={`font-bold text-dark-gray leading-tight ${
-            featured ? 'text-2xl' : 'text-xl'
+            featured ? 'text-2xl lg:text-3xl' : 'text-xl'
           }`}>
-            <Link to={`/blog/${post.slug}`} className="hover:text-steel-blue transition-colors">
+            <Link to={`/blog/${post.slug}`} className="hover:text-steel-blue transition-colors line-clamp-2">
               {post.title}
             </Link>
           </CardTitle>
         </CardHeader>
+        
         <CardContent className="flex-grow">
-          <p className="text-dark-gray/80 mb-4">{post.summary}</p>
+          <p className={`text-dark-gray/80 mb-4 ${featured ? 'text-base' : 'text-sm'} line-clamp-3`}>
+            {post.summary}
+          </p>
           <div className="flex flex-wrap gap-1">
-            {post.tags.slice(0, 3).map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs">
+            {post.tags.slice(0, featured ? 4 : 3).map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs hover:bg-steel-blue hover:text-white transition-colors">
                 <Tag className="w-2 h-2 mr-1" />
                 {tag}
               </Badge>
             ))}
-            {post.tags.length > 3 && (
+            {post.tags.length > (featured ? 4 : 3) && (
               <Badge variant="secondary" className="text-xs">
-                +{post.tags.length - 3} more
+                +{post.tags.length - (featured ? 4 : 3)} more
               </Badge>
             )}
           </div>
         </CardContent>
-        <CardFooter className="flex justify-between items-center text-sm text-dark-gray/60 border-t border-steel-blue/10 pt-4">
+        
+        <CardFooter className="flex justify-between items-center text-sm text-dark-gray/60 border-t border-steel-blue/10 pt-4 bg-gray-50/50">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <User size={14} />
-              <span>{post.author}</span>
+              <span className="truncate">{post.author}</span>
             </div>
             <div className="flex items-center space-x-1">
               <Calendar size={14} />
               <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
             </div>
           </div>
-          <Link to={`/blog/${post.slug}`} className="flex items-center text-steel-blue hover:underline font-medium">
-            Read More <ArrowRight size={16} className="ml-1" />
-          </Link>
+          <div className="flex items-center space-x-2">
+            <ShareButton post={post} variant="simple" size="sm" />
+            <Link to={`/blog/${post.slug}`} className="flex items-center text-steel-blue hover:underline font-medium transition-colors">
+              Read More <ArrowRight size={16} className="ml-1" />
+            </Link>
+          </div>
         </CardFooter>
       </Card>
     </motion.div>
@@ -237,9 +262,15 @@ const BlogPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {featuredPosts.map((post, index) => (
-                <BlogPostCard key={post.slug} post={post} index={index} featured={index === 0} />
+                <BlogPostCard 
+                  key={post.slug} 
+                  post={post} 
+                  index={index} 
+                  featured={index === 0} 
+                  gridSize={index === 0 ? 'large' : 'normal'}
+                />
               ))}
             </div>
           </div>
@@ -314,9 +345,19 @@ const BlogPage = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Get the latest Swiss tax insights delivered to your inbox
                     </p>
-                    <Button className="w-full bg-steel-blue hover:bg-blue-700 text-white">
-                      Subscribe to Newsletter
-                    </Button>
+                    {/* HubSpot Newsletter Signup Form */}
+                    <div className="hubspot-newsletter-container">
+                      <iframe 
+                        src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
+                        width="100%"
+                        height="250"
+                        frameBorder="0"
+                        scrolling="no"
+                        title="Taxed GmbH Newsletter Signup - Blog"
+                        className="border-0 rounded-lg"
+                        style={{ minHeight: '250px' }}
+                      />
+                    </div>
                   </CardContent>
                 </Card>
               </div>
@@ -353,10 +394,15 @@ const BlogPage = () => {
 
               {/* Articles Grid */}
               {filteredPosts.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                   {filteredPosts.map((post, index) => (
-              <BlogPostCard key={post.slug} post={post} index={index} />
-            ))}
+                    <BlogPostCard 
+                      key={post.slug} 
+                      post={post} 
+                      index={index}
+                      gridSize="normal"
+                    />
+                  ))}
                 </div>
               ) : (
                 <div className="text-center py-16">

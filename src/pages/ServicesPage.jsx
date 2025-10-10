@@ -2,26 +2,118 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FileText, ArrowRight, CheckCircle, Globe, Wallet, Shield, Calculator } from 'lucide-react';
+import { FileText, ArrowRight, CheckCircle, Globe, Wallet, Shield, Calculator, Download, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const ServicesPage = () => {
-  const keyFeatures = [
+  const keyServices = [
+    {
+      icon: FileText,
+      title: 'Basic Tax Return',
+      description: 'Complete Swiss tax return preparation for simple tax situations with standard deductions.',
+      price: 'CHF 249',
+      originalPrice: 'CHF 349',
+      savings: 'CHF 100',
+      popular: false,
+      features: [
+        'Individual tax return preparation',
+        'Standard deductions included',
+        'Electronic filing with tax authorities',
+        'Final tax return copy',
+        'Email support (48h response)',
+        'Basic tax optimization'
+      ],
+      color: 'border-gray-300',
+      buttonColor: 'bg-gray-600 hover:bg-gray-700'
+    },
     {
       icon: Globe,
-      title: 'International Income Handling',
-      description: 'We correctly report foreign salaries, investments, and other assets.'
+      title: 'Standard Tax Return',
+      description: 'Most popular for expats and professionals with multiple income sources and international elements.',
+      price: 'CHF 449',
+      originalPrice: 'CHF 649',
+      savings: 'CHF 200',
+      popular: true,
+      features: [
+        'Individual tax return preparation',
+        'Multiple income sources',
+        'Foreign income handling',
+        'International tax treaties',
+        'Cross-border income optimization',
+        'Priority email support (24h response)',
+        'Phone consultation (30 min)',
+        'Post-filing support'
+      ],
+      color: 'border-steel-blue',
+      buttonColor: 'bg-steel-blue hover:bg-steel-blue/90'
+    },
+    {
+      icon: Shield,
+      title: 'Premium Tax Return',
+      description: 'Complete solution for complex tax situations with comprehensive planning and optimization.',
+      price: 'CHF 799',
+      originalPrice: 'CHF 1,199',
+      savings: 'CHF 400',
+      popular: false,
+      features: [
+        'Individual tax return preparation',
+        'Complex income structures',
+        'International tax planning',
+        'Multi-year tax optimization',
+        'Investment tax strategies',
+        'Priority support (12h response)',
+        'Phone consultation (60 min)',
+        'Tax planning session',
+        'Ongoing tax advice'
+      ],
+      color: 'border-warm-red',
+      buttonColor: 'bg-warm-red hover:bg-warm-red/90'
     },
     {
       icon: Wallet,
       title: 'Quellensteuer Adjustments',
-      description: 'We help you claim refunds for tax at source (*Quellensteuer*) if applicable.'
+      description: 'Professional assistance with Swiss withholding tax refunds and adjustments.',
+      price: 'CHF 249-449',
+      features: [
+        'Withholding tax analysis',
+        'Refund optimization',
+        'Cantonal variations',
+        'Cross-border tax treaties',
+        'Document preparation'
+      ],
+      color: 'border-green-300',
+      buttonColor: 'bg-green-600 hover:bg-green-700'
     },
     {
-      icon: Shield,
-      title: 'Digital & Secure Process',
-      description: 'Submit your documents through a secure, fully digital platform.'
+      icon: Calculator,
+      title: 'Tax Planning Services',
+      description: 'Strategic tax planning and optimization for individuals and businesses.',
+      price: 'CHF 449-799',
+      features: [
+        'Multi-year planning',
+        'Investment optimization',
+        'Retirement planning',
+        'Estate planning',
+        'International structures'
+      ],
+      color: 'border-purple-300',
+      buttonColor: 'bg-purple-600 hover:bg-purple-700'
+    },
+    {
+      icon: Globe,
+      title: 'Business Tax Services',
+      description: 'Comprehensive corporate tax consulting for Swiss and international businesses.',
+      price: 'CHF 799+',
+      features: [
+        'Corporate tax returns',
+        'VAT compliance',
+        'International structures',
+        'Transfer pricing',
+        'Business tax planning'
+      ],
+      color: 'border-orange-300',
+      buttonColor: 'bg-orange-600 hover:bg-orange-700'
     }
   ];
 
@@ -102,30 +194,73 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-dark-gray mb-4">
-              Key Features of Our Service
+              Our Professional Tax Services
             </h2>
             <p className="text-xl text-dark-gray max-w-3xl mx-auto">
-              We provide a simple, reliable, and fully transparent tax filing experience.
+              Comprehensive Swiss tax consulting services tailored for expatriates and businesses.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {keyFeatures.map((feature, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {keyServices.map((service, index) => (
               <motion.div
-                key={feature.title}
+                key={service.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="relative"
               >
-                <Card className="h-full card-hover border-steel-blue/20 shadow-lg text-center bg-white">
-                  <CardHeader>
-                    <div className="w-16 h-16 rounded-full bg-warm-red-tint flex items-center justify-center mx-auto mb-4">
-                      <feature.icon className="h-8 w-8 text-steel-blue" />
+                {service.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="bg-warm-red text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      Most Popular
                     </div>
-                    <CardTitle className="text-xl text-dark-gray">{feature.title}</CardTitle>
+                  </div>
+                )}
+                
+                <Card className={`h-full card-hover ${service.color} shadow-lg bg-white hover:shadow-xl transition-all duration-300 relative ${service.popular ? 'ring-2 ring-warm-red' : ''}`}>
+                  <CardHeader className="text-center pb-4">
+                    <div className="w-16 h-16 rounded-full bg-warm-red-tint flex items-center justify-center mx-auto mb-4">
+                      <service.icon className="h-8 w-8 text-steel-blue" />
+                    </div>
+                    <CardTitle className="text-xl text-dark-gray">{service.title}</CardTitle>
+                    <p className="text-sm text-dark-gray/70 mb-4">{service.description}</p>
+                    
+                    {/* Pricing */}
+                    <div className="space-y-2">
+                      {service.originalPrice && (
+                        <div className="flex items-center justify-center space-x-2">
+                          <span className="text-lg text-gray-500 line-through">{service.originalPrice}</span>
+                          <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
+                            Save {service.savings}
+                          </span>
+                        </div>
+                      )}
+                      <div className="text-3xl font-bold text-steel-blue">{service.price}</div>
+                    </div>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-dark-gray/80">{feature.description}</p>
+                  
+                  <CardContent className="pt-0">
+                    <div className="space-y-3 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-dark-gray/70">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="mt-6">
+                      <Button 
+                        asChild 
+                        className={`w-full ${service.buttonColor} text-white`}
+                      >
+                        <Link to="/store">
+                          Add to Shop
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>

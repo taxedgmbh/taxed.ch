@@ -239,15 +239,20 @@ const NewsPage = () => {
             <p className="text-xl mb-8 text-blue-100">
               Get the latest Swiss tax news and updates delivered to your inbox
             </p>
-            <div className="max-w-md mx-auto flex gap-4">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 text-gray-900"
-              />
-              <Button className="bg-white text-steel-blue hover:bg-blue-50">
-                Subscribe
-              </Button>
+            <div className="max-w-2xl mx-auto">
+              {/* HubSpot Newsletter Signup Form */}
+              <div className="hubspot-newsletter-container bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <iframe 
+                  src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
+                  width="100%"
+                  height="300"
+                  frameBorder="0"
+                  scrolling="no"
+                  title="Taxed GmbH Newsletter Signup - News"
+                  className="border-0 rounded-lg"
+                  style={{ minHeight: '300px' }}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ export const formatCurrency = (priceInCents, currencyInfo) => {
 	}
 
 	const { code, symbol, template } = currencyInfo;
-	const currencyDisplay = symbol || code || '€';
+	const currencyDisplay = symbol || code || 'CHF';
 	const amount = (priceInCents / 100).toFixed(2);
 
 	if (template) {
@@ -43,7 +43,7 @@ const extractVariants = (variants) => {
 	return (variants || []).map((v) => {
 		const price_in_cents = v?.prices?.[0]?.amount || 0;
 		const sale_price_in_cents = v?.prices?.[0]?.sale_amount || null;
-		const currency = v?.prices?.[0]?.currency_code || "eur";
+		const currency = v?.prices?.[0]?.currency_code || "chf";
 
 		return {
 			id: v?.id || "",
@@ -126,7 +126,7 @@ const getProductPrice = (product) => {
 		selectedVariant?.prices[0]?.sale_amount ||
 		selectedVariant?.prices[0]?.amount ||
 		0;
-	const currency = selectedVariant?.prices[0]?.currency_code || "eur";
+	const currency = selectedVariant?.prices[0]?.currency_code || "chf";
 
 	// price_in_cents is the price value in cents, make sure to convert it to a full price based on decimal_digits
 	return { price_in_cents, currency };
@@ -140,7 +140,7 @@ const getProductPrice = (product) => {
  * @property {string|null} sku - Stock keeping unit for inventory tracking
  * @property {number} price_in_cents - Price in cents in smallest currency unit (e.g., cents for USD)
  * @property {number|null} sale_price_in_cents - Discounted price in cents in smallest currency unit, if applicable
- * @property {string} currency - Currency code (e.g., "USD", "EUR")
+ * @property {string} currency - Currency code (e.g., "USD", "CHF")
  * @property {boolean} manage_inventory - Whether inventory is managed for product and/or variant. When true, stock should be tracked
  * @property {number|null} weight - Product weight in specified units
  * @property {Array<{id: string, option_id: string, variant_id: string, value: string}>} options - Variant-specific options

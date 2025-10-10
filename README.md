@@ -6,7 +6,7 @@
 
 Professional Swiss tax website for expats and businesses. Complete React application with automated deployment to Hostinger.
 
-📚 **Complete Documentation**: See [DOCUMENTATION.md](./DOCUMENTATION.md) for full details.
+📚 **Complete Documentation**: See [PRODUCT_REQUIREMENTS_DOCUMENT.md](./PRODUCT_REQUIREMENTS_DOCUMENT.md) for comprehensive technical and business specifications.
 
 ## ✨ **Key Features**
 
@@ -41,8 +41,8 @@ npm run build
 
 ## 📚 **Documentation**
 
-- **[DOCUMENTATION.md](./DOCUMENTATION.md)** - Complete technical documentation
-- **[DATABASE_INTEGRATION_GUIDE.md](./DATABASE_INTEGRATION_GUIDE.md)** - MySQL setup and PHP backend
+- **[PRODUCT_REQUIREMENTS_DOCUMENT.md](./PRODUCT_REQUIREMENTS_DOCUMENT.md)** - Complete technical and business specifications
+- **All documentation consolidated** into one comprehensive PRD
 
 ## 📄 **License**
 

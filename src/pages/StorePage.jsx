@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   CheckCircle, 
@@ -20,20 +20,65 @@ import {
   Sparkles,
   Target,
   Lock,
-  ShoppingCart
+  ShoppingCart,
+  Mail,
+  X,
+  Trash2,
+  Plus,
+  Minus
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import ProductsList from '@/components/ProductsList';
+// import ProductsList from '@/components/ProductsList';
 
 const StorePage = () => {
+  const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const addToCart = (pkg) => {
+    const existingItem = cart.find(item => item.id === pkg.id);
+    if (existingItem) {
+      setCart(cart.map(item => 
+        item.id === pkg.id 
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      ));
+    } else {
+      setCart([...cart, { ...pkg, quantity: 1 }]);
+    }
+    setIsCartOpen(true);
+  };
+
+  const removeFromCart = (pkgId) => {
+    setCart(cart.filter(item => item.id !== pkgId));
+  };
+
+  const updateQuantity = (pkgId, newQuantity) => {
+    if (newQuantity <= 0) {
+      removeFromCart(pkgId);
+    } else {
+      setCart(cart.map(item => 
+        item.id === pkgId 
+          ? { ...item, quantity: newQuantity }
+          : item
+      ));
+    }
+  };
+
+  const getTotalPrice = () => {
+    return cart.reduce((total, item) => {
+      const price = parseInt(item.price.replace('CHF ', '').replace(',', ''));
+      return total + (price * item.quantity);
+    }, 0);
+  };
+
   const packages = [
     {
       id: 'basic',
       name: 'Basic Tax Return',
       subtitle: 'Perfect for simple tax situations',
-      price: 'CHF 299',
-      originalPrice: 'CHF 399',
+      price: 'CHF 249',
+      originalPrice: 'CHF 349',
       savings: 'CHF 100',
       popular: false,
       features: [
@@ -52,8 +97,8 @@ const StorePage = () => {
       id: 'standard',
       name: 'Standard Tax Return',
       subtitle: 'Most popular for expats and professionals',
-      price: 'CHF 499',
-      originalPrice: 'CHF 699',
+      price: 'CHF 449',
+      originalPrice: 'CHF 649',
       savings: 'CHF 200',
       popular: true,
       features: [
@@ -129,9 +174,9 @@ const StorePage = () => {
     <>
       <Helmet>
         <title>Swiss Tax Return Packages | Taxed GmbH - Save up to CHF 400</title>
-        <meta name="description" content="Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 299), Standard (CHF 499), or Premium (CHF 799) packages. Limited time savings!" />
+        <meta name="description" content="Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages. Limited time savings!" />
         <meta property="og:title" content="Swiss Tax Return Packages | Taxed GmbH - Save up to CHF 400" />
-        <meta property="og:description" content="Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 299), Standard (CHF 499), or Premium (CHF 799) packages. Limited time savings!" />
+        <meta property="og:description" content="Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages. Limited time savings!" />
       </Helmet>
 
       {/* Hero Section */}
@@ -187,15 +232,12 @@ const StorePage = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-steel-blue hover:bg-gray-100 text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
-                onClick={() => {
-                  const subject = encodeURIComponent('Swiss Tax Package Selection');
-                  const body = encodeURIComponent("Hello Taxed GmbH,\n\nI want to get my Swiss taxes done! Can you help me choose the right package?");
-                  const emailUrl = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
-                  window.open(emailUrl, '_blank');
-                }}
+                asChild
               >
-                <MessageCircle className="mr-3 h-6 w-6" />
-                Get Started Now
+                <Link to="#packages">
+                  <ShoppingCart className="mr-3 h-6 w-6" />
+                  Choose Your Package
+                </Link>
               </Button>
               <Button 
                 size="lg" 
@@ -285,15 +327,10 @@ const StorePage = () => {
                       <Button 
                         className={`w-full ${pkg.buttonColor} text-white text-lg py-4 font-bold`}
                         size="lg"
-                        onClick={() => {
-                          const subject = encodeURIComponent(`Interest in ${pkg.name} Package`);
-                          const body = encodeURIComponent(`Hello Taxed GmbH,\n\nI'm interested in the ${pkg.name} package (${pkg.price}). Can you help me get started?`);
-                          const emailUrl = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
-                          window.open(emailUrl, '_blank');
-                        }}
+                        onClick={() => addToCart(pkg)}
                       >
-                        <MessageCircle className="mr-2 h-5 w-5" />
-                        Get Started Now
+                        <ShoppingCart className="mr-2 h-5 w-5" />
+                        Add to Cart
                       </Button>
                       
                       <div className="text-center mt-3">
@@ -369,7 +406,10 @@ const StorePage = () => {
               Browse our additional tax services and tools
             </p>
           </motion.div>
-          <ProductsList />
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-dark-gray mb-4">Additional Services Coming Soon</h3>
+            <p className="text-gray-600">We're working on expanding our service offerings. Contact us for custom tax solutions.</p>
+          </div>
         </div>
       </section>
 
@@ -407,15 +447,12 @@ const StorePage = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-red-600 hover:bg-gray-100 text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
-                onClick={() => {
-                  const subject = encodeURIComponent('Free Consultation + 10% Discount');
-                  const body = encodeURIComponent("Hello Taxed GmbH,\n\nI want the free consultation + 10% discount! Help me get my Swiss taxes done.");
-                  const emailUrl = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
-                  window.open(emailUrl, '_blank');
-                }}
+                asChild
               >
-                <MessageCircle className="mr-3 h-6 w-6" />
-                Get Free Consultation
+                <Link to="/contact">
+                  <MessageCircle className="mr-3 h-6 w-6" />
+                  Get Free Consultation
+                </Link>
               </Button>
               <Button 
                 size="lg" 
@@ -458,6 +495,136 @@ const StorePage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Shopping Cart Sidebar */}
+      <AnimatePresence>
+        {isCartOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black bg-opacity-50 z-40"
+              onClick={() => setIsCartOpen(false)}
+            />
+            
+            {/* Cart Sidebar */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col"
+            >
+              {/* Cart Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                  <ShoppingCart className="mr-2 h-6 w-6" />
+                  Shopping Cart ({cart.length})
+                </h2>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsCartOpen(false)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <X className="h-5 w-5" />
+                </Button>
+              </div>
+
+              {/* Cart Items */}
+              <div className="flex-1 overflow-y-auto p-6">
+                {cart.length === 0 ? (
+                  <div className="text-center py-12">
+                    <ShoppingCart className="mx-auto h-12 w-12 text-gray-400 mb-4" />
+                    <p className="text-gray-500">Your cart is empty</p>
+                    <Button
+                      onClick={() => setIsCartOpen(false)}
+                      className="mt-4"
+                    >
+                      Continue Shopping
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {cart.map((item) => (
+                      <div key={item.id} className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-900">{item.name}</h3>
+                          <p className="text-sm text-gray-600">{item.subtitle}</p>
+                          <p className="text-lg font-bold text-steel-blue">{item.price}</p>
+                        </div>
+                        
+                        <div className="flex items-center space-x-2">
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            className="h-8 w-8 p-0"
+                          >
+                            <Minus className="h-4 w-4" />
+                          </Button>
+                          <span className="w-8 text-center font-semibold">{item.quantity}</span>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            className="h-8 w-8 p-0"
+                          >
+                            <Plus className="h-4 w-4" />
+                          </Button>
+                        </div>
+                        
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-red-500 hover:text-red-700"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Cart Footer */}
+              {cart.length > 0 && (
+                <div className="border-t border-gray-200 p-6">
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-lg font-semibold">Total:</span>
+                    <span className="text-xl font-bold text-steel-blue">CHF {getTotalPrice()}</span>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <Button
+                      className="w-full bg-steel-blue hover:bg-steel-blue/90"
+                      size="lg"
+                      onClick={() => {
+                        setIsCartOpen(false);
+                        window.location.href = '/contact';
+                      }}
+                    >
+                      Proceed to Checkout
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                    
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => setIsCartOpen(false)}
+                    >
+                      Continue Shopping
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };
