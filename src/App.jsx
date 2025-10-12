@@ -51,6 +51,9 @@ import TaxAuditSupportPage from '@/pages/TaxAuditSupportPage';
 import TaxCompliancePage from '@/pages/TaxCompliancePage';
 import TaxRecoveryPage from '@/pages/TaxRecoveryPage';
 import PartnershipPage from '@/pages/PartnershipPage';
+import ForumPage from '@/pages/ForumPage';
+import ForumCategoryPage from '@/pages/ForumCategoryPage';
+import ForumTopicPage from '@/pages/ForumTopicPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import { useCart } from '@/hooks/useCart';
 import { initializeDailyBlogScheduler } from '@/services/dailyBlogScheduler';
@@ -149,6 +152,11 @@ function App() {
           <Route path="/tax-compliance" element={<TaxCompliancePage />} />
           <Route path="/tax-recovery" element={<TaxRecoveryPage />} />
           <Route path="/partnership" element={<PartnershipPage />} />
+          
+          {/* Forum Routes */}
+          <Route path="/forum" element={<ForumPage />} />
+          <Route path="/forum/category/:categorySlug" element={<ForumCategoryPage />} />
+          <Route path="/forum/topic/:topicSlug" element={<ForumTopicPage />} />
           
           {/* 404 - Catch all undefined routes */}
           <Route path="*" element={<NotFoundPage />} />
