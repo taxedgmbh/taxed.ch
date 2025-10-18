@@ -283,7 +283,7 @@ const Footer = () => {
       ]
     },
     {
-      title: "Expertise",
+      title: "Experience",
       links: [
         { name: "Case Studies", href: "/case-studies", description: "Client success stories" },
         { name: "Our Team", href: "/team", description: "Meet our tax experts" },
@@ -321,7 +321,7 @@ const Footer = () => {
   const certifications = [
     { name: "Swiss Tax Expert", icon: Award },
     { name: "GDPR Compliant", icon: Shield },
-    { name: "ISO 27001", icon: Shield },
+    { name: "Data Protection", icon: Shield },
     { name: "Swiss Quality", icon: Award },
   ];
 
@@ -458,12 +458,13 @@ const Footer = () => {
 
             {/* Footer Links - 8 columns */}
             <div className="lg:col-span-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {footerSections.map((section) => (
                   <div key={section.title}>
                     <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
                       {section.title === "Services" && <Settings className="h-5 w-5 mr-2 text-steel-blue" />}
                       {section.title === "Resources" && <FileText className="h-5 w-5 mr-2 text-steel-blue" />}
+                      {section.title === "Experience" && <Award className="h-5 w-5 mr-2 text-steel-blue" />}
                       {section.title === "Company" && <Users className="h-5 w-5 mr-2 text-steel-blue" />}
                       {section.title}
                     </h3>

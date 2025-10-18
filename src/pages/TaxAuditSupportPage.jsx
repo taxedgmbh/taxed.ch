@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { 
-  Shield, 
   AlertTriangle, 
   CheckCircle, 
   Clock, 
@@ -55,7 +54,6 @@ import {
   Workflow,
   Fish,
   Bug,
-  Virus,
   Database as DatabaseIcon,
   Shield as ShieldIcon,
   Lock as LockIcon,

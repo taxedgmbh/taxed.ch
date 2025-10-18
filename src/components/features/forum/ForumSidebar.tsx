@@ -115,11 +115,12 @@ export const ForumSidebar: React.FC<ForumSidebarProps> = ({
               onClick={() => onFilterClick?.(filter.name)}
             >
               <div className="flex items-center justify-between w-full">
-              <filter.icon className="w-4 h-4 mr-3" />
-              <span className="flex-1">{filter.name}</span>
-              <Badge variant="secondary" className="ml-2">
-                {filter.count}
-              </Badge>
+                <filter.icon className="w-4 h-4 mr-3" />
+                <span className="flex-1">{filter.name}</span>
+                <Badge variant="secondary" className="ml-2">
+                  {filter.count}
+                </Badge>
+              </div>
             </Button>
           ))}
         </div>

@@ -136,7 +136,7 @@ const TaxSecurityPage = () => {
     { id: 'cyber', name: 'Cyber Attacks', icon: Shield },
     { id: 'data', name: 'Data Breaches', icon: Database },
     { id: 'phishing', name: 'Phishing', icon: Fish },
-    { id: 'malware', name: 'Malware', icon: Virus },
+    { id: 'malware', name: 'Malware', icon: Shield },
     { id: 'insider', name: 'Insider Threats', icon: Users }
   ];
 

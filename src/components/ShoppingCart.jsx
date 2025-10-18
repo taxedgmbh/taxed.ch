@@ -1,7 +1,22 @@
 import React, { useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingCart as ShoppingCartIcon, X, Plus, Minus, Trash2 } from 'lucide-react';
+import { 
+  ShoppingCart as ShoppingCartIcon, 
+  X, 
+  Plus, 
+  Minus, 
+  Trash2, 
+  FileText, 
+  Calculator, 
+  Building, 
+  Briefcase, 
+  TrendingUp,
+  Shield,
+  Users,
+  Home,
+  Globe
+} from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { Button } from '@/components/ui/button';
 import { initializeCheckout, formatCurrency } from '@/api/EcommerceApi';
@@ -10,6 +25,33 @@ import { useToast } from '@/components/ui/use-toast';
 const ShoppingCart = ({ isCartOpen, setIsCartOpen }) => {
   const { toast } = useToast();
   const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
+
+  // Function to get icon and color based on service type
+  const getServiceIcon = (productTitle) => {
+    const title = productTitle.toLowerCase();
+    
+    if (title.includes('basic') || title.includes('simple')) {
+      return { icon: Home, color: 'from-green-500 to-green-600' };
+    } else if (title.includes('standard') || title.includes('regular')) {
+      return { icon: Building, color: 'from-blue-500 to-blue-600' };
+    } else if (title.includes('premium') || title.includes('advanced')) {
+      return { icon: Briefcase, color: 'from-purple-500 to-purple-600' };
+    } else if (title.includes('complex') || title.includes('comprehensive')) {
+      return { icon: TrendingUp, color: 'from-orange-500 to-orange-600' };
+    } else if (title.includes('custom') || title.includes('tailored')) {
+      return { icon: Calculator, color: 'from-indigo-500 to-indigo-600' };
+    } else if (title.includes('business') || title.includes('corporate')) {
+      return { icon: Building, color: 'from-gray-600 to-gray-700' };
+    } else if (title.includes('individual') || title.includes('personal')) {
+      return { icon: Users, color: 'from-pink-500 to-pink-600' };
+    } else if (title.includes('international') || title.includes('expat')) {
+      return { icon: Globe, color: 'from-cyan-500 to-cyan-600' };
+    } else if (title.includes('security') || title.includes('compliance')) {
+      return { icon: Shield, color: 'from-red-500 to-red-600' };
+    } else {
+      return { icon: FileText, color: 'from-steel-blue to-blue-600' };
+    }
+  };
 
   const handleCheckout = useCallback(async () => {
     if (cartItems.length === 0) {
@@ -85,9 +127,18 @@ const ShoppingCart = ({ isCartOpen, setIsCartOpen }) => {
                   </Button>
                 </div>
               ) : (
-                cartItems.map(item => (
-                  <div key={item.variant.id} className="flex items-start gap-4 bg-white p-3 rounded-lg shadow-sm">
-                    <img src={item.product.image} alt={item.product.title} className="w-20 h-20 object-cover rounded-md border" />
+                cartItems.map(item => {
+                  const { icon: IconComponent, color } = getServiceIcon(item.product.title);
+                  
+                  return (
+                    <div key={item.variant.id} className="flex items-start gap-4 bg-white p-3 rounded-lg shadow-sm">
+                      {item.product.image ? (
+                        <img src={item.product.image} alt={item.product.title} className="w-20 h-20 object-cover rounded-md border" />
+                      ) : (
+                        <div className={`w-20 h-20 bg-gradient-to-br ${color} rounded-md border flex items-center justify-center`}>
+                          <IconComponent className="w-8 h-8 text-white" />
+                        </div>
+                      )}
                     <div className="flex-grow">
                       <h3 className="font-semibold text-dark-gray">{item.product.title}</h3>
                       <p className="text-sm text-gray-500">{item.variant.title}</p>
@@ -104,7 +155,8 @@ const ShoppingCart = ({ isCartOpen, setIsCartOpen }) => {
                       <Trash2 size={16}/>
                     </Button>
                   </div>
-                ))
+                  );
+                })
               )}
             </div>
             {cartItems.length > 0 && (
