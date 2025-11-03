@@ -6,7 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "node tools/generate-rss.js && node tools/generate-llms.js && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:apple-design": "playwright test apple-design-compliance",
+    "test:report": "playwright show-report",
+    "validate:design": "./scripts/apple-design-validator.sh",
+    "validate:design:fix": "./scripts/apple-design-validator.sh --auto-fix",
+    "validate:design:pr": "./scripts/apple-design-validator.sh --auto-fix --pr"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
@@ -22,8 +29,10 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.1.13",
     "@radix-ui/react-toast": "^1.1.5",
+    "@types/firebase": "^2.4.32",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.0.0",
+    "firebase": "^12.5.0",
     "framer-motion": "^10.16.4",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.285.0",
@@ -42,6 +51,7 @@
     "@babel/parser": "^7.27.0",
     "@babel/traverse": "^7.27.0",
     "@babel/types": "^7.27.0",
+    "@playwright/test": "^1.48.0",
     "@types/node": "^20.19.17",
     "@types/react": "^18.3.24",
     "@types/react-dom": "^18.3.7",

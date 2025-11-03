@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # Apple Design Validator Agent Server
+  agent-server:
+    build:
+      context: ..
+      dockerfile: server/Dockerfile
+    container_name: apple-design-validator
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - REPO_DIR=/tmp/repos
+      - AUTO_MERGE=${AUTO_MERGE:-false}
+      - MAX_FIX_ITERATIONS=3
+    volumes:
+      - repo-cache:/tmp/repos
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Optional: Redis for job queue (for high-volume scenarios)
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: apple-design-validator-redis
+  #   restart: unless-stopped
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis-data:/data
+
+volumes:
+  repo-cache:
+  # redis-data:

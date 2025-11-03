@@ -82,3 +82,12 @@ hostinger-deploy-*
 # Build output
 dist/
 build/
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Apple Design Validator
+audit-results/
+test-output.log

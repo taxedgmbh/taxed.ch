@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import AdminApp from '@/pages/admin/AdminApp';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ShoppingCart from '@/components/ShoppingCart';
@@ -117,7 +118,8 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/admin" element={<AdminPage />} />
+          {/* Admin Portal - Separate routing context */}
+          <Route path="/admin/*" element={<AdminApp />} />
           <Route path="/calculators" element={<TaxCalculatorPage />} />
           <Route path="/resources" element={<ResourceCenterPage />} />
           <Route path="/news" element={<NewsPage />} />
