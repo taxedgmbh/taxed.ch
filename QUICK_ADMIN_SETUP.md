@@ -31,11 +31,15 @@ https://console.firebase.google.com/project/taxedgmbh/firestore/data/~2Fusers
 
 5. Click **"Save"**
 
-## ✅ Step 2: Update Firestore Rules (2 minutes)
+## ✅ Step 2: Set Firestore Security Rules (2 minutes)
+
+⚠️ **IMPORTANT**: You currently don't have security rules configured!
 
 https://console.firebase.google.com/project/taxedgmbh/firestore/rules
 
-Replace with these rules (they check user roles):
+**Use the rules from `FIRESTORE_RULES_FOR_YOUR_STRUCTURE.txt`** - they're designed for your existing data structure (documents with userId, chats with participantIds, etc.)
+
+Or use these simplified rules to get started:
 
 ```javascript
 rules_version = '2';
