@@ -53,7 +53,7 @@ const ContactSection = () => {
           >
             <Card className="border-steel-blue/20 shadow-xl bg-white">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-dark-gray mb-6">Get Your Free Consultation</h3>
+                <h3 className="text-2xl font-bold text-dark-gray mb-6">Get Started Today</h3>
                 
                 {/* HubSpot Embedded Form */}
                 <div className="hubspot-form-container">

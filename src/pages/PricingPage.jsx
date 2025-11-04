@@ -960,7 +960,7 @@ const PricingPage = () => {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
               <DollarSign className="w-5 h-5 text-yellow-400 mr-2" />
-              <span className="text-sm font-semibold">100% Transparent Pricing • No Hidden Costs • Free Consultation</span>
+              <span className="text-sm font-semibold">100% Transparent Pricing • No Hidden Costs</span>
             </div>
             
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">

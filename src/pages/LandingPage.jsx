@@ -276,12 +276,6 @@ const LandingPage = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-steel-blue text-lg px-8 py-4">
-                <Link to="/contact">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Free Consultation
-                </Link>
-              </Button>
             </div>
 
             {/* Stats */}
@@ -549,12 +543,6 @@ const LandingPage = () => {
                 <Link to="/store">
                   Get Started Today
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
-                <Link to="/contact">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Free Consultation
                 </Link>
               </Button>
             </div>

@@ -428,9 +428,9 @@ const StorePage = () => {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
               <Zap className="w-5 h-5 text-yellow-400 mr-2" />
-              <span className="text-sm font-semibold">Limited Time: Free Consultation + 10% Discount</span>
+              <span className="text-sm font-semibold">Limited Time: 10% Discount for New Clients</span>
             </div>
-            
+
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Don't Let Tax Deadlines
               <br />
@@ -438,24 +438,14 @@ const StorePage = () => {
             </h2>
             
             <p className="text-xl lg:text-2xl mb-12 text-red-100 max-w-4xl mx-auto leading-relaxed">
-              Every day you wait is money lost. <strong>Get expert Swiss tax help now</strong> and save thousands 
-              compared to Big 4 rates. <strong>Free consultation + 10% discount for new clients.</strong>
+              Every day you wait is money lost. <strong>Get expert Swiss tax help now</strong> and save thousands
+              compared to Big 4 rates. <strong>10% discount for new clients.</strong>
             </p>
 
             {/* Final CTAs */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <Button 
-                size="lg" 
-                className="bg-white text-red-600 hover:bg-gray-100 text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
-                asChild
-              >
-                <Link to="/contact">
-                  <MessageCircle className="mr-3 h-6 w-6" />
-                  Get Free Consultation
-                </Link>
-              </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-green-600 hover:bg-green-700 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
                 onClick={() => window.location.href = 'tel:+41799107787'}
               >

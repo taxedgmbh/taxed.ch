@@ -245,9 +245,6 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({ className 
                 and start saving money today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-8 py-4">
-                  Get Free Consultation
-                </Button>
                 <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
                   View Services
                 </Button>

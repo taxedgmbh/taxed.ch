@@ -485,9 +485,6 @@ const ClientTestimonialsPage = () => {
               <button className="bg-white text-steel-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
                 Get Your Tax Quote
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-steel-blue transition-colors">
-                Schedule Free Consultation
-              </button>
             </div>
           </motion.div>
         </div>

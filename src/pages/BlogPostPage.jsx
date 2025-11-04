@@ -169,11 +169,6 @@ const BlogPostPage = () => {
                         View Our Packages
                       </Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg">
-                      <Link to="/contact">
-                        Get Free Consultation
-                      </Link>
-                    </Button>
                   </div>
                 </div>
               </motion.div>
