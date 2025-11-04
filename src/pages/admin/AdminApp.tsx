@@ -3,45 +3,22 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { AdminAuthProvider } from '../../contexts/AdminAuthContext';
 import PrivateRoute from '../../components/admin/PrivateRoute';
 import AdminLayout from '../../components/admin/AdminLayout';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import Documents from './Documents';
 import DocumentDetail from './DocumentDetail';
 import Customers from './Customers';
+import CustomerDetail from './CustomerDetail';
 import Messages from './Messages';
-
-// Placeholder components - to be implemented
-const Analytics: React.FC = () => (
-  <div className="text-center py-12">
-    <h2 className="text-2xl font-bold text-gray-900">Analytics Dashboard</h2>
-    <p className="mt-2 text-gray-600">Analytics features coming soon...</p>
-  </div>
-);
-
-const Assignments: React.FC = () => (
-  <div className="text-center py-12">
-    <h2 className="text-2xl font-bold text-gray-900">Assignment Management</h2>
-    <p className="mt-2 text-gray-600">Manage customer-expert assignments</p>
-  </div>
-);
-
-const CustomerDetail: React.FC = () => (
-  <div className="text-center py-12">
-    <h2 className="text-2xl font-bold text-gray-900">Customer Profile</h2>
-    <p className="mt-2 text-gray-600">Detailed customer information</p>
-  </div>
-);
-
-const Settings: React.FC = () => (
-  <div className="text-center py-12">
-    <h2 className="text-2xl font-bold text-gray-900">Settings</h2>
-    <p className="mt-2 text-gray-600">Account and system settings</p>
-  </div>
-);
+import Analytics from './Analytics';
+import Assignments from './Assignments';
+import Settings from './Settings';
 
 const AdminApp: React.FC = () => {
   return (
-    <AdminAuthProvider>
+    <ErrorBoundary>
+      <AdminAuthProvider>
       <Routes>
         {/* Public Routes */}
         <Route path="/login" element={<Login />} />
@@ -72,6 +49,7 @@ const AdminApp: React.FC = () => {
         <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
       </Routes>
     </AdminAuthProvider>
+    </ErrorBoundary>
   );
 };
 
