@@ -2,13 +2,13 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  CheckCircle, 
-  Star, 
-  Users, 
-  Shield, 
-  Clock, 
+import {
+  ArrowRight,
+  CheckCircle,
+  Star,
+  Users,
+  Shield,
+  Clock,
   Calculator,
   FileText,
   TrendingUp,
@@ -40,7 +40,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const LandingPage = () => {
+const LandingPageFixed = () => {
   const stats = [
     { number: "500+", label: "Happy Clients", icon: Users },
     { number: "98%", label: "Success Rate", icon: CheckCircle },
@@ -53,28 +53,28 @@ const LandingPage = () => {
       title: "Individual Tax Returns",
       description: "Complete Swiss tax filing for expatriates with expert guidance",
       icon: FileText,
-      color: "bg-blue-500",
+      color: "bg-blue-600",
       link: "/services"
     },
     {
       title: "Tax Planning",
       description: "Strategic optimization to minimize your tax burden legally",
       icon: TrendingUp,
-      color: "bg-green-500",
+      color: "bg-green-600",
       link: "/services"
     },
     {
       title: "Digital Filing",
       description: "Secure online submission with real-time tracking",
       icon: Zap,
-      color: "bg-purple-500",
+      color: "bg-purple-600",
       link: "/services"
     },
     {
       title: "International Income",
       description: "Cross-border income reporting and compliance",
       icon: Globe,
-      color: "bg-orange-500",
+      color: "bg-orange-600",
       link: "/services"
     }
   ];
@@ -166,7 +166,7 @@ const LandingPage = () => {
         <meta property="og:title" content="Taxed GmbH | Professional Swiss Tax Services for Expats & Businesses" />
         <meta property="og:description" content="Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Professional client portal, advanced tools, and comprehensive tax solutions." />
         <link rel="canonical" href="https://taxed.ch" />
-        
+
         {/* Structured Data - Enhanced for Bing */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -236,13 +236,18 @@ const LandingPage = () => {
         </script>
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Skip Navigation Link for Accessibility */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-gray-900 px-4 py-2 rounded-md z-50">
+        Skip to main content
+      </a>
+
+      {/* Hero Section - Improved Contrast and Responsiveness */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-steel-blue via-blue-600 to-blue-800">
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 opacity-30" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -251,41 +256,50 @@ const LandingPage = () => {
             className="text-white"
           >
             <div className="mb-6">
-              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/10 backdrop-blur-sm border border-white/20">
-                <Award className="h-4 w-4 mr-2" />
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm border border-white/30">
+                <Award className="h-4 w-4 mr-2" aria-hidden="true" />
                 Professional Swiss Tax Services
               </span>
             </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
               Expert Swiss Tax
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
                 Solutions
               </span>
             </h1>
-            
-            <p className="text-xl lg:text-2xl mb-8 text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Professional tax consulting services for expatriates and businesses. 
+
+            <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-white max-w-4xl mx-auto leading-relaxed">
+              Professional tax consulting services for expatriates and businesses.
               <span className="block mt-2">Advanced tools, secure client portal, and expert guidance for all your Swiss tax needs.</span>
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button asChild size="lg" className="bg-white text-steel-blue hover:bg-gray-100 text-lg px-8 py-4">
-                <Link to="/store">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-gray-900 hover:bg-gray-100 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
+              >
+                <Link to="/store" aria-label="Get started with our services today">
                   Get Started Today
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-steel-blue text-lg px-8 py-4">
-                <Link to="/contact">
-                  <Phone className="mr-2 h-5 w-5" />
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
+              >
+                <Link to="/contact" aria-label="Schedule a free consultation">
+                  <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
                   Free Consultation
                 </Link>
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {/* Stats - Better Responsive Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -295,289 +309,314 @@ const LandingPage = () => {
                   className="text-center"
                 >
                   <div className="flex items-center justify-center mb-2">
-                    <stat.icon className="h-8 w-8 text-yellow-300" />
+                    <stat.icon className="h-6 sm:h-8 w-6 sm:w-8 text-yellow-300" aria-hidden="true" />
                   </div>
-                  <div className="text-3xl font-bold text-white">{stat.number}</div>
-                  <div className="text-sm text-white/80">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white">{stat.number}</div>
+                  <div className="text-xs sm:text-sm text-white">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
-        
+
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          aria-label="Scroll down for more content"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-white/60"
+            className="text-white"
           >
-            <ChevronRight className="h-6 w-6 rotate-90" />
+            <ChevronRight className="h-6 w-6 rotate-90" aria-hidden="true" />
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Professional Tax Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive Swiss tax solutions designed for expatriates and businesses. 
-              Expert guidance, transparent pricing, and digital-first approach.
-            </p>
-          </motion.div>
+      {/* Main Content */}
+      <main id="main-content">
+        {/* Services Section - Fixed Color Contrast */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12 sm:mb-16"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                Professional Tax Services
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
+                Comprehensive Swiss tax solutions designed for expatriates and businesses.
+                Expert guidance, transparent pricing, and digital-first approach.
+              </p>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 group">
-                  <CardContent className="p-6">
-                    <div className={`inline-flex p-3 rounded-lg ${service.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <service.icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    <Link to={service.link} className="inline-flex items-center text-steel-blue hover:text-blue-700 font-medium">
-                      Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tools & Resources Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Free Tools & Resources
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Access our comprehensive suite of tax tools, calculators, and resources. 
-              Everything you need to understand and optimize your Swiss tax situation.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {tools.map((tool, index) => (
-              <motion.div
-                key={tool.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-xl transition-all duration-300">
-                  <CardContent className="p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        <div className="p-3 bg-steel-blue rounded-lg text-white">
-                          <tool.icon className="h-6 w-6" />
-                        </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 group focus-within:ring-2 focus-within:ring-blue-500">
+                    <CardContent className="p-4 sm:p-6">
+                      <div className={`inline-flex p-3 rounded-lg ${service.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`} aria-hidden="true">
+                        <service.icon className="h-6 w-6" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">{tool.title}</h3>
-                        <p className="text-gray-600 mb-4">{tool.description}</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {tool.features.map((feature, idx) => (
-                            <span key={idx} className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full">
-                              {feature}
-                            </span>
-                          ))}
-                        </div>
-                        <Link to={tool.link} className="inline-flex items-center text-steel-blue hover:text-blue-700 font-medium">
-                          Access Now <ArrowRight className="ml-1 h-4 w-4" />
-                        </Link>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Features Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Professional Features
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Enterprise-level tools and services that rival the Big 4 consulting firms. 
-              Secure, professional, and designed for serious tax optimization.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 group">
-                  <CardContent className="p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        <div className="p-3 bg-gradient-to-r from-steel-blue to-blue-600 rounded-lg text-white group-hover:scale-110 transition-transform duration-300">
-                          <feature.icon className="h-6 w-6" />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                        <p className="text-gray-600 mb-4">{feature.description}</p>
-                        <Link to={feature.link} className="inline-flex items-center text-steel-blue hover:text-blue-700 font-medium">
-                          Explore Feature <ArrowRight className="ml-1 h-4 w-4" />
-                        </Link>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-r from-steel-blue to-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              What Our Clients Say
-            </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Join hundreds of satisfied clients who trust Taxed GmbH with their Swiss tax needs.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full bg-white/10 backdrop-blur-sm border-white/20">
-                  <CardContent className="p-8">
-                    <div className="flex mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-300 fill-current" />
-                      ))}
-                    </div>
-                    <Quote className="h-8 w-8 text-white/60 mb-4" />
-                    <p className="text-white/90 mb-6 italic">"{testimonial.content}"</p>
-                    <div>
-                      <div className="font-semibold text-white">{testimonial.name}</div>
-                      <div className="text-white/70 text-sm">{testimonial.role}</div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Optimize Your Swiss Taxes?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Join hundreds of expatriates and businesses who trust Taxed GmbH for their Swiss tax needs. 
-              Professional service, transparent pricing, and expert guidance.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button asChild size="lg" className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-4">
-                <Link to="/store">
-                  Get Started Today
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
-                <Link to="/contact">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Free Consultation
-                </Link>
-              </Button>
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                      <p className="text-gray-700 mb-4 text-sm sm:text-base">{service.description}</p>
+                      <Link
+                        to={service.link}
+                        className="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium focus:outline-none focus:underline"
+                        aria-label={`Learn more about ${service.title}`}
+                      >
+                        Learn More <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">500+</div>
-                <div className="text-gray-400">Happy Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">98%</div>
-                <div className="text-gray-400">Success Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                <div className="text-gray-400">Support Available</div>
-              </div>
+        {/* Tools & Resources Section - Fixed Contrast */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12 sm:mb-16"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                Free Tools & Resources
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
+                Access our comprehensive suite of tax tools, calculators, and resources.
+                Everything you need to understand and optimize your Swiss tax situation.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+              {tools.map((tool, index) => (
+                <motion.div
+                  key={tool.title}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-500">
+                    <CardContent className="p-6 sm:p-8">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="p-3 bg-blue-700 rounded-lg text-white" aria-hidden="true">
+                            <tool.icon className="h-6 w-6" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{tool.title}</h3>
+                          <p className="text-gray-700 mb-4 text-sm sm:text-base">{tool.description}</p>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {tool.features.map((feature, idx) => (
+                              <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-900 text-xs sm:text-sm rounded-full font-medium">
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                          <Link
+                            to={tool.link}
+                            className="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium focus:outline-none focus:underline"
+                            aria-label={`Access ${tool.title} now`}
+                          >
+                            Access Now <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                          </Link>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+
+        {/* Professional Features Section - Improved Responsiveness */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12 sm:mb-16"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                Professional Features
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
+                Enterprise-level tools and services that rival the Big 4 consulting firms.
+                Secure, professional, and designed for serious tax optimization.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 group focus-within:ring-2 focus-within:ring-blue-500">
+                    <CardContent className="p-6 sm:p-8">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="p-3 bg-gradient-to-r from-blue-700 to-blue-600 rounded-lg text-white group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                            <feature.icon className="h-6 w-6" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                          <p className="text-gray-700 mb-4 text-sm sm:text-base">{feature.description}</p>
+                          <Link
+                            to={feature.link}
+                            className="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium focus:outline-none focus:underline"
+                            aria-label={`Explore ${feature.title} feature`}
+                          >
+                            Explore Feature <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                          </Link>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section - Fixed Contrast */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-700 to-blue-600">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12 sm:mb-16"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                What Our Clients Say
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto">
+                Join hundreds of satisfied clients who trust Taxed GmbH with their Swiss tax needs.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-colors">
+                    <CardContent className="p-6 sm:p-8">
+                      <div className="flex mb-4" role="img" aria-label={`${testimonial.rating} star rating`}>
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 text-yellow-300 fill-current" aria-hidden="true" />
+                        ))}
+                      </div>
+                      <Quote className="h-8 w-8 text-white/80 mb-4" aria-hidden="true" />
+                      <p className="text-white mb-6 italic text-sm sm:text-base">"{testimonial.content}"</p>
+                      <div>
+                        <div className="font-semibold text-white">{testimonial.name}</div>
+                        <div className="text-gray-200 text-sm">{testimonial.role}</div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section - Fixed Contrast */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                Ready to Optimize Your Swiss Taxes?
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto">
+                Join hundreds of expatriates and businesses who trust Taxed GmbH for their Swiss tax needs.
+                Professional service, transparent pricing, and expert guidance.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-gray-900 hover:bg-gray-100 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                >
+                  <Link to="/store" aria-label="Get started with our services">
+                    Get Started Today
+                    <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                >
+                  <Link to="/contact" aria-label="Schedule a free consultation">
+                    <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
+                    Free Consultation
+                  </Link>
+                </Button>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">500+</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Happy Clients</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">98%</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Success Rate</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">24/7</div>
+                  <div className="text-gray-300 text-sm sm:text-base">Support Available</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </main>
     </>
   );
 };
 
-export default LandingPage;
+export default LandingPageFixed;
