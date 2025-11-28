@@ -22,6 +22,7 @@ import {
   X
 } from 'lucide-react';
 import ShareButton from '@/components/ui/ShareButton';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 const BlogPostCard = ({ post, index, featured = false, gridSize = 'normal' }) => {
   const getDifficultyColor = (difficulty) => {
@@ -177,7 +178,11 @@ const BlogPage = () => {
         <meta property="og:title" content="Swiss Tax Blog | Taxed GmbH - Expert Insights for Expats 2025" />
         <meta property="og:description" content="Comprehensive Swiss tax blog with expert insights for expats. Learn about Quellensteuer, Pillar 3a, real estate tax, crypto tax, and more from Swiss tax professionals." />
       </Helmet>
-      
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <Breadcrumbs items={[{ label: 'Blog', path: '/blog' }]} />
+      </div>
+
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-steel-blue via-blue-600 to-blue-800 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>

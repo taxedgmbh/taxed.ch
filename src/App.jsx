@@ -81,6 +81,10 @@ function App() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
+  // Get current path for hreflang tags
+  const currentPath = location.pathname;
+  const baseUrl = 'https://taxed.ch';
+
   return (
     <div className="min-h-screen bg-light-gray-bg-1 flex flex-col">
       <Helmet>
@@ -89,6 +93,12 @@ function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="alternate" type="application/rss+xml" title="RSS Feed for Taxed GmbH" href="/rss.xml" />
+
+        {/* Hreflang tags for multilingual support */}
+        <link rel="alternate" hrefLang="de-CH" href={`${baseUrl}/de${currentPath}`} />
+        <link rel="alternate" hrefLang="en-CH" href={`${baseUrl}${currentPath}`} />
+        <link rel="alternate" hrefLang="fr-CH" href={`${baseUrl}/fr${currentPath}`} />
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}${currentPath}`} />
       </Helmet>
       
       <Header isLandingPage={isLandingPage} />

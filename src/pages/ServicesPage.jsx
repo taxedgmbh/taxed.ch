@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FileText, ArrowRight, CheckCircle, Globe, Wallet, Shield, Calculator, Download, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 const ServicesPage = () => {
   const keyServices = [
@@ -136,6 +137,10 @@ const ServicesPage = () => {
         <meta property="og:description" content="Taxed GmbH specializes in one service: filing Swiss tax returns for expatriates. We offer flat-rate pricing, digital submission, and expert handling of international income." />
         <link rel="canonical" href="https://taxed.ch/services" />
       </Helmet>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Services', path: '/services' }]} />
+      </div>
 
       <section className="py-20 bg-light-gray-bg-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

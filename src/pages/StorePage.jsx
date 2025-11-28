@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Breadcrumbs from '@/components/Breadcrumbs';
 // import ProductsList from '@/components/ProductsList';
 
 const StorePage = () => {
@@ -178,6 +179,10 @@ const StorePage = () => {
         <meta property="og:title" content="Swiss Tax Return Packages | Taxed GmbH - Save up to CHF 400" />
         <meta property="og:description" content="Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages. Limited time savings!" />
       </Helmet>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <Breadcrumbs items={[{ label: 'Store', path: '/store' }]} />
+      </div>
 
       {/* Hero Section */}
       <section className="relative py-32 bg-gradient-to-br from-steel-blue via-blue-600 to-blue-800 overflow-hidden">

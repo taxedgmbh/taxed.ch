@@ -1,6 +1,5 @@
 ## Pages
 - [| Taxed GmbH](/productdetail): No description available
-- [| Taxed GmbH Blog`}](/blogpost): No description available
 - [About Us | Taxed GmbH - Expert Swiss Tax Consulting Team](/about): Meet the expert team at Taxed GmbH. Founded by Emanuel Flury in Biel/Bienne, Switzerland, we specialize in making Swiss tax filing simple for expats with 15+ years of experience and 500+ happy clients.
 - [Accessibility - Taxed GmbH | Swiss Tax Consulting](/accessibility): Accessibility information for Taxed GmbH website. Learn about our commitment to making our services accessible to all users.
 - [Admin Panel - Taxed GmbH | Secure Administration](/admin): Secure administrative access to Taxed GmbH client portal and system management.
