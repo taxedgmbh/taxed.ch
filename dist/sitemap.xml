@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Main Pages -->
   <url>
     <loc>https://www.taxed.ch/</loc>
-    <lastmod>2025-10-09</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/about</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/services</loc>
-    <lastmod>2025-10-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/how-it-works</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/pricing</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/contact</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -41,7 +43,7 @@
   <!-- Store & E-commerce -->
   <url>
     <loc>https://www.taxed.ch/store</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,31 +51,31 @@
   <!-- Client Services -->
   <url>
     <loc>https://www.taxed.ch/client-portal</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/case-studies</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/team</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/industry-specializations</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/advanced-tax-tools</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -81,25 +83,25 @@
   <!-- Phase 1 Critical Pages -->
   <url>
     <loc>https://www.taxed.ch/tax-deadlines</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/expat-tax-guide</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/testimonials</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/tax-planning-guide</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -107,31 +109,31 @@
   <!-- Phase 2 Professional Pages -->
   <url>
     <loc>https://www.taxed.ch/business-tax-guide</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/international-tax</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/tax-forms</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/tax-updates</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/webinars</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -139,31 +141,31 @@
   <!-- Phase 3 Advanced Pages -->
   <url>
     <loc>https://www.taxed.ch/technology</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/security</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/support</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/tax-glossary</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/events</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -171,19 +173,19 @@
   <!-- Tools & Resources -->
   <url>
     <loc>https://www.taxed.ch/calculators</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/resources</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/law</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -191,13 +193,13 @@
   <!-- Content & News -->
   <url>
     <loc>https://www.taxed.ch/blog</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/news</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -205,19 +207,19 @@
   <!-- Support & Information -->
   <url>
     <loc>https://www.taxed.ch/faq</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/careers</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/sitemap</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -225,19 +227,19 @@
   <!-- Legal & Compliance -->
   <url>
     <loc>https://www.taxed.ch/impressum</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/privacy-policy</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.taxed.ch/accessibility</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -245,7 +247,7 @@
   <!-- Admin Pages (Lower Priority) -->
   <url>
     <loc>https://www.taxed.ch/admin</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>

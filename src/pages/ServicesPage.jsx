@@ -131,8 +131,10 @@ const ServicesPage = () => {
       <Helmet>
         <title>Our Service | Swiss Tax Returns for Expatriates | Taxed GmbH</title>
         <meta name="description" content="Taxed GmbH specializes in one service: filing Swiss tax returns for expatriates. We offer flat-rate pricing, digital submission, and expert handling of international income." />
+        <meta name="keywords" content="Swiss tax return preparation, individual tax filing Switzerland, expat tax services, Quellensteuer adjustment, withholding tax refund, tax planning Switzerland, Swiss tax optimization, corporate tax services, digital tax filing, international income Switzerland" />
         <meta property="og:title" content="Our Service | Swiss Tax Returns for Expatriates | Taxed GmbH" />
         <meta property="og:description" content="Taxed GmbH specializes in one service: filing Swiss tax returns for expatriates. We offer flat-rate pricing, digital submission, and expert handling of international income." />
+        <link rel="canonical" href="https://taxed.ch/services" />
       </Helmet>
 
       <section className="py-20 bg-light-gray-bg-1">

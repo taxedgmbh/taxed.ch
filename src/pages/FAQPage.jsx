@@ -146,8 +146,84 @@ const FAQPage = () => {
       <Helmet>
         <title>FAQ - Frequently Asked Questions | Taxed GmbH</title>
         <meta name="description" content="Find answers to common questions about Swiss taxes, expat tax filing, deductions, and more. Expert guidance for your tax questions." />
+        <meta name="keywords" content="Swiss tax FAQ, tax questions Switzerland, expat tax help, Quellensteuer questions, Swiss tax filing help, tax deductions Switzerland, Swiss tax advice" />
         <meta property="og:title" content="FAQ - Frequently Asked Questions | Taxed GmbH" />
         <meta property="og:description" content="Find answers to common questions about Swiss taxes, expat tax filing, deductions, and more. Expert guidance for your tax questions." />
+        <link rel="canonical" href="https://taxed.ch/faq" />
+
+        {/* FAQ Schema Markup for Rich Snippets */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Quellensteuer (withholding tax) in Switzerland?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Quellensteuer is a withholding tax deducted directly from your salary by your employer. It's a simplified form of taxation for foreign workers in Switzerland. However, you may need to file a tax return to claim deductions or if you have additional income sources."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to file a Swiss tax return as an expat?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, if you're a foreign worker with a B permit or have been in Switzerland for more than 30 days, you typically need to file a tax return. This applies even if you're subject to withholding tax, as you may be eligible for deductions or have additional income to declare."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What's the difference between federal and cantonal taxes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Switzerland has a three-tier tax system: federal, cantonal, and municipal. Federal taxes are the same across Switzerland, while cantonal and municipal rates vary significantly. Your total tax burden depends on where you live and work."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When is the Swiss tax filing deadline?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The deadline varies by canton but is typically March 31st of the following year. Some cantons offer extensions until April 30th. It's important to check your specific canton's deadline and file on time to avoid penalties."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I handle foreign income while living in Switzerland?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Foreign income must be declared on your Swiss tax return. Switzerland has tax treaties with many countries to avoid double taxation. You may be able to claim foreign tax credits or exemptions depending on your situation and the relevant tax treaty."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What documents do I need for my Swiss tax return?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For a complete Swiss tax return, you'll need: (1) Annual salary statements from all employers, (2) Tax certificate (Lohnausweis), (3) Bank statements, (4) Investment documents, (5) Property documents if applicable, (6) Previous year's tax return for reference."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does Swiss tax filing take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Typically 2-3 business days after you've provided all required documents. Simple returns can be completed in 24 hours. Complex international situations may take up to 5 business days."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I get a Quellensteuer refund?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, you may be eligible for a Quellensteuer refund if: (1) You're a B or C permit holder, (2) Your actual tax rate is lower than withheld amount, (3) You have deductible expenses. Average refunds range from CHF 500-2,000."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <section className="py-20 bg-light-gray-bg-1">
