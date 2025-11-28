@@ -29,6 +29,8 @@ import TaxCalculatorPage from '@/pages/TaxCalculatorPage';
 import ResourceCenterPage from '@/pages/ResourceCenterPage';
 import NewsPage from '@/pages/NewsPage';
 import ClientPortalPage from '@/pages/ClientPortalPage';
+import ClientLoginPage from '@/pages/ClientLoginPage';
+import ProtectedClientRoute from '@/components/ProtectedClientRoute';
 import CaseStudiesPage from '@/pages/CaseStudiesPage';
 import TeamPage from '@/pages/TeamPage';
 import IndustrySpecializationsPage from '@/pages/IndustrySpecializationsPage';
@@ -58,6 +60,7 @@ import ForumTopicPage from '@/pages/ForumTopicPage';
 import ForumTestPage from '@/pages/ForumTestPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import { useCart } from '@/hooks/useCart';
+import { ClientAuthProvider } from '@/contexts/ClientAuthContext';
 import { initializeDailyBlogScheduler } from '@/services/dailyBlogScheduler';
 import { initializeAnalytics, trackWebVitals } from '@/utils/analytics';
 import { initializePerformanceOptimizations } from '@/utils/performance';
@@ -86,8 +89,9 @@ function App() {
   const baseUrl = 'https://taxed.ch';
 
   return (
-    <div className="min-h-screen bg-light-gray-bg-1 flex flex-col">
-      <Helmet>
+    <ClientAuthProvider>
+      <div className="min-h-screen bg-light-gray-bg-1 flex flex-col">
+        <Helmet>
         <html lang="en" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -139,7 +143,16 @@ function App() {
           <Route path="/calculators" element={<TaxCalculatorPage />} />
           <Route path="/resources" element={<ResourceCenterPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/client-portal" element={<ClientPortalPage />} />
+          {/* Client Portal Routes */}
+          <Route path="/client-portal/login" element={<ClientLoginPage />} />
+          <Route
+            path="/client-portal"
+            element={
+              <ProtectedClientRoute>
+                <ClientPortalPage />
+              </ProtectedClientRoute>
+            }
+          />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/industry-specializations" element={<IndustrySpecializationsPage />} />
@@ -185,7 +198,8 @@ function App() {
       </main>
       
       <Footer />
-    </div>
+      </div>
+    </ClientAuthProvider>
   );
 }
 
