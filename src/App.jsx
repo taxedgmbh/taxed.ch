@@ -29,6 +29,8 @@ import TaxCalculatorPage from '@/pages/TaxCalculatorPage';
 import ResourceCenterPage from '@/pages/ResourceCenterPage';
 import NewsPage from '@/pages/NewsPage';
 import ClientPortalPage from '@/pages/ClientPortalPage';
+import ClientLoginPage from '@/pages/ClientLoginPage';
+import ProtectedClientRoute from '@/components/ProtectedClientRoute';
 import CaseStudiesPage from '@/pages/CaseStudiesPage';
 import TeamPage from '@/pages/TeamPage';
 import IndustrySpecializationsPage from '@/pages/IndustrySpecializationsPage';
@@ -58,6 +60,7 @@ import ForumTopicPage from '@/pages/ForumTopicPage';
 import ForumTestPage from '@/pages/ForumTestPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import { useCart } from '@/hooks/useCart';
+import { ClientAuthProvider } from '@/contexts/ClientAuthContext';
 import { initializeDailyBlogScheduler } from '@/services/dailyBlogScheduler';
 import { initializeAnalytics, trackWebVitals } from '@/utils/analytics';
 import { initializePerformanceOptimizations } from '@/utils/performance';
@@ -81,14 +84,31 @@ function App() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
+  // Get current path for hreflang tags
+  const currentPath = location.pathname;
+  const baseUrl = 'https://taxed.ch';
+
   return (
-    <div className="min-h-screen bg-light-gray-bg-1 flex flex-col">
-      <Helmet>
+    <ClientAuthProvider>
+      <div className="min-h-screen bg-light-gray-bg-1 flex flex-col">
+        <Helmet>
         <html lang="en" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="alternate" type="application/rss+xml" title="RSS Feed for Taxed GmbH" href="/rss.xml" />
+
+        {/* Preload critical resources for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        {/* Hreflang tags for multilingual support */}
+        <link rel="alternate" hrefLang="de-CH" href={`${baseUrl}/de${currentPath}`} />
+        <link rel="alternate" hrefLang="en-CH" href={`${baseUrl}${currentPath}`} />
+        <link rel="alternate" hrefLang="fr-CH" href={`${baseUrl}/fr${currentPath}`} />
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}${currentPath}`} />
       </Helmet>
       
       <Header isLandingPage={isLandingPage} />
@@ -123,7 +143,16 @@ function App() {
           <Route path="/calculators" element={<TaxCalculatorPage />} />
           <Route path="/resources" element={<ResourceCenterPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/client-portal" element={<ClientPortalPage />} />
+          {/* Client Portal Routes */}
+          <Route path="/client-portal/login" element={<ClientLoginPage />} />
+          <Route
+            path="/client-portal"
+            element={
+              <ProtectedClientRoute>
+                <ClientPortalPage />
+              </ProtectedClientRoute>
+            }
+          />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/industry-specializations" element={<IndustrySpecializationsPage />} />
@@ -169,7 +198,8 @@ function App() {
       </main>
       
       <Footer />
-    </div>
+      </div>
+    </ClientAuthProvider>
   );
 }
 

@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { FileText, ArrowRight, CheckCircle, Globe, Wallet, Shield, Calculator, Download, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import InternalLinks from '@/components/InternalLinks';
 
 const ServicesPage = () => {
   const keyServices = [
@@ -131,9 +133,15 @@ const ServicesPage = () => {
       <Helmet>
         <title>Our Service | Swiss Tax Returns for Expatriates | Taxed GmbH</title>
         <meta name="description" content="Taxed GmbH specializes in one service: filing Swiss tax returns for expatriates. We offer flat-rate pricing, digital submission, and expert handling of international income." />
+        <meta name="keywords" content="Swiss tax return preparation, individual tax filing Switzerland, expat tax services, Quellensteuer adjustment, withholding tax refund, tax planning Switzerland, Swiss tax optimization, corporate tax services, digital tax filing, international income Switzerland" />
         <meta property="og:title" content="Our Service | Swiss Tax Returns for Expatriates | Taxed GmbH" />
         <meta property="og:description" content="Taxed GmbH specializes in one service: filing Swiss tax returns for expatriates. We offer flat-rate pricing, digital submission, and expert handling of international income." />
+        <link rel="canonical" href="https://taxed.ch/services" />
       </Helmet>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Services', path: '/services' }]} />
+      </div>
 
       <section className="py-20 bg-light-gray-bg-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -467,6 +475,17 @@ const ServicesPage = () => {
               </Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Internal Links for SEO */}
+      <section className="py-16 bg-light-gray-bg-1">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <InternalLinks
+            context="services"
+            currentPage="/services"
+            limit={4}
+          />
         </div>
       </section>
 

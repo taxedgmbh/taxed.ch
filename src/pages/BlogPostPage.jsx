@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ShareButton from '@/components/ui/ShareButton';
 import ImmersiveReader from '@/components/ui/ImmersiveReader';
 import ReadAloud from '@/components/ui/ReadAloud';
+import InternalLinks from '@/components/InternalLinks';
 
 const BlogPostPage = () => {
   const { slug } = useParams();
@@ -43,14 +44,123 @@ const BlogPostPage = () => {
     }
   };
 
+  // Generate Article schema markup
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.summary,
+    "image": post.imageUrl,
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Person",
+      "name": post.author,
+      "jobTitle": post.authorTitle
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Taxed GmbH",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://taxed.ch/images/og-taxed-logo.jpg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://taxed.ch/blog/${post.slug}`
+    },
+    "articleSection": post.category,
+    "keywords": post.tags.join(", "),
+    "wordCount": post.content.split(' ').length,
+    "articleBody": post.content.replace(/<[^>]*>/g, '').substring(0, 1000) + "..."
+  };
+
+  // Check if this is a tutorial/guide and add HowTo schema
+  const isTutorial = post.title.toLowerCase().match(/guide|how to|step-by-step|tutorial|complete.*to/);
+  const howToSchema = isTutorial ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": post.title,
+    "description": post.summary,
+    "image": post.imageUrl,
+    "totalTime": post.readTime,
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "CHF",
+      "value": "0"
+    },
+    "tool": ["Computer", "Tax Documents", "Swiss Tax Software"],
+    "supply": ["Salary Certificate (Lohnausweis)", "Bank Statements", "Insurance Certificates"],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Gather Required Documents",
+        "text": "Collect all necessary documents including salary certificates, bank statements, and expense receipts."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Register for Online Tax Filing",
+        "text": "Sign up for your canton's eTax system using your AVS/AHV number."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Complete Personal Information",
+        "text": "Enter your personal details, civil status, and residence information."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Declare All Income Sources",
+        "text": "Report employment income, investment income, and any foreign income."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Claim Eligible Deductions",
+        "text": "Maximize deductions including Pillar 3a, health insurance, professional expenses, and childcare costs."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Review and Submit",
+        "text": "Double-check all information and submit your tax return electronically or by mail."
+      }
+    ]
+  } : null;
+
   return (
     <>
       <Helmet>
         <title>{`${post.title} | Taxed GmbH Blog`}</title>
         <meta name="description" content={post.summary} />
+        <meta name="keywords" content={post.tags.join(", ")} />
         <meta property="og:title" content={`${post.title} | Taxed GmbH Blog`} />
         <meta property="og:description" content={post.summary} />
         <meta property="og:image" content={post.imageUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content={post.author} />
+        <meta property="article:section" content={post.category} />
+        {post.tags.map(tag => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
+        <link rel="canonical" href={`https://taxed.ch/blog/${post.slug}`} />
+
+        {/* Article Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
+
+        {/* HowTo Schema for Tutorial/Guide Posts */}
+        {howToSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(howToSchema)}
+          </script>
+        )}
       </Helmet>
       
       <div className="bg-white py-12 sm:py-20">
@@ -152,9 +262,16 @@ const BlogPostPage = () => {
                 </div>
 
                 {/* Article Content */}
-                <article 
+                <article
                   className="magazine-article max-w-none"
                   dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+
+                {/* Internal Links for SEO */}
+                <InternalLinks
+                  context="blog-post"
+                  currentPage={`/blog/${post.slug}`}
+                  limit={4}
                 />
 
                 {/* CTA Section */}

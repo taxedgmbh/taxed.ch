@@ -44,6 +44,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 const AboutPage = () => {
   const team = [
@@ -226,6 +227,10 @@ const AboutPage = () => {
         <meta property="og:title" content="About Us | Taxed GmbH - Expert Swiss Tax Consulting Team" />
         <meta property="og:description" content="Meet the expert team at Taxed GmbH. Founded by Emanuel Flury in Biel/Bienne, Switzerland, we specialize in making Swiss tax filing simple for expats with 15+ years of experience and 500+ happy clients." />
       </Helmet>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <Breadcrumbs items={[{ label: 'About', path: '/about' }]} />
+      </div>
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-steel-blue via-blue-600 to-purple-700 text-white relative overflow-hidden">

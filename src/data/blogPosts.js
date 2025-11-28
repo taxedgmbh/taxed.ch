@@ -2025,6 +2025,562 @@ const blogPosts = [
     `,
     imageUrl: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=400&fit=crop',
     imageAlt: 'Swiss Federal Palace in Bern representing Swiss government and tax policy'
+  },
+  {
+    id: 'swiss-tax-return-guide-2025',
+    slug: 'swiss-tax-return-guide-2025-complete-step-by-step-tutorial',
+    title: 'Swiss Tax Return Guide 2025: Complete Step-by-Step Tutorial',
+    author: 'Emanuel Flury',
+    authorTitle: 'Founder & Lead Tax Consultant',
+    date: '2025-11-28',
+    category: 'Tax Basics',
+    tags: ['Swiss Tax Return', 'Tax Filing', 'Tax Guide 2025', 'Expats', 'Steuererklärung'],
+    summary: 'Complete step-by-step guide to filing your Swiss tax return in 2025. Learn about deadlines, required documents, deductions, and the entire tax filing process for expatriates and residents.',
+    readTime: '18 min read',
+    difficulty: 'Beginner',
+    featured: true,
+    content: `
+      <p class="mb-6 text-lg leading-relaxed">Filing a Swiss tax return can seem overwhelming, especially for expatriates navigating the system for the first time. This comprehensive 2025 guide walks you through every step of the process, from gathering documents to submitting your return and understanding your tax assessment. Whether you're subject to withholding tax (Quellensteuer) or filing a regular tax return, this tutorial ensures you maximize deductions while remaining fully compliant with Swiss tax law.</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop" alt="Swiss tax forms and calculator on desk" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 1: Swiss tax return preparation - Photo by <a href="https://unsplash.com/@goumbik" class="text-blue-600 hover:underline">Lukas Blazek</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>Understanding the Swiss Tax System</h2>
+      <p>Switzerland operates a unique three-tier tax system consisting of federal, cantonal, and municipal taxes. Unlike many countries with a single national tax authority, Switzerland's 26 cantons each have independent tax systems with varying rates and regulations.</p>
+
+      <p>The Swiss Federal Tax Administration (ESTV) oversees federal taxes, which are standardized across the country. However, cantonal and municipal taxes vary significantly - your total tax burden depends heavily on where you live and work. Zurich, Geneva, and Basel typically have higher rates, while cantons like Zug, Schwyz, and Nidwalden offer considerably lower tax rates.</p>
+
+      <h2>Who Must File a Swiss Tax Return?</h2>
+      <p>Swiss residents must file an annual tax return if they fall into any of these categories:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>Swiss citizens and C permit holders:</strong> Mandatory annual tax return regardless of income</li>
+        <li><strong>B permit holders:</strong> Required if gross income exceeds CHF 120,000 per year or if you have income from multiple sources</li>
+        <li><strong>L permit holders:</strong> May be subject to withholding tax but should file if eligible for deductions</li>
+        <li><strong>Cross-border workers (G permit):</strong> Generally taxed at source but may need to file in certain circumstances</li>
+        <li><strong>Property owners:</strong> Anyone owning Swiss real estate must file regardless of permit status</li>
+      </ul>
+
+      <h2>Important Deadlines for 2025</h2>
+      <p>Tax return deadlines vary by canton but generally follow this timeline:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>March 31, 2025:</strong> Standard deadline for most cantons (for 2024 tax year)</li>
+        <li><strong>April 30 - June 30, 2025:</strong> Extended deadlines in some cantons</li>
+        <li><strong>September 30, 2025:</strong> Extended deadline if using a tax advisor (automatic extension in most cantons)</li>
+        <li><strong>Late filing penalty:</strong> CHF 100-200 initial fee plus potential interest charges</li>
+      </ul>
+
+      <p>Pro tip: Filing online through your canton's eTax system often grants an automatic 1-month extension.</p>
+
+      <h2>Required Documents Checklist</h2>
+      <p>Before starting your tax return, gather these essential documents:</p>
+
+      <h3>Income Documents</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Salary certificate (Lohnausweis) from all employers</li>
+        <li>Withholding tax statements if applicable</li>
+        <li>Self-employment income records and expense documentation</li>
+        <li>Investment income statements (dividends, interest, capital gains)</li>
+        <li>Pension and social security statements</li>
+        <li>Rental income documentation if you own property</li>
+      </ul>
+
+      <h3>Deduction Documentation</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Pillar 3a contribution certificates</li>
+        <li>Health insurance premium statements</li>
+        <li>Professional expense receipts (if claiming above standard deduction)</li>
+        <li>Childcare expense invoices</li>
+        <li>Charitable donation receipts</li>
+        <li>Mortgage interest statements</li>
+        <li>Property maintenance expense receipts</li>
+      </ul>
+
+      <h2>Step-by-Step Filing Process</h2>
+
+      <h3>Step 1: Register for Online Tax Filing</h3>
+      <p>Most Swiss cantons offer secure online tax filing platforms (eTax Suisse, ZH-eTax, GE-eTax, etc.). Register with your canton's system using your AVS/AHV number and last year's tax assessment.</p>
+
+      <p>Benefits of online filing:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Pre-filled information from employers and banks</li>
+        <li>Automatic calculation of taxes</li>
+        <li>Built-in validation to catch errors</li>
+        <li>Save and return to complete later</li>
+        <li>Faster processing and assessment</li>
+      </ul>
+
+      <h3>Step 2: Complete Personal Information</h3>
+      <p>Enter your personal details:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Full name, address, and contact information</li>
+        <li>Civil status (single, married, divorced, widowed)</li>
+        <li>Children and dependents</li>
+        <li>Permit type and residence dates</li>
+        <li>Bank account information for refunds</li>
+      </ul>
+
+      <h3>Step 3: Declare All Income Sources</h3>
+      <p>Report all income including:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>Employment income:</strong> Enter amounts from salary certificates</li>
+        <li><strong>Self-employment:</strong> Calculate net profit (revenue minus expenses)</li>
+        <li><strong>Investment income:</strong> Interest, dividends, capital gains</li>
+        <li><strong>Rental income:</strong> Gross rental income minus expenses</li>
+        <li><strong>Foreign income:</strong> All worldwide income must be declared (tax treaties may apply)</li>
+        <li><strong>Cryptocurrency:</strong> Capital gains from crypto trading are taxable as wealth appreciation</li>
+      </ul>
+
+      <h3>Step 4: Claim All Eligible Deductions</h3>
+      <p>Maximize your deductions:</p>
+
+      <h4>Standard Deductions (No Documentation Required)</h4>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Professional expenses: CHF 2,300 (employed) or CHF 800 (executives)</li>
+        <li>Insurance deductions: CHF 1,700 (single) or CHF 3,500 (married)</li>
+        <li>Commuting costs: CHF 700 minimum</li>
+      </ul>
+
+      <h4>Additional Deductions (Documentation Required)</h4>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Pillar 3a contributions: Up to CHF 7,056 (employed) or CHF 35,280 (self-employed)</li>
+        <li>Actual professional expenses exceeding standard deduction</li>
+        <li>Actual health insurance premiums</li>
+        <li>Childcare costs: Up to CHF 25,000 per child</li>
+        <li>Charitable donations</li>
+        <li>Mortgage interest and property maintenance</li>
+        <li>Education expenses for career advancement</li>
+      </ul>
+
+      <h3>Step 5: Declare Assets and Liabilities</h3>
+      <p>Swiss wealth tax requires reporting:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Bank account balances (as of December 31)</li>
+        <li>Investment portfolio values</li>
+        <li>Real estate property values</li>
+        <li>Vehicle values</li>
+        <li>Life insurance cash values</li>
+        <li>Cryptocurrency holdings</li>
+        <li>Outstanding debts and liabilities</li>
+      </ul>
+
+      <h3>Step 6: Review and Submit</h3>
+      <p>Before submitting:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Double-check all figures for accuracy</li>
+        <li>Ensure all income sources are reported</li>
+        <li>Verify deduction amounts and documentation</li>
+        <li>Review the tax calculation summary</li>
+        <li>Print or save a copy for your records</li>
+        <li>Submit electronically or by mail with signature</li>
+      </ul>
+
+      <h2>After Submission: What to Expect</h2>
+
+      <h3>Tax Assessment Timeline</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>2-6 months:</strong> Processing time varies by canton and complexity</li>
+        <li><strong>Provisional assessment:</strong> You'll receive an estimated tax bill</li>
+        <li><strong>Final assessment:</strong> Official tax decision arrives later</li>
+        <li><strong>Payment schedule:</strong> Usually payable in 1-3 installments</li>
+      </ul>
+
+      <h3>If You Owe Additional Taxes</h3>
+      <p>If your assessment shows you owe more:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Payment deadline is typically 30 days from assessment date</li>
+        <li>Request an installment plan if needed (most cantons allow this)</li>
+        <li>Late payment interest: 3-4% annually in most cantons</li>
+      </ul>
+
+      <h3>If You're Entitled to a Refund</h3>
+      <p>Refund process:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Refunds are paid directly to your bank account</li>
+        <li>Processing time: 2-4 weeks after final assessment</li>
+        <li>Interest on refunds: Generally 0.5-1% annually</li>
+      </ul>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>Not declaring foreign accounts:</strong> Mandatory disclosure under tax treaties</li>
+        <li><strong>Claiming unsupported deductions:</strong> Always keep receipts</li>
+        <li><strong>Missing filing deadline:</strong> Results in penalties and interest</li>
+        <li><strong>Forgetting cryptocurrency:</strong> All crypto holdings must be declared</li>
+        <li><strong>Incorrect permit status:</strong> Affects your filing obligations</li>
+        <li><strong>Not claiming treaty benefits:</strong> Can result in double taxation</li>
+      </ul>
+
+      <h2>When to Hire a Tax Professional</h2>
+      <p>Consider professional help if:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>You have multiple income sources (employment + self-employment + investments)</li>
+        <li>You own international assets or have foreign income</li>
+        <li>You're dealing with complex situations (divorce, inheritance, business sale)</li>
+        <li>You want to optimize tax planning for future years</li>
+        <li>You're subject to wealth tax optimization strategies</li>
+      </ul>
+
+      <p>Professional tax services typically cost CHF 250-800 for individuals, but often save more through optimized deductions and avoiding errors.</p>
+
+      <h2>Conclusion</h2>
+      <p>Filing your Swiss tax return doesn't have to be stressful. By following this step-by-step guide, gathering all required documents, and claiming all eligible deductions, you can complete your 2025 tax return accurately and efficiently. Remember that Swiss tax authorities value accuracy over speed - take your time, keep detailed records, and don't hesitate to seek professional help for complex situations.</p>
+
+      <p>Start early, stay organized, and you'll navigate the Swiss tax system successfully!</p>
+
+      <h2>Additional Resources</h2>
+      <ul class="list-disc pl-6 mb-4">
+        <li><a href="https://www.estv.admin.ch" class="text-blue-600 hover:underline">Swiss Federal Tax Administration (ESTV)</a></li>
+        <li><a href="https://www.taxed.ch/calculators" class="text-blue-600 hover:underline">Free Swiss Tax Calculators</a></li>
+        <li><a href="https://www.taxed.ch/services" class="text-blue-600 hover:underline">Professional Tax Filing Services</a></li>
+      </ul>
+    `,
+    imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop',
+    imageAlt: 'Swiss tax return forms and documents being completed'
+  },
+  {
+    id: 'top-10-tax-deductions-expats-switzerland-2025',
+    slug: 'top-10-tax-deductions-expats-switzerland-2025',
+    title: 'Top 10 Tax Deductions for Expats in Switzerland 2025',
+    author: 'Patricia',
+    authorTitle: 'Senior Tax Advisor',
+    date: '2025-11-27',
+    category: 'Tax Deductions',
+    tags: ['Tax Deductions', 'Expats', 'Tax Savings', 'Switzerland 2025', 'Tax Optimization'],
+    summary: 'Maximize your tax savings in Switzerland! Discover the top 10 tax deductions specifically available to expatriates, including often-missed opportunities that could save you thousands of francs.',
+    readTime: '14 min read',
+    difficulty: 'Intermediate',
+    featured: true,
+    content: `
+      <p class="mb-6 text-lg leading-relaxed">As an expatriate living in Switzerland, you have access to numerous tax deductions that many newcomers overlook. Understanding and claiming these deductions can significantly reduce your tax burden - often by several thousand francs annually. This comprehensive guide reveals the top 10 tax deductions specifically beneficial to expats, complete with eligibility requirements, documentation needs, and pro tips for maximizing each deduction.</p>
+
+      <figure class="my-8">
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop" alt="Tax deduction calculation and financial planning" class="w-full rounded-lg shadow-lg">
+        <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 1: Optimizing tax deductions - Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
+      </figure>
+
+      <h2>1. Pillar 3a Retirement Contributions (Up to CHF 7,056)</h2>
+      <p>The Pillar 3a is Switzerland's voluntary private pension system and offers the largest single tax deduction available to expats:</p>
+
+      <h3>Maximum Deduction Amounts (2025)</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>Employed individuals:</strong> CHF 7,056 per year</li>
+        <li><strong>Self-employed without pension fund:</strong> CHF 35,280 or 20% of net income (whichever is lower)</li>
+        <li><strong>Married couples:</strong> Each spouse can contribute separately if both have earned income</li>
+      </ul>
+
+      <h3>Tax Savings Example</h3>
+      <p>For someone in Zurich earning CHF 100,000:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Full CHF 7,056 contribution = approximately CHF 2,200-2,800 in tax savings</li>
+        <li>Over 30 years of working = CHF 66,000-84,000 in total tax savings</li>
+        <li>Plus compound investment returns on the contributed amount</li>
+      </ul>
+
+      <h3>Expat Considerations</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>Availability:</strong> You must be a Swiss tax resident to contribute</li>
+        <li><strong>Withdrawal restrictions:</strong> Funds locked until 5 years before retirement age</li>
+        <li><strong>Early withdrawal:</strong> Allowed when leaving Switzerland permanently, buying a home, or becoming self-employed</li>
+        <li><strong>Tax on withdrawal:</strong> Taxed at preferential rates (usually 5-12%)</li>
+      </ul>
+
+      <p><strong>Pro Tip:</strong> Make your Pillar 3a contribution in December or early January to ensure it counts for the tax year. Many expats plan to leave Switzerland and can withdraw their Pillar 3a tax-free or at very low rates depending on their next country of residence.</p>
+
+      <h2>2. Health Insurance Premiums (Full Deduction)</h2>
+      <p>Switzerland's mandatory health insurance premiums are fully deductible:</p>
+
+      <h3>What's Deductible</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Basic health insurance premiums (Grundversicherung)</li>
+        <li>Supplementary insurance premiums</li>
+        <li>Dental insurance premiums</li>
+        <li>Accident insurance (if not covered by employer)</li>
+        <li>Life insurance premiums</li>
+      </ul>
+
+      <h3>Average Annual Savings</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Single person: CHF 4,000-6,000 in premium deductions = CHF 1,200-1,800 tax savings</li>
+        <li>Family of 4: CHF 12,000-18,000 in premium deductions = CHF 3,600-5,400 tax savings</li>
+      </ul>
+
+      <h3>Documentation Required</h3>
+      <p>Your insurance company provides annual premium statements (Prämiennachweis). Keep all insurance certificates and receipts.</p>
+
+      <p><strong>Expat Tip:</strong> If you have international health insurance, check if it qualifies for Swiss tax deductions. Some policies are recognized, others are not.</p>
+
+      <h2>3. Professional Expenses (Minimum CHF 2,300)</h2>
+      <p>Work-related expenses are deductible, with options for standard or itemized deductions:</p>
+
+      <h3>Standard Deduction (No Documentation Needed)</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>CHF 2,300 for most employees</li>
+        <li>CHF 4,000 for certain professions</li>
+        <li>Automatically granted even without expenses</li>
+      </ul>
+
+      <h3>Itemized Professional Expenses (If Higher Than Standard)</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Professional development and continuing education courses</li>
+        <li>Industry conferences and seminars</li>
+        <li>Professional literature and subscriptions</li>
+        <li>Work tools and equipment not provided by employer</li>
+        <li>Home office expenses (if working from home regularly)</li>
+        <li>Professional clothing (uniforms, safety gear)</li>
+        <li>Professional association memberships</li>
+      </ul>
+
+      <h3>Common Expat Professional Expenses</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>Language courses:</strong> Deductible if required for your job (CHF 2,000-5,000/year)</li>
+        <li><strong>Professional certifications:</strong> CFA, CPA, PMP, etc. (CHF 1,000-10,000)</li>
+        <li><strong>Industry conferences abroad:</strong> Travel and registration fees</li>
+        <li><strong>Relocation costs:</strong> If job-related and not reimbursed by employer</li>
+      </ul>
+
+      <p><strong>Strategy:</strong> Track all professional expenses throughout the year. If they exceed CHF 2,300, claim itemized deductions instead of the standard amount.</p>
+
+      <h2>4. Commuting Costs (Minimum CHF 700)</h2>
+      <p>Daily travel between home and work is deductible:</p>
+
+      <h3>Public Transportation</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Full cost of annual or monthly travel passes</li>
+        <li>Train, bus, tram subscriptions</li>
+        <li>Half-fare card costs can be included</li>
+        <li>Example: Annual GA Travelcard (CHF 3,860) = full deduction</li>
+      </ul>
+
+      <h3>Private Vehicle</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>CHF 0.70 per kilometer (2025 rate)</li>
+        <li>Capped at approximately CHF 3,000 in most cantons</li>
+        <li>Only deductible if public transport is unreasonable</li>
+      </ul>
+
+      <h3>Calculation Example</h3>
+      <p>Zurich to Basel commute (87km each way):</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>220 working days × 174km = 38,280km</li>
+        <li>38,280km × CHF 0.70 = CHF 26,796</li>
+        <li>Capped at canton maximum (usually CHF 3,000)</li>
+        <li>Tax savings: CHF 900-1,200</li>
+      </ul>
+
+      <p><strong>Expat Advantage:</strong> If you're a cross-border commuter or have a long-distance commute, this deduction can be substantial.</p>
+
+      <h2>5. Childcare Expenses (Up to CHF 25,000 per Child)</h2>
+      <p>One of the most valuable deductions for expat families:</p>
+
+      <h3>Eligible Expenses</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Daycare (Krippe/Kita) costs</li>
+        <li>After-school care programs</li>
+        <li>Nanny and au pair costs</li>
+        <li>Summer camps with childcare component</li>
+        <li>Babysitting costs (if both parents work)</li>
+      </ul>
+
+      <h3>Eligibility Requirements</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Child must be under 14 years old</li>
+        <li>Both parents must be employed or in education</li>
+        <li>Expenses must be necessary due to work obligations</li>
+        <li>Care cannot be provided by close family members (parents, siblings)</li>
+      </ul>
+
+      <h3>Maximum Deductions (2025)</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Federal tax: Up to CHF 25,000 per child</li>
+        <li>Cantonal tax: Varies (CHF 10,000-25,000 depending on canton)</li>
+      </ul>
+
+      <h3>Real-World Example</h3>
+      <p>Family in Zurich with two children in daycare:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Annual daycare costs: CHF 40,000 (CHF 20,000 per child)</li>
+        <li>Deductible amount: CHF 40,000</li>
+        <li>Tax savings: CHF 12,000-16,000 per year</li>
+        <li>Over 10 years: CHF 120,000-160,000 in tax savings</li>
+      </ul>
+
+      <p><strong>Important:</strong> Keep all invoices and payment receipts. Many cantons require detailed documentation.</p>
+
+      <h2>6. Foreign Tax Credits (Avoiding Double Taxation)</h2>
+      <p>Expats with income from abroad can claim foreign tax credits:</p>
+
+      <h3>How It Works</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Report all worldwide income in Switzerland</li>
+        <li>Credit foreign taxes already paid</li>
+        <li>Avoid paying tax twice on the same income</li>
+      </ul>
+
+      <h3>Common Scenarios for Expats</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>Foreign rental income:</strong> Property in home country</li>
+        <li><strong>Foreign dividends:</strong> Withholding tax on US stocks (15-30%)</li>
+        <li><strong>Foreign pension income:</strong> State pensions from home country</li>
+        <li><strong>Stock options:</strong> From former employer abroad</li>
+      </ul>
+
+      <h3>Documentation Needed</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Foreign tax payment receipts</li>
+        <li>Tax treaty declarations</li>
+        <li>Income statements from foreign sources</li>
+      </ul>
+
+      <p><strong>Pro Tip:</strong> File IRS Form W-8BEN (USA) or equivalent forms for other countries to reduce withholding tax at source to 15% instead of 30%.</p>
+
+      <h2>7. Moving and Relocation Expenses</h2>
+      <p>Job-related moving expenses are deductible if not reimbursed by your employer:</p>
+
+      <h3>Deductible Relocation Costs</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Professional moving company fees</li>
+        <li>Transportation of household goods</li>
+        <li>Temporary accommodation during transition</li>
+        <li>Storage costs (reasonable duration)</li>
+        <li>Travel costs for house hunting trips</li>
+        <li>Breaking rental lease (early termination fees)</li>
+      </ul>
+
+      <h3>Requirements</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Move must be job-related (new position, transfer, etc.)</li>
+        <li>Expenses not reimbursed by employer</li>
+        <li>Must be reasonable and documented</li>
+      </ul>
+
+      <h3>Typical Deduction Amounts</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Within Switzerland: CHF 3,000-8,000</li>
+        <li>International move: CHF 8,000-15,000</li>
+        <li>Tax savings: CHF 2,400-6,000</li>
+      </ul>
+
+      <p><strong>Expat Advantage:</strong> International relocations often involve substantial expenses. Document everything!</p>
+
+      <h2>8. Mortgage Interest and Property Expenses</h2>
+      <p>Swiss homeowners can deduct significant property-related expenses:</p>
+
+      <h3>Deductible Mortgage Costs</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Mortgage interest payments (full amount)</li>
+        <li>Not principal repayments</li>
+      </ul>
+
+      <h3>Maintenance and Renovation Deductions</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Standard maintenance: 10-20% of rental value (no receipts needed)</li>
+        <li>Actual maintenance costs: If higher than standard (requires receipts)</li>
+        <li>Energy efficiency improvements: Fully deductible</li>
+        <li>Solar panels, heat pumps, insulation</li>
+      </ul>
+
+      <h3>Example: Apartment in Zurich</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Property value: CHF 800,000</li>
+        <li>Mortgage: CHF 600,000 at 2.5% = CHF 15,000 interest</li>
+        <li>Maintenance (10% of CHF 24,000 rental value): CHF 2,400</li>
+        <li>Total deduction: CHF 17,400</li>
+        <li>Tax savings: CHF 5,220-6,960</li>
+      </ul>
+
+      <p><strong>Expat Consideration:</strong> If you bought property in Switzerland, these deductions make ownership more tax-efficient than renting.</p>
+
+      <h2>9. Education and Training Expenses</h2>
+      <p>Career-related education is increasingly deductible:</p>
+
+      <h3>Fully Deductible Education</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Professional development in your current field</li>
+        <li>Required certifications and licenses</li>
+        <li>Job-related language courses</li>
+        <li>Master's degree related to current profession</li>
+      </ul>
+
+      <h3>Partially Deductible</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Career advancement courses up to CHF 12,000</li>
+        <li>Retraining for a new career path</li>
+      </ul>
+
+      <h3>Common Expat Education Expenses</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>German/French language courses: CHF 2,000-5,000</li>
+        <li>MBA programs: CHF 40,000-100,000 (partially deductible)</li>
+        <li>CFA/CPA/ACCA certifications: CHF 5,000-15,000</li>
+        <li>Professional conferences: CHF 1,000-3,000</li>
+      </ul>
+
+      <p><strong>Strategy:</strong> Time major educational expenses (MBA, executive programs) during high-income years for maximum tax benefit.</p>
+
+      <h2>10. Charitable Donations</h2>
+      <p>Donations to qualified Swiss charities are fully deductible:</p>
+
+      <h3>Requirements</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Organization must have Swiss tax-exempt status</li>
+        <li>Minimum donation: Usually CHF 100</li>
+        <li>Maximum: Varies by canton (typically 20% of income)</li>
+      </ul>
+
+      <h3>Eligible Organizations</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Swiss Red Cross</li>
+        <li>UNICEF Switzerland</li>
+        <li>WWF Switzerland</li>
+        <li>Universities and research institutions</li>
+        <li>Cultural institutions (museums, theaters)</li>
+        <li>Religious institutions</li>
+      </ul>
+
+      <h3>Tax Savings Example</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Donation: CHF 5,000</li>
+        <li>Tax savings: CHF 1,500-2,000 (depending on tax rate)</li>
+        <li>Effective cost of donation: CHF 3,000-3,500</li>
+      </ul>
+
+      <p><strong>Pro Tip:</strong> Consolidate charitable giving in high-income years for maximum tax benefit.</p>
+
+      <h2>Bonus: Additional Deductions to Know</h2>
+      <ul class="list-disc pl-6 mb-4">
+        <li><strong>Disability deductions:</strong> If you or family members have health limitations</li>
+        <li><strong>Alimony payments:</strong> Fully deductible if court-ordered</li>
+        <li><strong>Interest on debt:</strong> Certain personal debts (limited)</li>
+        <li><strong>Double household:</strong> If maintaining two residences for work</li>
+      </ul>
+
+      <h2>Maximizing Your Deductions: Action Plan</h2>
+
+      <h3>Throughout the Year</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Keep all receipts and documentation organized</li>
+        <li>Contribute to Pillar 3a before December 31</li>
+        <li>Track professional expenses monthly</li>
+        <li>Document childcare payments</li>
+      </ul>
+
+      <h3>Tax Season Preparation</h3>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Gather all tax documents by February</li>
+        <li>Review last year's return for missed deductions</li>
+        <li>Calculate if itemizing beats standard deductions</li>
+        <li>Consider professional tax advice for complex situations</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>These 10 tax deductions can save expatriates in Switzerland thousands of francs annually. The key is staying organized, keeping detailed records, and understanding which deductions apply to your specific situation. Don't leave money on the table - claim every deduction you're entitled to!</p>
+
+      <p>Need help optimizing your tax return? Our experts at Taxed GmbH specialize in expatriate tax situations and can ensure you claim every available deduction.</p>
+    `,
+    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
+    imageAlt: 'Tax deductions and financial optimization planning'
   }
 ];
 

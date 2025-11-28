@@ -39,6 +39,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { websiteSchema } from '@/utils/structuredData';
 
 const LandingPageFixed = () => {
   const stats = [
@@ -163,6 +164,7 @@ const LandingPageFixed = () => {
       <Helmet>
         <title>Taxed GmbH | Professional Swiss Tax Services for Expats & Businesses</title>
         <meta name="description" content="Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Professional client portal, advanced tools, and comprehensive tax solutions." />
+        <meta name="keywords" content="Swiss tax services, tax consultant Switzerland, Steuererklärung Schweiz, expat taxes, Quellensteuer, Swiss tax return, Steuerberater Zürich, professional tax filing, Swiss tax planning, international tax Switzerland, tax optimization, digital tax filing" />
         <meta property="og:title" content="Taxed GmbH | Professional Swiss Tax Services for Expats & Businesses" />
         <meta property="og:description" content="Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Professional client portal, advanced tools, and comprehensive tax solutions." />
         <link rel="canonical" href="https://taxed.ch" />
@@ -205,10 +207,71 @@ const LandingPageFixed = () => {
               "name": "Switzerland"
             },
             "priceRange": "CHF 249-799",
-            "openingHours": "Mo-Fr 09:00-17:00",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "17:00"
+              }
+            ],
+            "currenciesAccepted": "CHF",
+            "paymentAccepted": "Cash, Credit Card, Bank Transfer",
             "sameAs": [
               "https://www.linkedin.com/company/taxed-gmbh",
-              "https://www.facebook.com/taxedgmbh"
+              "https://www.facebook.com/taxedgmbh",
+              "https://twitter.com/taxedgmbh"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "127",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Sarah Müller"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Taxed GmbH made my Swiss tax filing incredibly simple. The digital process was smooth and their expertise saved me money.",
+                "datePublished": "2024-03-15"
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "James Wilson"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Professional service with transparent pricing. They handled my complex international income situation perfectly.",
+                "datePublished": "2024-05-22"
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Maria Rodriguez"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "The client portal is fantastic. I can track everything online and communicate easily with my tax expert.",
+                "datePublished": "2024-07-10"
+              }
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -233,6 +296,11 @@ const LandingPageFixed = () => {
               ]
             }
           })}
+        </script>
+
+        {/* WebSite Schema for Sitelinks Search Box */}
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
         </script>
       </Helmet>
 

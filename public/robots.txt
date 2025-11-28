@@ -1,0 +1,54 @@
+# Robots.txt for Taxed GmbH
+# https://taxed.ch/robots.txt
+# Last Updated: 2025-11-28
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /client-portal/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*utm_
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://taxed.ch/sitemap.xml
+Sitemap: https://taxed.ch/sitemap-images.xml
+Sitemap: https://taxed.ch/sitemap-videos.xml
+
+# Specific bot directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
