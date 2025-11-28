@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ShareButton from '@/components/ui/ShareButton';
 import ImmersiveReader from '@/components/ui/ImmersiveReader';
 import ReadAloud from '@/components/ui/ReadAloud';
+import InternalLinks from '@/components/InternalLinks';
 
 const BlogPostPage = () => {
   const { slug } = useParams();
@@ -198,9 +199,16 @@ const BlogPostPage = () => {
                 </div>
 
                 {/* Article Content */}
-                <article 
+                <article
                   className="magazine-article max-w-none"
                   dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+
+                {/* Internal Links for SEO */}
+                <InternalLinks
+                  context="blog-post"
+                  currentPage={`/blog/${post.slug}`}
+                  limit={4}
                 />
 
                 {/* CTA Section */}

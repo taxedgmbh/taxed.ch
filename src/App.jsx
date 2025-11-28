@@ -94,6 +94,12 @@ function App() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="alternate" type="application/rss+xml" title="RSS Feed for Taxed GmbH" href="/rss.xml" />
 
+        {/* Preload critical resources for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
         {/* Hreflang tags for multilingual support */}
         <link rel="alternate" hrefLang="de-CH" href={`${baseUrl}/de${currentPath}`} />
         <link rel="alternate" hrefLang="en-CH" href={`${baseUrl}${currentPath}`} />

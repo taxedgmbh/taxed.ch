@@ -5,6 +5,7 @@ import { ChevronDown, ChevronUp, HelpCircle, Search } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import InternalLinks from '@/components/InternalLinks';
 
 const FAQPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -328,6 +329,15 @@ const FAQPage = () => {
               </div>
             </motion.div>
           ))}
+
+          {/* Internal Links for SEO */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <InternalLinks
+              context="tax-basics"
+              currentPage="/faq"
+              limit={4}
+            />
+          </div>
 
           {/* Contact CTA */}
           <motion.div

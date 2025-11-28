@@ -6,6 +6,7 @@ import { FileText, ArrowRight, CheckCircle, Globe, Wallet, Shield, Calculator, D
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import InternalLinks from '@/components/InternalLinks';
 
 const ServicesPage = () => {
   const keyServices = [
@@ -474,6 +475,17 @@ const ServicesPage = () => {
               </Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Internal Links for SEO */}
+      <section className="py-16 bg-light-gray-bg-1">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <InternalLinks
+            context="services"
+            currentPage="/services"
+            limit={4}
+          />
         </div>
       </section>
 
