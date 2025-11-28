@@ -39,6 +39,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { websiteSchema } from '@/utils/structuredData';
 
 const LandingPageFixed = () => {
   const stats = [
@@ -295,6 +296,11 @@ const LandingPageFixed = () => {
               ]
             }
           })}
+        </script>
+
+        {/* WebSite Schema for Sitelinks Search Box */}
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
         </script>
       </Helmet>
 

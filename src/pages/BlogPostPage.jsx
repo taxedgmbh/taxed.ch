@@ -76,6 +76,62 @@ const BlogPostPage = () => {
     "articleBody": post.content.replace(/<[^>]*>/g, '').substring(0, 1000) + "..."
   };
 
+  // Check if this is a tutorial/guide and add HowTo schema
+  const isTutorial = post.title.toLowerCase().match(/guide|how to|step-by-step|tutorial|complete.*to/);
+  const howToSchema = isTutorial ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": post.title,
+    "description": post.summary,
+    "image": post.imageUrl,
+    "totalTime": post.readTime,
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "CHF",
+      "value": "0"
+    },
+    "tool": ["Computer", "Tax Documents", "Swiss Tax Software"],
+    "supply": ["Salary Certificate (Lohnausweis)", "Bank Statements", "Insurance Certificates"],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Gather Required Documents",
+        "text": "Collect all necessary documents including salary certificates, bank statements, and expense receipts."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Register for Online Tax Filing",
+        "text": "Sign up for your canton's eTax system using your AVS/AHV number."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Complete Personal Information",
+        "text": "Enter your personal details, civil status, and residence information."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Declare All Income Sources",
+        "text": "Report employment income, investment income, and any foreign income."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Claim Eligible Deductions",
+        "text": "Maximize deductions including Pillar 3a, health insurance, professional expenses, and childcare costs."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Review and Submit",
+        "text": "Double-check all information and submit your tax return electronically or by mail."
+      }
+    ]
+  } : null;
+
   return (
     <>
       <Helmet>
@@ -98,6 +154,13 @@ const BlogPostPage = () => {
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
         </script>
+
+        {/* HowTo Schema for Tutorial/Guide Posts */}
+        {howToSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(howToSchema)}
+          </script>
+        )}
       </Helmet>
       
       <div className="bg-white py-12 sm:py-20">
