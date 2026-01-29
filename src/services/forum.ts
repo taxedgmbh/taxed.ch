@@ -3,7 +3,7 @@
  * Centralized API calls for the forum section
  */
 
-const API_BASE = '/forum-unified-api.php';
+const API_BASE = '/backend/forum-unified-api.php';
 
 // Types
 export interface ForumCategory {
