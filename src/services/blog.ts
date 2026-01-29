@@ -4,6 +4,7 @@
  */
 
 import { apiService } from './api';
+import { blogCache } from '@/utils/CacheManager';
 import type {
   BlogPost,
   BlogAuthor,
@@ -18,41 +19,11 @@ import type {
 } from '@/types/blog';
 
 class BlogService {
-  private cache: Map<string, any> = new Map();
-  private cacheExpiry: Map<string, number> = new Map();
-  private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
-
-  /**
-   * Get cached data or fetch from API
-   */
-  private async getCachedData<T>(
-    key: string,
-    fetcher: () => Promise<T>,
-    useCache: boolean = true
-  ): Promise<T> {
-    if (useCache && this.cache.has(key)) {
-      const expiry = this.cacheExpiry.get(key);
-      if (expiry && Date.now() < expiry) {
-        return this.cache.get(key);
-      }
-    }
-
-    const data = await fetcher();
-    
-    if (useCache) {
-      this.cache.set(key, data);
-      this.cacheExpiry.set(key, Date.now() + this.CACHE_DURATION);
-    }
-    
-    return data;
-  }
-
   /**
    * Clear cache
    */
   public clearCache(): void {
-    this.cache.clear();
-    this.cacheExpiry.clear();
+    blogCache.clear();
   }
 
   /**
@@ -74,7 +45,7 @@ class BlogService {
 
       const cacheKey = `posts_${queryParams.toString()}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogPost[]>(`/blog/posts?${queryParams.toString()}`);
         
         if (response.success && response.data) {
@@ -96,7 +67,7 @@ class BlogService {
     try {
       const cacheKey = `post_${slug}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogPost>(`/blog/posts/${slug}`);
         
         if (response.success && response.data) {
@@ -118,7 +89,7 @@ class BlogService {
     try {
       const cacheKey = `featured_posts_${limit}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogPost[]>(`/blog/posts/featured?limit=${limit}`);
         
         if (response.success && response.data) {
@@ -214,7 +185,7 @@ class BlogService {
     try {
       const cacheKey = 'categories';
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogCategory[]>('/blog/categories');
         
         if (response.success && response.data) {
@@ -236,7 +207,7 @@ class BlogService {
     try {
       const cacheKey = 'tags';
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogTag[]>('/blog/tags');
         
         if (response.success && response.data) {
@@ -258,7 +229,7 @@ class BlogService {
     try {
       const cacheKey = 'authors';
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogAuthor[]>('/blog/authors');
         
         if (response.success && response.data) {
@@ -408,7 +379,7 @@ class BlogService {
     try {
       const cacheKey = 'blog_stats';
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogStats>('/blog/stats');
         
         if (response.success && response.data) {
@@ -502,7 +473,7 @@ class BlogService {
     try {
       const cacheKey = `popular_posts_${limit}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogPost[]>(`/blog/posts/popular?limit=${limit}`);
         
         if (response.success && response.data) {
@@ -524,7 +495,7 @@ class BlogService {
     try {
       const cacheKey = `recent_posts_${limit}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return blogCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<BlogPost[]>(`/blog/posts/recent?limit=${limit}`);
         
         if (response.success && response.data) {

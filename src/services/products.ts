@@ -4,6 +4,7 @@
  */
 
 import { apiService } from './api';
+import { productsCache } from '@/utils/CacheManager';
 import type {
   Product,
   ProductImage,
@@ -20,41 +21,11 @@ import type {
 } from '@/types/products';
 
 class ProductsService {
-  private cache: Map<string, any> = new Map();
-  private cacheExpiry: Map<string, number> = new Map();
-  private readonly CACHE_DURATION = 10 * 60 * 1000; // 10 minutes
-
-  /**
-   * Get cached data or fetch from API
-   */
-  private async getCachedData<T>(
-    key: string,
-    fetcher: () => Promise<T>,
-    useCache: boolean = true
-  ): Promise<T> {
-    if (useCache && this.cache.has(key)) {
-      const expiry = this.cacheExpiry.get(key);
-      if (expiry && Date.now() < expiry) {
-        return this.cache.get(key);
-      }
-    }
-
-    const data = await fetcher();
-    
-    if (useCache) {
-      this.cache.set(key, data);
-      this.cacheExpiry.set(key, Date.now() + this.CACHE_DURATION);
-    }
-    
-    return data;
-  }
-
   /**
    * Clear cache
    */
   public clearCache(): void {
-    this.cache.clear();
-    this.cacheExpiry.clear();
+    productsCache.clear();
   }
 
   /**
@@ -80,7 +51,7 @@ class ProductsService {
 
       const cacheKey = `products_${queryParams.toString()}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return productsCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<Product[]>(`/products?${queryParams.toString()}`);
         
         if (response.success && response.data) {
@@ -102,7 +73,7 @@ class ProductsService {
     try {
       const cacheKey = `product_${slug}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return productsCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<Product>(`/products/${slug}`);
         
         if (response.success && response.data) {
@@ -124,7 +95,7 @@ class ProductsService {
     try {
       const cacheKey = `product_id_${id}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return productsCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<Product>(`/products/id/${id}`);
         
         if (response.success && response.data) {
@@ -146,7 +117,7 @@ class ProductsService {
     try {
       const cacheKey = `featured_products_${limit}`;
       
-      return this.getCachedData(cacheKey, async () => {
+      return productsCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<Product[]>(`/products/featured?limit=${limit}`);
         
         if (response.success && response.data) {
@@ -215,7 +186,7 @@ class ProductsService {
     try {
       const cacheKey = 'product_categories';
       
-      return this.getCachedData(cacheKey, async () => {
+      return productsCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<ProductCategory[]>('/products/categories');
         
         if (response.success && response.data) {
@@ -237,7 +208,7 @@ class ProductsService {
     try {
       const cacheKey = 'product_attributes';
       
-      return this.getCachedData(cacheKey, async () => {
+      return productsCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<ProductAttribute[]>('/products/attributes');
         
         if (response.success && response.data) {
@@ -352,7 +323,7 @@ class ProductsService {
     try {
       const cacheKey = 'product_bundles';
       
-      return this.getCachedData(cacheKey, async () => {
+      return productsCache.getOrFetch(cacheKey, async () => {
         const response = await apiService.get<ProductBundle[]>('/products/bundles');
         
         if (response.success && response.data) {
