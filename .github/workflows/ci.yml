@@ -1,12 +1,14 @@
-name: Build and Deploy
+name: CI
 
 on:
   push:
     branches: [main]
-  workflow_dispatch: # Allow manual trigger
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,33 +27,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to deploy branch
-        run: |
-          cd dist
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Deploy: ${{ github.sha }}"
-          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:deploy
-
-          echo "✅ Deployed to 'deploy' branch"
-
-      - name: Trigger Hostinger webhook
+      - name: Trigger Hostinger (on main push only)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           echo "🚀 Triggering Hostinger deployment..."
-          response=$(curl -s -o /dev/null -w "%{http_code}" -X POST "${{ secrets.HOSTINGER_WEBHOOK_URL }}" || echo "000")
-
-          if [ "$response" = "200" ] || [ "$response" = "201" ] || [ "$response" = "204" ]; then
-            echo "✅ Hostinger webhook triggered (HTTP $response)"
-          else
-            echo "⚠️ Webhook response: HTTP $response (Hostinger may still auto-deploy via Git)"
-          fi
+          curl -X POST "${{ secrets.HOSTINGER_WEBHOOK_URL }}" || echo "Webhook sent"
 
       - name: Summary
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          echo "## 🚀 Deployment Complete" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Source**: main @ ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Deployed to**: deploy branch" >> $GITHUB_STEP_SUMMARY
+          echo "## ✅ Build Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Site**: https://taxed.ch" >> $GITHUB_STEP_SUMMARY
