@@ -1,0 +1,59 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to deploy branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create orphan deploy branch with only dist contents
+          cd dist
+          git init
+          git add -A
+          git commit -m "Deploy: ${{ github.sha }}"
+          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:deploy
+
+          echo "✅ Deployed to 'deploy' branch"
+
+      - name: Trigger Hostinger webhook
+        run: |
+          echo "🚀 Triggering Hostinger deployment..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" -X POST "${{ secrets.HOSTINGER_WEBHOOK_URL }}" || echo "000")
+
+          if [ "$response" = "200" ] || [ "$response" = "201" ] || [ "$response" = "204" ]; then
+            echo "✅ Hostinger webhook triggered (HTTP $response)"
+          else
+            echo "⚠️ Webhook response: HTTP $response (Hostinger may still auto-deploy via Git)"
+          fi
+
+      - name: Summary
+        run: |
+          echo "## 🚀 Deployment Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Source**: main @ ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Deployed to**: deploy branch" >> $GITHUB_STEP_SUMMARY
+          echo "- **Site**: https://taxed.ch" >> $GITHUB_STEP_SUMMARY

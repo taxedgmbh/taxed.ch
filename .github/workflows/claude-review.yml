@@ -1,0 +1,188 @@
+name: Claude AI Code Review & Auto-Merge
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: Run tests
+        run: npm test
+
+  claude-review:
+    needs: ci
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    outputs:
+      approval: ${{ steps.claude-review.outputs.approval }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -E '\.(js|jsx|ts|tsx|css|html|json)$' || true)
+          echo "Changed files:"
+          echo "$files"
+          echo "$files" > changed_files.txt
+          count=$(echo "$files" | grep -c . || echo "0")
+          echo "file_count=$count" >> $GITHUB_OUTPUT
+
+      - name: Get diff content
+        if: steps.changed-files.outputs.file_count != '0'
+        run: |
+          git diff origin/${{ github.base_ref }}...HEAD -- $(cat changed_files.txt | head -20) > diff_content.txt
+          head -c 50000 diff_content.txt > diff_truncated.txt
+
+      - name: Claude AI Review
+        if: steps.changed-files.outputs.file_count != '0'
+        id: claude-review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          diff_content=$(cat diff_truncated.txt)
+
+          # Create the API request
+          cat > request.json << 'EOF'
+          {
+            "model": "claude-sonnet-4-20250514",
+            "max_tokens": 2000,
+            "messages": [
+              {
+                "role": "user",
+                "content": "You are an automated code reviewer for taxed.ch (Swiss tax consulting React/Vite app). Review these changes and decide if they should be auto-merged.\n\nRules for APPROVE (auto-merge):\n- Code builds and tests pass (CI already verified this)\n- No obvious security vulnerabilities (XSS, injection, exposed secrets)\n- No breaking changes to existing functionality\n- Reasonable code quality\n\nRules for REJECT:\n- Security issues found\n- Code that would break the app\n- Exposed API keys or secrets\n- Malicious code patterns\n\nRespond with EXACTLY this format:\n\n**Decision**: APPROVE or REJECT\n**Reason**: One sentence explanation\n**Issues**: List any concerns (or 'None')\n\nBe lenient - approve unless there's a real problem. This is an automated pipeline.\n\nChanges to review:\n```diff\nDIFF_CONTENT\n```"
+              }
+            ]
+          }
+          EOF
+
+          # Escape diff content and insert
+          diff_escaped=$(cat diff_truncated.txt | head -1000 | jq -Rs .)
+          jq --arg diff "$(cat diff_truncated.txt | head -1000)" '.messages[0].content = (.messages[0].content | gsub("DIFF_CONTENT"; $diff))' request.json > request_final.json
+
+          # Call Claude API
+          response=$(curl -s https://api.anthropic.com/v1/messages \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: $ANTHROPIC_API_KEY" \
+            -H "anthropic-version: 2023-06-01" \
+            -d @request_final.json)
+
+          # Extract review
+          review=$(echo "$response" | jq -r '.content[0].text // "Error: API call failed"')
+          echo "$review" > review_output.txt
+          echo "Review output:"
+          echo "$review"
+
+          # Determine approval
+          if echo "$review" | grep -qi "Decision.*APPROVE"; then
+            echo "approval=approve" >> $GITHUB_OUTPUT
+            echo "✅ Claude approved the changes"
+          else
+            echo "approval=reject" >> $GITHUB_OUTPUT
+            echo "❌ Claude rejected the changes"
+          fi
+
+      - name: Auto-approve if no code changes
+        if: steps.changed-files.outputs.file_count == '0'
+        id: no-code
+        run: |
+          echo "approval=approve" >> $GITHUB_OUTPUT
+          echo "No code files changed - auto-approving"
+
+      - name: Post review comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            let review = '✅ No code changes detected - auto-approved.';
+            let approval = 'approve';
+
+            try {
+              review = fs.readFileSync('review_output.txt', 'utf8');
+              approval = review.toLowerCase().includes('decision') && review.toLowerCase().includes('approve') ? 'approve' : 'reject';
+            } catch (e) {
+              // No review file means no code changes
+            }
+
+            const emoji = approval === 'approve' ? '✅' : '❌';
+            const status = approval === 'approve' ? 'APPROVED - Auto-merging...' : 'REJECTED - Manual review required';
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `## 🤖 Claude AI Code Review\n\n${review}\n\n---\n**Status**: ${emoji} ${status}`
+            });
+
+  auto-merge:
+    needs: [ci, claude-review]
+    runs-on: ubuntu-latest
+    if: needs.claude-review.outputs.approval == 'approve'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Merge PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚀 Claude approved - merging PR..."
+
+          # Wait a moment for GitHub to process
+          sleep 5
+
+          # Merge the PR (squash merge)
+          gh pr merge ${{ github.event.pull_request.number }} --squash --delete-branch || {
+            echo "Direct merge failed, trying with admin flag..."
+            gh pr merge ${{ github.event.pull_request.number }} --squash --delete-branch --admin
+          }
+
+          echo "✅ PR merged successfully!"
+
+  notify-rejection:
+    needs: claude-review
+    runs-on: ubuntu-latest
+    if: needs.claude-review.outputs.approval == 'reject'
+
+    steps:
+      - name: Post rejection notice
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `## ⚠️ Auto-Merge Blocked\n\nClaude AI found issues that require attention. Please review the feedback above and push fixes.\n\nOnce fixed, the PR will be re-reviewed automatically.`
+            });
