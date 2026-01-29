@@ -77,7 +77,6 @@ const AI_REWRITE_PROMPTS = {
 // Function to fetch news from multiple sources
 export const fetchNewsFromSources = async () => {
   try {
-    console.log('🔄 Fetching news from multiple sources...');
     
     // In a real implementation, this would use web scraping or RSS feeds
     // For now, we'll simulate fetching from different sources
@@ -98,11 +97,9 @@ export const fetchNewsFromSources = async () => {
       )
     );
     
-    console.log(`📰 Found ${allNews.length} relevant tax news articles`);
     return allNews;
-    
+
   } catch (error) {
-    console.error('❌ Error fetching news from sources:', error);
     return [];
   }
 };
@@ -214,7 +211,6 @@ const fetchNZZNews = async () => {
 // Function to rewrite news content with AI
 export const rewriteNewsWithAI = async (originalNews) => {
   try {
-    console.log(`🤖 Rewriting news: ${originalNews.title}`);
     
     // Get AI provider (using the same system as blog generation)
     const aiProvider = import.meta.env.VITE_AI_PROVIDER || 'gemini';
@@ -277,11 +273,9 @@ Respond with ONLY a JSON object in this format:
       imageAlt: `News image for ${parsed.category} category`
     };
     
-    console.log(`✅ Successfully rewritten: ${rewrittenNews.title}`);
     return rewrittenNews;
-    
+
   } catch (error) {
-    console.error('❌ Error rewriting news with AI:', error);
     // Return original news if AI rewriting fails
     return {
       ...originalNews,
@@ -328,11 +322,9 @@ export const saveRewrittenNews = (rewrittenNews) => {
     const trimmedNews = existingNews.slice(0, 50);
     
     localStorage.setItem('rewrittenNews', JSON.stringify(trimmedNews));
-    console.log(`💾 Saved rewritten news: ${rewrittenNews.title}`);
-    
+
     return true;
   } catch (error) {
-    console.error('❌ Error saving rewritten news:', error);
     return false;
   }
 };
@@ -343,7 +335,6 @@ export const getRewrittenNews = () => {
     const news = JSON.parse(localStorage.getItem('rewrittenNews') || '[]');
     return news.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
   } catch (error) {
-    console.error('❌ Error getting rewritten news:', error);
     return [];
   }
 };
@@ -351,13 +342,10 @@ export const getRewrittenNews = () => {
 // Main function to run daily news aggregation and rewriting
 export const runDailyNewsAggregation = async () => {
   try {
-    console.log('🚀 Starting daily news aggregation and rewriting...');
-    
     // Fetch news from all sources
     const fetchedNews = await fetchNewsFromSources();
-    
+
     if (fetchedNews.length === 0) {
-      console.log('⚠️ No relevant news found today');
       return [];
     }
     
@@ -375,11 +363,9 @@ export const runDailyNewsAggregation = async () => {
       }
     }
     
-    console.log(`✅ Daily news aggregation complete: ${rewrittenNews.length} articles rewritten`);
     return rewrittenNews;
-    
+
   } catch (error) {
-    console.error('❌ Error in daily news aggregation:', error);
     return [];
   }
 };
@@ -388,25 +374,22 @@ export const runDailyNewsAggregation = async () => {
 export const scheduleDailyNewsUpdate = () => {
   // Check if auto-generation is enabled
   const autoGenerate = localStorage.getItem('autoGenerateNews') === 'true';
-  
+
   if (!autoGenerate) {
-    console.log('📰 Auto news generation is disabled');
     return;
   }
-  
+
   // Check if we've already run today
   const lastRun = localStorage.getItem('lastNewsGenerationDate');
   const today = new Date().toDateString();
-  
+
   if (lastRun === today) {
-    console.log('📰 News already generated today');
     return;
   }
-  
+
   // Run news aggregation
   runDailyNewsAggregation().then(() => {
     localStorage.setItem('lastNewsGenerationDate', today);
-    console.log('📰 Daily news generation scheduled and completed');
   });
 };
 
@@ -465,7 +448,6 @@ const generateWithGemini = async (prompt) => {
     }
     
   } catch (error) {
-    console.error('❌ Gemini API error:', error);
     throw error;
   }
 };

@@ -2,17 +2,11 @@
 
 // Initialize Microsoft Clarity for Bing insights
 export const initializeBingAnalytics = () => {
-  if (typeof window !== 'undefined' && window.clarity) {
-    // Clarity is already loaded via the script tag
-    console.log('Microsoft Clarity initialized for Bing optimization');
-  }
+  // Clarity is already loaded via the script tag
 };
 
 // Submit URL to Bing for immediate indexing
 export const submitToBingIndexing = async (url) => {
-  // This would typically be done server-side with Bing's IndexNow API
-  console.log(`URL submitted for Bing indexing: ${url}`);
-  
   // For client-side, we can trigger a ping to help with discovery
   if (typeof window !== 'undefined') {
     try {
@@ -21,12 +15,12 @@ export const submitToBingIndexing = async (url) => {
       iframe.style.display = 'none';
       iframe.src = `https://www.bing.com/ping?sitemap=${encodeURIComponent(url)}`;
       document.body.appendChild(iframe);
-      
+
       setTimeout(() => {
         document.body.removeChild(iframe);
       }, 5000);
     } catch (error) {
-      console.warn('Bing ping failed:', error);
+      // Silently handle Bing ping failures
     }
   }
 };
@@ -50,16 +44,9 @@ export const trackBingEvent = (eventName, properties = {}) => {
 // Optimize content for Bing's algorithm preferences
 export const optimizeForBing = () => {
   if (typeof window !== 'undefined') {
-    // Bing prefers explicit keyword density and clear content structure
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      // Ensure keywords are present and well-structured
-      console.log('Keywords optimized for Bing:', metaKeywords.content);
-    }
-    
     // Bing values social signals
     addSocialMetaTags();
-    
+
     // Bing appreciates clear navigation structure
     optimizeNavigationForBing();
   }
@@ -163,7 +150,6 @@ export const bingIndexNowAPI = {
       
       return response.ok;
     } catch (error) {
-      console.error('IndexNow API error:', error);
       return false;
     }
   }

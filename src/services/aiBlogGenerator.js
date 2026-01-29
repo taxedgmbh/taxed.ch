@@ -285,8 +285,6 @@ const generateImagePrompt = (topic, category) => {
 // Generate blog post using Google Gemini (Free)
 const generateWithGemini = async (topic) => {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.REACT_APP_GEMINI_API_KEY;
-  console.log('Gemini API key available:', !!apiKey);
-  console.log('API Key (first 10 chars):', apiKey ? apiKey.substring(0, 10) + '...' : 'Not found');
   
   // Use the correct Gemini model name
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
@@ -322,8 +320,6 @@ Format the response as JSON with the following structure:
 
 Make sure the content is accurate, helpful, and provides real value to expats dealing with Swiss taxes and finance.`;
 
-  console.log('Making request to Gemini API...');
-  
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -344,44 +340,32 @@ Make sure the content is accurate, helpful, and provides real value to expats de
     })
   });
 
-  console.log('Response status:', response.status);
-  
   if (!response.ok) {
     const errorText = await response.text();
-    console.error('Gemini API error response:', errorText);
     throw new Error(`Gemini API error: ${response.status} - ${errorText}`);
   }
 
   const data = await response.json();
-  console.log('Gemini API response received');
-  
+
   if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
-    console.error('Unexpected Gemini API response structure:', data);
     throw new Error('Invalid response structure from Gemini API');
   }
-  
+
   const aiResponse = data.candidates[0].content.parts[0].text;
-  console.log('AI Response length:', aiResponse.length);
-  console.log('AI Response preview:', aiResponse.substring(0, 300) + '...');
-  
+
   return aiResponse;
 };
 
 // Generate blog post using AI
 export const generateBlogPost = async () => {
   try {
-    console.log('generateBlogPost called');
     const { category, topic } = getRandomTopic();
-    console.log('Selected topic:', { category, topic });
-    
     const aiClient = initializeAIClient();
-    console.log('AI client initialized:', aiClient);
-    
+
     let response;
-    
+
     switch (aiClient.provider) {
       case AI_PROVIDERS.GEMINI:
-        console.log('Using Gemini provider');
         response = await generateWithGemini(topic);
         break;
       case AI_PROVIDERS.OPENAI:
@@ -413,17 +397,13 @@ export const generateBlogPost = async () => {
         jsonText = jsonMatch[0];
       }
       
-      console.log('Attempting to parse JSON:', jsonText.substring(0, 200) + '...');
       blogPost = JSON.parse(jsonText);
     } catch (parseError) {
-      console.error('Failed to parse AI response:', parseError);
-      console.error('Raw response:', response);
       throw new Error('Invalid AI response format - AI did not return valid JSON');
     }
 
     // Validate the blog post structure
     if (!blogPost.title || !blogPost.content || !blogPost.summary) {
-      console.error('Incomplete blog post structure:', blogPost);
       
       // Create a fallback blog post if the AI response is incomplete
       const today = new Date().toISOString().split('T')[0];
@@ -475,7 +455,6 @@ export const generateBlogPost = async () => {
     return blogPost;
 
   } catch (error) {
-    console.error('Error generating blog post:', error);
     throw error;
   }
 };
@@ -492,7 +471,7 @@ export const generateMultipleBlogPosts = async (count = 1) => {
         await new Promise(resolve => setTimeout(resolve, 2000));
       }
     } catch (error) {
-      console.error(`Failed to generate blog post ${i + 1}:`, error);
+      // Continue generating remaining posts if one fails
     }
   }
   return posts;
@@ -506,7 +485,6 @@ export const saveBlogPost = (blogPost) => {
     localStorage.setItem('aiGeneratedPosts', JSON.stringify(existingPosts));
     return true;
   } catch (error) {
-    console.error('Error saving blog post:', error);
     return false;
   }
 };
@@ -516,7 +494,6 @@ export const getAIGeneratedPosts = () => {
   try {
     return JSON.parse(localStorage.getItem('aiGeneratedPosts') || '[]');
   } catch (error) {
-    console.error('Error retrieving AI blog posts:', error);
     return [];
   }
 };
@@ -533,10 +510,9 @@ export const scheduleDailyBlogGeneration = () => {
       .then(post => {
         saveBlogPost(post);
         localStorage.setItem('lastBlogGeneration', today);
-        console.log('Daily blog post generated:', post.title, 'at', post.formattedTime);
       })
-      .catch(error => {
-        console.error('Failed to generate daily blog post:', error);
+      .catch(() => {
+        // Silently handle daily generation failures
       });
   }
 };

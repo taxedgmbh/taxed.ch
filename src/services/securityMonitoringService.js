@@ -91,8 +91,7 @@ export const securityMonitoringService = {
     
     // Initialize threat indicators
     this.initializeThreatIndicators();
-    
-    console.log('🚨 Security monitoring service initialized');
+
     return { success: true };
   },
 

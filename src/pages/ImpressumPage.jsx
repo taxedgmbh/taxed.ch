@@ -88,7 +88,7 @@ const ImpressumPage = () => {
                     
                     <div>
                       <p className="font-medium">VAT Number</p>
-                      <p>CHE-XXX.XXX.XXX MWST</p>
+                      <p>CHE-350.820.923 MWST</p>
                     </div>
                     
                     <div>

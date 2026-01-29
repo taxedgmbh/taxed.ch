@@ -1,70 +1,78 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import AdminApp from '@/pages/admin/AdminApp';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ShoppingCart from '@/components/ShoppingCart';
-import LandingPage from '@/pages/LandingPage';
-import AboutPage from '@/pages/AboutPage';
-import ServicesPage from '@/pages/ServicesPage';
-import HowItWorksPage from '@/pages/HowItWorksPage';
-import ContactPage from '@/pages/ContactPage';
-import StorePage from '@/pages/StorePage';
-import ProductDetailPage from '@/pages/ProductDetailPage';
-import SuccessPage from '@/pages/SuccessPage';
-import ImpressumPage from '@/pages/ImpressumPage';
-import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
-import AccessibilityPage from '@/pages/AccessibilityPage';
-import SitemapPage from '@/pages/SitemapPage';
-import FAQPage from '@/pages/FAQPage';
-import CareersPage from '@/pages/CareersPage';
-import LawSectionPage from '@/pages/LawSectionPage';
-import PricingPage from '@/pages/PricingPage';
-import CartPage from '@/pages/CartPage';
-import BlogPage from '@/pages/BlogPage';
-import BlogPostPage from '@/pages/BlogPostPage';
-import AdminPage from '@/pages/AdminPage';
-import TaxCalculatorPage from '@/pages/TaxCalculatorPage';
-import ResourceCenterPage from '@/pages/ResourceCenterPage';
-import NewsPage from '@/pages/NewsPage';
-import ClientPortalPage from '@/pages/ClientPortalPage';
-import ClientLoginPage from '@/pages/ClientLoginPage';
 import ProtectedClientRoute from '@/components/ProtectedClientRoute';
-import CaseStudiesPage from '@/pages/CaseStudiesPage';
-import TeamPage from '@/pages/TeamPage';
-import IndustrySpecializationsPage from '@/pages/IndustrySpecializationsPage';
-import AdvancedTaxToolsPage from '@/pages/AdvancedTaxToolsPage';
-import TaxDeadlinesPage from '@/pages/TaxDeadlinesPage';
-import ExpatTaxGuidePage from '@/pages/ExpatTaxGuidePage';
-import ClientTestimonialsPage from '@/pages/ClientTestimonialsPage';
-import TaxPlanningGuidePage from '@/pages/TaxPlanningGuidePage';
-import BusinessTaxGuidePage from '@/pages/BusinessTaxGuidePage';
-import InternationalTaxPage from '@/pages/InternationalTaxPage';
-import TaxFormsPage from '@/pages/TaxFormsPage';
-import TaxUpdatesPage from '@/pages/TaxUpdatesPage';
-import TaxWebinarsPage from '@/pages/TaxWebinarsPage';
-import TaxTechnologyPage from '@/pages/TaxTechnologyPage';
-import TaxSecurityPage from '@/pages/TaxSecurityPage';
-import TaxSupportPage from '@/pages/TaxSupportPage';
-import TaxGlossaryPage from '@/pages/TaxGlossaryPage';
-import TaxReturnExplainedPage from '@/pages/TaxReturnExplainedPage';
-import TaxEventsPage from '@/pages/TaxEventsPage';
-import TaxAuditSupportPage from '@/pages/TaxAuditSupportPage';
-import TaxCompliancePage from '@/pages/TaxCompliancePage';
-import TaxRecoveryPage from '@/pages/TaxRecoveryPage';
-import PartnershipPage from '@/pages/PartnershipPage';
-import ForumPage from '@/pages/ForumPageSimple';
-import ForumCategoryPage from '@/pages/ForumCategoryPage';
-import ForumTopicPage from '@/pages/ForumTopicPage';
-import ForumTestPage from '@/pages/ForumTestPage';
-import NotFoundPage from '@/pages/NotFoundPage';
 import { useCart } from '@/hooks/useCart';
 import { ClientAuthProvider } from '@/contexts/ClientAuthContext';
 import { initializeDailyBlogScheduler } from '@/services/dailyBlogScheduler';
 import { initializeAnalytics, trackWebVitals } from '@/utils/analytics';
 import { initializePerformanceOptimizations } from '@/utils/performance';
 import { initializeBingOptimizations } from '@/utils/bing';
+
+// Loading component for Suspense fallback
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-steel-blue"></div>
+  </div>
+);
+
+// Lazy load all page components for code splitting
+const LandingPage = React.lazy(() => import('@/pages/LandingPage'));
+const AboutPage = React.lazy(() => import('@/pages/AboutPage'));
+const ServicesPage = React.lazy(() => import('@/pages/ServicesPage'));
+const HowItWorksPage = React.lazy(() => import('@/pages/HowItWorksPage'));
+const ContactPage = React.lazy(() => import('@/pages/ContactPage'));
+const StorePage = React.lazy(() => import('@/pages/StorePage'));
+const ProductDetailPage = React.lazy(() => import('@/pages/ProductDetailPage'));
+const SuccessPage = React.lazy(() => import('@/pages/SuccessPage'));
+const ImpressumPage = React.lazy(() => import('@/pages/ImpressumPage'));
+const PrivacyPolicyPage = React.lazy(() => import('@/pages/PrivacyPolicyPage'));
+const AccessibilityPage = React.lazy(() => import('@/pages/AccessibilityPage'));
+const SitemapPage = React.lazy(() => import('@/pages/SitemapPage'));
+const FAQPage = React.lazy(() => import('@/pages/FAQPage'));
+const CareersPage = React.lazy(() => import('@/pages/CareersPage'));
+const LawSectionPage = React.lazy(() => import('@/pages/LawSectionPage'));
+const PricingPage = React.lazy(() => import('@/pages/PricingPage'));
+const CartPage = React.lazy(() => import('@/pages/CartPage'));
+const BlogPage = React.lazy(() => import('@/pages/BlogPage'));
+const BlogPostPage = React.lazy(() => import('@/pages/BlogPostPage'));
+const AdminApp = React.lazy(() => import('@/pages/admin/AdminApp'));
+const TaxCalculatorPage = React.lazy(() => import('@/pages/TaxCalculatorPage'));
+const ResourceCenterPage = React.lazy(() => import('@/pages/ResourceCenterPage'));
+const NewsPage = React.lazy(() => import('@/pages/NewsPage'));
+const ClientPortalPage = React.lazy(() => import('@/pages/ClientPortalPage'));
+const ClientLoginPage = React.lazy(() => import('@/pages/ClientLoginPage'));
+const CaseStudiesPage = React.lazy(() => import('@/pages/CaseStudiesPage'));
+const TeamPage = React.lazy(() => import('@/pages/TeamPage'));
+const IndustrySpecializationsPage = React.lazy(() => import('@/pages/IndustrySpecializationsPage'));
+const AdvancedTaxToolsPage = React.lazy(() => import('@/pages/AdvancedTaxToolsPage'));
+const TaxDeadlinesPage = React.lazy(() => import('@/pages/TaxDeadlinesPage'));
+const ExpatTaxGuidePage = React.lazy(() => import('@/pages/ExpatTaxGuidePage'));
+const ClientTestimonialsPage = React.lazy(() => import('@/pages/ClientTestimonialsPage'));
+const TaxPlanningGuidePage = React.lazy(() => import('@/pages/TaxPlanningGuidePage'));
+const BusinessTaxGuidePage = React.lazy(() => import('@/pages/BusinessTaxGuidePage'));
+const InternationalTaxPage = React.lazy(() => import('@/pages/InternationalTaxPage'));
+const TaxFormsPage = React.lazy(() => import('@/pages/TaxFormsPage'));
+const TaxUpdatesPage = React.lazy(() => import('@/pages/TaxUpdatesPage'));
+const TaxWebinarsPage = React.lazy(() => import('@/pages/TaxWebinarsPage'));
+const TaxTechnologyPage = React.lazy(() => import('@/pages/TaxTechnologyPage'));
+const TaxSecurityPage = React.lazy(() => import('@/pages/TaxSecurityPage'));
+const TaxSupportPage = React.lazy(() => import('@/pages/TaxSupportPage'));
+const TaxGlossaryPage = React.lazy(() => import('@/pages/TaxGlossaryPage'));
+const TaxReturnExplainedPage = React.lazy(() => import('@/pages/TaxReturnExplainedPage'));
+const TaxEventsPage = React.lazy(() => import('@/pages/TaxEventsPage'));
+const TaxAuditSupportPage = React.lazy(() => import('@/pages/TaxAuditSupportPage'));
+const TaxCompliancePage = React.lazy(() => import('@/pages/TaxCompliancePage'));
+const TaxRecoveryPage = React.lazy(() => import('@/pages/TaxRecoveryPage'));
+const PartnershipPage = React.lazy(() => import('@/pages/PartnershipPage'));
+const ForumPage = React.lazy(() => import('@/pages/ForumPageSimple'));
+const ForumCategoryPage = React.lazy(() => import('@/pages/ForumCategoryPage'));
+const ForumTopicPage = React.lazy(() => import('@/pages/ForumTopicPage'));
+const ForumTestPage = React.lazy(() => import('@/pages/ForumTestPage'));
+const NotFoundPage = React.lazy(() => import('@/pages/NotFoundPage'));
 
 function App() {
   // Initialize services
@@ -115,6 +123,7 @@ function App() {
       <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
       
       <main className="flex-grow">
+        <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -195,6 +204,7 @@ function App() {
           {/* 404 - Catch all undefined routes */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        </Suspense>
       </main>
       
       <Footer />

@@ -15,7 +15,6 @@ export const initializeDailyBlogScheduler = () => {
   try {
     // Check if auto-generation is enabled
     if (isAutoGenerationEnabled()) {
-      console.log('Auto-generation is enabled. Checking for daily blog generation...');
       scheduleDailyBlogGeneration();
     }
 
@@ -29,12 +28,11 @@ export const initializeDailyBlogScheduler = () => {
     // Also check when the app becomes visible (user returns to tab)
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden && isAutoGenerationEnabled()) {
-        console.log('App became visible. Checking for daily blog generation...');
         scheduleDailyBlogGeneration();
       }
     });
   } catch (error) {
-    console.warn('Error initializing daily blog scheduler:', error);
+    // Silently handle scheduler initialization errors
   }
 };
 
