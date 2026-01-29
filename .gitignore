@@ -80,7 +80,6 @@ temp/
 hostinger-deploy-*
 
 # Build output
-dist/
 build/
 
 # Playwright

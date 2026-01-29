@@ -5,6 +5,7 @@
 - [Admin Panel - Taxed GmbH | Secure Administration](/admin): Secure administrative access to Taxed GmbH client portal and system management.
 - [Advanced Tax Tools - Professional Tax Analysis | Taxed GmbH](/advancedtaxtools): Access our advanced tax planning tools and simulators. Professional-grade tax analysis for complex scenarios and optimization strategies.
 - [Case Studies - Client Success Stories | Taxed GmbH](/casestudies): Explore real client success stories and case studies showcasing how Taxed GmbH has helped expats optimize their Swiss tax situation.
+- [Client Login - Taxed GmbH](/clientlogin): Log in to your Taxed GmbH client portal to manage your tax documents and cases.
 - [Client Portal - Taxed GmbH | Secure Tax Management](/clientportal): Access your secure client portal to manage tax cases, upload documents, and communicate with your Swiss tax advisor at Taxed GmbH.
 - [FAQ - Frequently Asked Questions | Taxed GmbH](/faq): Find answers to common questions about Swiss taxes, expat tax filing, deductions, and more. Expert guidance for your tax questions.
 - [Get Expert Swiss Tax Help Now | Taxed GmbH - Better Than Big 4](/contact): Skip the Big 4 bureaucracy. Get direct access to senior Swiss tax experts at 60% lower rates. Email info@taxed.ch for professional consultation.
