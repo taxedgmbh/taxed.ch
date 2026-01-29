@@ -228,7 +228,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({ className = '' }
   };
 
   const handleBulkAction = (action: string) => {
-    console.log(`Bulk action: ${action} for users:`, selectedUsers);
+    // TODO: Implement bulk action handling
     setSelectedUsers([]);
   };
 

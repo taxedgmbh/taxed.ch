@@ -61,12 +61,10 @@ const NewsPage = () => {
   const handleGenerateNews = async () => {
     setIsGenerating(true);
     try {
-      console.log('🚀 Starting news generation...');
       await runDailyNewsAggregation();
-      await loadNews(); // Reload news after generation
-      console.log('✅ News generation completed');
+      await loadNews();
     } catch (error) {
-      console.error('❌ Error generating news:', error);
+      // Error handled silently in production
     } finally {
       setIsGenerating(false);
     }

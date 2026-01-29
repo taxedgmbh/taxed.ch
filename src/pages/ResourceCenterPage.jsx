@@ -35,8 +35,7 @@ const ResourceCenterPage = () => {
     // In a real implementation, this would trigger an actual download
     // and potentially send the email to your CRM
     if (email && name) {
-      console.log(`Downloading ${resourceName} for ${name} (${email})`);
-      // Here you would integrate with your email service or CRM
+      // Integration point for email service or CRM
     }
     
     // Show success message

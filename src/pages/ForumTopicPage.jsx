@@ -207,8 +207,7 @@ const ForumTopicPage = () => {
   };
 
   const handleReport = (postId) => {
-    console.log('Report post:', postId);
-    // Implement reporting functionality
+    // TODO: Implement reporting functionality
   };
 
   const handleShare = () => {

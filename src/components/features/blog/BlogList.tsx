@@ -203,8 +203,7 @@ export const BlogList: React.FC<BlogListProps> = ({
           >
             <BlogFilters
               onFiltersChange={(filters) => {
-                // Apply filters logic here
-                console.log('Filters changed:', filters);
+                // TODO: Apply filters logic here
               }}
             />
           </motion.div>
