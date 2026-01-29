@@ -39,54 +39,6 @@ export const ForumSidebar: React.FC<ForumSidebarProps> = ({
   onFilterClick,
   className = ''
 }) => {
-  // Mock data for now
-  const mockCategories: ForumCategory[] = [
-    {
-      id: '1',
-      name: 'Individual Tax Returns',
-      slug: 'individual-tax-returns',
-      description: 'Personal tax questions and advice',
-      icon: 'user',
-      color: '#3B82F6',
-      topicCount: 24,
-      postCount: 156,
-      lastActivity: '2 hours ago'
-    },
-    {
-      id: '2',
-      name: 'Business Tax Services',
-      slug: 'business-tax-services',
-      description: 'Corporate tax compliance and planning',
-      icon: 'building',
-      color: '#10B981',
-      topicCount: 18,
-      postCount: 89,
-      lastActivity: '4 hours ago'
-    },
-    {
-      id: '3',
-      name: 'International Tax',
-      slug: 'international-tax',
-      description: 'Cross-border tax issues and treaties',
-      icon: 'globe',
-      color: '#F59E0B',
-      topicCount: 31,
-      postCount: 203,
-      lastActivity: '1 hour ago'
-    },
-    {
-      id: '4',
-      name: 'Tax Education',
-      slug: 'tax-education',
-      description: 'Swiss tax law updates and resources',
-      icon: 'book-open',
-      color: '#8B5CF6',
-      topicCount: 12,
-      postCount: 67,
-      lastActivity: '6 hours ago'
-    }
-  ];
-
   const quickFilters = [
     { name: 'Latest Topics', icon: Clock, count: 45 },
     { name: 'Most Popular', icon: TrendingUp, count: 23 },
@@ -133,7 +85,7 @@ export const ForumSidebar: React.FC<ForumSidebarProps> = ({
           Categories
         </h3>
         <div className="space-y-3">
-          {mockCategories.map((category) => (
+          {categories.map((category) => (
             <motion.div
               key={category.id}
               whileHover={{ scale: 1.02 }}

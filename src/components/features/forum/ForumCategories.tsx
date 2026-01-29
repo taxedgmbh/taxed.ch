@@ -44,108 +44,8 @@ export const ForumCategories: React.FC<ForumCategoriesProps> = ({
   onCategoryClick,
   loading = false,
   className = ''
-}) => {
-  // Mock data for now
-  const mockCategories: ForumCategory[] = [
-    {
-      id: '1',
-      name: 'Individual Tax Returns',
-      slug: 'individual-tax-returns',
-      description: 'Questions about personal tax returns, deductions, and individual tax planning',
-      icon: 'user',
-      color: '#3B82F6',
-      topicCount: 24,
-      postCount: 156,
-      lastActivity: '2 hours ago',
-      lastTopic: {
-        title: 'Quellensteuer refund for expat',
-        author: 'John Doe',
-        createdAt: '2 hours ago'
-      }
-    },
-    {
-      id: '2',
-      name: 'Business Tax Services',
-      slug: 'business-tax-services',
-      description: 'Corporate tax compliance, VAT, and business tax planning',
-      icon: 'building',
-      color: '#10B981',
-      topicCount: 18,
-      postCount: 89,
-      lastActivity: '4 hours ago',
-      lastTopic: {
-        title: 'VAT registration for new company',
-        author: 'Jane Smith',
-        createdAt: '4 hours ago'
-      }
-    },
-    {
-      id: '3',
-      name: 'International Tax',
-      slug: 'international-tax',
-      description: 'Cross-border tax issues, tax treaties, and expatriate tax planning',
-      icon: 'globe',
-      color: '#F59E0B',
-      topicCount: 31,
-      postCount: 203,
-      lastActivity: '1 hour ago',
-      lastTopic: {
-        title: 'Double taxation treaty CH-USA',
-        author: 'Mike Johnson',
-        createdAt: '1 hour ago'
-      }
-    },
-    {
-      id: '4',
-      name: 'Tax Education & Resources',
-      slug: 'tax-education-resources',
-      description: 'Swiss tax law updates, deadlines, forms, and educational content',
-      icon: 'book-open',
-      color: '#8B5CF6',
-      topicCount: 12,
-      postCount: 67,
-      lastActivity: '6 hours ago',
-      lastTopic: {
-        title: '2024 tax rate changes',
-        author: 'Tax Expert',
-        createdAt: '6 hours ago'
-      },
-      isPinned: true
-    },
-    {
-      id: '5',
-      name: 'Professional Services',
-      slug: 'professional-services',
-      description: 'Tax audit support, compliance issues, and recovery services',
-      icon: 'briefcase',
-      color: '#EF4444',
-      topicCount: 8,
-      postCount: 34,
-      lastActivity: '1 day ago',
-      lastTopic: {
-        title: 'Tax audit support needed',
-        author: 'Sarah Wilson',
-        createdAt: '1 day ago'
-      }
-    },
-    {
-      id: '6',
-      name: 'General Discussion',
-      slug: 'general-discussion',
-      description: 'Tax news, success stories, community events, and off-topic discussions',
-      icon: 'message-circle',
-      color: '#6B7280',
-      topicCount: 45,
-      postCount: 234,
-      lastActivity: '30 minutes ago',
-      lastTopic: {
-        title: 'Success story: Got my refund!',
-        author: 'Tom Brown',
-        createdAt: '30 minutes ago'
-      }
-    }
-  ];
-
+) => {
+  // Use categories from props
   const getIcon = (iconName: string) => {
     const icons = {
       'user': '👤',
@@ -179,7 +79,7 @@ export const ForumCategories: React.FC<ForumCategoriesProps> = ({
 
   return (
     <div className={`space-y-4 ${className}`}>
-      {mockCategories.map((category, index) => (
+      {categories.map((category, index) => (
         <motion.div
           key={category.id}
           initial={{ opacity: 0, y: 20 }}

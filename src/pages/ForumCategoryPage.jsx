@@ -6,192 +6,132 @@ import { ForumTopics } from '@/components/features/forum/ForumTopics';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  ArrowLeft, 
-  Plus, 
-  Filter, 
-  Search,
+import {
+  ArrowLeft,
+  Plus,
   MessageCircle,
   Users,
   Clock,
-  Star,
-  Lock,
-  Pin
+  AlertCircle
 } from 'lucide-react';
+import { getCategory, getTopics } from '@/services/forum';
 
 const ForumCategoryPage = () => {
   const { categorySlug } = useParams();
   const navigate = useNavigate();
   const [category, setCategory] = useState(null);
   const [topics, setTopics] = useState([]);
+  const [allTopics, setAllTopics] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('newest');
-  const [filterBy, setFilterBy] = useState('all');
 
-  // Mock data for now
-  const mockCategories = {
-    'individual-tax-returns': {
-      id: '1',
-      name: 'Individual Tax Returns',
-      slug: 'individual-tax-returns',
-      description: 'Questions about personal tax returns, deductions, and individual tax planning',
-      icon: 'user',
-      color: '#3B82F6',
-      topicCount: 24,
-      postCount: 156,
-      lastActivity: '2 hours ago',
-      rules: [
-        'Be specific about your tax situation',
-        'Include relevant documents when possible',
-        'Respect privacy and confidentiality',
-        'Follow Swiss tax law guidelines'
-      ]
-    },
-    'business-tax-services': {
-      id: '2',
-      name: 'Business Tax Services',
-      slug: 'business-tax-services',
-      description: 'Corporate tax compliance, VAT, and business tax planning',
-      icon: 'building',
-      color: '#10B981',
-      topicCount: 18,
-      postCount: 89,
-      lastActivity: '4 hours ago',
-      rules: [
-        'Provide company details when relevant',
-        'Include business structure information',
-        'Mention industry and revenue size',
-        'Follow corporate tax guidelines'
-      ]
-    },
-    'international-tax': {
-      id: '3',
-      name: 'International Tax',
-      slug: 'international-tax',
-      description: 'Cross-border tax issues, tax treaties, and expatriate tax planning',
-      icon: 'globe',
-      color: '#F59E0B',
-      topicCount: 31,
-      postCount: 203,
-      lastActivity: '1 hour ago',
-      rules: [
-        'Specify your home country and residence status',
-        'Include tax treaty information if relevant',
-        'Mention double taxation concerns',
-        'Provide expat-specific details'
-      ]
-    }
-  };
-
-  const mockTopics = [
-    {
-      id: '1',
-      title: 'Quellensteuer refund for expat - urgent help needed',
-      slug: 'quellensteuer-refund-expat-urgent',
-      content: 'I need help with my Quellensteuer refund. I\'m an expat and not sure about the process...',
-      author: {
-        id: '1',
-        name: 'John Doe',
-        role: 'member'
-      },
-      category: {
-        id: '1',
-        name: 'Individual Tax Returns',
-        slug: 'individual-tax-returns',
-        color: '#3B82F6'
-      },
-      tags: ['quellensteuer', 'expat', 'refund'],
-      status: 'active',
-      isSolved: false,
-      isFeatured: true,
-      views: 156,
-      replies: 8,
-      likes: 12,
-      lastReply: {
-        author: 'Tax Expert',
-        createdAt: '2 hours ago'
-      },
-      createdAt: '2024-01-15T10:30:00Z',
-      updatedAt: '2024-01-15T14:30:00Z'
-    },
-    {
-      id: '2',
-      title: 'Pillar 3a contributions and tax deductions',
-      slug: 'pillar-3a-contributions-tax-deductions',
-      content: 'I want to maximize my Pillar 3a contributions for tax benefits. What\'s the current limit?',
-      author: {
-        id: '2',
-        name: 'Sarah Wilson',
-        role: 'member'
-      },
-      category: {
-        id: '1',
-        name: 'Individual Tax Returns',
-        slug: 'individual-tax-returns',
-        color: '#3B82F6'
-      },
-      tags: ['pillar-3a', 'deductions', 'retirement'],
-      status: 'active',
-      isSolved: true,
-      isFeatured: false,
-      views: 89,
-      replies: 15,
-      likes: 23,
-      lastReply: {
-        author: 'Retirement Expert',
-        createdAt: '4 hours ago'
-      },
-      createdAt: '2024-01-14T09:15:00Z',
-      updatedAt: '2024-01-15T10:15:00Z'
-    },
-    {
-      id: '3',
-      title: 'Tax deductions for home office expenses',
-      slug: 'tax-deductions-home-office-expenses',
-      content: 'I work from home 3 days a week. Can I deduct home office expenses from my taxes?',
-      author: {
-        id: '3',
-        name: 'Mike Johnson',
-        role: 'member'
-      },
-      category: {
-        id: '1',
-        name: 'Individual Tax Returns',
-        slug: 'individual-tax-returns',
-        color: '#3B82F6'
-      },
-      tags: ['home-office', 'deductions', 'expenses'],
-      status: 'active',
-      isSolved: false,
-      isFeatured: false,
-      views: 67,
-      replies: 5,
-      likes: 8,
-      lastReply: {
-        author: 'Tax Advisor',
-        createdAt: '1 hour ago'
-      },
-      createdAt: '2024-01-15T08:45:00Z',
-      updatedAt: '2024-01-15T13:45:00Z'
-    }
+  // Category guidelines (static for now)
+  const defaultRules = [
+    'Be specific about your tax situation',
+    'Include relevant documents when possible',
+    'Respect privacy and confidentiality',
+    'Follow Swiss tax law guidelines'
   ];
 
+  // Icon mapping based on category slug
+  const getIcon = (slug) => {
+    const icons = {
+      'individual-tax-returns': '👤',
+      'business-tax-services': '🏢',
+      'international-tax': '🌍',
+      'tax-planning': '📚',
+      'general-discussion': '💬'
+    };
+    return icons[slug] || '📁';
+  };
+
+  // Transform API topic to component format
+  const transformTopic = (apiTopic) => ({
+    id: apiTopic.id.toString(),
+    title: apiTopic.title,
+    slug: apiTopic.slug,
+    content: apiTopic.content,
+    author: {
+      id: '1',
+      name: `${apiTopic.author_name || 'Anonymous'} ${apiTopic.author_lastname || ''}`.trim(),
+      role: apiTopic.author_karma > 100 ? 'expert' : 'member'
+    },
+    category: {
+      id: apiTopic.category_slug,
+      name: apiTopic.category_name,
+      slug: apiTopic.category_slug,
+      color: apiTopic.category_color || '#3B82F6'
+    },
+    tags: [], // API doesn't return tags yet
+    status: apiTopic.status,
+    isSolved: apiTopic.is_solved,
+    isFeatured: apiTopic.is_featured,
+    views: apiTopic.views || 0,
+    replies: apiTopic.replies_count || 0,
+    likes: apiTopic.upvotes || 0,
+    lastReply: {
+      author: 'Community',
+      createdAt: apiTopic.last_reply_at || apiTopic.created_at
+    },
+    createdAt: apiTopic.created_at,
+    updatedAt: apiTopic.last_reply_at || apiTopic.created_at
+  });
+
   useEffect(() => {
-    // Simulate loading
-    setLoading(true);
-    setTimeout(() => {
-      const categoryData = mockCategories[categorySlug];
-      if (categoryData) {
-        setCategory(categoryData);
-        setTopics(mockTopics);
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        // Fetch category and topics in parallel
+        const [categoryData, topicsData] = await Promise.all([
+          getCategory(categorySlug),
+          getTopics({ category: categorySlug })
+        ]);
+
+        if (!categoryData) {
+          setError('Category not found');
+          setLoading(false);
+          return;
+        }
+
+        // Transform category data
+        setCategory({
+          id: categoryData.id.toString(),
+          name: categoryData.name,
+          slug: categoryData.slug,
+          description: categoryData.description,
+          icon: categoryData.slug,
+          color: categoryData.color || '#3B82F6',
+          topicCount: categoryData.topic_count || 0,
+          postCount: categoryData.post_count || 0,
+          lastActivity: categoryData.last_activity
+            ? new Date(categoryData.last_activity).toLocaleDateString()
+            : 'No activity yet',
+          rules: defaultRules
+        });
+
+        // Transform topics
+        const transformedTopics = topicsData.map(transformTopic);
+        setTopics(transformedTopics);
+        setAllTopics(transformedTopics);
+      } catch (err) {
+        console.error('Error fetching forum data:', err);
+        setError(err.message || 'Failed to load forum data');
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
-    }, 1000);
+    };
+
+    if (categorySlug) {
+      fetchData();
+    }
   }, [categorySlug]);
 
   const handleCreateTopic = () => {
-    navigate(`/forum/category/${categorySlug}/create-topic`);
+    // Navigate to forum with create modal
+    navigate('/forum');
   };
 
   const handleTopicClick = (topic) => {
@@ -200,25 +140,16 @@ const ForumCategoryPage = () => {
 
   const handleSearch = (query) => {
     setSearchQuery(query);
-    // Filter topics based on search query
-    const filtered = mockTopics.filter(topic =>
+    if (!query.trim()) {
+      setTopics(allTopics);
+      return;
+    }
+
+    const filtered = allTopics.filter(topic =>
       topic.title.toLowerCase().includes(query.toLowerCase()) ||
-      topic.content.toLowerCase().includes(query.toLowerCase()) ||
-      topic.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+      topic.content.toLowerCase().includes(query.toLowerCase())
     );
     setTopics(filtered);
-  };
-
-  const getIcon = (iconName) => {
-    const icons = {
-      'user': '👤',
-      'building': '🏢',
-      'globe': '🌍',
-      'book-open': '📚',
-      'briefcase': '💼',
-      'message-circle': '💬'
-    };
-    return icons[iconName] || '📁';
   };
 
   if (loading) {
@@ -233,6 +164,26 @@ const ForumCategoryPage = () => {
                 <div key={index} className="h-24 bg-gray-200 rounded"></div>
               ))}
             </div>
+          </div>
+        </div>
+      </ForumLayout>
+    );
+  }
+
+  if (error) {
+    return (
+      <ForumLayout>
+        <div className="text-center py-12">
+          <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Error Loading Category</h1>
+          <p className="text-gray-600 mb-6">{error}</p>
+          <div className="flex justify-center space-x-4">
+            <Button onClick={() => window.location.reload()}>
+              Try Again
+            </Button>
+            <Button variant="outline" onClick={() => navigate('/forum')}>
+              Back to Forum
+            </Button>
           </div>
         </div>
       </ForumLayout>
@@ -275,11 +226,11 @@ const ForumCategoryPage = () => {
 
           <Card className="p-6">
             <div className="flex items-start space-x-4">
-              <div 
+              <div
                 className="w-16 h-16 rounded-lg flex items-center justify-center text-white text-2xl font-medium flex-shrink-0"
                 style={{ backgroundColor: category.color }}
               >
-                {getIcon(category.icon)}
+                {getIcon(category.slug)}
               </div>
               <div className="flex-1">
                 <div className="flex items-center space-x-2 mb-2">
@@ -304,7 +255,7 @@ const ForumCategoryPage = () => {
                   </div>
                   <div className="flex items-center">
                     <Clock className="w-4 h-4 mr-1" />
-                    Last activity {category.lastActivity}
+                    Last activity: {category.lastActivity}
                   </div>
                 </div>
               </div>
@@ -357,7 +308,7 @@ const ForumCategoryPage = () => {
         </motion.div>
 
         {/* Empty State */}
-        {topics.length === 0 && (
+        {topics.length === 0 && !searchQuery && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

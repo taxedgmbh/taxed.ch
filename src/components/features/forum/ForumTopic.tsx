@@ -103,71 +103,6 @@ export const ForumTopic: React.FC<ForumTopicProps> = ({
   const [editingPost, setEditingPost] = useState<string | null>(null);
   const [editContent, setEditContent] = useState('');
 
-  // Mock data for now
-  const mockTopic: ForumTopic = {
-    id: '1',
-    title: 'Quellensteuer refund for expat - urgent help needed',
-    content: 'I need help with my Quellensteuer refund. I\'m an expat working in Switzerland and I\'m not sure about the process. I\'ve been here for 2 years and I think I might be eligible for a refund. Can someone guide me through the process?',
-    author: {
-      id: '1',
-      name: 'John Doe',
-      role: 'member'
-    },
-    category: {
-      id: '1',
-      name: 'Individual Tax Returns',
-      color: '#3B82F6'
-    },
-    tags: ['quellensteuer', 'expat', 'refund'],
-    status: 'active',
-    isSolved: false,
-    views: 156,
-    likes: 12,
-    userLiked: false,
-    userBookmarked: false,
-    createdAt: '2024-01-15T10:30:00Z',
-    updatedAt: '2024-01-15T14:30:00Z'
-  };
-
-  const mockPosts: ForumPost[] = [
-    {
-      id: '1',
-      content: 'To get a Quellensteuer refund, you need to file Form 85 with the Swiss tax authorities. Since you\'ve been here for 2 years, you should be eligible. Here\'s what you need to do:\n\n1. Download Form 85 from the tax office website\n2. Fill out your personal details\n3. Attach your salary statements\n4. Submit before the deadline (usually March 31st)\n\nI can help you with the specific sections if you need.',
-      author: {
-        id: '2',
-        name: 'Tax Expert',
-        role: 'expert',
-        reputation: 1250
-      },
-      isSolution: false,
-      isExpertAnswer: true,
-      likes: 8,
-      dislikes: 0,
-      userLiked: false,
-      userDisliked: false,
-      createdAt: '2024-01-15T11:00:00Z',
-      updatedAt: '2024-01-15T11:00:00Z'
-    },
-    {
-      id: '2',
-      content: 'I went through this process last year. The key is to make sure you have all your documents ready. Don\'t forget to include your residence permit and any tax certificates from your home country.',
-      author: {
-        id: '3',
-        name: 'Sarah Wilson',
-        role: 'member',
-        reputation: 340
-      },
-      isSolution: false,
-      isExpertAnswer: false,
-      likes: 3,
-      dislikes: 0,
-      userLiked: true,
-      userDisliked: false,
-      createdAt: '2024-01-15T12:30:00Z',
-      updatedAt: '2024-01-15T12:30:00Z'
-    }
-  ];
-
   const handleReply = () => {
     if (replyContent.trim()) {
       onReply?.(replyContent, replyingTo || undefined);
@@ -234,90 +169,16 @@ export const ForumTopic: React.FC<ForumTopicProps> = ({
     );
   }
 
+  // Don't render if no topic provided
+  if (!topic) {
+    return null;
+  }
+
   return (
     <div className={`space-y-6 ${className}`}>
-      {/* Back Button */}
-      <Button
-        variant="ghost"
-        onClick={() => window.history.back()}
-        className="mb-4"
-      >
-        <ArrowLeft className="w-4 h-4 mr-2" />
-        Back to Topics
-      </Button>
-
-      {/* Topic Header */}
-      <Card className="p-6">
-        <div className="space-y-4">
-          {/* Title and Meta */}
-          <div className="flex items-start justify-between">
-            <div className="flex-1">
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                {mockTopic.title}
-              </h1>
-              <div className="flex items-center space-x-4 text-sm text-gray-500">
-                <div className="flex items-center">
-                  <User className="w-4 h-4 mr-1" />
-                  <span className="font-medium">{mockTopic.author.name}</span>
-                  <Badge className={`ml-2 ${getRoleColor(mockTopic.author.role)}`}>
-                    {mockTopic.author.role}
-                  </Badge>
-                </div>
-                <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-1" />
-                  {formatDate(mockTopic.createdAt)}
-                </div>
-                <div className="flex items-center">
-                  <Eye className="w-4 h-4 mr-1" />
-                  {mockTopic.views} views
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => onLike?.(mockTopic.id)}
-                className={mockTopic.userLiked ? 'text-red-500' : 'text-gray-500'}
-              >
-                <Heart className="w-4 h-4 mr-1" />
-                {mockTopic.likes}
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => onBookmark?.(mockTopic.id)}
-                className={mockTopic.userBookmarked ? 'text-blue-500' : 'text-gray-500'}
-              >
-                <Bookmark className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="sm">
-                <Share2 className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2">
-            {mockTopic.tags.map((tag) => (
-              <Badge key={tag} variant="outline">
-                #{tag}
-              </Badge>
-            ))}
-          </div>
-
-          {/* Topic Content */}
-          <div className="prose max-w-none">
-            <p className="text-gray-700 leading-relaxed">
-              {mockTopic.content}
-            </p>
-          </div>
-        </div>
-      </Card>
-
       {/* Posts */}
       <div className="space-y-4">
-        {mockPosts.map((post, index) => (
+        {posts.map((post, index) => (
           <motion.div
             key={post.id}
             initial={{ opacity: 0, y: 20 }}

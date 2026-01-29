@@ -6,20 +6,18 @@ import { ForumTopic } from '@/components/features/forum/ForumTopic';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  ArrowLeft, 
-  Share2, 
-  Bookmark, 
+import {
+  ArrowLeft,
+  Share2,
+  Bookmark,
   Heart,
-  Flag,
-  Edit,
-  Trash2,
-  Star,
-  MessageCircle,
-  Eye,
   Clock,
-  User
+  Eye,
+  User,
+  AlertCircle,
+  Loader2
 } from 'lucide-react';
+import { getTopic, getPosts, vote } from '@/services/forum';
 
 const ForumTopicPage = () => {
   const { topicSlug } = useParams();
@@ -27,147 +25,143 @@ const ForumTopicPage = () => {
   const [topic, setTopic] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [userLiked, setUserLiked] = useState(false);
   const [userBookmarked, setUserBookmarked] = useState(false);
 
-  // Mock data for now
-  const mockTopics = {
-    'quellensteuer-refund-expat-urgent': {
+  // Transform API topic to component format
+  const transformTopic = (apiTopic) => ({
+    id: apiTopic.id.toString(),
+    title: apiTopic.title,
+    slug: apiTopic.slug,
+    content: apiTopic.content,
+    author: {
       id: '1',
-      title: 'Quellensteuer refund for expat - urgent help needed',
-      slug: 'quellensteuer-refund-expat-urgent',
-      content: 'I need help with my Quellensteuer refund. I\'m an expat working in Switzerland and I\'m not sure about the process. I\'ve been here for 2 years and I think I might be eligible for a refund. Can someone guide me through the process?\n\nI have all my salary statements and my residence permit. I\'m just not sure about the forms and deadlines.',
-      author: {
-        id: '1',
-        name: 'John Doe',
-        role: 'member'
-      },
-      category: {
-        id: '1',
-        name: 'Individual Tax Returns',
-        color: '#3B82F6'
-      },
-      tags: ['quellensteuer', 'expat', 'refund'],
-      status: 'active',
-      isSolved: false,
-      views: 156,
-      likes: 12,
-      userLiked: false,
-      userBookmarked: false,
-      createdAt: '2024-01-15T10:30:00Z',
-      updatedAt: '2024-01-15T14:30:00Z'
-    }
-  };
+      name: `${apiTopic.author_name || 'Anonymous'} ${apiTopic.author_lastname || ''}`.trim(),
+      role: apiTopic.author_karma > 100 ? 'expert' : 'member'
+    },
+    category: {
+      id: apiTopic.category_slug,
+      name: apiTopic.category_name,
+      slug: apiTopic.category_slug,
+      color: apiTopic.category_color || '#3B82F6'
+    },
+    tags: [], // API doesn't return tags yet
+    status: apiTopic.status,
+    isSolved: apiTopic.is_solved,
+    views: apiTopic.views || 0,
+    likes: apiTopic.upvotes || 0,
+    userLiked: apiTopic.user_vote === 'up',
+    userBookmarked: false,
+    createdAt: apiTopic.created_at,
+    updatedAt: apiTopic.last_reply_at || apiTopic.created_at
+  });
 
-  const mockPosts = [
-    {
+  // Transform API post to component format
+  const transformPost = (apiPost) => ({
+    id: apiPost.id.toString(),
+    content: apiPost.content,
+    author: {
       id: '1',
-      content: 'To get a Quellensteuer refund, you need to file Form 85 with the Swiss tax authorities. Since you\'ve been here for 2 years, you should be eligible. Here\'s what you need to do:\n\n1. Download Form 85 from the tax office website\n2. Fill out your personal details\n3. Attach your salary statements\n4. Submit before the deadline (usually March 31st)\n\nI can help you with the specific sections if you need. The key is to make sure you have all your documents ready.',
-      author: {
-        id: '2',
-        name: 'Tax Expert',
-        role: 'expert',
-        reputation: 1250
-      },
-      isSolution: false,
-      isExpertAnswer: true,
-      likes: 8,
-      dislikes: 0,
-      userLiked: false,
-      userDisliked: false,
-      createdAt: '2024-01-15T11:00:00Z',
-      updatedAt: '2024-01-15T11:00:00Z'
+      name: `${apiPost.author_name || 'Anonymous'} ${apiPost.author_lastname || ''}`.trim(),
+      role: apiPost.is_expert_answer ? 'expert' : 'member',
+      reputation: apiPost.author_karma || 0
     },
-    {
-      id: '2',
-      content: 'I went through this process last year. The key is to make sure you have all your documents ready. Don\'t forget to include your residence permit and any tax certificates from your home country.\n\nAlso, make sure to check if your home country has a tax treaty with Switzerland - this can affect your eligibility.',
-      author: {
-        id: '3',
-        name: 'Sarah Wilson',
-        role: 'member',
-        reputation: 340
-      },
-      isSolution: false,
-      isExpertAnswer: false,
-      likes: 3,
-      dislikes: 0,
-      userLiked: true,
-      userDisliked: false,
-      createdAt: '2024-01-15T12:30:00Z',
-      updatedAt: '2024-01-15T12:30:00Z'
-    },
-    {
-      id: '3',
-      content: 'Just to add to the expert\'s answer - the deadline for Form 85 is indeed March 31st, but you can submit it earlier. I submitted mine in February and got my refund by April.\n\nAlso, make sure to keep copies of everything you submit. The tax office can be slow to respond, so having records is important.',
-      author: {
-        id: '4',
-        name: 'Mike Johnson',
-        role: 'member',
-        reputation: 280
-      },
-      isSolution: false,
-      isExpertAnswer: false,
-      likes: 5,
-      dislikes: 0,
-      userLiked: false,
-      userDisliked: false,
-      createdAt: '2024-01-15T14:00:00Z',
-      updatedAt: '2024-01-15T14:00:00Z'
-    }
-  ];
+    isSolution: apiPost.is_solution,
+    isExpertAnswer: apiPost.is_expert_answer,
+    likes: apiPost.upvotes || 0,
+    dislikes: apiPost.downvotes || 0,
+    userLiked: apiPost.user_vote === 'up',
+    userDisliked: apiPost.user_vote === 'down',
+    createdAt: apiPost.created_at,
+    updatedAt: apiPost.created_at
+  });
 
   useEffect(() => {
-    // Simulate loading
-    setLoading(true);
-    setTimeout(() => {
-      const topicData = mockTopics[topicSlug];
-      if (topicData) {
-        setTopic(topicData);
-        setPosts(mockPosts);
-        setUserLiked(topicData.userLiked);
-        setUserBookmarked(topicData.userBookmarked);
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        // Fetch topic
+        const topicData = await getTopic(topicSlug);
+
+        if (!topicData) {
+          setError('Topic not found');
+          setLoading(false);
+          return;
+        }
+
+        const transformedTopic = transformTopic(topicData);
+        setTopic(transformedTopic);
+        setUserLiked(transformedTopic.userLiked);
+
+        // Fetch posts
+        const postsData = await getPosts(topicData.id);
+        const transformedPosts = postsData.map(transformPost);
+        setPosts(transformedPosts);
+      } catch (err) {
+        console.error('Error fetching topic:', err);
+        setError(err.message || 'Failed to load topic');
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
-    }, 1000);
+    };
+
+    if (topicSlug) {
+      fetchData();
+    }
   }, [topicSlug]);
 
-  const handleLike = (postId) => {
-    if (postId === topic.id) {
-      setUserLiked(!userLiked);
-      // Update topic likes
-      setTopic(prev => ({
-        ...prev,
-        likes: userLiked ? prev.likes - 1 : prev.likes + 1
-      }));
+  const handleLike = async (postId) => {
+    if (postId === topic?.id) {
+      try {
+        await vote('topic', parseInt(topic.id), 'up');
+        setUserLiked(!userLiked);
+        setTopic(prev => ({
+          ...prev,
+          likes: userLiked ? prev.likes - 1 : prev.likes + 1
+        }));
+      } catch (err) {
+        console.error('Error voting:', err);
+      }
     } else {
-      // Update post likes
-      setPosts(prev => prev.map(post => 
-        post.id === postId 
-          ? { ...post, likes: post.userLiked ? post.likes - 1 : post.likes + 1, userLiked: !post.userLiked }
-          : post
-      ));
+      try {
+        await vote('post', parseInt(postId), 'up');
+        setPosts(prev => prev.map(post =>
+          post.id === postId
+            ? { ...post, likes: post.userLiked ? post.likes - 1 : post.likes + 1, userLiked: !post.userLiked }
+            : post
+        ));
+      } catch (err) {
+        console.error('Error voting:', err);
+      }
     }
   };
 
-  const handleDislike = (postId) => {
-    setPosts(prev => prev.map(post => 
-      post.id === postId 
-        ? { ...post, dislikes: post.userDisliked ? post.dislikes - 1 : post.dislikes + 1, userDisliked: !post.userDisliked }
-        : post
-    ));
+  const handleDislike = async (postId) => {
+    try {
+      await vote('post', parseInt(postId), 'down');
+      setPosts(prev => prev.map(post =>
+        post.id === postId
+          ? { ...post, dislikes: post.userDisliked ? post.dislikes - 1 : post.dislikes + 1, userDisliked: !post.userDisliked }
+          : post
+      ));
+    } catch (err) {
+      console.error('Error voting:', err);
+    }
   };
 
-  const handleBookmark = (topicId) => {
+  const handleBookmark = () => {
     setUserBookmarked(!userBookmarked);
   };
 
   const handleMarkSolution = (postId) => {
-    setPosts(prev => prev.map(post => 
-      post.id === postId 
+    setPosts(prev => prev.map(post =>
+      post.id === postId
         ? { ...post, isSolution: true }
         : { ...post, isSolution: false }
     ));
-    // Mark topic as solved
     setTopic(prev => ({ ...prev, isSolved: true }));
   };
 
@@ -190,13 +184,13 @@ const ForumTopicPage = () => {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };
-    
+
     setPosts(prev => [...prev, newPost]);
   };
 
   const handleEdit = (postId, content) => {
-    setPosts(prev => prev.map(post => 
-      post.id === postId 
+    setPosts(prev => prev.map(post =>
+      post.id === postId
         ? { ...post, content, updatedAt: new Date().toISOString() }
         : post
     ));
@@ -207,35 +201,46 @@ const ForumTopicPage = () => {
   };
 
   const handleReport = (postId) => {
-    // TODO: Implement reporting functionality
+    // Reporting not implemented yet
   };
 
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: topic.title,
-        text: topic.content,
+        title: topic?.title,
+        text: topic?.content,
         url: window.location.href
       });
     } else {
       navigator.clipboard.writeText(window.location.href);
-      // Show toast notification
     }
   };
 
   if (loading) {
     return (
       <ForumLayout>
-        <div className="space-y-6">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 rounded w-1/3 mb-4"></div>
-            <div className="h-4 bg-gray-200 rounded w-1/2 mb-6"></div>
-            <div className="h-32 bg-gray-200 rounded mb-6"></div>
-            <div className="space-y-4">
-              {[...Array(3)].map((_, index) => (
-                <div key={index} className="h-24 bg-gray-200 rounded"></div>
-              ))}
-            </div>
+        <div className="flex items-center justify-center py-12">
+          <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+          <span className="ml-2 text-gray-600">Loading topic...</span>
+        </div>
+      </ForumLayout>
+    );
+  }
+
+  if (error) {
+    return (
+      <ForumLayout>
+        <div className="text-center py-12">
+          <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Error Loading Topic</h1>
+          <p className="text-gray-600 mb-6">{error}</p>
+          <div className="flex justify-center space-x-4">
+            <Button onClick={() => window.location.reload()}>
+              Try Again
+            </Button>
+            <Button variant="outline" onClick={() => navigate('/forum')}>
+              Back to Forum
+            </Button>
           </div>
         </div>
       </ForumLayout>
@@ -268,7 +273,7 @@ const ForumTopicPage = () => {
           <div className="flex items-center space-x-4 mb-6">
             <Button
               variant="ghost"
-              onClick={() => navigate(`/forum/category/${topic.category.id}`)}
+              onClick={() => navigate(`/forum/category/${topic.category.slug}`)}
               className="flex items-center"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -315,7 +320,7 @@ const ForumTopicPage = () => {
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => handleBookmark(topic.id)}
+                    onClick={handleBookmark}
                     className={userBookmarked ? 'text-blue-500' : 'text-gray-500'}
                   >
                     <Bookmark className="w-4 h-4" />
@@ -331,13 +336,15 @@ const ForumTopicPage = () => {
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {topic.tags.map((tag) => (
-                  <Badge key={tag} variant="outline">
-                    #{tag}
-                  </Badge>
-                ))}
-              </div>
+              {topic.tags && topic.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {topic.tags.map((tag) => (
+                    <Badge key={tag} variant="outline">
+                      #{tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
 
               {/* Topic Content */}
               <div className="prose max-w-none">
