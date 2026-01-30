@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -41,7 +41,28 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { websiteSchema } from '@/utils/structuredData';
 
-const LandingPageFixed = () => {
+const LandingPage = () => {
+  // Respect user's motion preferences for accessibility
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handleChange = (e) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Animation variants that respect reduced motion preference
+  const fadeInUp = prefersReducedMotion
+    ? {}
+    : { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, whileInView: { opacity: 1, y: 0 } };
+
+  const fadeIn = prefersReducedMotion
+    ? {}
+    : { initial: { opacity: 0 }, animate: { opacity: 1 } };
+
   const stats = [
     { number: "500+", label: "Happy Clients", icon: Users },
     { number: "98%", label: "Success Rate", icon: CheckCircle },
@@ -318,9 +339,9 @@ const LandingPageFixed = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={fadeInUp.initial}
+            animate={fadeInUp.animate}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
             className="text-white"
           >
             <div className="mb-6">
@@ -371,9 +392,9 @@ const LandingPageFixed = () => {
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={fadeInUp.initial}
+                  animate={fadeInUp.animate}
+                  transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
                   className="text-center"
                 >
                   <div className="flex items-center justify-center mb-2">
@@ -389,15 +410,15 @@ const LandingPageFixed = () => {
 
         {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
+          initial={fadeIn.initial}
+          animate={fadeIn.animate}
+          transition={prefersReducedMotion ? { duration: 0 } : { delay: 1, duration: 1 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           aria-label="Scroll down for more content"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={prefersReducedMotion ? {} : { y: [0, 10, 0] }}
+            transition={prefersReducedMotion ? {} : { duration: 2, repeat: Infinity }}
             className="text-white"
           >
             <ChevronRight className="h-6 w-6 rotate-90" aria-hidden="true" />
@@ -411,9 +432,9 @@ const LandingPageFixed = () => {
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-12 sm:mb-16"
             >
@@ -430,9 +451,9 @@ const LandingPageFixed = () => {
               {services.map((service, index) => (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={fadeInUp.initial}
+                  whileInView={fadeInUp.whileInView}
+                  transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <Card className="h-full hover:shadow-xl transition-all duration-300 group focus-within:ring-2 focus-within:ring-blue-500">
@@ -461,9 +482,9 @@ const LandingPageFixed = () => {
         <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-12 sm:mb-16"
             >
@@ -524,9 +545,9 @@ const LandingPageFixed = () => {
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-12 sm:mb-16"
             >
@@ -543,9 +564,9 @@ const LandingPageFixed = () => {
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={fadeInUp.initial}
+                  whileInView={fadeInUp.whileInView}
+                  transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <Card className="h-full hover:shadow-xl transition-all duration-300 group focus-within:ring-2 focus-within:ring-blue-500">
@@ -580,9 +601,9 @@ const LandingPageFixed = () => {
         <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-700 to-blue-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-12 sm:mb-16"
             >
@@ -598,9 +619,9 @@ const LandingPageFixed = () => {
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={fadeInUp.initial}
+                  whileInView={fadeInUp.whileInView}
+                  transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <Card className="h-full bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-colors">
@@ -628,9 +649,9 @@ const LandingPageFixed = () => {
         <section className="py-12 sm:py-16 lg:py-20 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
               viewport={{ once: true }}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
@@ -687,4 +708,4 @@ const LandingPageFixed = () => {
   );
 };
 
-export default LandingPageFixed;
+export default LandingPage;

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ForumHeader } from './ForumHeader';
 import { ForumSidebar } from './ForumSidebar';
 import { ForumStats } from './ForumStats';
+import { getCategories, getStats } from '@/services/forum';
 
 interface ForumLayoutProps {
   children: React.ReactNode;
@@ -17,6 +18,24 @@ export const ForumLayout: React.FC<ForumLayoutProps> = ({
   showStats = true,
   className = ''
 }) => {
+  const [categories, setCategories] = useState([]);
+  const [stats, setStats] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [categoriesData, statsData] = await Promise.all([
+          getCategories(),
+          getStats()
+        ]);
+        setCategories(categoriesData);
+        setStats(statsData);
+      } catch (err) {
+        console.error('Error fetching forum data:', err);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className={`min-h-screen bg-gray-50 ${className}`}>
       {/* Forum Header */}
@@ -27,7 +46,20 @@ export const ForumLayout: React.FC<ForumLayoutProps> = ({
           {/* Sidebar */}
           {showSidebar && (
             <aside className="lg:w-1/4">
-              <ForumSidebar />
+              <ForumSidebar
+                categories={categories.map(cat => ({
+                  id: String(cat.id),
+                  name: cat.name,
+                  slug: cat.slug,
+                  description: cat.description,
+                  icon: cat.icon || 'book-open',
+                  color: cat.color || '#3B82F6',
+                  topicCount: cat.topic_count || 0,
+                  postCount: cat.post_count || 0,
+                  lastActivity: cat.last_activity
+                }))}
+                stats={stats}
+              />
             </aside>
           )}
           
@@ -46,7 +78,7 @@ export const ForumLayout: React.FC<ForumLayoutProps> = ({
         {/* Forum Stats */}
         {showStats && (
           <div className="mt-12">
-            <ForumStats />
+            <ForumStats stats={stats} />
           </div>
         )}
       </div>

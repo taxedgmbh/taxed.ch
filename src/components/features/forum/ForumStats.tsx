@@ -1,30 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
-import { 
-  Users, 
-  MessageCircle, 
-  TrendingUp, 
+import {
+  Users,
+  MessageCircle,
+  TrendingUp,
   Star,
-  Clock,
   Award,
   Activity
 } from 'lucide-react';
 
 interface ForumStatsProps {
   stats?: {
-    totalMembers: number;
-    activeToday: number;
-    totalTopics: number;
-    totalPosts: number;
-    expertAnswers: number;
-    solvedTopics: number;
-    averageResponseTime: string;
-    topContributors: Array<{
-      name: string;
-      posts: number;
-      reputation: number;
-    }>;
+    total_users: number;
+    total_topics: number;
+    total_posts: number;
+    total_categories: number;
+    total_votes: number;
   };
   className?: string;
 }
@@ -33,74 +25,42 @@ export const ForumStats: React.FC<ForumStatsProps> = ({
   stats,
   className = ''
 }) => {
-  // Mock data for now
-  const mockStats = {
-    totalMembers: 1247,
-    activeToday: 89,
-    totalTopics: 156,
-    totalPosts: 892,
-    expertAnswers: 234,
-    solvedTopics: 67,
-    averageResponseTime: '2.5 hours',
-    topContributors: [
-      { name: 'Tax Expert', posts: 45, reputation: 1250 },
-      { name: 'Business Expert', posts: 38, reputation: 980 },
-      { name: 'International Expert', posts: 32, reputation: 850 },
-      { name: 'Sarah Wilson', posts: 28, reputation: 720 },
-      { name: 'Mike Johnson', posts: 25, reputation: 680 }
-    ]
-  };
-
-  const currentStats = stats || mockStats;
 
   const statCards = [
     {
-      title: 'Total Members',
-      value: currentStats.totalMembers.toLocaleString(),
+      title: 'Members',
+      value: stats?.total_users?.toLocaleString() ?? '0',
       icon: Users,
       color: 'text-blue-600',
-      bgColor: 'bg-blue-100',
-      change: '+12% this month'
+      bgColor: 'bg-blue-100'
     },
     {
-      title: 'Active Today',
-      value: currentStats.activeToday.toLocaleString(),
+      title: 'Categories',
+      value: stats?.total_categories?.toLocaleString() ?? '0',
       icon: Activity,
       color: 'text-green-600',
-      bgColor: 'bg-green-100',
-      change: '+8% from yesterday'
+      bgColor: 'bg-green-100'
     },
     {
-      title: 'Total Topics',
-      value: currentStats.totalTopics.toLocaleString(),
+      title: 'Topics',
+      value: stats?.total_topics?.toLocaleString() ?? '0',
       icon: MessageCircle,
       color: 'text-purple-600',
-      bgColor: 'bg-purple-100',
-      change: '+15% this week'
+      bgColor: 'bg-purple-100'
     },
     {
-      title: 'Expert Answers',
-      value: currentStats.expertAnswers.toLocaleString(),
+      title: 'Posts',
+      value: stats?.total_posts?.toLocaleString() ?? '0',
       icon: Star,
       color: 'text-yellow-600',
-      bgColor: 'bg-yellow-100',
-      change: '+23% this month'
+      bgColor: 'bg-yellow-100'
     },
     {
-      title: 'Solved Topics',
-      value: currentStats.solvedTopics.toLocaleString(),
+      title: 'Votes',
+      value: stats?.total_votes?.toLocaleString() ?? '0',
       icon: Award,
       color: 'text-green-600',
-      bgColor: 'bg-green-100',
-      change: '+18% this week'
-    },
-    {
-      title: 'Avg Response Time',
-      value: currentStats.averageResponseTime,
-      icon: Clock,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-100',
-      change: '-0.5 hours improvement'
+      bgColor: 'bg-green-100'
     }
   ];
 
@@ -126,9 +86,6 @@ export const ForumStats: React.FC<ForumStatsProps> = ({
                     {stat.value}
                   </h3>
                   <p className="text-sm text-gray-600">{stat.title}</p>
-                  <p className="text-xs text-green-600 font-medium">
-                    {stat.change}
-                  </p>
                 </div>
               </div>
             </Card>
@@ -136,104 +93,24 @@ export const ForumStats: React.FC<ForumStatsProps> = ({
         ))}
       </div>
 
-      {/* Top Contributors */}
+      {/* Forum Overview */}
       <Card className="p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <TrendingUp className="w-5 h-5 mr-2" />
-          Top Contributors
+          Forum Overview
         </h3>
-        <div className="space-y-4">
-          {currentStats.topContributors.map((contributor, index) => (
-            <motion.div
-              key={contributor.name}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-semibold text-sm">
-                    {contributor.name.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">{contributor.name}</h4>
-                  <p className="text-sm text-gray-500">
-                    {contributor.posts} posts • {contributor.reputation} reputation
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="flex items-center text-yellow-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-4 h-4 ${
-                        i < Math.floor(contributor.reputation / 200) ? 'fill-current' : ''
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className="text-sm font-medium text-gray-600">
-                  #{index + 1}
-                </span>
-              </div>
-            </motion.div>
-          ))}
+        <p className="text-gray-600 text-sm">
+          Welcome to the Swiss Tax Forum! This is a community-driven space where
+          you can discuss tax questions, share experiences, and get advice from
+          fellow taxpayers and experts.
+        </p>
+        <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+          <p className="text-sm text-blue-800">
+            <strong>Getting Started:</strong> Browse categories, read existing topics,
+            or start a new discussion to get help with your tax questions.
+          </p>
         </div>
       </Card>
-
-      {/* Community Insights */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Community Health
-          </h3>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">Response Rate</span>
-              <span className="font-semibold text-green-600">94%</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">Expert Participation</span>
-              <span className="font-semibold text-blue-600">87%</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">Solution Rate</span>
-              <span className="font-semibold text-purple-600">78%</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">User Satisfaction</span>
-              <span className="font-semibold text-yellow-600">4.8/5</span>
-            </div>
-          </div>
-        </Card>
-
-        <Card className="p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Recent Activity
-          </h3>
-          <div className="space-y-3">
-            <div className="flex items-center space-x-3 text-sm">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-gray-600">5 new topics in the last hour</span>
-            </div>
-            <div className="flex items-center space-x-3 text-sm">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-gray-600">12 expert answers provided</span>
-            </div>
-            <div className="flex items-center space-x-3 text-sm">
-              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-              <span className="text-gray-600">3 topics marked as solved</span>
-            </div>
-            <div className="flex items-center space-x-3 text-sm">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-              <span className="text-gray-600">8 new members joined</span>
-            </div>
-          </div>
-        </Card>
-      </div>
     </div>
   );
 };

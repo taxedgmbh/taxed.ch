@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { 
   MessageCircle, 
   Users, 
@@ -26,8 +25,16 @@ interface ForumCategory {
   lastActivity?: string;
 }
 
+interface ForumStats {
+  total_topics: number;
+  total_posts: number;
+  total_users: number;
+  total_categories: number;
+}
+
 interface ForumSidebarProps {
   categories?: ForumCategory[];
+  stats?: ForumStats;
   onCategoryClick?: (category: ForumCategory) => void;
   onFilterClick?: (filter: string) => void;
   className?: string;
@@ -35,15 +42,16 @@ interface ForumSidebarProps {
 
 export const ForumSidebar: React.FC<ForumSidebarProps> = ({
   categories = [],
+  stats,
   onCategoryClick,
   onFilterClick,
   className = ''
 }) => {
   const quickFilters = [
-    { name: 'Latest Topics', icon: Clock, count: 45 },
-    { name: 'Most Popular', icon: TrendingUp, count: 23 },
-    { name: 'Unanswered', icon: MessageCircle, count: 8 },
-    { name: 'Expert Answers', icon: Star, count: 15 }
+    { name: 'Latest Topics', icon: Clock },
+    { name: 'Most Popular', icon: TrendingUp },
+    { name: 'Unanswered', icon: MessageCircle },
+    { name: 'Expert Answers', icon: Star }
   ];
 
   const formatTimeAgo = (timeString: string) => {
@@ -66,12 +74,9 @@ export const ForumSidebar: React.FC<ForumSidebarProps> = ({
               className="w-full justify-start text-left"
               onClick={() => onFilterClick?.(filter.name)}
             >
-              <div className="flex items-center justify-between w-full">
+              <div className="flex items-center w-full">
                 <filter.icon className="w-4 h-4 mr-3" />
                 <span className="flex-1">{filter.name}</span>
-                <Badge variant="secondary" className="ml-2">
-                  {filter.count}
-                </Badge>
               </div>
             </Button>
           ))}
@@ -138,25 +143,28 @@ export const ForumSidebar: React.FC<ForumSidebarProps> = ({
         </div>
       </Card>
 
-      {/* Popular Tags */}
-      <Card className="p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <Tag className="w-5 h-5 mr-2" />
-          Popular Tags
-        </h3>
-        <div className="flex flex-wrap gap-2">
-          {['quellensteuer', 'expat', 'vat', 'pillar-3a', 'tax-planning', 'compliance'].map((tag) => (
-            <Button
-              key={tag}
-              variant="outline"
-              size="sm"
-              className="text-xs"
-            >
-              #{tag}
-            </Button>
-          ))}
-        </div>
-      </Card>
+      {/* Popular Tags - derived from category slugs */}
+      {categories.length > 0 && (
+        <Card className="p-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+            <Tag className="w-5 h-5 mr-2" />
+            Popular Tags
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {categories.slice(0, 6).map((category) => (
+              <Button
+                key={category.slug}
+                variant="outline"
+                size="sm"
+                className="text-xs"
+                onClick={() => onCategoryClick?.(category)}
+              >
+                #{category.slug}
+              </Button>
+            ))}
+          </div>
+        </Card>
+      )}
 
       {/* Forum Stats */}
       <Card className="p-6">
@@ -166,20 +174,28 @@ export const ForumSidebar: React.FC<ForumSidebarProps> = ({
         </h3>
         <div className="space-y-3">
           <div className="flex justify-between items-center">
-            <span className="text-sm text-gray-600">Total Members</span>
-            <span className="font-semibold text-gray-900">1,247</span>
+            <span className="text-sm text-gray-600">Members</span>
+            <span className="font-semibold text-gray-900">
+              {stats?.total_users?.toLocaleString() ?? '-'}
+            </span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-sm text-gray-600">Active Today</span>
-            <span className="font-semibold text-green-600">89</span>
+            <span className="text-sm text-gray-600">Categories</span>
+            <span className="font-semibold text-blue-600">
+              {stats?.total_categories?.toLocaleString() ?? categories.length}
+            </span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-sm text-gray-600">Topics This Week</span>
-            <span className="font-semibold text-blue-600">23</span>
+            <span className="text-sm text-gray-600">Topics</span>
+            <span className="font-semibold text-purple-600">
+              {stats?.total_topics?.toLocaleString() ?? '-'}
+            </span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-sm text-gray-600">Expert Answers</span>
-            <span className="font-semibold text-purple-600">156</span>
+            <span className="text-sm text-gray-600">Posts</span>
+            <span className="font-semibold text-green-600">
+              {stats?.total_posts?.toLocaleString() ?? '-'}
+            </span>
           </div>
         </div>
       </Card>
