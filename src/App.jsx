@@ -20,59 +20,82 @@ const PageLoader = () => (
 );
 
 // Lazy load all page components for code splitting
+
+// Root pages
 const LandingPage = React.lazy(() => import('@/pages/LandingPage'));
-const AboutPage = React.lazy(() => import('@/pages/AboutPage'));
-const ServicesPage = React.lazy(() => import('@/pages/ServicesPage'));
-const HowItWorksPage = React.lazy(() => import('@/pages/HowItWorksPage'));
-const ContactPage = React.lazy(() => import('@/pages/ContactPage'));
-const StorePage = React.lazy(() => import('@/pages/StorePage'));
-const ProductDetailPage = React.lazy(() => import('@/pages/ProductDetailPage'));
-const SuccessPage = React.lazy(() => import('@/pages/SuccessPage'));
-const ImpressumPage = React.lazy(() => import('@/pages/ImpressumPage'));
-const PrivacyPolicyPage = React.lazy(() => import('@/pages/PrivacyPolicyPage'));
-const AccessibilityPage = React.lazy(() => import('@/pages/AccessibilityPage'));
-const SitemapPage = React.lazy(() => import('@/pages/SitemapPage'));
-const FAQPage = React.lazy(() => import('@/pages/FAQPage'));
-const CareersPage = React.lazy(() => import('@/pages/CareersPage'));
-const LawSectionPage = React.lazy(() => import('@/pages/LawSectionPage'));
-const PricingPage = React.lazy(() => import('@/pages/PricingPage'));
-const CartPage = React.lazy(() => import('@/pages/CartPage'));
-const BlogPage = React.lazy(() => import('@/pages/BlogPage'));
-const BlogPostPage = React.lazy(() => import('@/pages/BlogPostPage'));
-const AdminApp = React.lazy(() => import('@/pages/admin/AdminApp'));
-const TaxCalculatorPage = React.lazy(() => import('@/pages/TaxCalculatorPage'));
-const ResourceCenterPage = React.lazy(() => import('@/pages/ResourceCenterPage'));
-const NewsPage = React.lazy(() => import('@/pages/NewsPage'));
-const ClientPortalPage = React.lazy(() => import('@/pages/ClientPortalPage'));
-const ClientLoginPage = React.lazy(() => import('@/pages/ClientLoginPage'));
-const CaseStudiesPage = React.lazy(() => import('@/pages/CaseStudiesPage'));
-const TeamPage = React.lazy(() => import('@/pages/TeamPage'));
-const IndustrySpecializationsPage = React.lazy(() => import('@/pages/IndustrySpecializationsPage'));
-const AdvancedTaxToolsPage = React.lazy(() => import('@/pages/AdvancedTaxToolsPage'));
-const TaxDeadlinesPage = React.lazy(() => import('@/pages/TaxDeadlinesPage'));
-const ExpatTaxGuidePage = React.lazy(() => import('@/pages/ExpatTaxGuidePage'));
-const ClientTestimonialsPage = React.lazy(() => import('@/pages/ClientTestimonialsPage'));
-const TaxPlanningGuidePage = React.lazy(() => import('@/pages/TaxPlanningGuidePage'));
-const BusinessTaxGuidePage = React.lazy(() => import('@/pages/BusinessTaxGuidePage'));
-const InternationalTaxPage = React.lazy(() => import('@/pages/InternationalTaxPage'));
-const TaxFormsPage = React.lazy(() => import('@/pages/TaxFormsPage'));
-const TaxUpdatesPage = React.lazy(() => import('@/pages/TaxUpdatesPage'));
-const TaxWebinarsPage = React.lazy(() => import('@/pages/TaxWebinarsPage'));
-const TaxTechnologyPage = React.lazy(() => import('@/pages/TaxTechnologyPage'));
-const TaxSecurityPage = React.lazy(() => import('@/pages/TaxSecurityPage'));
-const TaxSupportPage = React.lazy(() => import('@/pages/TaxSupportPage'));
-const TaxGlossaryPage = React.lazy(() => import('@/pages/TaxGlossaryPage'));
-const TaxReturnExplainedPage = React.lazy(() => import('@/pages/TaxReturnExplainedPage'));
-const TaxEventsPage = React.lazy(() => import('@/pages/TaxEventsPage'));
-const TaxAuditSupportPage = React.lazy(() => import('@/pages/TaxAuditSupportPage'));
-const TaxCompliancePage = React.lazy(() => import('@/pages/TaxCompliancePage'));
-const TaxRecoveryPage = React.lazy(() => import('@/pages/TaxRecoveryPage'));
-const PartnershipPage = React.lazy(() => import('@/pages/PartnershipPage'));
-const ForumPage = React.lazy(() => import('@/pages/ForumPageSimple'));
-const ForumCategoryPage = React.lazy(() => import('@/pages/ForumCategoryPage'));
-const ForumTopicPage = React.lazy(() => import('@/pages/ForumTopicPage'));
-const ForumTestPage = React.lazy(() => import('@/pages/ForumTestPage'));
 const NotFoundPage = React.lazy(() => import('@/pages/NotFoundPage'));
+
+// Core marketing pages
+const AboutPage = React.lazy(() => import('@/pages/core/AboutPage'));
+const ServicesPage = React.lazy(() => import('@/pages/core/ServicesPage'));
+const HowItWorksPage = React.lazy(() => import('@/pages/core/HowItWorksPage'));
+const ContactPage = React.lazy(() => import('@/pages/core/ContactPage'));
+const CareersPage = React.lazy(() => import('@/pages/core/CareersPage'));
+const PricingPage = React.lazy(() => import('@/pages/core/PricingPage'));
+const TeamPage = React.lazy(() => import('@/pages/core/TeamPage'));
+const PartnershipPage = React.lazy(() => import('@/pages/core/PartnershipPage'));
+
+// Store pages
+const StorePage = React.lazy(() => import('@/pages/store/StorePage'));
+const ProductDetailPage = React.lazy(() => import('@/pages/store/ProductDetailPage'));
+const SuccessPage = React.lazy(() => import('@/pages/store/SuccessPage'));
+const CartPage = React.lazy(() => import('@/pages/store/CartPage'));
+
+// Legal pages
+const ImpressumPage = React.lazy(() => import('@/pages/legal/ImpressumPage'));
+const PrivacyPolicyPage = React.lazy(() => import('@/pages/legal/PrivacyPolicyPage'));
+const AccessibilityPage = React.lazy(() => import('@/pages/legal/AccessibilityPage'));
+const TermsOfServicePage = React.lazy(() => import('@/pages/legal/TermsOfServicePage'));
+const CookiePolicyPage = React.lazy(() => import('@/pages/legal/CookiePolicyPage'));
+
+// Content pages
+const SitemapPage = React.lazy(() => import('@/pages/content/SitemapPage'));
+const FAQPage = React.lazy(() => import('@/pages/content/FAQPage'));
+const LawSectionPage = React.lazy(() => import('@/pages/content/LawSectionPage'));
+const ResourceCenterPage = React.lazy(() => import('@/pages/content/ResourceCenterPage'));
+const NewsPage = React.lazy(() => import('@/pages/content/NewsPage'));
+const CaseStudiesPage = React.lazy(() => import('@/pages/content/CaseStudiesPage'));
+const IndustrySpecializationsPage = React.lazy(() => import('@/pages/content/IndustrySpecializationsPage'));
+const ClientTestimonialsPage = React.lazy(() => import('@/pages/content/ClientTestimonialsPage'));
+
+// Blog pages
+const BlogPage = React.lazy(() => import('@/pages/blog/BlogPage'));
+const BlogPostPage = React.lazy(() => import('@/pages/blog/BlogPostPage'));
+
+// Admin
+const AdminApp = React.lazy(() => import('@/pages/admin/AdminApp'));
+
+// Tax resource pages
+const TaxCalculatorPage = React.lazy(() => import('@/pages/tax/TaxCalculatorPage'));
+const TaxDeadlinesPage = React.lazy(() => import('@/pages/tax/TaxDeadlinesPage'));
+const TaxFormsPage = React.lazy(() => import('@/pages/tax/TaxFormsPage'));
+const TaxUpdatesPage = React.lazy(() => import('@/pages/tax/TaxUpdatesPage'));
+const TaxWebinarsPage = React.lazy(() => import('@/pages/tax/TaxWebinarsPage'));
+const TaxTechnologyPage = React.lazy(() => import('@/pages/tax/TaxTechnologyPage'));
+const TaxSecurityPage = React.lazy(() => import('@/pages/tax/TaxSecurityPage'));
+const TaxSupportPage = React.lazy(() => import('@/pages/tax/TaxSupportPage'));
+const TaxGlossaryPage = React.lazy(() => import('@/pages/tax/TaxGlossaryPage'));
+const TaxReturnExplainedPage = React.lazy(() => import('@/pages/tax/TaxReturnExplainedPage'));
+const TaxEventsPage = React.lazy(() => import('@/pages/tax/TaxEventsPage'));
+const TaxAuditSupportPage = React.lazy(() => import('@/pages/tax/TaxAuditSupportPage'));
+const TaxCompliancePage = React.lazy(() => import('@/pages/tax/TaxCompliancePage'));
+const TaxRecoveryPage = React.lazy(() => import('@/pages/tax/TaxRecoveryPage'));
+
+// Guides pages
+const AdvancedTaxToolsPage = React.lazy(() => import('@/pages/guides/AdvancedTaxToolsPage'));
+const ExpatTaxGuidePage = React.lazy(() => import('@/pages/guides/ExpatTaxGuidePage'));
+const TaxPlanningGuidePage = React.lazy(() => import('@/pages/guides/TaxPlanningGuidePage'));
+const BusinessTaxGuidePage = React.lazy(() => import('@/pages/guides/BusinessTaxGuidePage'));
+const InternationalTaxPage = React.lazy(() => import('@/pages/guides/InternationalTaxPage'));
+
+// Client portal pages
+const ClientPortalPage = React.lazy(() => import('@/pages/client/ClientPortalPage'));
+const ClientLoginPage = React.lazy(() => import('@/pages/client/ClientLoginPage'));
+
+// Forum pages
+const ForumPage = React.lazy(() => import('@/pages/forum/ForumPageSimple'));
+const ForumCategoryPage = React.lazy(() => import('@/pages/forum/ForumCategoryPage'));
+const ForumTopicPage = React.lazy(() => import('@/pages/forum/ForumTopicPage'));
 
 function App() {
   // Initialize services
@@ -136,8 +159,8 @@ function App() {
           <Route path="/impressum" element={<ImpressumPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms" element={<PrivacyPolicyPage />} />
-          <Route path="/cookies" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} />
+          <Route path="/cookies" element={<CookiePolicyPage />} />
           <Route path="/accessibility" element={<AccessibilityPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
           <Route path="/faq" element={<FAQPage />} />
@@ -198,7 +221,6 @@ function App() {
           <Route path="/forum" element={<ForumPage />} />
           <Route path="/forum/category/:categorySlug" element={<ForumCategoryPage />} />
           <Route path="/forum/topic/:topicSlug" element={<ForumTopicPage />} />
-          <Route path="/forum-test" element={<ForumTestPage />} />
           
           
           {/* 404 - Catch all undefined routes */}

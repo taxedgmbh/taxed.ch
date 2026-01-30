@@ -87,7 +87,7 @@ const Footer = () => {
                     <Phone className="h-4 w-4 text-steel-blue" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium">info@taxed.ch</div>
+                    <div className="text-sm font-medium">+41 79 910 77 87</div>
                     <div className="text-xs text-gray-500">Mon-Fri 9:00-18:00</div>
                   </div>
                 </div>

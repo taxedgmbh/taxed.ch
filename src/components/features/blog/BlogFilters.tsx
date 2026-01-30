@@ -59,7 +59,7 @@ const popularTags = [
 ];
 
 const authors = [
-  'Emmanuel Flury',
+  'Emanuel Flury',
   'Sarah Müller',
   'Michael Weber',
   'Lisa Chen'

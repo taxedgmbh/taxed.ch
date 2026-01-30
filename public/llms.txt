@@ -6,6 +6,7 @@
 - [Case Studies - Client Success Stories | Taxed GmbH](/casestudies): Explore real client success stories and case studies showcasing how Taxed GmbH has helped expats optimize their Swiss tax situation.
 - [Client Login - Taxed GmbH](/clientlogin): Log in to your Taxed GmbH client portal to manage your tax documents and cases.
 - [Client Portal - Taxed GmbH | Secure Tax Management](/clientportal): Access your secure client portal to manage tax cases, upload documents, and communicate with your Swiss tax advisor at Taxed GmbH.
+- [Cookie Policy - Taxed GmbH | Swiss Tax Consulting](/cookiepolicy): Cookie Policy for Taxed GmbH. Learn how we use cookies on our website and how you can manage your preferences.
 - [FAQ - Frequently Asked Questions | Taxed GmbH](/faq): Find answers to common questions about Swiss taxes, expat tax filing, deductions, and more. Expert guidance for your tax questions.
 - [Get Expert Swiss Tax Help Now | Taxed GmbH - Better Than Big 4](/contact): Skip the Big 4 bureaucracy. Get direct access to senior Swiss tax experts at 60% lower rates. Email info@taxed.ch for professional consultation.
 - [How It Works | Taxed GmbH - Simple 3-Step Swiss Tax Filing Process](/howitworks): Simple 3-step process: Book free consultation, upload documents securely, we file your return. Fast, secure, and stress-free Swiss tax filing.
@@ -21,4 +22,5 @@
 - [Tax Compliance Services | Taxed GmbH - Swiss Tax Compliance Management](/taxcompliance): Professional Swiss tax compliance services. Comprehensive compliance management, monitoring, and reporting. Ensure full compliance with Swiss tax regulations.
 - [Tax Recovery Services | Taxed GmbH - Swiss Tax Recovery Specialists](/taxrecovery): Expert Swiss tax recovery services. Recover overpaid taxes, penalties, and withholding tax. Professional tax recovery specialists with proven track record.
 - [Taxed GmbH | Professional Swiss Tax Services for Expats & Businesses](/landing): Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Professional client portal, advanced tools, and comprehensive tax solutions.
+- [Terms of Service - Taxed GmbH | Swiss Tax Consulting](/termsofservice): Terms of Service for Taxed GmbH. Read our terms and conditions for using our Swiss tax consulting and filing services.
 - [Your Cart | Taxed GmbH](/cart): Review and manage items in your shopping cart.

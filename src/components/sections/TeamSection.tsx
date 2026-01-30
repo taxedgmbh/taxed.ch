@@ -35,16 +35,16 @@ interface TeamSectionProps {
 export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
   const teamMembers: TeamMember[] = [
     {
-      id: 'emmanuel-flury',
-      name: 'Emmanuel Flury',
+      id: 'emanuel-flury',
+      name: 'Emanuel Flury',
       position: 'Founder & Senior Tax Consultant',
-      bio: 'With over 15 years of experience in Swiss tax law, Emmanuel specializes in international tax planning and business consulting.',
-      image: '/images/team/emmanuel-flury.jpg',
+      bio: 'With over 15 years of experience in Swiss tax law, Emanuel specializes in international tax planning and business consulting.',
+      image: '/images/team/emanuel-flury.jpg',
       qualifications: ['Certified Tax Advisor', 'CPA Switzerland', 'MBA Finance'],
       experience: '15+ years',
-      location: 'Zurich, Switzerland',
-      email: 'emmanuel@taxedgmbh.ch',
-      linkedin: 'https://linkedin.com/in/emmanuel-flury',
+      location: 'Biel/Bienne, Switzerland',
+      email: 'emanuel@taxed.ch',
+      linkedin: 'https://linkedin.com/in/emanuel-flury',
       specialties: ['International Tax', 'Business Consulting', 'Tax Optimization'],
       rating: 4.9,
       clients: 200
