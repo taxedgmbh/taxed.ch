@@ -14,7 +14,7 @@ import {
   Settings,
   Map
 } from 'lucide-react';
-import { InteractiveMap, footerSections, socialLinks, certifications } from '@/components/footer';
+import { InteractiveMap, footerSections, socialLinks, certifications } from '@/components/footer/index';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

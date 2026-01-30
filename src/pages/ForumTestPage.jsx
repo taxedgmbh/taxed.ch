@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getCategories } from '@/services/forum';
 
 const ForumTestPage = () => {
   const [loading, setLoading] = useState(true);
@@ -8,9 +9,8 @@ const ForumTestPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/forum-unified-api.php?action=categories');
-        const result = await response.json();
-        setData(result);
+        const categories = await getCategories();
+        setData({ success: true, data: categories });
       } catch (err) {
         setError(err.message);
       } finally {

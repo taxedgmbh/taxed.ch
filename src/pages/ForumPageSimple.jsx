@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getCategories, getTopics } from '@/services/forum';
 
 const ForumPageSimple = () => {
   const [loading, setLoading] = useState(true);
@@ -9,21 +10,14 @@ const ForumPageSimple = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch categories
-        const categoriesResponse = await fetch('/forum-unified-api.php?action=categories');
-        const categoriesData = await categoriesResponse.json();
-        
-        if (categoriesData.success) {
-          setCategories(categoriesData.data);
-        }
+        // Fetch categories and topics using forum service
+        const [categoriesData, topicsData] = await Promise.all([
+          getCategories(),
+          getTopics()
+        ]);
 
-        // Fetch topics
-        const topicsResponse = await fetch('/forum-unified-api.php?action=topics');
-        const topicsData = await topicsResponse.json();
-        
-        if (topicsData.success) {
-          setTopics(topicsData.data);
-        }
+        setCategories(categoriesData);
+        setTopics(topicsData);
       } catch (err) {
         setError(err.message);
         console.error('Error fetching data:', err);

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Mail, ShoppingCart, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
-import { MegaMenu, SearchModal, navigation } from '@/components/header';
+import { MegaMenu, SearchModal, navigation } from '@/components/header/index';
 
 const Header = ({ isLandingPage }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
