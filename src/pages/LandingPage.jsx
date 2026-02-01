@@ -495,12 +495,12 @@ const LandingPage = () => {
                     <iframe
                       src="https://share-eu1.hsforms.com/1xA0NQrALToW5NH7CkatXWA2ds4ox"
                       width="100%"
-                      height="550"
+                      height="800"
                       frameBorder="0"
-                      scrolling="yes"
+                      scrolling="no"
                       title="Free Tax Assessment Form"
                       className="border-0 rounded-lg"
-                      style={{ minHeight: '550px' }}
+                      style={{ minHeight: '800px' }}
                     />
                   </div>
                 </div>
