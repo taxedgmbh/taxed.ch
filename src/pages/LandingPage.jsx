@@ -458,7 +458,28 @@ const LandingPage = () => {
                 <div className="grid lg:grid-cols-5 gap-8 items-start">
                   {/* Trust Indicators - Left Side */}
                   <div className="lg:col-span-2 text-white space-y-6">
-                    <h3 className="text-xl font-semibold">Why Choose Taxed GmbH?</h3>
+                    {/* Founder Section with Photo */}
+                    <div className="flex items-start gap-5">
+                      <div className="flex-shrink-0">
+                        <img
+                          src="https://eflury.com/images/portraits/emanuel-aaron-flury-portrait.png"
+                          alt="Emanuel Flury - Founder & Senior Tax Consultant"
+                          className="w-28 h-36 sm:w-32 sm:h-44 object-cover object-top rounded-xl shadow-lg border-2 border-white/30"
+                        />
+                      </div>
+                      <div className="flex-1 pt-1">
+                        <h3 className="text-xl font-semibold mb-2">Why Choose Taxed GmbH?</h3>
+                        <p className="text-blue-100 text-sm mb-3">
+                          Founded by <span className="font-semibold text-white">Emanuel Flury</span>,
+                          our team provides transparent, flat-rate Swiss tax services for expats.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-2 py-1 bg-white/20 rounded-full text-xs">10+ Years Experience</span>
+                          <span className="px-2 py-1 bg-white/20 rounded-full text-xs">500+ Clients</span>
+                        </div>
+                      </div>
+                    </div>
+
                     <ul className="space-y-4">
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />

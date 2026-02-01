@@ -50,51 +50,41 @@ const AboutPage = () => {
   const team = [
     {
       name: 'Emanuel Flury',
-      role: 'Founder & Managing Director',
-      description: 'Emanuel Flury is the Founder and Managing Director of Taxed GmbH. He is responsible for the overall management of the firm and advises clients in matters related to Swiss and international taxation, with a focus on expatriates. With a background in economics and finance, he ensures the firm\'s services are compliant, client-oriented, and up to date.',
-      email: 'me@eflury.com',
-      image: 'Professional headshot of Emanuel Flury, a man in business attire',
-      experience: '15+ years',
-      expertise: ['Swiss Taxation', 'International Tax Law', 'Expatriate Services', 'Business Strategy'],
-      education: 'Master in Economics & Finance',
+      role: 'Founder & Senior Tax Consultant',
+      description: 'Emanuel Flury is the Founder of Taxed GmbH, specializing in helping expats and professionals navigate Swiss tax requirements with transparent, flat-rate services. He is responsible for the overall management of the firm and advises clients in matters related to Swiss taxation.',
+      email: 'info@taxed.ch',
+      image: 'https://eflury.com/images/portraits/emanuel-aaron-flury-portrait.png',
+      experience: '10+ years',
+      expertise: ['Swiss Taxation', 'Expat Tax Services', 'Tax Optimization', 'Business Strategy'],
+      education: 'Swiss Tax Advisory Certification',
       languages: ['German', 'English', 'French'],
       achievements: ['Swiss Certified Tax Expert', '500+ Happy Clients', '98% Success Rate']
     },
     {
-      name: 'Patricia Marie Fangon',
-      role: 'Tax Consultant & Customer Service Specialist',
-      description: 'Patricia Marie Fangon supports clients at Taxed GmbH in both tax matters and customer service. She helps manage client communication, documentation, and the preparation of tax-related information. Patricia is currently building her expertise in Swiss taxation, especially in the context of international clients.',
-      email: 'patriciafangon@taxed.ch',
-      image: 'Professional headshot of Patricia Marie Fangon, a woman with a friendly smile',
-      experience: '8+ years',
-      expertise: ['Customer Service', 'Tax Documentation', 'Client Communication', 'Process Management'],
-      education: 'Bachelor in Business Administration',
-      languages: ['English', 'French', 'Spanish'],
-      achievements: ['Customer Satisfaction Award', 'Process Optimization Expert', 'Bilingual Specialist']
-    },
-    {
       name: 'Angela Samson',
-      role: 'Tax Consultant & Research Specialist',
-      description: 'Angela Samson is part of the Taxed GmbH team with a focus on tax research and support. She contributes to ensuring that the firm\'s services are based on up-to-date Swiss and international tax regulations. Angela assists in the preparation of cases and background analyses for client inquiries.',
-      email: 'angelasamson@taxed.ch',
-      image: 'Professional headshot of Angela Samson, a woman in a professional setting',
-      experience: '10+ years',
-      expertise: ['Tax Research', 'Regulatory Compliance', 'Case Analysis', 'Legal Documentation'],
-      education: 'Master in Tax Law',
-      languages: ['German', 'English', 'Italian'],
-      achievements: ['Research Excellence Award', 'Compliance Specialist', 'Legal Expert']
+      role: 'Tax Return Preparer',
+      description: 'Angela Samson is a dedicated tax return preparer at Taxed GmbH, helping clients file accurate and compliant Swiss tax returns. She ensures all documentation is properly prepared and submitted on time.',
+      email: 'info@taxed.ch',
+      image: null,
+      initials: 'AS',
+      experience: 'Professional',
+      expertise: ['Individual Tax Returns', 'Tax Compliance', 'Documentation', 'Client Support'],
+      education: 'Tax Preparation Certification',
+      languages: ['English'],
+      achievements: ['Accuracy Excellence', 'Client Support Specialist', 'Documentation Expert']
     },
     {
-      name: 'Generyan Depalubos',
-      role: 'Software Engineer',
-      description: 'Generyan Depalubos is our Software Engineer responsible for developing and maintaining our digital platforms and client portal systems. With expertise in modern web technologies and software development, Generyan ensures our clients have access to cutting-edge digital tools for their tax needs.',
-      email: 'generyandepalubos@taxed.ch',
-      image: 'Professional headshot of Generyan Depalubos, a software engineer in business attire',
-      experience: '8+ years',
-      expertise: ['Software Development', 'Web Technologies', 'System Architecture', 'Digital Solutions'],
-      education: 'Bachelor in Computer Science',
-      languages: ['English', 'Filipino', 'German'],
-      achievements: ['Technical Excellence Award', 'Innovation Leader', 'Digital Solutions Expert']
+      name: 'Patricia Marie Fangon',
+      role: 'Tax Return Preparer',
+      description: 'Patricia Marie Fangon is an experienced tax return preparer providing bilingual support for French and English speaking clients. She helps manage client documentation and the preparation of tax-related information.',
+      email: 'info@taxed.ch',
+      image: null,
+      initials: 'PF',
+      experience: 'Professional',
+      expertise: ['Individual Tax Returns', 'Bilingual Support', 'Client Communication', 'Tax Documentation'],
+      education: 'Tax Preparation Certification',
+      languages: ['French', 'English'],
+      achievements: ['Bilingual Specialist', 'Client Relations Expert', 'Documentation Excellence']
     }
   ];
 
@@ -139,7 +129,7 @@ const AboutPage = () => {
     {
       year: '2024',
       title: 'Expansion & Growth',
-      description: 'Added Generyan Depalubos as Software Engineer, enhanced digital platforms and client base to 500+ happy clients',
+      description: 'Enhanced digital platforms and grew client base to 500+ happy clients across Switzerland',
       icon: TrendingUp
     },
     {
@@ -192,8 +182,8 @@ const AboutPage = () => {
   const stats = [
     { number: '500+', label: 'Happy Clients', icon: Users, color: 'text-blue-600' },
     { number: '98%', label: 'Success Rate', icon: CheckCircle, color: 'text-green-600' },
-    { number: '15+', label: 'Years Experience', icon: Clock, color: 'text-purple-600' },
-    { number: '4', label: 'Expert Team Members', icon: Award, color: 'text-orange-600' }
+    { number: '10+', label: 'Years Experience', icon: Clock, color: 'text-purple-600' },
+    { number: '3', label: 'Expert Team Members', icon: Award, color: 'text-orange-600' }
   ];
 
   const swissAdvantages = [
@@ -356,7 +346,7 @@ const AboutPage = () => {
             </p>
             <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-lg">
               <Users className="h-5 w-5 text-steel-blue" />
-              <span className="text-sm font-medium text-dark-gray">4 Expert Team Members</span>
+              <span className="text-sm font-medium text-dark-gray">3 Expert Team Members</span>
             </div>
           </motion.div>
 
@@ -373,12 +363,18 @@ const AboutPage = () => {
                 <Card className="h-full w-full flex flex-col card-hover border-steel-blue/20 shadow-lg bg-white overflow-hidden">
                   <div className="bg-gradient-to-r from-steel-blue to-blue-600 p-6 text-white">
                     <div className="flex items-center space-x-4">
-                      <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white/20">
-                        <img 
-                          className="w-full h-full object-cover"
-                          alt={member.image}
-                          src="https://images.unsplash.com/photo-1595872018818-97555653a011" 
-                        />
+                      <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white/20 flex-shrink-0">
+                        {member.image ? (
+                          <img
+                            className="w-full h-full object-cover object-top"
+                            alt={member.name}
+                            src={member.image}
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-white/20 flex items-center justify-center">
+                            <span className="text-2xl font-bold text-white">{member.initials}</span>
+                          </div>
+                        )}
                       </div>
                       <div>
                         <h3 className="text-xl font-bold">{member.name}</h3>
