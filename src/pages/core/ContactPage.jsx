@@ -226,7 +226,7 @@ const ContactPage = () => {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-green-600 hover:bg-green-700 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200"
+                className="bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200"
                 onClick={() => {
                   const subject = encodeURIComponent('Swiss Tax Consulting Inquiry');
                   const body = encodeURIComponent("Hello Taxed GmbH,\n\nI want to skip the Big 4 and get expert Swiss tax help at 60% lower rates. Can you help me?");
@@ -480,7 +480,7 @@ const ContactPage = () => {
                         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
                         window.open(whatsappUrl, '_blank');
                       }}
-                      className="w-full bg-green-600 hover:bg-green-700 text-white text-lg py-4" 
+                      className="w-full bg-steel-blue hover:bg-blue-800 text-white text-lg py-4"
                       size="lg"
                     >
                       <MessageCircle className="mr-2 h-5 w-5" />
@@ -596,7 +596,7 @@ const ContactPage = () => {
       </section>
 
       {/* Newsletter Signup Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600">
+      <section className="py-20 bg-gradient-to-br from-steel-blue via-blue-700 to-blue-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -751,7 +751,7 @@ const ContactPage = () => {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-green-600 hover:bg-green-700 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
+                className="bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
                 onClick={() => {
                   const subject = encodeURIComponent('Free Consultation + 10% Discount');
                   const body = encodeURIComponent("Hello Taxed GmbH,\n\nI want the free consultation + 10% discount! Help me skip the Big 4 and get expert Swiss tax assistance.");

@@ -33,7 +33,7 @@ const ForumPageSimple = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-steel-blue mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading forum...</p>
         </div>
       </div>
@@ -48,7 +48,7 @@ const ForumPageSimple = () => {
           <p className="text-gray-600 mb-4">Error: {error}</p>
           <button 
             onClick={() => window.location.reload()} 
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            className="bg-steel-blue text-white px-4 py-2 rounded hover:bg-blue-800"
           >
             Retry
           </button>
@@ -64,6 +64,7 @@ const ForumPageSimple = () => {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Swiss Tax Forum</h1>
           <p className="text-gray-600">Discuss tax questions and get expert advice</p>
+          <div className="w-24 h-1 bg-steel-blue mt-4 rounded-full"></div>
         </div>
 
         {/* Categories */}
@@ -71,10 +72,10 @@ const ForumPageSimple = () => {
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {categories.map((category) => (
-              <div key={category.id} className="bg-white p-4 rounded-lg shadow">
+              <div key={category.id} className="bg-white p-4 rounded-lg shadow border-l-4 border-steel-blue hover:shadow-md transition-shadow">
                 <h3 className="font-semibold text-gray-900">{category.name}</h3>
                 <p className="text-gray-600 text-sm mt-1">{category.description}</p>
-                <div className="mt-2 text-sm text-gray-500">
+                <div className="mt-2 text-sm text-steel-blue font-medium">
                   {category.topic_count || 0} topics
                 </div>
               </div>

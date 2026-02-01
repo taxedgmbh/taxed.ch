@@ -27,7 +27,7 @@ const ServicesPage = () => {
         'Basic tax optimization'
       ],
       color: 'border-gray-300',
-      buttonColor: 'bg-gray-600 hover:bg-gray-700'
+      buttonColor: 'bg-steel-blue hover:bg-blue-800'
     },
     {
       icon: Globe,
@@ -70,7 +70,7 @@ const ServicesPage = () => {
         'Ongoing tax advice'
       ],
       color: 'border-warm-red',
-      buttonColor: 'bg-warm-red hover:bg-warm-red/90'
+      buttonColor: 'bg-steel-blue hover:bg-blue-800'
     },
     {
       icon: Wallet,
@@ -85,7 +85,7 @@ const ServicesPage = () => {
         'Document preparation'
       ],
       color: 'border-green-300',
-      buttonColor: 'bg-green-600 hover:bg-green-700'
+      buttonColor: 'bg-steel-blue hover:bg-blue-800'
     },
     {
       icon: Calculator,
@@ -100,7 +100,7 @@ const ServicesPage = () => {
         'International structures'
       ],
       color: 'border-purple-300',
-      buttonColor: 'bg-purple-600 hover:bg-purple-700'
+      buttonColor: 'bg-steel-blue hover:bg-blue-800'
     },
     {
       icon: Globe,
@@ -115,7 +115,7 @@ const ServicesPage = () => {
         'Business tax planning'
       ],
       color: 'border-orange-300',
-      buttonColor: 'bg-orange-600 hover:bg-orange-700'
+      buttonColor: 'bg-steel-blue hover:bg-blue-800'
     }
   ];
 
@@ -365,7 +365,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Resource Center Section */}
-      <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-sky-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -374,7 +374,7 @@ const ServicesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-full bg-steel-blue text-white flex items-center justify-center mx-auto mb-6">
               <Download className="h-8 w-8" />
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-dark-gray mb-6">
@@ -403,7 +403,7 @@ const ServicesPage = () => {
                 <div className="text-3xl mb-3">{resource.icon}</div>
                 <h3 className="font-semibold text-dark-gray mb-2">{resource.title}</h3>
                 <p className="text-sm text-dark-gray/70 mb-4">{resource.description}</p>
-                <Button asChild size="sm" className="bg-green-600 hover:bg-green-700">
+                <Button asChild size="sm" className="bg-steel-blue hover:bg-blue-800">
                   <Link to="/resources">Browse Resources</Link>
                 </Button>
               </motion.div>
@@ -411,7 +411,7 @@ const ServicesPage = () => {
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+            <Button asChild size="lg" className="bg-steel-blue hover:bg-blue-800">
               <Link to="/resources">
                 Access Resource Center
                 <ArrowRight className="ml-2 h-5 w-5" />

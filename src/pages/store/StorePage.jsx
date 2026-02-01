@@ -91,7 +91,7 @@ const StorePage = () => {
         'Basic tax optimization'
       ],
       color: 'border-gray-300',
-      buttonColor: 'bg-gray-600 hover:bg-gray-700',
+      buttonColor: 'bg-steel-blue hover:bg-blue-800',
       icon: FileText
     },
     {
@@ -142,8 +142,8 @@ const StorePage = () => {
         'Tax planning for next year',
         'Dedicated tax expert assigned'
       ],
-      color: 'border-yellow-500',
-      buttonColor: 'bg-yellow-500 hover:bg-yellow-600',
+      color: 'border-brand-gold',
+      buttonColor: 'bg-brand-gold hover:bg-yellow-600',
       icon: Crown
     }
   ];
@@ -246,7 +246,7 @@ const StorePage = () => {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-green-600 hover:bg-green-700 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
+                className="bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
                 onClick={() => window.location.href = 'tel:+41799107787'}
               >
                 <Mail className="mr-3 h-6 w-6" />
@@ -287,7 +287,7 @@ const StorePage = () => {
               >
                 {pkg.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                    <div className="bg-brand-gold text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                       <Star className="w-4 h-4 inline mr-1" />
                       Most Popular
                     </div>
@@ -310,7 +310,7 @@ const StorePage = () => {
                         <span className="text-4xl font-bold text-dark-gray">{pkg.price}</span>
                         <span className="text-lg text-gray-500 line-through">{pkg.originalPrice}</span>
                       </div>
-                      <div className="inline-flex items-center bg-green-100 text-green-800 rounded-full px-3 py-1 text-sm font-semibold">
+                      <div className="inline-flex items-center bg-blue-100 text-steel-blue rounded-full px-3 py-1 text-sm font-semibold">
                         <TrendingUp className="w-4 h-4 mr-1" />
                         Save {pkg.savings}
                       </div>
@@ -461,7 +461,7 @@ const StorePage = () => {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-green-600 hover:bg-green-700 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
+                className="bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
                 onClick={() => window.location.href = 'tel:+41799107787'}
               >
                 <Mail className="mr-3 h-6 w-6" />

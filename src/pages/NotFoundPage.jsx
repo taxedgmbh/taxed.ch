@@ -35,21 +35,21 @@ const NotFoundPage = () => {
       description: 'Complete guide for expatriates',
       icon: Globe,
       href: '/resources',
-      color: 'from-green-500 to-green-600'
+      color: 'from-steel-blue to-blue-700'
     },
     {
       title: 'Our Services',
       description: 'Professional Swiss tax consulting',
       icon: Building,
       href: '/services',
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-steel-blue to-blue-700'
     },
     {
       title: 'Contact Us',
       description: 'Get expert tax advice',
       icon: Users,
       href: '/contact',
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-steel-blue to-blue-700'
     }
   ];
 
@@ -89,7 +89,7 @@ const NotFoundPage = () => {
               <div className="text-9xl lg:text-[12rem] font-bold text-white/90 mb-4">
                 404
               </div>
-              <div className="w-32 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto rounded-full"></div>
+              <div className="w-32 h-2 bg-brand-gold mx-auto rounded-full"></div>
             </motion.div>
 
             {/* Main Message */}
@@ -124,7 +124,7 @@ const NotFoundPage = () => {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold rounded-xl hover:from-yellow-500 hover:to-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-brand-gold text-white font-semibold rounded-xl hover:bg-yellow-600 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Get Help
@@ -312,7 +312,7 @@ const NotFoundPage = () => {
                     const message = encodeURIComponent("Hello! I'm having trouble finding what I need on your website. Could you please help me?");
                     window.open(emailUrl, '_blank');
                   }}
-                  className="inline-flex items-center px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors"
+                  className="inline-flex items-center px-8 py-3 bg-steel-blue hover:bg-blue-800 text-white font-semibold rounded-lg transition-colors"
                 >
                   Email Chat
                 </button>
