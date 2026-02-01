@@ -58,7 +58,6 @@ export const navigation = [
     href: '/about',
   },
   { name: 'Blog', href: '/blog', type: 'link' },
-  { name: 'Forum', href: '/forum', type: 'link' },
   { name: 'Contact', href: '/contact', type: 'link' },
 ];
 
