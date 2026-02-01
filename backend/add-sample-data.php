@@ -7,7 +7,7 @@ $db_host = $_ENV['DB_HOST'] ?? 'localhost';
 $db_port = $_ENV['DB_PORT'] ?? '3306';
 $db_name = $_ENV['DB_NAME'] ?? 'u497646184_taxedgmbh';
 $db_user = $_ENV['DB_USER'] ?? 'u497646184_taxedgmbh';
-$db_pass = $_ENV['DB_PASS'] ?? 'Hauskauf629!';
+$db_pass = $_ENV['DB_PASS'] ?? '';
 
 try {
     $pdo = new PDO(

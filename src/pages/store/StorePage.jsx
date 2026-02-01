@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   CheckCircle, 
   Star, 
@@ -33,6 +33,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 // import ProductsList from '@/components/ProductsList';
 
 const StorePage = () => {
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -244,14 +245,13 @@ const StorePage = () => {
                   Choose Your Package
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                className="bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
-                onClick={() => window.location.href = 'tel:+41799107787'}
+              <a
+                href="mailto:info@taxed.ch"
+                className="inline-flex items-center bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
               >
                 <Mail className="mr-3 h-6 w-6" />
                 Email: info@taxed.ch
-              </Button>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -459,14 +459,13 @@ const StorePage = () => {
                   Get Free Consultation
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                className="bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
-                onClick={() => window.location.href = 'tel:+41799107787'}
+              <a
+                href="mailto:info@taxed.ch"
+                className="inline-flex items-center bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
               >
                 <Mail className="mr-3 h-6 w-6" />
                 Email: info@taxed.ch
-              </Button>
+              </a>
             </div>
 
             {/* Final Trust Indicators */}
@@ -609,7 +608,7 @@ const StorePage = () => {
                       size="lg"
                       onClick={() => {
                         setIsCartOpen(false);
-                        window.location.href = '/contact';
+                        navigate('/contact');
                       }}
                     >
                       Proceed to Checkout

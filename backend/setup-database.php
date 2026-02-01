@@ -5,7 +5,13 @@
  */
 
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
+
+// CORS configuration - restrict to specific origins
+$allowed_origins = ['https://taxed.ch', 'https://www.taxed.ch', 'http://localhost:5173'];
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($origin, $allowed_origins)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+}
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
@@ -15,12 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Database configuration
+// Database configuration from environment variables
 $db_config = [
-    'host' => 'localhost',
-    'dbname' => 'u497646184_taxedgmbh',
-    'username' => 'u497646184_taxedgmbh',
-    'password' => 'Hauskauf629!',
+    'host' => $_ENV['DB_HOST'] ?? 'localhost',
+    'dbname' => $_ENV['DB_NAME'] ?? 'u497646184_taxedgmbh',
+    'username' => $_ENV['DB_USER'] ?? 'u497646184_taxedgmbh',
+    'password' => $_ENV['DB_PASS'] ?? '',
     'charset' => 'utf8mb4'
 ];
 
@@ -268,20 +274,25 @@ switch ($action) {
             }
         }
         
-        // Insert default admin user
+        // Insert default admin user with secure random password
         try {
-            $admin_sql = "INSERT INTO admin_users (username, email, password_hash, first_name, last_name, role) 
+            // Generate a secure random password
+            $admin_password = bin2hex(random_bytes(16));
+
+            $admin_sql = "INSERT INTO admin_users (username, email, password_hash, first_name, last_name, role)
                           VALUES ('admin', 'admin@taxed.ch', ?, 'Admin', 'User', 'admin')
                           ON DUPLICATE KEY UPDATE username=username";
-            
+
             $stmt = $pdo->prepare($admin_sql);
-            $stmt->execute([password_hash('admin123', PASSWORD_DEFAULT)]);
-            
+            $stmt->execute([password_hash($admin_password, PASSWORD_ARGON2ID)]);
+
             $results[] = "Default admin user created successfully";
+            $results[] = "IMPORTANT: Your admin password is: " . $admin_password . " - Save this and change it immediately!";
             $success_count++;
         } catch (PDOException $e) {
             $results[] = "Error creating admin user: " . $e->getMessage();
             $error_count++;
+            $admin_password = null;
         }
         
         // Verify tables were created
@@ -310,7 +321,7 @@ switch ($action) {
         }
         
         http_response_code(200);
-        echo json_encode([
+        $response = [
             'success' => $error_count == 0,
             'message' => 'Database setup completed',
             'results' => $results,
@@ -319,10 +330,14 @@ switch ($action) {
             'admin_credentials' => [
                 'username' => 'admin',
                 'email' => 'admin@taxed.ch',
-                'password' => 'admin123',
-                'warning' => 'CHANGE THIS PASSWORD IMMEDIATELY!'
+                'warning' => 'Password shown in results above. CHANGE IT IMMEDIATELY!'
             ]
-        ]);
+        ];
+        // Only include password if it was generated in this request
+        if (isset($admin_password) && $admin_password !== null) {
+            $response['admin_credentials']['temp_password'] = $admin_password;
+        }
+        echo json_encode($response);
         break;
         
     case 'status':

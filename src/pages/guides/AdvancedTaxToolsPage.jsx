@@ -497,19 +497,12 @@ const AdvancedTaxToolsPage = () => {
                   >
                     Schedule Expert Consultation
                   </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-steel-blue"
-                    onClick={() => {
-                      const subject = encodeURIComponent("Inquiry");
-    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
-                      const message = encodeURIComponent("Hello! I'd like to discuss advanced tax planning strategies. Could you please provide more information about your professional services?");
-                      window.open(emailUrl, '_blank');
-                    }}
+                  <a
+                    href="mailto:info@taxed.ch?subject=Advanced%20Tax%20Planning%20Inquiry&body=Hello%20Taxed%20GmbH%2C%0A%0AI%27d%20like%20to%20discuss%20advanced%20tax%20planning%20strategies.%20Could%20you%20please%20provide%20more%20information%20about%20your%20professional%20services%3F"
+                    className="inline-flex items-center justify-center rounded-md border-2 border-white text-white hover:bg-white hover:text-steel-blue px-8 py-3 text-lg font-medium"
                   >
                     Email Expert
-                  </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>

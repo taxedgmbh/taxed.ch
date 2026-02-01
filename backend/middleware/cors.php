@@ -7,7 +7,9 @@ class CorsMiddleware {
     private $maxAge;
     
     public function __construct($config = []) {
-        $this->allowedOrigins = $config['allowed_origins'] ?? ['*'];
+        // Default to production origins - never use wildcard '*'
+        $defaultOrigins = ['https://taxed.ch', 'https://www.taxed.ch', 'http://localhost:5173'];
+        $this->allowedOrigins = $config['allowed_origins'] ?? $defaultOrigins;
         $this->allowedMethods = $config['allowed_methods'] ?? ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'];
         $this->allowedHeaders = $config['allowed_headers'] ?? ['Content-Type', 'Authorization', 'X-Requested-With'];
         $this->maxAge = $config['max_age'] ?? 86400; // 24 hours

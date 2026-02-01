@@ -305,17 +305,12 @@ const NotFoundPage = () => {
                   Schedule Consultation
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
-                <button
-                  onClick={() => {
-                    const subject = encodeURIComponent("Inquiry");
-    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
-                    const message = encodeURIComponent("Hello! I'm having trouble finding what I need on your website. Could you please help me?");
-                    window.open(emailUrl, '_blank');
-                  }}
+                <a
+                  href="mailto:info@taxed.ch?subject=Website%20Inquiry&body=Hello%20Taxed%20GmbH%2C%0A%0AI%20have%20a%20question%20about%20your%20services.%20Could%20you%20please%20help%20me%3F"
                   className="inline-flex items-center px-8 py-3 bg-steel-blue hover:bg-blue-800 text-white font-semibold rounded-lg transition-colors"
                 >
-                  Email Chat
-                </button>
+                  Email Us
+                </a>
               </div>
             </div>
           </motion.div>

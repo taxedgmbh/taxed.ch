@@ -1,6 +1,12 @@
 <?php
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
+
+// CORS configuration - restrict to specific origins
+$allowed_origins = ['https://taxed.ch', 'https://www.taxed.ch', 'http://localhost:5173'];
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($origin, $allowed_origins)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+}
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
@@ -14,7 +20,7 @@ $db_host = $_ENV['DB_HOST'] ?? 'localhost';
 $db_port = $_ENV['DB_PORT'] ?? '3306';
 $db_name = $_ENV['DB_NAME'] ?? 'u497646184_taxedgmbh';
 $db_user = $_ENV['DB_USER'] ?? 'u497646184_taxedgmbh';
-$db_pass = $_ENV['DB_PASS'] ?? 'Hauskauf629!';
+$db_pass = $_ENV['DB_PASS'] ?? '';
 
 try {
     $pdo = new PDO(

@@ -337,19 +337,13 @@ const PricingPage = () => {
                 <Calculator className="mr-3 h-6 w-6" />
                 Calculate My Price
               </Button>
-              <Button 
-                size="lg" 
-                className="bg-yellow-500 hover:bg-yellow-600 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
-                onClick={() => {
-                  const subject = encodeURIComponent("Inquiry");
-    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
-                  const message = encodeURIComponent("💰 I want to see your transparent pricing! Can you give me a free quote?");
-                  window.open(emailUrl, '_blank');
-                }}
+              <a
+                href="mailto:info@taxed.ch?subject=Free%20Quote%20Request&body=Hello%20Taxed%20GmbH%2C%0A%0AI%20want%20to%20see%20your%20transparent%20pricing!%20Can%20you%20give%20me%20a%20free%20quote%3F"
+                className="inline-flex items-center bg-brand-gold hover:bg-yellow-600 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
               >
                 <MessageCircle className="mr-3 h-6 w-6" />
                 Get Free Quote
-              </Button>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -453,10 +447,10 @@ const PricingPage = () => {
                 <Button
                   className="flex-1 bg-steel-blue hover:bg-steel-blue/90 text-white"
                   onClick={() => {
-                    const subject = encodeURIComponent("Inquiry");
-    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
-                    const message = encodeURIComponent(`💰 I calculated my custom price: CHF ${calculateCustomPrice()}. Can you help me get started?`);
-                    window.open(emailUrl, '_blank');
+                    const price = calculateCustomPrice();
+                    const subject = encodeURIComponent("Custom Pricing Quote Request");
+                    const body = encodeURIComponent(`Hello Taxed GmbH,\n\nI calculated my custom price: CHF ${price}. Can you help me get started?\n\nThank you!`);
+                    window.location.href = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
                     setShowCalculator(false);
                   }}
                 >
@@ -816,10 +810,9 @@ const PricingPage = () => {
                         className={`w-full ${pkg.buttonColor} text-white text-lg py-4 font-bold`}
                         size="lg"
                         onClick={() => {
-                          const subject = encodeURIComponent("Inquiry");
-    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
-                          const message = encodeURIComponent(`💰 I'm interested in the ${pkg.name} package (${pkg.price}). Can you help me get started?`);
-                          window.open(emailUrl, '_blank');
+                          const subject = encodeURIComponent(`Interest in ${pkg.name} Package`);
+                          const body = encodeURIComponent(`Hello Taxed GmbH,\n\nI'm interested in the ${pkg.name} package (${pkg.price}). Can you help me get started?\n\nThank you!`);
+                          window.location.href = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
                         }}
                       >
                         <MessageCircle className="mr-2 h-5 w-5" />
@@ -980,20 +973,13 @@ const PricingPage = () => {
                 <Calculator className="mr-2 h-5 w-5" />
                 Calculate My Price
               </Button>
-            <Button 
-              size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-steel-blue text-lg px-8 py-4 font-bold"
-                onClick={() => {
-                  const subject = encodeURIComponent("Inquiry");
-    const body = encodeURIComponent("Hello Taxed GmbH,\n\nI have a question about your services. Could you please help me?");
-                  const message = encodeURIComponent("💰 I want to see your transparent pricing! Can you give me a free quote?");
-                  window.open(emailUrl, '_blank');
-                }}
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Get Free Quote
-            </Button>
+            <a
+              href="mailto:info@taxed.ch?subject=Free%20Quote%20Request&body=Hello%20Taxed%20GmbH%2C%0A%0AI%20want%20to%20see%20your%20transparent%20pricing!%20Can%20you%20give%20me%20a%20free%20quote%3F"
+              className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-steel-blue text-lg px-8 py-4 font-bold rounded-md"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Get Free Quote
+            </a>
             </div>
 
             <div className="mt-8 text-sm text-blue-200">

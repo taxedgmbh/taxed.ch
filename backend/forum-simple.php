@@ -5,7 +5,13 @@
  */
 
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
+
+// CORS configuration - restrict to specific origins
+$allowed_origins = ['https://taxed.ch', 'https://www.taxed.ch', 'http://localhost:5173'];
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($origin, $allowed_origins)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+}
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
@@ -15,14 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Simple database connection
+// Simple database connection using environment variables
 function getSimpleDatabase() {
     try {
-        $host = 'localhost';
-        $dbname = 'u497646184_taxedgmbh';
-        $username = 'u497646184_taxedgmbh';
-        $password = 'Hauskauf629!';
-        
+        $host = $_ENV['DB_HOST'] ?? 'localhost';
+        $dbname = $_ENV['DB_NAME'] ?? 'u497646184_taxedgmbh';
+        $username = $_ENV['DB_USER'] ?? 'u497646184_taxedgmbh';
+        $password = $_ENV['DB_PASS'] ?? '';
+
         $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;

@@ -11,11 +11,11 @@ $test_results = [
 
 // Test 1: Database Connection
 try {
-    $db_host = 'localhost';
-    $db_port = '3306';
-    $db_name = 'u497646184_taxedgmbh';
-    $db_user = 'u497646184_taxedgmbh';
-    $db_pass = 'Hauskauf629!';
+    $db_host = $_ENV['DB_HOST'] ?? 'localhost';
+    $db_port = $_ENV['DB_PORT'] ?? '3306';
+    $db_name = $_ENV['DB_NAME'] ?? 'u497646184_taxedgmbh';
+    $db_user = $_ENV['DB_USER'] ?? 'u497646184_taxedgmbh';
+    $db_pass = $_ENV['DB_PASS'] ?? '';
     
     $pdo = new PDO(
         "mysql:host={$db_host};port={$db_port};dbname={$db_name};charset=utf8mb4",
