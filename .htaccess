@@ -1,0 +1,11 @@
+# Redirect all requests to dist/ folder for Hostinger deployment
+# This ensures the built production files are served instead of source files
+
+RewriteEngine On
+RewriteBase /
+
+# Don't rewrite if already accessing dist/
+RewriteCond %{REQUEST_URI} !^/dist/
+
+# Rewrite everything to dist/
+RewriteRule ^(.*)$ dist/$1 [L]
