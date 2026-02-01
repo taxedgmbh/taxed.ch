@@ -12,6 +12,36 @@ import {
   scheduleDailyNewsUpdate
 } from '@/services/newsService';
 
+// Helper functions (moved outside component for NewsCard access)
+const formatDate = (dateString) => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+const formatTime = (dateString) => {
+  return new Date(dateString).toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+};
+
+const categories = [
+  { id: 'all', name: 'All News', icon: '📰' },
+  { id: 'government', name: 'Government', icon: '🏛️' },
+  { id: 'tax-policy', name: 'Tax Policy', icon: '📋' },
+  { id: 'tax-law', name: 'Tax Law', icon: '⚖️' },
+  { id: 'news', name: 'General News', icon: '📢' },
+  { id: 'business', name: 'Business', icon: '💼' }
+];
+
+const getCategoryIcon = (category) => {
+  const categoryObj = categories.find(cat => cat.id === category);
+  return categoryObj ? categoryObj.icon : '📰';
+};
+
 const NewsPage = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,15 +49,6 @@ const NewsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [lastUpdated, setLastUpdated] = useState(null);
   const [isGenerating, setIsGenerating] = useState(false);
-
-  const categories = [
-    { id: 'all', name: 'All News', icon: '📰' },
-    { id: 'government', name: 'Government', icon: '🏛️' },
-    { id: 'tax-policy', name: 'Tax Policy', icon: '📋' },
-    { id: 'tax-law', name: 'Tax Law', icon: '⚖️' },
-    { id: 'news', name: 'General News', icon: '📢' },
-    { id: 'business', name: 'Business', icon: '💼' }
-  ];
 
   useEffect(() => {
     loadNews();
@@ -72,26 +93,6 @@ const NewsPage = () => {
 
   const handleRefresh = () => {
     loadNews();
-  };
-
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
-  const formatTime = (dateString) => {
-    return new Date(dateString).toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-  };
-
-  const getCategoryIcon = (category) => {
-    const categoryObj = categories.find(cat => cat.id === category);
-    return categoryObj ? categoryObj.icon : '📰';
   };
 
   const filteredNews = news.filter(article => {

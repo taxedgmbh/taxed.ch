@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { 
-  Calendar, 
-  MapPin, 
-  Clock, 
+import {
+  Calendar,
+  MapPin,
+  Clock,
   Users,
   Target,
   CheckCircle,
@@ -62,6 +62,7 @@ import {
   Key,
   Fingerprint,
   Phone,
+  Calculator,
   Wifi as WifiIcon,
   Shield as SecurityShield,
   Lock as SecurityLock,

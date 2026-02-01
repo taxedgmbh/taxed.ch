@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { 
-  Star, 
-  Quote, 
-  Play, 
-  Download, 
+import {
+  Star,
+  Quote,
+  Play,
+  Download,
   ArrowRight,
   Users,
   Building,
@@ -15,7 +15,8 @@ import {
   TrendingUp,
   Shield,
   Clock,
-  DollarSign
+  DollarSign,
+  AlertTriangle
 } from 'lucide-react';
 
 const ClientTestimonialsPage = () => {
