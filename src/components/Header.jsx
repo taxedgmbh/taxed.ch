@@ -48,7 +48,7 @@ const Header = ({ isLandingPage }) => {
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="w-10 h-10 bg-gradient-to-br from-steel-blue to-blue-600 rounded-xl flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
                 <img
-                  src="/favicon-192x192.png"
+                  src="/logo-64.png"
                   alt="Taxed GmbH Logo"
                   width="40"
                   height="40"

@@ -64,7 +64,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-steel-blue to-blue-600 rounded-xl flex items-center justify-center overflow-hidden shadow-lg">
                   <img
-                    src="/favicon-192x192.png"
+                    src="/logo-96.png"
                     alt="Taxed GmbH Logo"
                     width="48"
                     height="48"
