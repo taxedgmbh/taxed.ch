@@ -18,36 +18,38 @@ const TeamPage = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Dr. Sarah Mueller",
-      position: "Senior Tax Advisor",
-      specialization: "International Tax Law",
-      experience: "15+ years",
-      education: "PhD Tax Law, University of Zurich",
+      name: "Emanuel Flury",
+      position: "Founder & Senior Tax Consultant",
+      specialization: "Swiss Tax Filing & Expat Services",
+      experience: "10+ years",
+      education: "Swiss Tax Advisory Certification",
       languages: ["German", "English", "French"],
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      bio: "Specializes in complex international tax matters and Swiss tax compliance for multinational corporations."
+      image: "https://eflury.com/images/portraits/emanuel-aaron-flury-portrait.png",
+      bio: "Founder of Taxed GmbH, specializing in helping expats and professionals navigate Swiss tax requirements with transparent, flat-rate services."
     },
     {
       id: 2,
-      name: "Michael Chen",
-      position: "Tax Consultant",
-      specialization: "Expat Tax Services",
-      experience: "8+ years",
-      education: "MSc Taxation, ETH Zurich",
-      languages: ["English", "German", "Mandarin"],
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      bio: "Expert in helping expatriates navigate Swiss tax requirements and optimize their tax situations."
+      name: "Angela Samson",
+      position: "Tax Return Preparer",
+      specialization: "Individual Tax Returns",
+      experience: "Professional Experience",
+      education: "Tax Preparation Certification",
+      languages: ["English"],
+      image: null,
+      initials: "AS",
+      bio: "Dedicated tax return preparer helping clients file accurate and compliant Swiss tax returns."
     },
     {
       id: 3,
-      name: "Anna Zimmermann",
-      position: "Digital Tax Specialist",
-      specialization: "Crypto & Digital Assets",
-      experience: "5+ years",
-      education: "MSc Finance, University of St. Gallen",
-      languages: ["German", "English", "Italian"],
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      bio: "Focuses on cryptocurrency taxation and digital asset compliance in Switzerland."
+      name: "Patricia Marie Fangon",
+      position: "Tax Return Preparer",
+      specialization: "Individual Tax Returns",
+      experience: "Professional Experience",
+      education: "Tax Preparation Certification",
+      languages: ["French", "English"],
+      image: null,
+      initials: "PF",
+      bio: "Experienced tax return preparer providing bilingual support for French and English speaking clients."
     }
   ];
 
@@ -137,11 +139,19 @@ const TeamPage = () => {
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="aspect-w-1 aspect-h-1">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-64 object-cover"
-                    />
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-64 object-cover object-top"
+                      />
+                    ) : (
+                      <div className="w-full h-64 bg-gradient-to-br from-steel-blue to-blue-600 flex items-center justify-center">
+                        <span className="text-6xl font-bold text-white">
+                          {member.initials}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   
                   <div className="p-6">

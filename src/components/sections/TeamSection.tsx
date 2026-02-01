@@ -38,45 +38,45 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
       id: 'emanuel-flury',
       name: 'Emanuel Flury',
       position: 'Founder & Senior Tax Consultant',
-      bio: 'With over 15 years of experience in Swiss tax law, Emanuel specializes in international tax planning and business consulting.',
-      image: '/images/team/emanuel-flury.jpg',
-      qualifications: ['Certified Tax Advisor', 'CPA Switzerland', 'MBA Finance'],
-      experience: '15+ years',
-      location: 'Biel/Bienne, Switzerland',
-      email: 'emanuel@taxed.ch',
-      linkedin: 'https://linkedin.com/in/emanuel-flury',
-      specialties: ['International Tax', 'Business Consulting', 'Tax Optimization'],
-      rating: 4.9,
-      clients: 200
-    },
-    {
-      id: 'sarah-mueller',
-      name: 'Sarah Müller',
-      position: 'Senior Tax Advisor',
-      bio: 'Expert in individual tax planning and compliance, Sarah helps clients navigate complex Swiss tax regulations.',
-      image: '/images/team/sarah-mueller.jpg',
-      qualifications: ['Tax Advisor Certification', 'Swiss Tax Law Diploma'],
-      experience: '12+ years',
-      location: 'Zurich, Switzerland',
-      email: 'sarah@taxedgmbh.ch',
-      linkedin: 'https://linkedin.com/in/sarah-mueller',
-      specialties: ['Individual Tax', 'Tax Compliance', 'Audit Support'],
-      rating: 4.8,
-      clients: 150
-    },
-    {
-      id: 'michael-weber',
-      name: 'Michael Weber',
-      position: 'Business Development Manager',
-      bio: 'Focused on helping startups and SMEs with business setup, bookkeeping, and growth strategies.',
-      image: '/images/team/michael-weber.jpg',
-      qualifications: ['Business Administration', 'Swiss Commercial Law'],
+      bio: 'Founder of Taxed GmbH, specializing in helping expats and professionals navigate Swiss tax requirements with transparent, flat-rate services.',
+      image: 'https://eflury.com/images/portraits/emanuel-aaron-flury-portrait.png',
+      qualifications: ['Swiss Tax Advisory Certification'],
       experience: '10+ years',
-      location: 'Zurich, Switzerland',
-      email: 'michael@taxedgmbh.ch',
-      linkedin: 'https://linkedin.com/in/michael-weber',
-      specialties: ['Business Setup', 'Bookkeeping', 'Growth Consulting'],
-      rating: 4.7,
+      location: 'Biel/Bienne, Switzerland',
+      email: 'info@taxed.ch',
+      linkedin: 'https://linkedin.com/in/emanuel-flury',
+      specialties: ['Swiss Tax Filing', 'Expat Services', 'Tax Optimization'],
+      rating: 4.9,
+      clients: 500
+    },
+    {
+      id: 'angela-samson',
+      name: 'Angela Samson',
+      position: 'Tax Return Preparer',
+      bio: 'Dedicated tax return preparer helping clients file accurate and compliant Swiss tax returns.',
+      image: '',
+      qualifications: ['Tax Preparation Certification'],
+      experience: 'Professional',
+      location: 'Biel/Bienne, Switzerland',
+      email: 'info@taxed.ch',
+      linkedin: '',
+      specialties: ['Individual Tax Returns', 'Tax Compliance', 'Client Support'],
+      rating: 4.8,
+      clients: 100
+    },
+    {
+      id: 'patricia-fangon',
+      name: 'Patricia Marie Fangon',
+      position: 'Tax Return Preparer',
+      bio: 'Experienced tax return preparer providing bilingual support for French and English speaking clients.',
+      image: '',
+      qualifications: ['Tax Preparation Certification'],
+      experience: 'Professional',
+      location: 'Biel/Bienne, Switzerland',
+      email: 'info@taxed.ch',
+      linkedin: '',
+      specialties: ['Individual Tax Returns', 'Bilingual Support', 'Client Relations'],
+      rating: 4.8,
       clients: 100
     }
   ];
@@ -135,14 +135,22 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
               <Card className="bg-white hover:shadow-xl transition-all duration-300 overflow-hidden">
                 {/* Member Image */}
                 <div className="relative h-80 bg-gradient-to-br from-blue-50 to-green-50">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-4xl font-bold">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center">
+                        <span className="text-white text-4xl font-bold">
+                          {member.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  
+                  )}
+
                   {/* Rating Badge */}
                   <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 shadow-lg">
                     <div className="flex items-center space-x-1">
