@@ -1,21 +1,4 @@
-// Comprehensive Swiss Tax Blog Posts Database
-// Standardized structure for all blog posts
-
-const blogPosts = [
-  {
-    id: 'eigenmietwert-guide-2026',
-    slug: 'eigenmietwert-imputed-rental-value-switzerland-complete-guide',
-    title: 'Eigenmietwert Explained: The Complete Guide to Imputed Rental Value in Switzerland',
-    author: 'Emanuel Flury',
-    authorTitle: 'Founder & Senior Tax Consultant',
-    date: '2026-02-01',
-    category: 'Real Estate',
-    tags: ['Eigenmietwert', 'Imputed Rental Value', 'Property Tax', 'Homeowner Tax', 'Mortgage Deductions', 'Swiss Real Estate', 'Tax Planning'],
-    summary: 'A comprehensive guide to Eigenmietwert (imputed rental value) in Switzerland. Learn what it is, how it\'s calculated, what deductions you can claim, and practical strategies to optimize your tax situation as a Swiss homeowner.',
-    readTime: '12 min read',
-    difficulty: 'Intermediate',
-    featured: true,
-    content: `
+import{j as t,aZ as u,af as C,a_ as F,q as k,T as A,p as P,M as z}from"./vendor-ui-834bd4ab.js";import{r as y}from"./vendor-react-fa5d0322.js";import{B as r}from"./main-394672de.js";import{C as E,a as H}from"./card-fd0e8de0.js";const n=[{id:"eigenmietwert-guide-2026",slug:"eigenmietwert-imputed-rental-value-switzerland-complete-guide",title:"Eigenmietwert Explained: The Complete Guide to Imputed Rental Value in Switzerland",author:"Emanuel Flury",authorTitle:"Founder & Senior Tax Consultant",date:"2026-02-01",category:"Real Estate",tags:["Eigenmietwert","Imputed Rental Value","Property Tax","Homeowner Tax","Mortgage Deductions","Swiss Real Estate","Tax Planning"],summary:"A comprehensive guide to Eigenmietwert (imputed rental value) in Switzerland. Learn what it is, how it's calculated, what deductions you can claim, and practical strategies to optimize your tax situation as a Swiss homeowner.",readTime:"12 min read",difficulty:"Intermediate",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">If you own property in Switzerland and live in it yourself, you're likely familiar with one of the most unique aspects of Swiss taxation: the Eigenmietwert, or imputed rental value. This concept requires homeowners to declare a fictional rental income for their own property—income they never actually receive. Understanding how Eigenmietwert works is essential for every Swiss homeowner, as it directly impacts your tax bill and opens up significant deduction opportunities that can offset this additional tax burden.</p>
 
       <figure class="my-8">
@@ -214,24 +197,7 @@ const blogPosts = [
         <p class="mb-4">Navigating Eigenmietwert and property-related deductions can be complex. Our team at Taxed GmbH specializes in helping Swiss homeowners and expats optimize their tax situation.</p>
         <p class="font-semibold">Contact us for a free assessment of your property tax situation.</p>
       </div>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop',
-    imageAlt: 'Swiss residential property representing Eigenmietwert taxation'
-  },
-  {
-    id: 'tax-deductible-expenses-guide-2025',
-    slug: 'tax-deductible-expenses-switzerland-2025-guide-individuals',
-    title: 'Tax-Deductible Expenses in Switzerland: 2025 Guide for Individuals',
-    author: 'Paritca',
-    authorTitle: 'Senior Tax Advisor',
-    date: '2025-01-20',
-    category: 'Tax Deductions',
-    tags: ['Tax Deductions', 'Switzerland', 'Individual Tax', 'Expenses', '2025'],
-    summary: 'A comprehensive guide to tax-deductible expenses for individuals in Switzerland. Learn about professional expenses, pension contributions, property costs, donations, and expat-specific deductions.',
-    readTime: '12 min read',
-    difficulty: 'Intermediate',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop",imageAlt:"Swiss residential property representing Eigenmietwert taxation"},{id:"tax-deductible-expenses-guide-2025",slug:"tax-deductible-expenses-switzerland-2025-guide-individuals",title:"Tax-Deductible Expenses in Switzerland: 2025 Guide for Individuals",author:"Paritca",authorTitle:"Senior Tax Advisor",date:"2025-01-20",category:"Tax Deductions",tags:["Tax Deductions","Switzerland","Individual Tax","Expenses","2025"],summary:"A comprehensive guide to tax-deductible expenses for individuals in Switzerland. Learn about professional expenses, pension contributions, property costs, donations, and expat-specific deductions.",readTime:"12 min read",difficulty:"Intermediate",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">Navigating Switzerland's tax system can be complex, but understanding deductible expenses is crucial for minimizing your tax burden. The Swiss Federal Tax Administration (ESTV) provides clear guidelines on what expenses qualify for deductions, potentially saving taxpayers thousands of francs annually. This comprehensive guide examines all major deductible categories for 2025, offering both Swiss residents and expatriates the knowledge needed to optimize their tax position while ensuring full compliance with Swiss tax law.</p>
       
       <figure class="my-8">
@@ -412,24 +378,7 @@ const blogPosts = [
           <p><strong>Figure 5:</strong> Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></p>
         </div>
       </div>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss tax documents and calculator on modern desk'
-  },
-  {
-    id: 'quellensteuer-guide-2025',
-    slug: 'understanding-swiss-tax-at-source-quellensteuer-2025',
-    title: 'Understanding Swiss Tax at Source (Quellensteuer) in 2025',
-    author: 'Elena Schmidt',
-    authorTitle: 'Senior Tax Advisor',
-    date: '2025-01-15',
-    category: 'Tax Basics',
-    tags: ['Quellensteuer', 'Expat Tax', 'Switzerland', 'Tax at Source'],
-    summary: 'A comprehensive guide to Swiss tax at source system for expats. Learn who is affected, how it\'s calculated, and when you might be eligible for a refund.',
-    readTime: '8 min read',
-    difficulty: 'Beginner',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop",imageAlt:"Swiss tax documents and calculator on modern desk"},{id:"quellensteuer-guide-2025",slug:"understanding-swiss-tax-at-source-quellensteuer-2025",title:"Understanding Swiss Tax at Source (Quellensteuer) in 2025",author:"Elena Schmidt",authorTitle:"Senior Tax Advisor",date:"2025-01-15",category:"Tax Basics",tags:["Quellensteuer","Expat Tax","Switzerland","Tax at Source"],summary:"A comprehensive guide to Swiss tax at source system for expats. Learn who is affected, how it's calculated, and when you might be eligible for a refund.",readTime:"8 min read",difficulty:"Beginner",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">For many expatriates arriving in Switzerland, the concept of "Quellensteuer," or tax at source, is one of the first financial matters they encounter. Unlike the standard tax filing system, this method involves your employer deducting taxes directly from your monthly salary. But who does this apply to, and what are the nuances? Let's break it down.</p>
       
       <h2>Who is Subject to Tax at Source?</h2>
@@ -450,24 +399,7 @@ const blogPosts = [
       
       <h2>The CHF 120,000 Threshold</h2>
       <p>If your gross annual income exceeds CHF 120,000, you are mandatorily required to file a tax return via the NOV process. The tax at source deducted from your salary then acts as a prepayment towards your final tax bill.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss tax documents and calculator on modern desk'
-  },
-  {
-    id: 'pillar-3a-complete-guide',
-    slug: 'expat-guide-to-pillar-3a-pension-in-switzerland-2025',
-    title: 'Complete Guide to Pillar 3a Pension for Expats in Switzerland',
-    author: 'Lukas Weber',
-    authorTitle: 'Pension Specialist',
-    date: '2025-01-10',
-    category: 'Pension & Savings',
-    tags: ['Pillar 3a', 'Pension', 'Savings', 'Tax Deduction'],
-    summary: 'Discover how the Pillar 3a pension plan can significantly reduce your Swiss tax bill and help you build wealth for the future. A must-read for any expat.',
-    readTime: '10 min read',
-    difficulty: 'Intermediate',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop",imageAlt:"Swiss tax documents and calculator on modern desk"},{id:"pillar-3a-complete-guide",slug:"expat-guide-to-pillar-3a-pension-in-switzerland-2025",title:"Complete Guide to Pillar 3a Pension for Expats in Switzerland",author:"Lukas Weber",authorTitle:"Pension Specialist",date:"2025-01-10",category:"Pension & Savings",tags:["Pillar 3a","Pension","Savings","Tax Deduction"],summary:"Discover how the Pillar 3a pension plan can significantly reduce your Swiss tax bill and help you build wealth for the future. A must-read for any expat.",readTime:"10 min read",difficulty:"Intermediate",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">As an expatriate in Switzerland, understanding the local pension system is crucial for both tax optimization and long-term financial planning. The Swiss pension system is based on three "pillars," and the third pillar, specifically Pillar 3a, offers a powerful tool for expats to save money and reduce their tax burden.</p>
 
       <h2>What is Pillar 3a?</h2>
@@ -490,24 +422,7 @@ const blogPosts = [
         <li>Purchase a primary residence in Switzerland</li>
         <li>Start your own business</li>
       </ul>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224154-26032fced8bd?w=800&h=400&fit=crop',
-    imageAlt: 'Piggy bank with Swiss coins representing savings'
-  },
-  {
-    id: 'real-estate-tax-switzerland',
-    slug: 'navigating-swiss-real-estate-tax-for-expats-2025',
-    title: 'Navigating Swiss Real Estate Tax for Expats in 2025',
-    author: 'Elena Schmidt',
-    authorTitle: 'Real Estate Tax Specialist',
-    date: '2025-01-05',
-    category: 'Real Estate',
-    tags: ['Real Estate', 'Property Tax', 'Wealth Tax', 'Eigenmietwert'],
-    summary: 'Owning property in Switzerland or abroad has significant tax implications. This guide covers imputed rental value, wealth tax, and deductible costs for expat homeowners.',
-    readTime: '12 min read',
-    difficulty: 'Advanced',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224154-26032fced8bd?w=800&h=400&fit=crop",imageAlt:"Piggy bank with Swiss coins representing savings"},{id:"real-estate-tax-switzerland",slug:"navigating-swiss-real-estate-tax-for-expats-2025",title:"Navigating Swiss Real Estate Tax for Expats in 2025",author:"Elena Schmidt",authorTitle:"Real Estate Tax Specialist",date:"2025-01-05",category:"Real Estate",tags:["Real Estate","Property Tax","Wealth Tax","Eigenmietwert"],summary:"Owning property in Switzerland or abroad has significant tax implications. This guide covers imputed rental value, wealth tax, and deductible costs for expat homeowners.",readTime:"12 min read",difficulty:"Advanced",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">For many expatriates, purchasing property represents a significant step towards settling in Switzerland. However, owning real estate—whether in Switzerland or abroad—introduces unique elements to your Swiss tax return.</p>
 
       <h2>The Concept of "Eigenmietwert" (Imputed Rental Value)</h2>
@@ -522,24 +437,7 @@ const blogPosts = [
 
       <h2>Wealth Tax and Foreign Property</h2>
       <p>In addition to income tax, Switzerland levies a wealth tax on your worldwide assets. The tax value of your Swiss property is added to your total wealth.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop',
-    imageAlt: 'Modern Swiss house with mountains in background'
-  },
-  {
-    id: 'crypto-tax-switzerland-2025',
-    slug: 'cryptocurrency-taxation-in-switzerland-2025',
-    title: 'Cryptocurrency Taxation in Switzerland: Complete Guide 2025',
-    author: 'Michael Chen',
-    authorTitle: 'Digital Assets Specialist',
-    date: '2025-01-12',
-    category: 'Digital Assets',
-    tags: ['Cryptocurrency', 'Bitcoin', 'Digital Assets', 'Capital Gains'],
-    summary: 'Everything you need to know about cryptocurrency taxation in Switzerland. Learn how to report crypto gains, losses, and comply with Swiss tax regulations.',
-    readTime: '15 min read',
-    difficulty: 'Advanced',
-    featured: false,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",imageAlt:"Modern Swiss house with mountains in background"},{id:"crypto-tax-switzerland-2025",slug:"cryptocurrency-taxation-in-switzerland-2025",title:"Cryptocurrency Taxation in Switzerland: Complete Guide 2025",author:"Michael Chen",authorTitle:"Digital Assets Specialist",date:"2025-01-12",category:"Digital Assets",tags:["Cryptocurrency","Bitcoin","Digital Assets","Capital Gains"],summary:"Everything you need to know about cryptocurrency taxation in Switzerland. Learn how to report crypto gains, losses, and comply with Swiss tax regulations.",readTime:"15 min read",difficulty:"Advanced",featured:!1,content:`
       <p class="mb-6 text-lg leading-relaxed">As cryptocurrency adoption continues to grow in Switzerland, understanding the tax implications is crucial for both individuals and businesses. Switzerland has established clear guidelines for cryptocurrency taxation that every investor should know.</p>
 
       <h2>How Cryptocurrency is Taxed in Switzerland</h2>
@@ -555,24 +453,7 @@ const blogPosts = [
 
       <h2>Wealth Tax Considerations</h2>
       <p>Your cryptocurrency holdings must be declared for wealth tax purposes. The value is determined at the end of each tax year.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=400&fit=crop',
-    imageAlt: 'Cryptocurrency trading interface with Swiss flag'
-  },
-  {
-    id: 'swiss-wealth-tax-guide',
-    slug: 'swiss-wealth-tax-complete-guide-2025',
-    title: 'Swiss Wealth Tax: Complete Guide for Expats 2025',
-    author: 'Sarah Müller',
-    authorTitle: 'Wealth Tax Advisor',
-    date: '2025-01-08',
-    category: 'Wealth Tax',
-    tags: ['Wealth Tax', 'Assets', 'Vermögenssteuer', 'Tax Planning'],
-    summary: 'Understand how Swiss wealth tax works, what assets are included, and how to optimize your wealth tax burden as an expat in Switzerland.',
-    readTime: '9 min read',
-    difficulty: 'Intermediate',
-    featured: false,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=400&fit=crop",imageAlt:"Cryptocurrency trading interface with Swiss flag"},{id:"swiss-wealth-tax-guide",slug:"swiss-wealth-tax-complete-guide-2025",title:"Swiss Wealth Tax: Complete Guide for Expats 2025",author:"Sarah Müller",authorTitle:"Wealth Tax Advisor",date:"2025-01-08",category:"Wealth Tax",tags:["Wealth Tax","Assets","Vermögenssteuer","Tax Planning"],summary:"Understand how Swiss wealth tax works, what assets are included, and how to optimize your wealth tax burden as an expat in Switzerland.",readTime:"9 min read",difficulty:"Intermediate",featured:!1,content:`
       <p class="mb-6 text-lg leading-relaxed">Switzerland is one of the few countries that still levies a wealth tax. Understanding how this tax works is essential for expats who have accumulated assets, whether in Switzerland or abroad.</p>
 
       <h2>What is Swiss Wealth Tax?</h2>
@@ -590,24 +471,7 @@ const blogPosts = [
 
       <h2>Tax Rates by Canton</h2>
       <p>Wealth tax rates vary significantly between cantons. Some cantons have no wealth tax, while others can charge up to 1% annually.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss financial documents and wealth management'
-  },
-  {
-    id: 'expat-tax-planning-2025',
-    slug: 'expat-tax-planning-strategies-switzerland-2025',
-    title: 'Expat Tax Planning Strategies for Switzerland 2025',
-    author: 'David Johnson',
-    authorTitle: 'International Tax Advisor',
-    date: '2025-01-03',
-    category: 'Tax Planning',
-    tags: ['Tax Planning', 'Expat', 'Optimization', 'Strategy'],
-    summary: 'Strategic tax planning tips for expats in Switzerland. Learn how to minimize your tax burden while staying compliant with Swiss tax laws.',
-    readTime: '11 min read',
-    difficulty: 'Advanced',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",imageAlt:"Swiss financial documents and wealth management"},{id:"expat-tax-planning-2025",slug:"expat-tax-planning-strategies-switzerland-2025",title:"Expat Tax Planning Strategies for Switzerland 2025",author:"David Johnson",authorTitle:"International Tax Advisor",date:"2025-01-03",category:"Tax Planning",tags:["Tax Planning","Expat","Optimization","Strategy"],summary:"Strategic tax planning tips for expats in Switzerland. Learn how to minimize your tax burden while staying compliant with Swiss tax laws.",readTime:"11 min read",difficulty:"Advanced",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">Effective tax planning is crucial for expats in Switzerland. With the right strategies, you can significantly reduce your tax burden while remaining fully compliant with Swiss tax regulations.</p>
 
       <h2>Key Tax Planning Strategies</h2>
@@ -624,24 +488,7 @@ const blogPosts = [
 
       <h2>Common Mistakes to Avoid</h2>
       <p>Many expats make costly mistakes in their tax planning. Here are the most common ones to avoid.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
-    imageAlt: 'Tax planning documents and calculator'
-  },
-  {
-    id: 'swiss-business-tax-2025',
-    slug: 'swiss-business-tax-guide-for-expats-2025',
-    title: 'Swiss Business Tax Guide for Expats: Starting a Business in 2025',
-    author: 'Anna Weber',
-    authorTitle: 'Business Tax Specialist',
-    date: '2025-01-01',
-    category: 'Business Tax',
-    tags: ['Business Tax', 'Entrepreneurship', 'Company Formation', 'VAT'],
-    summary: 'Complete guide to Swiss business taxation for expats. Learn about corporate tax rates, VAT, and tax obligations when starting a business in Switzerland.',
-    readTime: '13 min read',
-    difficulty: 'Advanced',
-    featured: false,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop",imageAlt:"Tax planning documents and calculator"},{id:"swiss-business-tax-2025",slug:"swiss-business-tax-guide-for-expats-2025",title:"Swiss Business Tax Guide for Expats: Starting a Business in 2025",author:"Anna Weber",authorTitle:"Business Tax Specialist",date:"2025-01-01",category:"Business Tax",tags:["Business Tax","Entrepreneurship","Company Formation","VAT"],summary:"Complete guide to Swiss business taxation for expats. Learn about corporate tax rates, VAT, and tax obligations when starting a business in Switzerland.",readTime:"13 min read",difficulty:"Advanced",featured:!1,content:`
       <p class="mb-6 text-lg leading-relaxed">Switzerland offers an attractive business environment for entrepreneurs, including expats. Understanding the tax implications of starting and running a business in Switzerland is essential for success.</p>
 
       <h2>Swiss Corporate Tax System</h2>
@@ -657,24 +504,7 @@ const blogPosts = [
         <li>R&D tax credits</li>
         <li>Special tax treatment for holding companies</li>
       </ul>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop',
-    imageAlt: 'Modern Swiss office building with business documents'
-  },
-  {
-    id: 'swiss-inheritance-tax-2025',
-    slug: 'swiss-inheritance-tax-guide-2025',
-    title: 'Swiss Inheritance Tax: Complete Guide for Expats 2025',
-    author: 'Robert Klein',
-    authorTitle: 'Estate Planning Specialist',
-    date: '2024-12-28',
-    category: 'Estate Planning',
-    tags: ['Inheritance Tax', 'Estate Planning', 'Succession', 'Wealth Transfer'],
-    summary: 'Understanding Swiss inheritance tax laws and how they affect expats. Learn about tax rates, exemptions, and planning strategies for wealth transfer.',
-    readTime: '10 min read',
-    difficulty: 'Advanced',
-    featured: false,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",imageAlt:"Modern Swiss office building with business documents"},{id:"swiss-inheritance-tax-2025",slug:"swiss-inheritance-tax-guide-2025",title:"Swiss Inheritance Tax: Complete Guide for Expats 2025",author:"Robert Klein",authorTitle:"Estate Planning Specialist",date:"2024-12-28",category:"Estate Planning",tags:["Inheritance Tax","Estate Planning","Succession","Wealth Transfer"],summary:"Understanding Swiss inheritance tax laws and how they affect expats. Learn about tax rates, exemptions, and planning strategies for wealth transfer.",readTime:"10 min read",difficulty:"Advanced",featured:!1,content:`
       <p class="mb-6 text-lg leading-relaxed">Swiss inheritance tax laws can be complex, especially for expats with assets in multiple countries. Understanding these laws is crucial for effective estate planning.</p>
 
       <h2>How Swiss Inheritance Tax Works</h2>
@@ -685,24 +515,7 @@ const blogPosts = [
 
       <h2>Planning Strategies</h2>
       <p>Effective estate planning can help minimize inheritance tax burden while ensuring your assets are transferred according to your wishes.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop',
-    imageAlt: 'Estate planning documents and family wealth transfer'
-  },
-  {
-    id: 'swiss-health-insurance-tax',
-    slug: 'swiss-health-insurance-tax-deductions-2025',
-    title: 'Swiss Health Insurance Tax Deductions: Maximize Your Savings 2025',
-    author: 'Maria Garcia',
-    authorTitle: 'Health Insurance Specialist',
-    date: '2024-12-25',
-    category: 'Health & Insurance',
-    tags: ['Health Insurance', 'Tax Deduction', 'Krankenkasse', 'Medical Expenses'],
-    summary: 'Learn how to maximize your Swiss health insurance tax deductions. Understand what medical expenses are deductible and how to claim them.',
-    readTime: '7 min read',
-    difficulty: 'Beginner',
-    featured: false,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop",imageAlt:"Estate planning documents and family wealth transfer"},{id:"swiss-health-insurance-tax",slug:"swiss-health-insurance-tax-deductions-2025",title:"Swiss Health Insurance Tax Deductions: Maximize Your Savings 2025",author:"Maria Garcia",authorTitle:"Health Insurance Specialist",date:"2024-12-25",category:"Health & Insurance",tags:["Health Insurance","Tax Deduction","Krankenkasse","Medical Expenses"],summary:"Learn how to maximize your Swiss health insurance tax deductions. Understand what medical expenses are deductible and how to claim them.",readTime:"7 min read",difficulty:"Beginner",featured:!1,content:`
       <p class="mb-6 text-lg leading-relaxed">Swiss health insurance premiums and many medical expenses are tax-deductible. Understanding what you can deduct can significantly reduce your tax burden.</p>
 
       <h2>Deductible Health Insurance Premiums</h2>
@@ -719,24 +532,7 @@ const blogPosts = [
 
       <h2>How to Claim Deductions</h2>
       <p>To claim health insurance deductions, you need to provide proof of payments and ensure all expenses meet the deductibility criteria.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss health insurance cards and medical documents'
-  },
-  {
-    id: 'swiss-education-tax-benefits',
-    slug: 'swiss-education-tax-benefits-expats-2025',
-    title: 'Swiss Education Tax Benefits for Expats: Save on School Fees 2025',
-    author: 'Jennifer Lee',
-    authorTitle: 'Education Tax Advisor',
-    date: '2024-12-22',
-    category: 'Education',
-    tags: ['Education', 'School Fees', 'Tax Deduction', 'International Schools'],
-    summary: 'Discover the tax benefits available for education expenses in Switzerland. Learn how to deduct school fees, language courses, and professional development costs.',
-    readTime: '8 min read',
-    difficulty: 'Intermediate',
-    featured: false,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop",imageAlt:"Swiss health insurance cards and medical documents"},{id:"swiss-education-tax-benefits",slug:"swiss-education-tax-benefits-expats-2025",title:"Swiss Education Tax Benefits for Expats: Save on School Fees 2025",author:"Jennifer Lee",authorTitle:"Education Tax Advisor",date:"2024-12-22",category:"Education",tags:["Education","School Fees","Tax Deduction","International Schools"],summary:"Discover the tax benefits available for education expenses in Switzerland. Learn how to deduct school fees, language courses, and professional development costs.",readTime:"8 min read",difficulty:"Intermediate",featured:!1,content:`
       <p class="mb-6 text-lg leading-relaxed">Education expenses can be significant for expat families in Switzerland. Fortunately, many of these expenses are tax-deductible, providing substantial savings.</p>
 
       <h2>Deductible Education Expenses</h2>
@@ -753,24 +549,7 @@ const blogPosts = [
 
       <h2>Professional Development</h2>
       <p>Courses and training that are directly related to your profession are generally fully deductible.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop',
-    imageAlt: 'International school building with Swiss flag'
-  },
-  {
-    id: 'flexible-retirement-switzerland-2025',
-    slug: 'flexible-retirement-switzerland-tax-implications-2025',
-    title: 'Flexible Retirement in Switzerland: Tax Implications and Planning Strategies 2025',
-    author: 'Dr. Peter Lang',
-    authorTitle: 'Senior Tax Advisor',
-    date: '2025-01-20',
-    category: 'Pension & Savings',
-    tags: ['Flexible Retirement', 'Pension', 'BVG', 'Tax Planning', 'Partial Retirement'],
-    summary: 'Understanding flexible retirement options in Switzerland and their tax implications. Learn about partial pension withdrawals, tax optimization strategies, and the upcoming 2027 tax changes.',
-    readTime: '12 min read',
-    difficulty: 'Advanced',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop",imageAlt:"International school building with Swiss flag"},{id:"flexible-retirement-switzerland-2025",slug:"flexible-retirement-switzerland-tax-implications-2025",title:"Flexible Retirement in Switzerland: Tax Implications and Planning Strategies 2025",author:"Dr. Peter Lang",authorTitle:"Senior Tax Advisor",date:"2025-01-20",category:"Pension & Savings",tags:["Flexible Retirement","Pension","BVG","Tax Planning","Partial Retirement"],summary:"Understanding flexible retirement options in Switzerland and their tax implications. Learn about partial pension withdrawals, tax optimization strategies, and the upcoming 2027 tax changes.",readTime:"12 min read",difficulty:"Advanced",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">As Switzerland's population ages and the number of baby boomers approaching retirement increases, flexible retirement options are becoming increasingly important. The Swiss pension system has evolved to accommodate this trend, but understanding the tax implications is crucial for effective retirement planning.</p>
 
       <h2>The Changing Landscape of Swiss Retirement</h2>
@@ -837,24 +616,7 @@ const blogPosts = [
       <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
         <p class="text-blue-800"><strong>Important Note:</strong> The proposed tax changes are still under discussion and may be modified or rejected by Parliament. However, given the significant potential impact, it's advisable to plan for the possibility of these changes taking effect in 2027.</p>
       </div>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss pension documents and retirement planning'
-  },
-  {
-    id: 'retroactive-pillar3a-2025',
-    slug: 'retroactive-pillar-3a-contributions-switzerland-2025',
-    title: 'Retroactive Pillar 3a Contributions: New Opportunities for Swiss Retirement Planning 2025',
-    author: 'TREUHAND|SUISSE',
-    authorTitle: 'Swiss Tax Association',
-    date: '2025-01-25',
-    category: 'Pension & Savings',
-    tags: ['Pillar 3a', 'Retroactive Contributions', 'Tax Deduction', 'Retirement Planning', 'BVV3'],
-    summary: 'Discover the new 2025 rules allowing retroactive Pillar 3a contributions to close contribution gaps. Learn about eligibility, limits, and tax benefits for optimizing your Swiss retirement savings.',
-    readTime: '10 min read',
-    difficulty: 'Intermediate',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop",imageAlt:"Swiss pension documents and retirement planning"},{id:"retroactive-pillar3a-2025",slug:"retroactive-pillar-3a-contributions-switzerland-2025",title:"Retroactive Pillar 3a Contributions: New Opportunities for Swiss Retirement Planning 2025",author:"TREUHAND|SUISSE",authorTitle:"Swiss Tax Association",date:"2025-01-25",category:"Pension & Savings",tags:["Pillar 3a","Retroactive Contributions","Tax Deduction","Retirement Planning","BVV3"],summary:"Discover the new 2025 rules allowing retroactive Pillar 3a contributions to close contribution gaps. Learn about eligibility, limits, and tax benefits for optimizing your Swiss retirement savings.",readTime:"10 min read",difficulty:"Intermediate",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">Starting January 1, 2025, Switzerland introduces a groundbreaking new opportunity in retirement planning: the ability to make retroactive contributions to Pillar 3a to close contribution gaps from previous years. This represents a significant enhancement to the Swiss three-pillar pension system and offers new possibilities for optimizing your retirement savings.</p>
 
       <h2>What Changes in 2025?</h2>
@@ -985,24 +747,7 @@ const blogPosts = [
       <div class="bg-green-50 border-l-4 border-green-400 p-4 my-6">
         <p class="text-green-800"><strong>Key Takeaway:</strong> Starting in 2025, you can make retroactive Pillar 3a contributions to close gaps from previous years, but only for gaps that arise from 2025 onwards. This offers new opportunities for tax optimization and retirement planning, but requires careful documentation and professional guidance.</p>
       </div>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224154-26032fced8bd?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss retirement planning with Pillar 3a documents'
-  },
-  {
-    id: 'swiss-eigenmietwert-referendum-2025',
-    slug: 'swiss-eigenmietwert-referendum-property-tax-changes-2025',
-    title: 'Swiss Eigenmietwert Referendum: Major Property Tax Changes Coming in 2025',
-    author: 'HEV Schweiz',
-    authorTitle: 'Swiss Homeowners Association',
-    date: '2025-01-30',
-    category: 'Real Estate',
-    tags: ['Eigenmietwert', 'Property Tax', 'Real Estate', 'Referendum', 'Swiss Tax'],
-    summary: 'Understanding the Swiss referendum on abolishing imputed rental value (Eigenmietwert) and its impact on property owners. Learn about the proposed changes, timeline, and what it means for your Swiss property taxes.',
-    readTime: '15 min read',
-    difficulty: 'Advanced',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224154-26032fced8bd?w=800&h=400&fit=crop",imageAlt:"Swiss retirement planning with Pillar 3a documents"},{id:"swiss-eigenmietwert-referendum-2025",slug:"swiss-eigenmietwert-referendum-property-tax-changes-2025",title:"Swiss Eigenmietwert Referendum: Major Property Tax Changes Coming in 2025",author:"HEV Schweiz",authorTitle:"Swiss Homeowners Association",date:"2025-01-30",category:"Real Estate",tags:["Eigenmietwert","Property Tax","Real Estate","Referendum","Swiss Tax"],summary:"Understanding the Swiss referendum on abolishing imputed rental value (Eigenmietwert) and its impact on property owners. Learn about the proposed changes, timeline, and what it means for your Swiss property taxes.",readTime:"15 min read",difficulty:"Advanced",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">Switzerland is facing a major tax reform that could fundamentally change how property owners are taxed. The referendum on September 28, 2025, will decide whether to abolish the imputed rental value (Eigenmietwert) system that has been in place for decades. This change would have significant implications for all Swiss property owners, especially expats.</p>
 
       <h2>What is the Eigenmietwert Referendum About?</h2>
@@ -1192,24 +937,7 @@ const blogPosts = [
       <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
         <p class="text-blue-800"><strong>For More Information:</strong> Visit <a href="https://faire-steuern.ch/" class="underline">faire-steuern.ch</a> for official campaign information and <a href="https://www.fedlex.admin.ch/eli/fga/2025/23/de" class="underline">fedlex.admin.ch</a> for the complete legal text.</p>
       </div>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss property and real estate tax documents'
-  },
-  {
-    id: 'switzerland-usa-fatca-agreement-2013',
-    slug: 'switzerland-usa-fatca-agreement-tax-dispute-resolution-2013',
-    title: 'Switzerland-USA FATCA Agreement: How the Tax Dispute Was Resolved in 2013',
-    author: 'SwissInfo',
-    authorTitle: 'Swiss International News',
-    date: '2025-02-01',
-    category: 'International Tax',
-    tags: ['FATCA', 'USA', 'Switzerland', 'Tax Dispute', 'Banking', 'Cross-Border'],
-    summary: 'Understanding the historic 2013 Switzerland-USA tax agreement that resolved the banking dispute and implemented FATCA. Learn about the impact on Swiss banks, US taxpayers, and cross-border tax compliance.',
-    readTime: '12 min read',
-    difficulty: 'Advanced',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",imageAlt:"Swiss property and real estate tax documents"},{id:"switzerland-usa-fatca-agreement-2013",slug:"switzerland-usa-fatca-agreement-tax-dispute-resolution-2013",title:"Switzerland-USA FATCA Agreement: How the Tax Dispute Was Resolved in 2013",author:"SwissInfo",authorTitle:"Swiss International News",date:"2025-02-01",category:"International Tax",tags:["FATCA","USA","Switzerland","Tax Dispute","Banking","Cross-Border"],summary:"Understanding the historic 2013 Switzerland-USA tax agreement that resolved the banking dispute and implemented FATCA. Learn about the impact on Swiss banks, US taxpayers, and cross-border tax compliance.",readTime:"12 min read",difficulty:"Advanced",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">The 2013 Switzerland-USA tax agreement marked a historic turning point in international tax compliance. This landmark deal resolved years of banking disputes and fundamentally changed how Swiss banks handle US taxpayers, implementing the Foreign Account Tax Compliance Act (FATCA) and ending decades of banking secrecy for US citizens.</p>
 
       <h2>The Historic Agreement: August 29, 2013</h2>
@@ -1427,24 +1155,7 @@ const blogPosts = [
       <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
         <p class="text-blue-800"><strong>For More Information:</strong> Visit <a href="https://www.swissinfo.ch/ger/politik/schweiz-und-usa-einigen-sich-im-steuerstreit/36782882" class="underline">SwissInfo.ch</a> for the complete article and <a href="https://www.irs.gov/businesses/corporations/foreign-account-tax-compliance-act-fatca" class="underline">IRS.gov</a> for current FATCA requirements.</p>
       </div>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss and US flags representing international tax cooperation'
-  },
-  {
-    id: 'swiss-agricultural-tariffs-usa-trade-2025',
-    slug: 'swiss-agricultural-tariffs-usa-trade-negotiations-2025',
-    title: 'Swiss Agricultural Tariffs: Can Switzerland Reduce Tariffs for Better USA Trade Deal?',
-    author: 'SwissInfo',
-    authorTitle: 'Swiss International News',
-    date: '2025-02-02',
-    category: 'International Trade',
-    tags: ['Agricultural Tariffs', 'USA Trade', 'Switzerland', 'Trade Negotiations', 'Food Safety'],
-    summary: 'Understanding Switzerland\'s agricultural tariff system and its potential impact on USA trade negotiations. Learn about the implications for Swiss farmers, consumers, and food safety standards.',
-    readTime: '10 min read',
-    difficulty: 'Intermediate',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop",imageAlt:"Swiss and US flags representing international tax cooperation"},{id:"swiss-agricultural-tariffs-usa-trade-2025",slug:"swiss-agricultural-tariffs-usa-trade-negotiations-2025",title:"Swiss Agricultural Tariffs: Can Switzerland Reduce Tariffs for Better USA Trade Deal?",author:"SwissInfo",authorTitle:"Swiss International News",date:"2025-02-02",category:"International Trade",tags:["Agricultural Tariffs","USA Trade","Switzerland","Trade Negotiations","Food Safety"],summary:"Understanding Switzerland's agricultural tariff system and its potential impact on USA trade negotiations. Learn about the implications for Swiss farmers, consumers, and food safety standards.",readTime:"10 min read",difficulty:"Intermediate",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">Switzerland is scrambling to ink a trade deal with the US amid an economic blow from tariffs that have hit the country hard. With Switzerland slammed with a 39% tariff rate in the US trade blitz, the question on everyone's mind is: can Switzerland lower its agricultural tariffs to negotiate a better deal with the US?</p>
 
       <div class="magazine-callout">
@@ -1741,24 +1452,7 @@ const blogPosts = [
       </div>
 
       <p>As Switzerland navigates these complex trade negotiations, the country's ability to maintain its unique agricultural model while securing beneficial trade agreements will be crucial for its future economic success and international standing.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss agricultural products and trade negotiations'
-  },
-  {
-    id: 'swiss-kita-costs-tax-deductions-2025',
-    slug: 'swiss-kita-costs-tax-deductions-guide-parents-2025',
-    title: 'Swiss Kita Costs and Tax Deductions: Complete Guide for Parents 2025',
-    author: 'Treuhand-Suche',
-    authorTitle: 'Swiss Tax Advisory Platform',
-    date: '2025-02-03',
-    category: 'Family & Children',
-    tags: ['Kita Costs', 'Tax Deductions', 'Childcare', 'Swiss Tax Law', 'Family Finance'],
-    summary: 'Complete guide to Swiss Kita costs and tax deductions for parents. Learn about federal and cantonal regulations, maximum deductions, and practical tips for optimizing your tax situation.',
-    readTime: '12 min read',
-    difficulty: 'Intermediate',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop",imageAlt:"Swiss agricultural products and trade negotiations"},{id:"swiss-kita-costs-tax-deductions-2025",slug:"swiss-kita-costs-tax-deductions-guide-parents-2025",title:"Swiss Kita Costs and Tax Deductions: Complete Guide for Parents 2025",author:"Treuhand-Suche",authorTitle:"Swiss Tax Advisory Platform",date:"2025-02-03",category:"Family & Children",tags:["Kita Costs","Tax Deductions","Childcare","Swiss Tax Law","Family Finance"],summary:"Complete guide to Swiss Kita costs and tax deductions for parents. Learn about federal and cantonal regulations, maximum deductions, and practical tips for optimizing your tax situation.",readTime:"12 min read",difficulty:"Intermediate",featured:!0,content:`
       <p>For many parents in Switzerland, third-party childcare through Kita centers is essential for balancing work and family life. Understanding the tax implications of Kita costs can significantly impact your family's financial situation. This comprehensive guide explains the legal framework, cantonal differences, and practical strategies for maximizing your tax benefits.</p>
 
       <h2>Legal Framework: Federal and Cantonal Regulations</h2>
@@ -2126,24 +1820,7 @@ const blogPosts = [
         <h4>For More Information</h4>
         <p>Visit <a href="https://treuhand-suche.ch/blog/kita-costs/" class="underline">Treuhand-Suche.ch</a> for the complete article and <a href="https://www.estv.admin.ch/estv/de/home.html" class="underline">ESTV.admin.ch</a> for official Swiss tax administration information.</p>
       </div>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss Kita center and children playing'
-  },
-  {
-    id: 'swiss-tax-developments-2025-oecd-minimum-tax',
-    slug: 'swiss-tax-developments-2025-oecd-minimum-tax-implementation',
-    title: 'Swiss Tax Developments 2025: OECD Minimum Tax Implementation and Corporate Tax Reforms',
-    author: 'Paritca',
-    authorTitle: 'Senior Tax Advisor',
-    date: '2025-01-20',
-    category: 'Corporate Tax',
-    tags: ['OECD Minimum Tax', 'Pillar 2', 'Corporate Tax', 'Switzerland', '2025', 'Tax Reform'],
-    summary: 'Comprehensive analysis of Switzerland\'s implementation of the OECD minimum tax (Pillar 2), corporate tax rate developments, and their impact on Swiss businesses and international tax planning.',
-    readTime: '15 min read',
-    difficulty: 'Advanced',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop",imageAlt:"Swiss Kita center and children playing"},{id:"swiss-tax-developments-2025-oecd-minimum-tax",slug:"swiss-tax-developments-2025-oecd-minimum-tax-implementation",title:"Swiss Tax Developments 2025: OECD Minimum Tax Implementation and Corporate Tax Reforms",author:"Paritca",authorTitle:"Senior Tax Advisor",date:"2025-01-20",category:"Corporate Tax",tags:["OECD Minimum Tax","Pillar 2","Corporate Tax","Switzerland","2025","Tax Reform"],summary:"Comprehensive analysis of Switzerland's implementation of the OECD minimum tax (Pillar 2), corporate tax rate developments, and their impact on Swiss businesses and international tax planning.",readTime:"15 min read",difficulty:"Advanced",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">Switzerland's tax landscape is undergoing significant transformation in 2025, with the implementation of the OECD minimum tax (Pillar 2) representing one of the most substantial changes to the Swiss tax system in decades. This comprehensive analysis examines the practical implications of these reforms for Swiss businesses, multinational corporations, and tax professionals navigating the evolving regulatory environment.</p>
       
       <figure class="my-8">
@@ -2238,24 +1915,7 @@ const blogPosts = [
         <li>Figure 4: Photo by <a href="https://unsplash.com/@christinhumephoto" class="text-blue-600 hover:underline">Christin Hume</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></li>
         <li>Figure 5: Photo by <a href="https://unsplash.com/@joshuaearle" class="text-blue-600 hover:underline">Joshua Earle</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></li>
       </ul>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss Federal Palace in Bern representing Swiss government and tax policy'
-  },
-  {
-    id: 'swiss-tax-return-guide-2025',
-    slug: 'swiss-tax-return-guide-2025-complete-step-by-step-tutorial',
-    title: 'Swiss Tax Return Guide 2025: Complete Step-by-Step Tutorial',
-    author: 'Emanuel Flury',
-    authorTitle: 'Founder & Lead Tax Consultant',
-    date: '2025-11-28',
-    category: 'Tax Basics',
-    tags: ['Swiss Tax Return', 'Tax Filing', 'Tax Guide 2025', 'Expats', 'Steuererklärung'],
-    summary: 'Complete step-by-step guide to filing your Swiss tax return in 2025. Learn about deadlines, required documents, deductions, and the entire tax filing process for expatriates and residents.',
-    readTime: '18 min read',
-    difficulty: 'Beginner',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=400&fit=crop",imageAlt:"Swiss Federal Palace in Bern representing Swiss government and tax policy"},{id:"swiss-tax-return-guide-2025",slug:"swiss-tax-return-guide-2025-complete-step-by-step-tutorial",title:"Swiss Tax Return Guide 2025: Complete Step-by-Step Tutorial",author:"Emanuel Flury",authorTitle:"Founder & Lead Tax Consultant",date:"2025-11-28",category:"Tax Basics",tags:["Swiss Tax Return","Tax Filing","Tax Guide 2025","Expats","Steuererklärung"],summary:"Complete step-by-step guide to filing your Swiss tax return in 2025. Learn about deadlines, required documents, deductions, and the entire tax filing process for expatriates and residents.",readTime:"18 min read",difficulty:"Beginner",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">Filing a Swiss tax return can seem overwhelming, especially for expatriates navigating the system for the first time. This comprehensive 2025 guide walks you through every step of the process, from gathering documents to submitting your return and understanding your tax assessment. Whether you're subject to withholding tax (Quellensteuer) or filing a regular tax return, this tutorial ensures you maximize deductions while remaining fully compliant with Swiss tax law.</p>
 
       <figure class="my-8">
@@ -2451,24 +2111,7 @@ const blogPosts = [
         <li><a href="https://www.taxed.ch/calculators" class="text-blue-600 hover:underline">Free Swiss Tax Calculators</a></li>
         <li><a href="https://www.taxed.ch/services" class="text-blue-600 hover:underline">Professional Tax Filing Services</a></li>
       </ul>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop',
-    imageAlt: 'Swiss tax return forms and documents being completed'
-  },
-  {
-    id: 'top-10-tax-deductions-expats-switzerland-2025',
-    slug: 'top-10-tax-deductions-expats-switzerland-2025',
-    title: 'Top 10 Tax Deductions for Expats in Switzerland 2025',
-    author: 'Patricia',
-    authorTitle: 'Senior Tax Advisor',
-    date: '2025-11-27',
-    category: 'Tax Deductions',
-    tags: ['Tax Deductions', 'Expats', 'Tax Savings', 'Switzerland 2025', 'Tax Optimization'],
-    summary: 'Maximize your tax savings in Switzerland! Discover the top 10 tax deductions specifically available to expatriates, including often-missed opportunities that could save you thousands of francs.',
-    readTime: '14 min read',
-    difficulty: 'Intermediate',
-    featured: true,
-    content: `
+    `,imageUrl:"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop",imageAlt:"Swiss tax return forms and documents being completed"},{id:"top-10-tax-deductions-expats-switzerland-2025",slug:"top-10-tax-deductions-expats-switzerland-2025",title:"Top 10 Tax Deductions for Expats in Switzerland 2025",author:"Patricia",authorTitle:"Senior Tax Advisor",date:"2025-11-27",category:"Tax Deductions",tags:["Tax Deductions","Expats","Tax Savings","Switzerland 2025","Tax Optimization"],summary:"Maximize your tax savings in Switzerland! Discover the top 10 tax deductions specifically available to expatriates, including often-missed opportunities that could save you thousands of francs.",readTime:"14 min read",difficulty:"Intermediate",featured:!0,content:`
       <p class="mb-6 text-lg leading-relaxed">As an expatriate living in Switzerland, you have access to numerous tax deductions that many newcomers overlook. Understanding and claiming these deductions can significantly reduce your tax burden - often by several thousand francs annually. This comprehensive guide reveals the top 10 tax deductions specifically beneficial to expats, complete with eligibility requirements, documentation needs, and pro tips for maximizing each deduction.</p>
 
       <figure class="my-8">
@@ -2794,85 +2437,6 @@ const blogPosts = [
       <p>These 10 tax deductions can save expatriates in Switzerland thousands of francs annually. The key is staying organized, keeping detailed records, and understanding which deductions apply to your specific situation. Don't leave money on the table - claim every deduction you're entitled to!</p>
 
       <p>Need help optimizing your tax return? Our experts at Taxed GmbH specialize in expatriate tax situations and can ensure you claim every available deduction.</p>
-    `,
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
-    imageAlt: 'Tax deductions and financial optimization planning'
-  }
-];
+    `,imageUrl:"https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop",imageAlt:"Tax deductions and financial optimization planning"}],M=[{id:"all",name:"All Articles",count:n.length},{id:"Tax Basics",name:"Tax Basics",count:n.filter(e=>e.category==="Tax Basics").length},{id:"Pension & Savings",name:"Pension & Savings",count:n.filter(e=>e.category==="Pension & Savings").length},{id:"Real Estate",name:"Real Estate",count:n.filter(e=>e.category==="Real Estate").length},{id:"Digital Assets",name:"Digital Assets",count:n.filter(e=>e.category==="Digital Assets").length},{id:"Wealth Tax",name:"Wealth Tax",count:n.filter(e=>e.category==="Wealth Tax").length},{id:"Tax Planning",name:"Tax Planning",count:n.filter(e=>e.category==="Tax Planning").length},{id:"Business Tax",name:"Business Tax",count:n.filter(e=>e.category==="Business Tax").length},{id:"Corporate Tax",name:"Corporate Tax",count:n.filter(e=>e.category==="Corporate Tax").length},{id:"Estate Planning",name:"Estate Planning",count:n.filter(e=>e.category==="Estate Planning").length},{id:"Health & Insurance",name:"Health & Insurance",count:n.filter(e=>e.category==="Health & Insurance").length},{id:"Education",name:"Education",count:n.filter(e=>e.category==="Education").length}],B=()=>n.sort((e,i)=>new Date(i.date)-new Date(e.date)),q=()=>n.filter(e=>e.featured).slice(0,3),L=e=>n.find(i=>i.slug===e),W=e=>{const i=e.toLowerCase();return n.filter(a=>a.title.toLowerCase().includes(i)||a.summary.toLowerCase().includes(i)||a.tags.some(c=>c.toLowerCase().includes(i))||a.content.toLowerCase().includes(i))},N=(e,i=3)=>n.filter(a=>a.id!==e.id&&(a.category===e.category||a.tags.some(c=>e.tags.includes(c)))).slice(0,i),G=()=>{const e={};return n.forEach(i=>{i.tags.forEach(a=>{e[a]=(e[a]||0)+1})}),Object.entries(e).sort(([,i],[,a])=>a-i).slice(0,10).map(([i,a])=>({tag:i,count:a}))},O=({post:e,variant:i="default",size:a="sm"})=>{const[c,p]=y.useState(!1),[h,o]=y.useState(!1),l=`https://taxed.ch/blog/${e.slug}`,d=e.title,m=e.summary,g=async()=>{try{await navigator.clipboard.writeText(l),p(!0),setTimeout(()=>p(!1),2e3)}catch(s){console.error("Failed to copy: ",s)}},w=()=>{const s=`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(l)}`;window.open(s,"_blank","width=600,height=400"),o(!1)},x=()=>{const s=`https://twitter.com/intent/tweet?text=${encodeURIComponent(d)}&url=${encodeURIComponent(l)}`;window.open(s,"_blank","width=600,height=400"),o(!1)},b=()=>{const s=`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(l)}`;window.open(s,"_blank","width=600,height=400"),o(!1)},v=()=>{const s=encodeURIComponent(d),S=encodeURIComponent(`${m}
 
-// Blog categories
-export const blogCategories = [
-  { id: 'all', name: 'All Articles', count: blogPosts.length },
-  { id: 'Tax Basics', name: 'Tax Basics', count: blogPosts.filter(p => p.category === 'Tax Basics').length },
-  { id: 'Pension & Savings', name: 'Pension & Savings', count: blogPosts.filter(p => p.category === 'Pension & Savings').length },
-  { id: 'Real Estate', name: 'Real Estate', count: blogPosts.filter(p => p.category === 'Real Estate').length },
-  { id: 'Digital Assets', name: 'Digital Assets', count: blogPosts.filter(p => p.category === 'Digital Assets').length },
-  { id: 'Wealth Tax', name: 'Wealth Tax', count: blogPosts.filter(p => p.category === 'Wealth Tax').length },
-  { id: 'Tax Planning', name: 'Tax Planning', count: blogPosts.filter(p => p.category === 'Tax Planning').length },
-  { id: 'Business Tax', name: 'Business Tax', count: blogPosts.filter(p => p.category === 'Business Tax').length },
-  { id: 'Corporate Tax', name: 'Corporate Tax', count: blogPosts.filter(p => p.category === 'Corporate Tax').length },
-  { id: 'Estate Planning', name: 'Estate Planning', count: blogPosts.filter(p => p.category === 'Estate Planning').length },
-  { id: 'Health & Insurance', name: 'Health & Insurance', count: blogPosts.filter(p => p.category === 'Health & Insurance').length },
-  { id: 'Education', name: 'Education', count: blogPosts.filter(p => p.category === 'Education').length }
-];
-
-// Get all blog posts
-export const getBlogPosts = () => {
-  return blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-};
-
-// Get featured blog posts
-export const getFeaturedPosts = () => {
-  return blogPosts.filter(post => post.featured).slice(0, 3);
-};
-
-// Get posts by category
-export const getPostsByCategory = (category) => {
-  if (category === 'all') return getBlogPosts();
-  return blogPosts.filter(post => post.category === category);
-};
-
-// Get post by slug
-export const getPostBySlug = (slug) => {
-  return blogPosts.find(post => post.slug === slug);
-};
-
-// Search posts
-export const searchPosts = (query) => {
-  const lowercaseQuery = query.toLowerCase();
-  return blogPosts.filter(post => 
-    post.title.toLowerCase().includes(lowercaseQuery) ||
-    post.summary.toLowerCase().includes(lowercaseQuery) ||
-    post.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery)) ||
-    post.content.toLowerCase().includes(lowercaseQuery)
-  );
-};
-
-// Get related posts
-export const getRelatedPosts = (currentPost, limit = 3) => {
-  return blogPosts
-    .filter(post => 
-      post.id !== currentPost.id && 
-      (post.category === currentPost.category || 
-       post.tags.some(tag => currentPost.tags.includes(tag)))
-    )
-    .slice(0, limit);
-};
-
-// Get popular tags
-export const getPopularTags = () => {
-  const tagCounts = {};
-  blogPosts.forEach(post => {
-    post.tags.forEach(tag => {
-      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-    });
-  });
-  
-  return Object.entries(tagCounts)
-    .sort(([,a], [,b]) => b - a)
-    .slice(0, 10)
-    .map(([tag, count]) => ({ tag, count }));
-};
-
-export default blogPosts;
-
+Read more: ${l}`),T=`mailto:?subject=${s}&body=${S}`;window.open(T),o(!1)},f=()=>{navigator.share?navigator.share({title:d,text:m,url:l}).catch(console.error):g(),o(!1)};return i==="simple"?t.jsxs(r,{variant:"outline",size:a,onClick:f,className:"flex items-center",children:[t.jsx(u,{className:"w-4 h-4 mr-2"}),"Share"]}):t.jsxs("div",{className:"relative",children:[t.jsxs(r,{variant:"outline",size:a,onClick:()=>o(!h),className:"flex items-center",children:[t.jsx(u,{className:"w-4 h-4 mr-2"}),"Share"]}),h&&t.jsxs(t.Fragment,{children:[t.jsx("div",{className:"fixed inset-0 z-40",onClick:()=>o(!1)}),t.jsx(E,{className:"absolute top-full right-0 mt-2 z-50 w-64 shadow-xl border-steel-blue/20",children:t.jsx(H,{className:"p-4",children:t.jsxs("div",{className:"space-y-3",children:[t.jsx("h4",{className:"font-semibold text-dark-gray text-sm mb-3",children:"Share this article"}),navigator.share&&t.jsxs(r,{variant:"outline",size:"sm",onClick:f,className:"w-full justify-start",children:[t.jsx(u,{className:"w-4 h-4 mr-2"}),"Share via..."]}),t.jsx(r,{variant:"outline",size:"sm",onClick:g,className:"w-full justify-start",children:c?t.jsxs(t.Fragment,{children:[t.jsx(C,{className:"w-4 h-4 mr-2 text-green-600"}),"Copied!"]}):t.jsxs(t.Fragment,{children:[t.jsx(F,{className:"w-4 h-4 mr-2"}),"Copy Link"]})}),t.jsxs("div",{className:"grid grid-cols-2 gap-2",children:[t.jsxs(r,{variant:"outline",size:"sm",onClick:w,className:"justify-start",children:[t.jsx(k,{className:"w-4 h-4 mr-2 text-blue-600"}),"Facebook"]}),t.jsxs(r,{variant:"outline",size:"sm",onClick:x,className:"justify-start",children:[t.jsx(A,{className:"w-4 h-4 mr-2 text-blue-400"}),"Twitter"]}),t.jsxs(r,{variant:"outline",size:"sm",onClick:b,className:"justify-start",children:[t.jsx(P,{className:"w-4 h-4 mr-2 text-blue-700"}),"LinkedIn"]}),t.jsxs(r,{variant:"outline",size:"sm",onClick:v,className:"justify-start",children:[t.jsx(z,{className:"w-4 h-4 mr-2 text-gray-600"}),"Email"]})]})]})})})]})]})};export{O as S,q as a,G as b,M as c,L as d,N as e,B as g,W as s};
