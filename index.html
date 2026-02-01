@@ -4,6 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Preconnect hints for external resources (improves Core Web Vitals) -->
+    <!-- Priority 1: Fonts (render-blocking, 750ms savings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Priority 2: Logo/images (LCP impact, 440ms savings) -->
+    <link rel="preconnect" href="https://horizons-cdn.hostinger.com" crossorigin />
+    <!-- Priority 3: HubSpot (330ms savings) -->
+    <link rel="preconnect" href="https://js-eu1.hsforms.net" crossorigin />
+    <!-- Priority 4: Analytics & Firebase -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://taxedgmbh.firebaseapp.com" />
+
+    <!-- Google Fonts - Non-blocking load for better Core Web Vitals -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

@@ -327,14 +327,108 @@ export const generateCourseSchema = (course) => ({
   }
 });
 
+/**
+ * BreadcrumbList Schema Generator
+ * Helps Google understand site navigation structure
+ * @param {Array} items - Array of {name, url} objects representing the breadcrumb trail
+ */
+export const generateBreadcrumbSchema = (items) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+});
+
+/**
+ * LocalBusiness Schema
+ * Specific local business schema for Swiss market presence
+ * Complements the ProfessionalService organization schema
+ */
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://taxed.ch/#localbusiness",
+  "name": "Taxed GmbH",
+  "image": "https://taxed.ch/images/og-taxed-logo.jpg",
+  "description": "Professional Swiss tax consulting and filing services for expatriates and businesses",
+  "url": "https://taxed.ch",
+  "telephone": "+41799107787",
+  "email": "info@taxed.ch",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Biel/Bienne",
+    "addressLocality": "Biel",
+    "addressRegion": "BE",
+    "postalCode": "2500",
+    "addressCountry": "CH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 47.1372,
+    "longitude": 7.2466
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "priceRange": "CHF 249 - CHF 799",
+  "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer", "Twint"],
+  "currenciesAccepted": "CHF",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Switzerland"
+    },
+    {
+      "@type": "City",
+      "name": "Zürich"
+    },
+    {
+      "@type": "City",
+      "name": "Bern"
+    },
+    {
+      "@type": "City",
+      "name": "Basel"
+    },
+    {
+      "@type": "City",
+      "name": "Geneva"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 46.8182,
+      "longitude": 8.2275
+    },
+    "geoRadius": "300000"
+  },
+  "hasMap": "https://maps.google.com/?q=Taxed+GmbH+Biel",
+  "sameAs": [
+    "https://www.linkedin.com/company/taxed-gmbh"
+  ]
+};
+
 export default {
   organizationSchema,
   websiteSchema,
+  localBusinessSchema,
   sampleReviews,
   generateReviewSchema,
   generateHowToSchema,
   generateServiceSchema,
   generateFAQSchema,
   generateVideoSchema,
-  generateCourseSchema
+  generateCourseSchema,
+  generateBreadcrumbSchema
 };
