@@ -375,15 +375,17 @@ const LandingPage = () => {
                 </Link>
               </Button>
               <Button
-                asChild
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
+                className="border-2 border-white bg-white/20 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                aria-label="Get a free tax assessment"
               >
-                <Link to="/contact" aria-label="Schedule a free consultation">
-                  <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
-                  Free Consultation
-                </Link>
+                <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
+                Free Assessment
               </Button>
             </div>
 
@@ -428,6 +430,85 @@ const LandingPage = () => {
 
       {/* Main Content */}
       <main id="main-content">
+        {/* Lead Capture Section - After Hero */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50" id="get-started">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              {/* Section Header */}
+              <div className="text-center mb-8">
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800 mb-4">
+                  <CheckCircle className="h-4 w-4 mr-2" aria-hidden="true" />
+                  Free Assessment - No Obligation
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Get Your Personalized Tax Assessment
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Fill out this quick form and our Swiss tax experts will contact you within 24 hours with a personalized assessment.
+                </p>
+              </div>
+
+              {/* Form Container */}
+              <div className="bg-gradient-to-br from-steel-blue to-blue-700 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-2xl">
+                <div className="grid lg:grid-cols-5 gap-8 items-start">
+                  {/* Trust Indicators - Left Side */}
+                  <div className="lg:col-span-2 text-white space-y-6">
+                    <h3 className="text-xl font-semibold">Why Choose Taxed GmbH?</h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                        <span>Save up to 80% compared to Big 4 firms</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                        <span>Certified Swiss tax experts</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                        <span>500+ satisfied expat clients</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                        <span>GDPR compliant & Swiss data residency</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                        <span>Response within 24 hours guaranteed</span>
+                      </li>
+                    </ul>
+
+                    {/* Trust Badges */}
+                    <div className="flex flex-wrap gap-3 pt-4">
+                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Swiss Tax Expert</span>
+                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm">GDPR Compliant</span>
+                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Data Protection</span>
+                    </div>
+                  </div>
+
+                  {/* HubSpot Form - Right Side */}
+                  <div className="lg:col-span-3 bg-white rounded-xl p-4 sm:p-6 shadow-inner">
+                    <iframe
+                      src="https://share-eu1.hsforms.com/1xA0NQrALToW5NH7CkatXWA2ds4ox"
+                      width="100%"
+                      height="550"
+                      frameBorder="0"
+                      scrolling="yes"
+                      title="Free Tax Assessment Form"
+                      className="border-0 rounded-lg"
+                      style={{ minHeight: '550px' }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Services Section - Fixed Color Contrast */}
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -674,15 +755,17 @@ const LandingPage = () => {
                   </Link>
                 </Button>
                 <Button
-                  asChild
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                  className="border-2 border-white bg-white/20 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  aria-label="Get a free tax assessment"
                 >
-                  <Link to="/contact" aria-label="Schedule a free consultation">
-                    <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
-                    Free Consultation
-                  </Link>
+                  <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
+                  Free Assessment
                 </Button>
               </div>
 
