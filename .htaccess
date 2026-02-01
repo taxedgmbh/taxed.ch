@@ -4,8 +4,12 @@
 RewriteEngine On
 RewriteBase /
 
+# Don't rewrite backend requests - serve PHP directly
+RewriteCond %{REQUEST_URI} ^/backend/
+RewriteRule ^ - [L]
+
 # Don't rewrite if already accessing dist/
 RewriteCond %{REQUEST_URI} !^/dist/
 
-# Rewrite everything to dist/
+# Rewrite everything else to dist/
 RewriteRule ^(.*)$ dist/$1 [L]
