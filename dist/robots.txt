@@ -8,8 +8,8 @@ Disallow: /admin/
 Disallow: /cart/
 Disallow: /client-portal/
 Disallow: /api/
-Disallow: /*.json$
-Disallow: /*?*utm_
+Disallow: /*.json
+Disallow: /*?utm_
 
 # Crawl-delay for politeness
 Crawl-delay: 1

@@ -91,9 +91,9 @@ const SearchModal = ({ isOpen, onClose }) => {
               <div className="max-h-96 overflow-y-auto">
                 {searchResults.length > 0 ? (
                   <div className="p-2">
-                    {searchResults.map((result, index) => (
+                    {searchResults.map((result) => (
                       <Link
-                        key={index}
+                        key={result.href}
                         to={result.href}
                         className="block p-4 hover:bg-gray-50 rounded-lg transition-colors"
                         onClick={handleClose}

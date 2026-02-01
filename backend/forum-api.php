@@ -6,6 +6,10 @@
 
 header('Content-Type: application/json');
 
+// Apply security headers
+require_once __DIR__ . '/middleware/security.php';
+SecurityMiddleware::applyAll();
+
 // CORS configuration - restrict to specific origins
 $allowed_origins = ['https://taxed.ch', 'https://www.taxed.ch', 'http://localhost:5173'];
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
@@ -25,6 +29,7 @@ require_once 'config/database.php';
 require_once 'models/ForumCategory.php';
 require_once 'models/ForumTopic.php';
 require_once 'models/ForumPost.php';
+require_once 'utils/validation.php';
 
 // Initialize database connection
 $pdo = getDatabase();
@@ -259,26 +264,36 @@ function handleSearch($method, $forumTopic, $forumPost) {
         echo json_encode(['error' => 'Method not allowed']);
         return;
     }
-    
+
     try {
-        $query = $_GET['q'] ?? '';
+        $query = trim($_GET['q'] ?? '');
         $type = $_GET['type'] ?? 'all';
         $page = (int)($_GET['page'] ?? 1);
         $limit = (int)($_GET['limit'] ?? 20);
-        
-        if (empty($query)) {
+
+        // Input validation
+        $validator = new Validator();
+        $validator->required($query, 'Search query');
+        $validator->searchQuery($query);
+        $validator->inArray($type, ['all', 'topics', 'posts'], 'Type');
+        $validator->pagination($page, $limit);
+
+        if ($validator->fails()) {
             http_response_code(400);
-            echo json_encode(['error' => 'Search query required']);
+            echo json_encode(['error' => $validator->getFirstError()]);
             return;
         }
-        
+
+        // Sanitize query
+        $query = Validator::sanitize($query);
+
         $results = [];
-        
+
         if ($type === 'all' || $type === 'topics') {
             $topics = $forumTopic->search($query, $page, $limit);
             $results['topics'] = $topics;
         }
-        
+
         if ($type === 'all' || $type === 'posts') {
             $posts = $forumPost->search($query, $page, $limit);
             $results['posts'] = $posts;

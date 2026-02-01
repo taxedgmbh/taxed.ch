@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown, ChevronUp, HelpCircle, Search } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -8,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import InternalLinks from '@/components/InternalLinks';
 
 const FAQPage = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [openItems, setOpenItems] = useState(new Set());
 
@@ -294,7 +296,7 @@ const FAQPage = () => {
                   const isOpen = openItems.has(key);
 
                   return (
-                    <Card key={itemIndex} className="border-steel-blue/20 shadow-lg">
+                    <Card key={key} className="border-steel-blue/20 shadow-lg">
                       <CardHeader
                         className="cursor-pointer hover:bg-gray-50 transition-colors"
                         onClick={() => toggleItem(categoryIndex, itemIndex)}
@@ -358,7 +360,7 @@ const FAQPage = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button
-                    onClick={() => window.location.href = '/contact'}
+                    onClick={() => navigate('/contact')}
                     className="bg-white text-steel-blue hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
                   >
                     Contact Us

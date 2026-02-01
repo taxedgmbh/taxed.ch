@@ -1,6 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
+// Apply security headers
+require_once __DIR__ . '/middleware/security.php';
+SecurityMiddleware::applyAll();
+
 // CORS configuration - restrict to specific origins
 $allowed_origins = ['https://taxed.ch', 'https://www.taxed.ch', 'http://localhost:5173'];
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
