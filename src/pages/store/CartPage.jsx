@@ -64,6 +64,7 @@ const CartPage = () => {
       <Helmet>
         <title>Your Cart | Taxed GmbH</title>
         <meta name="description" content="Review and manage items in your shopping cart." />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <section className="py-20 bg-light-gray-bg-1">

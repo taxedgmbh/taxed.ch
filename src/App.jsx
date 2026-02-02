@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -158,7 +158,7 @@ function App() {
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
           <Route path="/terms" element={<TermsOfServicePage />} />
           <Route path="/cookies" element={<CookiePolicyPage />} />
           <Route path="/accessibility" element={<AccessibilityPage />} />

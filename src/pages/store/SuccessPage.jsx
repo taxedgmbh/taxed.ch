@@ -11,6 +11,7 @@ const SuccessPage = () => {
       <Helmet>
         <title>Payment Successful | Taxed GmbH</title>
         <meta name="description" content="Your payment was successful. Thank you for your purchase." />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="min-h-[60vh] flex items-center justify-center bg-light-gray-bg-1 py-12 px-4 sm:px-6 lg:px-8">
         <motion.div

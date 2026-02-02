@@ -1,6 +1,7 @@
 ## Pages
 - [| Taxed GmbH](/productdetail): No description available
 - [Accessibility - Taxed GmbH | Swiss Tax Consulting](/accessibility): Accessibility information for Taxed GmbH website. Learn about our commitment to making our services accessible to all users.
+- [Admin Login | Taxed GmbH](/login): No description available
 - [Advanced Tax Tools - Professional Tax Analysis | Taxed GmbH](/advancedtaxtools): Access our advanced tax planning tools and simulators. Professional-grade tax analysis for complex scenarios and optimization strategies.
 - [Case Studies - Client Success Stories | Taxed GmbH](/casestudies): Explore real client success stories and case studies showcasing how Taxed GmbH has helped expats optimize their Swiss tax situation.
 - [Client Login - Taxed GmbH](/clientlogin): Log in to your Taxed GmbH client portal to manage your tax documents and cases.
@@ -15,6 +16,7 @@
 - [Privacy Policy - Taxed GmbH | GDPR & WhatsApp API Compliant](/privacypolicy): Comprehensive privacy policy for Taxed GmbH covering GDPR compliance, WhatsApp API usage, data protection, and your rights. Swiss tax consulting with full transparency.
 - [Sitemap - Taxed GmbH | Swiss Tax Consulting](/sitemap): Complete sitemap of Taxed GmbH website. Find all pages and sections of our Swiss tax consulting services.
 - [Swiss Tax Calculators | Taxed GmbH - Calculate Your Swiss Taxes](/taxcalculator): Free Swiss tax calculators for expats. Calculate income tax, wealth tax, Pillar 3a optimization, and more. Get accurate estimates for your Swiss tax obligations.
+- [Swiss Tax Forum | Taxed GmbH](/forumpagesimple): No description available
 - [Swiss Tax News & Updates | Taxed GmbH](/news): Stay updated with the latest Swiss tax news, policy changes, and regulatory updates. AI-powered news aggregation with expert analysis.
 - [Swiss Tax Return Packages | Taxed GmbH - Save up to CHF 400](/store): Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages. Limited time savings!
 - [Tax Audit Support Services | Taxed GmbH - Professional Swiss Tax Audit Assistance](/taxauditsupport): Expert Swiss tax audit support services. Professional representation, pre-audit preparation, and post-audit assistance. Protect your interests with our experienced tax audit specialists.
