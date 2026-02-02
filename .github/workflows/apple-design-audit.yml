@@ -111,7 +111,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const context = JSON.parse(fs.readFileSync('audit-results/agent-context.json', 'utf8'));
+            const auditData = JSON.parse(fs.readFileSync('audit-results/agent-context.json', 'utf8'));
             const runId = '${{ github.run_id }}';
             const serverUrl = '${{ github.server_url }}';
             const repoFullName = '${{ github.repository }}';
@@ -122,15 +122,15 @@ jobs:
               '### Event Details',
               '| Field | Value |',
               '|-------|-------|',
-              `| Trigger | ${context.event} |`,
-              `| Branch | ${context.branch} |`,
-              `| Commit | ${context.commit} |`,
-              `| Actor | @${context.actor} |`,
-              `| Timestamp | ${context.timestamp} |`,
+              `| Trigger | ${auditData.event} |`,
+              `| Branch | ${auditData.branch} |`,
+              `| Commit | ${auditData.commit} |`,
+              `| Actor | @${auditData.actor} |`,
+              `| Timestamp | ${auditData.timestamp} |`,
               '',
               '### Test Results',
-              `| Build Status | ${context.build_status} |`,
-              `| Playwright Tests | ${context.test_status} |`,
+              `| Build Status | ${auditData.build_status} |`,
+              `| Playwright Tests | ${auditData.test_status} |`,
               '',
               '### Action Required',
               'The Apple Design Validator Agent has detected potential violations.',
@@ -142,9 +142,9 @@ jobs:
             ].join('\n');
 
             await github.rest.issues.create({
-              owner: context.repository.split('/')[0],
-              repo: context.repository.split('/')[1],
-              title: `Apple Design Audit Failed - ${context.commit.substring(0, 7)}`,
+              owner: auditData.repository.split('/')[0],
+              repo: auditData.repository.split('/')[1],
+              title: `Apple Design Audit Failed - ${auditData.commit.substring(0, 7)}`,
               body: body,
               labels: ['design', 'accessibility', 'apple-hig', 'automated-audit']
             });
