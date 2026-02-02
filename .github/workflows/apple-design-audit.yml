@@ -18,6 +18,8 @@ permissions:
 jobs:
   apple-design-validation:
     runs-on: ubuntu-latest
+    outputs:
+      agent_required: ${{ steps.agent_validation.outputs.agent_required }}
 
     steps:
       - name: Checkout repository
@@ -101,6 +103,7 @@ jobs:
 
           echo "Agent context prepared. Manual review required."
           echo "AGENT_REQUIRED=true" >> $GITHUB_ENV
+          echo "agent_required=true" >> $GITHUB_OUTPUT
 
       - name: Create Issue for Design Violations
         if: env.AGENT_REQUIRED == 'true'
