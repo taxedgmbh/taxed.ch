@@ -145,7 +145,7 @@ function App() {
       <Header isLandingPage={isLandingPage} />
       <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
       
-      <main className="flex-grow w-full max-w-full overflow-x-hidden">
+      <main className="flex-grow w-full max-w-[1280px] mx-auto overflow-x-hidden">
         <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
