@@ -460,7 +460,7 @@ const ServicesPage = () => {
                 <div className="text-3xl mb-3">{newsItem.icon}</div>
                 <h3 className="font-semibold text-dark-gray mb-2">{newsItem.title}</h3>
                 <p className="text-sm text-dark-gray/70 mb-4">{newsItem.description}</p>
-                <Button asChild size="sm" className="bg-orange-600 hover:bg-orange-700">
+                <Button asChild size="sm" className="bg-orange-800 hover:bg-orange-900 text-white">
                   <Link to="/news">Read News</Link>
                 </Button>
               </motion.div>
@@ -468,7 +468,7 @@ const ServicesPage = () => {
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700">
+            <Button asChild size="lg" className="bg-orange-800 hover:bg-orange-900 text-white">
               <Link to="/news">
                 Browse All News
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -517,8 +517,7 @@ const ServicesPage = () => {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-steel-blue text-lg px-8 py-4"
+                className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-4 font-semibold shadow-lg"
                 asChild
               >
                 <Link to="/pricing">View Pricing</Link>

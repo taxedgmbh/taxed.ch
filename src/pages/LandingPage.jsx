@@ -377,7 +377,7 @@ const LandingPage = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white bg-white/20 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
+                className="bg-white text-gray-900 hover:bg-gray-100 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600 font-semibold shadow-lg"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' });
@@ -474,8 +474,8 @@ const LandingPage = () => {
                           our team provides transparent, flat-rate Swiss tax services for expats.
                         </p>
                         <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 bg-white/20 rounded-full text-xs">10+ Years Experience</span>
-                          <span className="px-2 py-1 bg-white/20 rounded-full text-xs">500+ Clients</span>
+                          <span className="px-2 py-1 bg-white text-gray-900 rounded-full text-xs font-medium shadow-sm">10+ Years Experience</span>
+                          <span className="px-2 py-1 bg-white text-gray-900 rounded-full text-xs font-medium shadow-sm">500+ Clients</span>
                         </div>
                       </div>
                     </div>
@@ -505,9 +505,9 @@ const LandingPage = () => {
 
                     {/* Trust Badges */}
                     <div className="flex flex-wrap gap-3 pt-4">
-                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Swiss Tax Expert</span>
-                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm">GDPR Compliant</span>
-                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Data Protection</span>
+                      <span className="px-3 py-1 bg-white text-gray-900 rounded-full text-sm font-medium shadow-sm">Swiss Tax Expert</span>
+                      <span className="px-3 py-1 bg-white text-gray-900 rounded-full text-sm font-medium shadow-sm">GDPR Compliant</span>
+                      <span className="px-3 py-1 bg-white text-gray-900 rounded-full text-sm font-medium shadow-sm">Data Protection</span>
                     </div>
                   </div>
 
@@ -776,7 +776,7 @@ const LandingPage = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white bg-white/20 backdrop-blur-sm text-white hover:bg-white hover:text-gray-900 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                  className="bg-white text-gray-900 hover:bg-gray-100 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 font-semibold shadow-lg"
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' });

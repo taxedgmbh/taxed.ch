@@ -59,11 +59,12 @@ const Breadcrumbs = ({ items = [] }) => {
                 )}
                 {isLast ? (
                   <span
-                    className="text-dark-gray font-medium"
+                    className="text-dark-gray font-medium inline-flex items-center justify-center min-w-[44px] min-h-[44px]"
                     aria-current="page"
+                    aria-label={isHome ? 'Home' : undefined}
                   >
                     {isHome ? (
-                      <Home className="h-4 w-4" />
+                      <Home className="h-5 w-5" aria-hidden="true" />
                     ) : (
                       item.label
                     )}
@@ -71,10 +72,11 @@ const Breadcrumbs = ({ items = [] }) => {
                 ) : (
                   <Link
                     to={item.path}
-                    className="hover:text-steel-blue transition-colors flex items-center"
+                    className="hover:text-steel-blue transition-colors inline-flex items-center justify-center min-w-[44px] min-h-[44px]"
+                    aria-label={isHome ? 'Home' : undefined}
                   >
                     {isHome ? (
-                      <Home className="h-4 w-4" />
+                      <Home className="h-5 w-5" aria-hidden="true" />
                     ) : (
                       item.label
                     )}

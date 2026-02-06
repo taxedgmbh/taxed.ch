@@ -48,7 +48,7 @@ const Footer = () => {
               <Link
                 to="/pricing"
                 onClick={handleLinkClick}
-                className="inline-flex items-center px-6 py-3 min-h-[44px] border-2 border-white bg-white/10 text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition-all duration-200"
+                className="inline-flex items-center px-6 py-3 min-h-[44px] bg-white text-gray-900 hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg"
               >
                 View Pricing
               </Link>
