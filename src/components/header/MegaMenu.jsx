@@ -130,7 +130,7 @@ const MegaMenu = ({ navItem }) => {
       <Button
         ref={triggerRef}
         variant="ghost"
-        className="flex items-center text-gray-700 hover:text-steel-blue hover:bg-gray-50 px-4 py-2 rounded-lg transition-all duration-200 font-medium"
+        className="flex items-center text-gray-700 hover:text-steel-blue hover:bg-gray-50 px-4 py-3 min-h-[44px] rounded-lg transition-all duration-200 font-medium"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label={`${navItem.name} menu`}
@@ -216,7 +216,7 @@ const MegaMenu = ({ navItem }) => {
                           <Link
                             key={itemIndex}
                             to={item.href}
-                            className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50 transition-all duration-300 border border-transparent hover:border-blue-100"
+                            className="group flex items-center space-x-3 p-3 min-h-[44px] rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50 transition-all duration-300 border border-transparent hover:border-blue-100"
                             onClick={() => setIsOpen(false)}
                             role="menuitem"
                             tabIndex={0}

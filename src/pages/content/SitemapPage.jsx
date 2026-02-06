@@ -147,7 +147,7 @@ const SitemapPage = () => {
                   <Calculator className="h-8 w-8 mb-3" />
                   <h3 className="text-lg font-semibold mb-2">Tax Tools</h3>
                   <p className="text-sm mb-4">Access our free Swiss tax calculators and planning tools</p>
-                  <Link to="/calculators" className="text-sm font-medium hover:underline">
+                  <Link to="/calculators" className="inline-flex items-center text-sm font-semibold text-white bg-white/20 px-4 py-2 min-h-[44px] rounded-lg hover:bg-white/30 transition-colors">
                     Try Calculators →
                   </Link>
                 </div>
@@ -156,7 +156,7 @@ const SitemapPage = () => {
                   <FileText className="h-8 w-8 mb-3" />
                   <h3 className="text-lg font-semibold mb-2">Resources</h3>
                   <p className="text-sm mb-4">Download tax guides, checklists, and templates</p>
-                  <Link to="/resources" className="text-sm font-medium hover:underline">
+                  <Link to="/resources" className="inline-flex items-center text-sm font-semibold text-white bg-white/20 px-4 py-2 min-h-[44px] rounded-lg hover:bg-white/30 transition-colors">
                     Browse Resources →
                   </Link>
                 </div>
@@ -165,7 +165,7 @@ const SitemapPage = () => {
                   <Newspaper className="h-8 w-8 mb-3" />
                   <h3 className="text-lg font-semibold mb-2">Latest News</h3>
                   <p className="text-sm mb-4">Stay updated with Swiss tax news and changes</p>
-                  <Link to="/news" className="text-sm font-medium hover:underline">
+                  <Link to="/news" className="inline-flex items-center text-sm font-semibold text-white bg-white/20 px-4 py-2 min-h-[44px] rounded-lg hover:bg-white/30 transition-colors">
                     Read News →
                   </Link>
                 </div>

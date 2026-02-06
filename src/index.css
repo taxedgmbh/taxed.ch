@@ -474,3 +474,25 @@ body {
 .pricing-card:hover::before {
   left: 100%;
 }
+
+/* Readable content container for optimal reading width */
+.readable-content {
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Apple-style touch targets - ensure minimum 44x44px */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* High contrast link styles for accessibility */
+.link-high-contrast {
+  color: #1e40af; /* blue-800 for better contrast */
+}
+
+.link-high-contrast:hover {
+  color: #1e3a8a; /* blue-900 */
+}

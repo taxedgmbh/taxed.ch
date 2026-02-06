@@ -326,7 +326,7 @@ const LandingPage = () => {
       </Helmet>
 
       {/* Skip Navigation Link for Accessibility */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-gray-900 px-4 py-2 rounded-md z-50">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-gray-900 px-6 py-3 min-h-[44px] inline-flex items-center rounded-md z-50 font-medium shadow-lg">
         Skip to main content
       </a>
 
@@ -345,7 +345,7 @@ const LandingPage = () => {
             className="text-white"
           >
             <div className="mb-6">
-              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm border border-white/30">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-gray-900 shadow-lg">
                 <Award className="h-4 w-4 mr-2" aria-hidden="true" />
                 Professional Swiss Tax Services
               </span>
@@ -565,7 +565,7 @@ const LandingPage = () => {
                       <p className="text-gray-700 mb-4 text-sm sm:text-base">{service.description}</p>
                       <Link
                         to={service.link}
-                        className="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium focus:outline-none focus:underline"
+                        className="inline-flex items-center text-blue-800 hover:text-blue-900 font-medium focus:outline-none focus:underline py-2 min-h-[44px]"
                         aria-label={`Learn more about ${service.title}`}
                       >
                         Learn More <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
@@ -626,7 +626,7 @@ const LandingPage = () => {
                           </div>
                           <Link
                             to={tool.link}
-                            className="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium focus:outline-none focus:underline"
+                            className="inline-flex items-center text-blue-800 hover:text-blue-900 font-medium focus:outline-none focus:underline py-2 min-h-[44px]"
                             aria-label={`Access ${tool.title} now`}
                           >
                             Access Now <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
@@ -682,7 +682,7 @@ const LandingPage = () => {
                           <p className="text-gray-700 mb-4 text-sm sm:text-base">{feature.description}</p>
                           <Link
                             to={feature.link}
-                            className="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium focus:outline-none focus:underline"
+                            className="inline-flex items-center text-blue-800 hover:text-blue-900 font-medium focus:outline-none focus:underline py-2 min-h-[44px]"
                             aria-label={`Explore ${feature.title} feature`}
                           >
                             Explore Feature <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />

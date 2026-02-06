@@ -40,7 +40,7 @@ const Footer = () => {
               <Link
                 to="/contact"
                 onClick={handleLinkClick}
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-steel-blue to-blue-600 hover:from-steel-blue/90 hover:to-blue-600/90 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-6 py-3 min-h-[44px] bg-gradient-to-r from-steel-blue to-blue-600 hover:from-steel-blue/90 hover:to-blue-600/90 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Get Started Today
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -48,7 +48,7 @@ const Footer = () => {
               <Link
                 to="/pricing"
                 onClick={handleLinkClick}
-                className="inline-flex items-center px-6 py-3 border border-gray-600 hover:border-steel-blue text-gray-300 hover:text-white font-semibold rounded-lg transition-all duration-200"
+                className="inline-flex items-center px-6 py-3 min-h-[44px] border-2 border-white bg-white/10 text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition-all duration-200"
               >
                 View Pricing
               </Link>
@@ -146,10 +146,10 @@ const Footer = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gray-800 hover:bg-steel-blue rounded-lg flex items-center justify-center transition-all duration-200 group"
+                      className="w-11 h-11 min-w-[44px] min-h-[44px] bg-gray-800 hover:bg-steel-blue rounded-lg flex items-center justify-center transition-all duration-200 group"
                       aria-label={`Follow us on ${social.name}`}
                     >
-                      <social.icon className="h-4 w-4 text-gray-400 group-hover:text-white transition-colors" />
+                      <social.icon className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" />
                     </a>
                   ))}
                 </div>
@@ -204,16 +204,16 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-400">
               <p>&copy; {currentYear} Taxed GmbH. All rights reserved.</p>
               <div className="flex items-center space-x-4">
-                <Link to="/impressum" onClick={handleLinkClick} className="hover:text-white transition-colors">
+                <Link to="/impressum" onClick={handleLinkClick} className="hover:text-white transition-colors py-2 min-h-[44px] inline-flex items-center">
                   Impressum
                 </Link>
-                <Link to="/privacy" onClick={handleLinkClick} className="hover:text-white transition-colors">
+                <Link to="/privacy" onClick={handleLinkClick} className="hover:text-white transition-colors py-2 min-h-[44px] inline-flex items-center">
                   Privacy Policy
                 </Link>
-                <Link to="/terms" onClick={handleLinkClick} className="hover:text-white transition-colors">
+                <Link to="/terms" onClick={handleLinkClick} className="hover:text-white transition-colors py-2 min-h-[44px] inline-flex items-center">
                   Terms of Service
                 </Link>
-                <Link to="/cookies" onClick={handleLinkClick} className="hover:text-white transition-colors">
+                <Link to="/cookies" onClick={handleLinkClick} className="hover:text-white transition-colors py-2 min-h-[44px] inline-flex items-center">
                   Cookie Policy
                 </Link>
               </div>
@@ -224,7 +224,7 @@ const Footer = () => {
                 href="/rss.xml"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 hover:text-white transition-colors"
+                className="flex items-center space-x-2 hover:text-white transition-colors py-2 min-h-[44px]"
                 aria-label="RSS Feed"
               >
                 <Rss className="h-4 w-4" />
@@ -234,13 +234,13 @@ const Footer = () => {
                 href="/sitemap.xml"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 hover:text-white transition-colors"
+                className="flex items-center space-x-2 hover:text-white transition-colors py-2 min-h-[44px]"
                 aria-label="Sitemap"
               >
                 <Globe className="h-4 w-4" />
                 <span>Sitemap</span>
               </a>
-              <Link to="/accessibility" onClick={handleLinkClick} className="flex items-center space-x-2 hover:text-white transition-colors">
+              <Link to="/accessibility" onClick={handleLinkClick} className="flex items-center space-x-2 hover:text-white transition-colors py-2 min-h-[44px]">
                 <Shield className="h-4 w-4" />
                 <span>Accessibility</span>
               </Link>

@@ -121,7 +121,7 @@ function App() {
 
   return (
     <ClientAuthProvider>
-      <div className="min-h-screen bg-light-gray-bg-1 flex flex-col">
+      <div className="min-h-screen bg-light-gray-bg-1 flex flex-col overflow-x-hidden">
         <Helmet>
         <html lang="en" />
         <meta charSet="utf-8" />
@@ -145,7 +145,7 @@ function App() {
       <Header isLandingPage={isLandingPage} />
       <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
       
-      <main className="flex-grow">
+      <main className="flex-grow w-full max-w-full overflow-x-hidden">
         <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />

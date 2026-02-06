@@ -583,7 +583,7 @@ const ContactPage = () => {
                         const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
                         window.open(mapsUrl, '_blank');
                       }}
-                      className="mt-3 px-4 py-2 bg-steel-blue text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                      className="mt-3 px-4 py-3 min-h-[44px] bg-steel-blue text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
                     >
                       View on Google Maps
                     </button>

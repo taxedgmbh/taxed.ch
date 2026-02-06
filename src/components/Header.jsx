@@ -14,7 +14,7 @@ const Header = ({ isLandingPage }) => {
   const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const getLinkClass = (href) => {
-    return `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+    return `px-4 py-3 min-h-[44px] inline-flex items-center rounded-lg text-sm font-medium transition-all duration-200 ${
       location.pathname === href || (href.startsWith('/blog') && location.pathname.startsWith('/blog'))
         ? 'text-steel-blue bg-steel-blue/10'
         : 'text-gray-700 hover:text-steel-blue hover:bg-gray-50'
@@ -85,22 +85,24 @@ const Header = ({ isLandingPage }) => {
           <div className="flex items-center space-x-2">
             <Button
               variant="ghost"
-              size="sm"
+              size="icon"
               className="hidden md:flex"
               onClick={() => setIsSearchOpen(true)}
+              aria-label="Search"
             >
-              <Search className="h-4 w-4" />
+              <Search className="h-5 w-5" />
             </Button>
 
             <Button
               variant="ghost"
-              size="sm"
+              size="icon"
               onClick={() => setIsCartOpen(true)}
               className="relative"
+              aria-label={`Shopping cart${cartItemCount > 0 ? `, ${cartItemCount} items` : ''}`}
             >
-              <ShoppingCart className="h-4 w-4" />
+              <ShoppingCart className="h-5 w-5" />
               {cartItemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" aria-hidden="true">
                   {cartItemCount}
                 </span>
               )}
@@ -115,9 +117,11 @@ const Header = ({ isLandingPage }) => {
 
             <Button
               variant="ghost"
-              size="sm"
+              size="icon"
               className="lg:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -154,7 +158,7 @@ const Header = ({ isLandingPage }) => {
                                 <Link
                                   key={itemIndex}
                                   to={item.href}
-                                  className="block text-sm text-gray-700 hover:text-steel-blue py-1"
+                                  className="block text-sm text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                   {item.name}
@@ -168,7 +172,7 @@ const Header = ({ isLandingPage }) => {
                   ) : (
                     <Link
                       to={navItem.href}
-                      className="block text-sm font-medium text-gray-700 hover:text-steel-blue py-2"
+                      className="block text-sm font-medium text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {navItem.name}

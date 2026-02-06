@@ -120,13 +120,13 @@ const InteractiveMap = () => {
                 <div className="flex space-x-2">
                   <button
                     onClick={openDirections}
-                    className="text-xs bg-steel-blue text-white px-2 py-1 rounded hover:bg-blue-600 transition-colors"
+                    className="text-xs bg-steel-blue text-white px-3 py-2 min-h-[44px] rounded hover:bg-blue-600 transition-colors"
                   >
                     Directions
                   </button>
                   <button
                     onClick={openStreetView}
-                    className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded hover:bg-gray-300 transition-colors"
+                    className="text-xs bg-gray-200 text-gray-900 px-3 py-2 min-h-[44px] rounded hover:bg-gray-300 transition-colors"
                   >
                     Street View
                   </button>
@@ -141,17 +141,17 @@ const InteractiveMap = () => {
         <div className="absolute top-2 right-2 flex flex-col space-y-1">
           <button
             onClick={handleZoomIn}
-            className="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center text-white transition-colors"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] bg-gray-700 hover:bg-gray-600 rounded-lg flex items-center justify-center text-white transition-colors border border-gray-500"
             aria-label="Zoom in"
           >
-            <span className="text-lg font-bold">+</span>
+            <span className="text-xl font-bold">+</span>
           </button>
           <button
             onClick={handleZoomOut}
-            className="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center text-white transition-colors"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] bg-gray-700 hover:bg-gray-600 rounded-lg flex items-center justify-center text-white transition-colors border border-gray-500"
             aria-label="Zoom out"
           >
-            <span className="text-lg font-bold">−</span>
+            <span className="text-xl font-bold">−</span>
           </button>
         </div>
 
@@ -182,13 +182,13 @@ const InteractiveMap = () => {
             <div className="flex space-x-2 justify-center">
               <button
                 onClick={openDirections}
-                className="text-xs bg-steel-blue text-white px-3 py-1 rounded hover:bg-blue-600 transition-colors"
+                className="text-sm bg-steel-blue text-white px-4 py-2 min-h-[44px] rounded hover:bg-blue-600 transition-colors"
               >
                 Get Directions
               </button>
               <button
                 onClick={openStreetView}
-                className="text-xs bg-white/20 text-white px-3 py-1 rounded hover:bg-white/30 transition-colors"
+                className="text-sm bg-gray-700 text-white px-4 py-2 min-h-[44px] rounded hover:bg-gray-600 transition-colors border border-gray-500"
               >
                 Street View
               </button>
@@ -198,20 +198,22 @@ const InteractiveMap = () => {
       </div>
 
       {/* Map Controls */}
-      <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
+      <div className="mt-3 flex items-center justify-between text-sm text-gray-400">
         <div className="flex items-center space-x-4">
           <button
             onClick={openDirections}
-            className="flex items-center space-x-1 hover:text-steel-blue transition-colors"
+            className="flex items-center space-x-1 hover:text-steel-blue transition-colors py-2 min-h-[44px]"
+            aria-label="Get directions to our office"
           >
-            <Navigation className="h-3 w-3" />
+            <Navigation className="h-4 w-4" />
             <span>Directions</span>
           </button>
           <button
             onClick={openStreetView}
-            className="flex items-center space-x-1 hover:text-steel-blue transition-colors"
+            className="flex items-center space-x-1 hover:text-steel-blue transition-colors py-2 min-h-[44px]"
+            aria-label="View street view of our location"
           >
-            <Clock className="h-3 w-3" />
+            <Clock className="h-4 w-4" />
             <span>Street View</span>
           </button>
         </div>

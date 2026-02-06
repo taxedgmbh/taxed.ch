@@ -300,7 +300,7 @@ const ServicesPage = () => {
             </ul>
             <div className="mt-8 text-center bg-warm-red-tint p-4 rounded-lg">
               <p className="text-dark-gray font-semibold">
-                All our services are offered at a transparent, <Link to="/pricing" className="text-steel-blue underline hover:text-brand-red">flat-rate price</Link>. No surprises, no hidden fees.
+                All our services are offered at a transparent, <Link to="/pricing" className="text-steel-blue underline hover:text-brand-red py-2 inline-flex items-center min-h-[44px]">flat-rate price</Link>. No surprises, no hidden fees.
               </p>
             </div>
           </div>
