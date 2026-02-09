@@ -142,7 +142,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
               >
                 <div className="text-center">
                   <div className="text-2xl font-bold text-blue-600">15+</div>
-                  <div className="text-xs text-gray-600">Years Experience</div>
+                  <div className="text-base text-gray-600">Years Experience</div>
                 </div>
               </motion.div>
             </div>

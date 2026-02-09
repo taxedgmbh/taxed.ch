@@ -195,8 +195,9 @@ test.describe('Apple HIG Compliance - Responsive Layout', () => {
 
   test('Desktop layout (1920px) - optimal reading width', async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1080 });
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
+    // Wait for main content to be visible instead of networkidle (more reliable on WebKit)
+    await page.waitForSelector('main, article, .content', { state: 'visible', timeout: 30000 });
 
     // Check that main content doesn't exceed recommended reading width (~75-80 characters)
     const mainContent = page.locator('main, article, .content').first();
@@ -231,11 +232,9 @@ test.describe('Apple HIG Compliance - Typography', () => {
   });
 
   test('Proper heading hierarchy', async ({ page }) => {
-    await page.goto('/');
-    // Wait for full page load including dynamic content
-    await page.waitForLoadState('networkidle');
-    // Wait specifically for h1 to render (React hydration)
-    await page.waitForSelector('h1', { timeout: 10000 });
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
+    // Wait specifically for h1 to render (React hydration) with longer timeout for WebKit
+    await page.waitForSelector('h1', { state: 'visible', timeout: 30000 });
 
     const headings = await page.evaluate(() => {
       const h = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];

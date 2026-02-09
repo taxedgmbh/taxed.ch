@@ -214,11 +214,11 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
                   <div className="grid grid-cols-2 gap-4 mb-4 text-center">
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="text-lg font-bold text-gray-900">{member.experience}</div>
-                      <div className="text-xs text-gray-600">Experience</div>
+                      <div className="text-base text-gray-600">Experience</div>
                     </div>
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="text-lg font-bold text-gray-900">{member.clients}+</div>
-                      <div className="text-xs text-gray-600">Happy Clients</div>
+                      <div className="text-base text-gray-600">Happy Clients</div>
                     </div>
                   </div>
 
