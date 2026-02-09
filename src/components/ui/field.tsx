@@ -23,7 +23,7 @@ export const Field: React.FC<FieldProps> = ({
     <div className={`space-y-2 ${className}`}>
       <label
         htmlFor={fieldId}
-        className="block text-sm font-medium text-gray-700"
+        className="block text-base font-medium text-gray-700"
       >
         {label}
         {required && <span className="text-red-500 ml-1">*</span>}
@@ -38,13 +38,13 @@ export const Field: React.FC<FieldProps> = ({
       </div>
       
       {helpText && !error && (
-        <p id={`${fieldId}-help`} className="text-sm text-gray-500">
+        <p id={`${fieldId}-help`} className="text-base text-gray-500">
           {helpText}
         </p>
       )}
       
       {error && (
-        <p id={`${fieldId}-error`} className="text-sm text-red-600" role="alert">
+        <p id={`${fieldId}-error`} className="text-base text-red-600" role="alert">
           {error}
         </p>
       )}

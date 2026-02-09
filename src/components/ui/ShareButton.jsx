@@ -98,7 +98,7 @@ const ShareButton = ({ post, variant = 'default', size = 'sm' }) => {
           <Card className="absolute top-full right-0 mt-2 z-50 w-64 shadow-xl border-steel-blue/20">
             <CardContent className="p-4">
               <div className="space-y-3">
-                <h4 className="font-semibold text-dark-gray text-sm mb-3">Share this article</h4>
+                <h4 className="font-semibold text-dark-gray text-base mb-3">Share this article</h4>
                 
                 {/* Native Share */}
                 {navigator.share && (

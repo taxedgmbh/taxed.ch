@@ -113,20 +113,20 @@ const InteractiveMap = () => {
 
             {/* Info Tooltip */}
             {showInfo && (
-              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-white text-gray-900 rounded-lg shadow-xl p-3 min-w-48 z-10">
-                <div className="text-sm font-semibold mb-1">Taxed GmbH</div>
-                <div className="text-xs text-gray-600 mb-2">Biel/Bienne, Switzerland</div>
-                <div className="text-xs text-gray-500 mb-3">Swiss Tax Consulting</div>
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-white text-gray-900 rounded-lg shadow-xl p-4 min-w-56 z-10">
+                <div className="text-base font-semibold mb-1">Taxed GmbH</div>
+                <div className="text-base text-gray-600 mb-2">Biel/Bienne, Switzerland</div>
+                <div className="text-base text-gray-500 mb-3">Swiss Tax Consulting</div>
                 <div className="flex space-x-2">
                   <button
                     onClick={openDirections}
-                    className="text-xs bg-steel-blue text-white px-3 py-2 min-h-[44px] rounded hover:bg-blue-600 transition-colors"
+                    className="text-base bg-steel-blue text-white px-4 py-2 min-h-[44px] min-w-[44px] rounded hover:bg-blue-600 transition-colors"
                   >
                     Directions
                   </button>
                   <button
                     onClick={openStreetView}
-                    className="text-xs bg-gray-200 text-gray-900 px-3 py-2 min-h-[44px] rounded hover:bg-gray-300 transition-colors"
+                    className="text-base bg-gray-200 text-gray-900 px-4 py-2 min-h-[44px] min-w-[44px] rounded hover:bg-gray-300 transition-colors"
                   >
                     Street View
                   </button>
@@ -156,17 +156,17 @@ const InteractiveMap = () => {
         </div>
 
         {/* Zoom Level Indicator */}
-        <div className="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
+        <div className="absolute bottom-2 left-2 bg-black/50 text-white text-base px-3 py-2 rounded">
           {Math.round(zoom * 100)}%
         </div>
 
         {/* Overlay with Location Info */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
           <div className="flex items-center space-x-2 text-white">
-            <MapPin className="h-4 w-4 text-steel-blue" />
+            <MapPin className="h-5 w-5 text-steel-blue" />
             <div>
-              <div className="text-sm font-semibold">Biel/Bienne, Switzerland</div>
-              <div className="text-xs text-gray-300">Our headquarters</div>
+              <div className="text-base font-semibold">Biel/Bienne, Switzerland</div>
+              <div className="text-base text-gray-300">Our headquarters</div>
             </div>
           </div>
         </div>
@@ -177,18 +177,18 @@ const InteractiveMap = () => {
         }`}>
           <div className="text-center text-white">
             <Map className="h-8 w-8 mx-auto mb-2 text-steel-blue" />
-            <div className="text-sm font-semibold">Interactive Map</div>
-            <div className="text-xs text-gray-300 mb-3">Drag to move - Click marker for info</div>
+            <div className="text-base font-semibold">Interactive Map</div>
+            <div className="text-base text-gray-300 mb-3">Drag to move - Click marker for info</div>
             <div className="flex space-x-2 justify-center">
               <button
                 onClick={openDirections}
-                className="text-sm bg-steel-blue text-white px-4 py-2 min-h-[44px] rounded hover:bg-blue-600 transition-colors"
+                className="text-base bg-steel-blue text-white px-4 py-2 min-h-[44px] min-w-[44px] rounded hover:bg-blue-600 transition-colors"
               >
                 Get Directions
               </button>
               <button
                 onClick={openStreetView}
-                className="text-sm bg-gray-700 text-white px-4 py-2 min-h-[44px] rounded hover:bg-gray-600 transition-colors border border-gray-500"
+                className="text-base bg-gray-700 text-white px-4 py-2 min-h-[44px] min-w-[44px] rounded hover:bg-gray-600 transition-colors border border-gray-500"
               >
                 Street View
               </button>
@@ -198,22 +198,22 @@ const InteractiveMap = () => {
       </div>
 
       {/* Map Controls */}
-      <div className="mt-3 flex items-center justify-between text-sm text-gray-400">
+      <div className="mt-3 flex items-center justify-between text-base text-gray-400">
         <div className="flex items-center space-x-4">
           <button
             onClick={openDirections}
-            className="flex items-center space-x-1 hover:text-steel-blue transition-colors py-2 min-h-[44px]"
+            className="flex items-center space-x-2 hover:text-steel-blue transition-colors py-2 min-h-[44px] min-w-[44px]"
             aria-label="Get directions to our office"
           >
-            <Navigation className="h-4 w-4" />
+            <Navigation className="h-5 w-5" />
             <span>Directions</span>
           </button>
           <button
             onClick={openStreetView}
-            className="flex items-center space-x-1 hover:text-steel-blue transition-colors py-2 min-h-[44px]"
+            className="flex items-center space-x-2 hover:text-steel-blue transition-colors py-2 min-h-[44px] min-w-[44px]"
             aria-label="View street view of our location"
           >
-            <Clock className="h-4 w-4" />
+            <Clock className="h-5 w-5" />
             <span>Street View</span>
           </button>
         </div>

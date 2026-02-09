@@ -14,7 +14,7 @@ const Header = ({ isLandingPage }) => {
   const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const getLinkClass = (href) => {
-    return `px-4 py-3 min-h-[44px] inline-flex items-center rounded-lg text-sm font-medium transition-all duration-200 ${
+    return `px-4 py-3 min-h-[44px] inline-flex items-center rounded-lg text-base font-medium transition-all duration-200 ${
       location.pathname === href || (href.startsWith('/blog') && location.pathname.startsWith('/blog'))
         ? 'text-steel-blue bg-steel-blue/10'
         : 'text-gray-700 hover:text-steel-blue hover:bg-gray-50'
@@ -26,10 +26,10 @@ const Header = ({ isLandingPage }) => {
       {/* Top Bar */}
       <div className="bg-gradient-to-r from-steel-blue to-blue-600 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center text-xs">
+          <div className="flex justify-between items-center text-base">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
-                <Mail className="h-3 w-3" />
+                <Mail className="h-4 w-4" />
                 <span>info@taxed.ch</span>
               </div>
             </div>
@@ -61,7 +61,7 @@ const Header = ({ isLandingPage }) => {
                 <div className="text-xl font-bold text-gray-900 group-hover:text-steel-blue transition-colors">
                   Taxed GmbH
                 </div>
-                <div className="text-xs text-gray-500">Swiss Tax Experts</div>
+                <div className="text-base text-gray-500">Swiss Tax Experts</div>
               </div>
             </Link>
           </div>
@@ -144,13 +144,13 @@ const Header = ({ isLandingPage }) => {
                 <div key={navItem.name}>
                   {navItem.type === 'mega' ? (
                     <div>
-                      <div className="text-sm font-semibold text-gray-900 mb-3">
+                      <div className="text-base font-semibold text-gray-900 mb-3">
                         {navItem.name}
                       </div>
                       <div className="space-y-2 ml-4">
                         {navItem.items.map((section, sectionIndex) => (
                           <div key={sectionIndex}>
-                            <div className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">
+                            <div className="text-base font-medium text-gray-500 uppercase tracking-wide mb-2">
                               {section.title}
                             </div>
                             <div className="space-y-1 ml-4">
@@ -158,7 +158,7 @@ const Header = ({ isLandingPage }) => {
                                 <Link
                                   key={itemIndex}
                                   to={item.href}
-                                  className="block text-sm text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
+                                  className="block text-base text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                   {item.name}
@@ -172,7 +172,7 @@ const Header = ({ isLandingPage }) => {
                   ) : (
                     <Link
                       to={navItem.href}
-                      className="block text-sm font-medium text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
+                      className="block text-base font-medium text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {navItem.name}

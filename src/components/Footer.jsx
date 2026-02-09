@@ -74,7 +74,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white">Taxed GmbH</div>
-                  <div className="text-sm text-gray-400">Expat Tax Consulting Made Simple</div>
+                  <div className="text-base text-gray-400">Expat Tax Consulting Made Simple</div>
                 </div>
               </div>
 
@@ -86,38 +86,38 @@ const Footer = () => {
               {/* Contact Information */}
               <div className="space-y-3 mb-8">
                 <div className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                  <div className="w-8 h-8 bg-steel-blue/20 rounded-lg flex items-center justify-center">
-                    <Phone className="h-4 w-4 text-steel-blue" />
+                  <div className="w-10 h-10 bg-steel-blue/20 rounded-lg flex items-center justify-center">
+                    <Phone className="h-5 w-5 text-steel-blue" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium">+41 79 910 77 87</div>
-                    <div className="text-xs text-gray-500">Mon-Fri 9:00-18:00</div>
+                    <div className="text-base font-medium">+41 79 910 77 87</div>
+                    <div className="text-base text-gray-500">Mon-Fri 9:00-18:00</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                  <div className="w-8 h-8 bg-steel-blue/20 rounded-lg flex items-center justify-center">
-                    <Mail className="h-4 w-4 text-steel-blue" />
+                  <div className="w-10 h-10 bg-steel-blue/20 rounded-lg flex items-center justify-center">
+                    <Mail className="h-5 w-5 text-steel-blue" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium">info@taxed.ch</div>
-                    <div className="text-xs text-gray-500">24/7 support</div>
+                    <div className="text-base font-medium">info@taxed.ch</div>
+                    <div className="text-base text-gray-500">24/7 support</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <div className="w-8 h-8 bg-steel-blue/20 rounded-lg flex items-center justify-center">
-                    <MapPin className="h-4 w-4 text-steel-blue" />
+                  <div className="w-10 h-10 bg-steel-blue/20 rounded-lg flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-steel-blue" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium">Biel/Bienne, Switzerland</div>
-                    <div className="text-xs text-gray-500">Serving all of Switzerland</div>
+                    <div className="text-base font-medium">Biel/Bienne, Switzerland</div>
+                    <div className="text-base text-gray-500">Serving all of Switzerland</div>
                   </div>
                 </div>
               </div>
 
               {/* Interactive Map */}
               <div className="mb-8">
-                <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4 flex items-center">
-                  <Map className="h-4 w-4 mr-2 text-steel-blue" />
+                <h4 className="text-base font-semibold text-gray-400 uppercase tracking-wide mb-4 flex items-center">
+                  <Map className="h-5 w-5 mr-2 text-steel-blue" />
                   Our Location
                 </h4>
                 <InteractiveMap />
@@ -125,11 +125,11 @@ const Footer = () => {
 
               {/* Certifications */}
               <div className="mb-8">
-                <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Certifications & Standards</h4>
+                <h4 className="text-base font-semibold text-gray-400 uppercase tracking-wide mb-4">Certifications & Standards</h4>
                 <div className="grid grid-cols-2 gap-3">
                   {certifications.map((cert, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-xs text-gray-400">
-                      <cert.icon className="h-3 w-3 text-steel-blue" />
+                    <div key={index} className="flex items-center space-x-2 text-base text-gray-400">
+                      <cert.icon className="h-4 w-4 text-steel-blue" />
                       <span>{cert.name}</span>
                     </div>
                   ))}
@@ -138,7 +138,7 @@ const Footer = () => {
 
               {/* Social Links */}
               <div>
-                <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Follow Us</h4>
+                <h4 className="text-base font-semibold text-gray-400 uppercase tracking-wide mb-4">Follow Us</h4>
                 <div className="flex space-x-3">
                   {socialLinks.map((social) => (
                     <a
@@ -174,16 +174,16 @@ const Footer = () => {
                           <Link
                             to={link.href}
                             onClick={handleLinkClick}
-                            className="group flex items-start space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all duration-200"
+                            className="group flex items-start space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all duration-200 min-h-[44px]"
                           >
-                            <div className="flex items-center justify-center w-6 h-6 bg-steel-blue/20 rounded-md group-hover:bg-steel-blue group-hover:text-white transition-colors mt-0.5">
-                              <ArrowRight className="h-3 w-3 text-steel-blue group-hover:text-white" />
+                            <div className="flex items-center justify-center w-8 h-8 bg-steel-blue/20 rounded-md group-hover:bg-steel-blue group-hover:text-white transition-colors mt-0.5">
+                              <ArrowRight className="h-4 w-4 text-steel-blue group-hover:text-white" />
                             </div>
                             <div>
-                              <div className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                              <div className="text-base font-medium text-gray-300 group-hover:text-white transition-colors">
                                 {link.name}
                               </div>
-                              <div className="text-xs text-gray-500 mt-1">
+                              <div className="text-base text-gray-500 mt-1">
                                 {link.description}
                               </div>
                             </div>
@@ -201,7 +201,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-400">
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-base text-gray-400">
               <p>&copy; {currentYear} Taxed GmbH. All rights reserved.</p>
               <div className="flex items-center space-x-4">
                 <Link to="/impressum" onClick={handleLinkClick} className="hover:text-white transition-colors py-2 min-h-[44px] inline-flex items-center">
@@ -219,7 +219,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
+            <div className="flex items-center space-x-6 text-base text-gray-400">
               <a
                 href="/rss.xml"
                 target="_blank"
@@ -250,21 +250,21 @@ const Footer = () => {
           {/* Trust Indicators */}
           <div className="mt-6 pt-6 border-t border-gray-800">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-              <div className="flex items-center space-x-6 text-xs text-gray-500">
+              <div className="flex items-center space-x-6 text-base text-gray-500">
                 <div className="flex items-center space-x-2">
-                  <Shield className="h-3 w-3 text-green-400" />
+                  <Shield className="h-4 w-4 text-green-400" />
                   <span>SSL Secured</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Award className="h-3 w-3 text-yellow-400" />
+                  <Award className="h-4 w-4 text-yellow-400" />
                   <span>Swiss Quality</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Users className="h-3 w-3 text-blue-400" />
+                  <Users className="h-4 w-4 text-blue-400" />
                   <span>500+ Happy Clients</span>
                 </div>
               </div>
-              <div className="text-xs text-gray-500">
+              <div className="text-base text-gray-500">
                 Made with love in Switzerland
               </div>
             </div>
