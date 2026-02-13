@@ -88,5 +88,103 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- WhatsApp Chat Button for Lead Generation -->
+    <style>
+      #wa-chat-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 9999;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #25D366;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: none;
+        padding: 0;
+      }
+      #wa-chat-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      }
+      #wa-chat-btn svg {
+        width: 34px;
+        height: 34px;
+        fill: #fff;
+      }
+      #wa-chat-tooltip {
+        position: fixed;
+        bottom: 92px;
+        right: 24px;
+        z-index: 9998;
+        background: #fff;
+        color: #1a1a1a;
+        padding: 12px 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        line-height: 1.4;
+        max-width: 240px;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+      }
+      #wa-chat-tooltip.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      #wa-chat-tooltip::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        right: 24px;
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        transform: rotate(45deg);
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+      }
+      #wa-chat-tooltip strong {
+        color: #25D366;
+      }
+      @media (max-width: 480px) {
+        #wa-chat-btn { bottom: 16px; right: 16px; width: 54px; height: 54px; }
+        #wa-chat-btn svg { width: 30px; height: 30px; }
+        #wa-chat-tooltip { bottom: 78px; right: 16px; max-width: 200px; font-size: 13px; }
+      }
+    </style>
+    <div id="wa-chat-tooltip">
+      <strong>Fragen?</strong> Schreiben Sie uns auf WhatsApp — kostenlose Erstberatung!
+    </div>
+    <a id="wa-chat-btn" href="https://wa.me/41783121190?text=Hallo%20Taxed%20GmbH%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Steuerberatung." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.908 15.908 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.31 22.606c-.39 1.1-1.932 2.014-3.168 2.28-.846.18-1.95.324-5.67-1.218-4.762-1.972-7.828-6.81-8.066-7.124-.228-.314-1.924-2.562-1.924-4.886s1.218-3.468 1.65-3.94c.432-.47.944-.588 1.26-.588.314 0 .63.002.904.016.292.014.682-.11 1.066.814.39.94 1.336 3.264 1.452 3.502.118.236.196.512.04.826-.158.314-.236.512-.472.786-.236.276-.496.616-.708.826-.236.236-.482.492-.208.962.276.472 1.224 2.018 2.63 3.268 1.808 1.608 3.332 2.106 3.804 2.342.472.236.746.196 1.022-.118.276-.314 1.178-1.374 1.492-1.844.314-.472.63-.39 1.06-.236.432.158 2.754 1.298 3.226 1.534.472.236.786.354.904.55.116.196.116 1.14-.274 2.24z"/></svg>
+    </a>
+    <script>
+      // Show tooltip after 3 seconds, hide after 8 seconds
+      setTimeout(function() {
+        var t = document.getElementById('wa-chat-tooltip');
+        if (t) { t.classList.add('visible'); }
+        setTimeout(function() { if (t) t.classList.remove('visible'); }, 5000);
+      }, 3000);
+      // Show tooltip on hover
+      var btn = document.getElementById('wa-chat-btn');
+      if (btn) {
+        btn.addEventListener('mouseenter', function() {
+          document.getElementById('wa-chat-tooltip').classList.add('visible');
+        });
+        btn.addEventListener('mouseleave', function() {
+          document.getElementById('wa-chat-tooltip').classList.remove('visible');
+        });
+      }
+    </script>
   </body>
 </html>
