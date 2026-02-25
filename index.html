@@ -184,6 +184,31 @@
         btn.addEventListener('mouseleave', function() {
           document.getElementById('wa-chat-tooltip').classList.remove('visible');
         });
+
+        // Track WhatsApp clicks → Firestore (whatsapp_leads collection)
+        btn.addEventListener('click', function() {
+          try {
+            var leadData = {
+              fields: {
+                timestamp: { timestampValue: new Date().toISOString() },
+                page: { stringValue: window.location.pathname + window.location.search },
+                referrer: { stringValue: document.referrer || 'direct' },
+                userAgent: { stringValue: navigator.userAgent },
+                screenSize: { stringValue: screen.width + 'x' + screen.height },
+                language: { stringValue: navigator.language || 'unknown' },
+                source: { stringValue: 'wa-chat-btn' },
+                utmSource: { stringValue: new URLSearchParams(window.location.search).get('utm_source') || '' },
+                utmMedium: { stringValue: new URLSearchParams(window.location.search).get('utm_medium') || '' },
+                utmCampaign: { stringValue: new URLSearchParams(window.location.search).get('utm_campaign') || '' }
+              }
+            };
+            fetch('https://firestore.googleapis.com/v1/projects/taxedgmbh/databases/taxedgmbh/documents/whatsapp_leads', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(leadData)
+            }).catch(function() {});
+          } catch(e) {}
+        });
       }
     </script>
   </body>

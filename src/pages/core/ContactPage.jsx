@@ -478,6 +478,7 @@ const ContactPage = () => {
                         const phoneNumber = '+41799107787';
                         const message = encodeURIComponent("Hello! I'm interested in Swiss tax consulting services. Could you please help me?");
                         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                        import('../../utils/whatsappTracker').then(m => m.trackWhatsAppClick({ source: 'contact-page', phoneNumber })).catch(() => {});
                         window.open(whatsappUrl, '_blank');
                       }}
                       className="w-full bg-steel-blue hover:bg-blue-800 text-white text-lg py-4"
