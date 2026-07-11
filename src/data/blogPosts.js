@@ -151,17 +151,17 @@ const blogPosts = [
       <p>The Eigenmietwert system has been controversial for decades, and there have been numerous parliamentary initiatives to abolish or reform it. The latest significant effort came in 2024 when the Swiss Council of States approved a bill to eliminate Eigenmietwert for primary residences.</p>
 
       <h3>Current Status (2026)</h3>
-      <p>As of early 2026, the reform discussions continue. Key points of the proposed changes include:</p>
+      <p>In the referendum of 28 September 2025, Swiss voters approved the abolition of the Eigenmietwert system. The key elements of the approved reform are:</p>
       <ul class="list-disc pl-6 mb-4">
-        <li>Elimination of Eigenmietwert for primary residences</li>
-        <li>Retention for secondary/vacation homes</li>
-        <li>Significant reduction in deductible mortgage interest (from 100% to about 40%)</li>
-        <li>Maintenance deductions would remain, but possibly reduced</li>
+        <li>Elimination of Eigenmietwert for owner-occupied residences</li>
+        <li>Cantons may introduce a special property tax on second homes</li>
+        <li>Significant restriction of deductible mortgage interest</li>
+        <li>Maintenance deductions will be largely eliminated once the reform takes effect</li>
       </ul>
 
       <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-8">
         <h4 class="text-lg font-semibold text-yellow-900 mb-2">Important Note</h4>
-        <p class="text-yellow-800">Any reform is subject to a potential referendum. Even if Parliament approves changes, Swiss voters may challenge them. Implementation of any changes would likely not take effect until 2027 or later. Plan your finances based on current rules while staying informed about potential changes.</p>
+        <p class="text-yellow-800">Although the reform has been approved, the entry into force is not expected before 2028, and the transitional rules are still being finalized. The current Eigenmietwert rules continue to apply until then — plan your finances based on current rules while staying informed about the implementation timeline.</p>
       </div>
 
       <h2>Practical Optimization Strategies</h2>
@@ -222,7 +222,7 @@ const blogPosts = [
     id: 'tax-deductible-expenses-guide-2025',
     slug: 'tax-deductible-expenses-switzerland-2025-guide-individuals',
     title: 'Tax-Deductible Expenses in Switzerland: 2025 Guide for Individuals',
-    author: 'Paritca',
+    author: 'Patricia',
     authorTitle: 'Senior Tax Advisor',
     date: '2025-01-20',
     category: 'Tax Deductions',
@@ -265,17 +265,17 @@ const blogPosts = [
       </figure>
 
       <h2>Pension Contributions and Retirement Planning</h2>
-      <p>Switzerland's three-pillar pension system provides significant tax advantages for retirement planning. According to the Swiss Federal Social Insurance Office (BSV), Pillar 3a contributions are fully deductible up to CHF 7,056.– for employed individuals in 2025 (Swiss Federal Social Insurance Office, 2025).</p>
+      <p>Switzerland's three-pillar pension system provides significant tax advantages for retirement planning. According to the Swiss Federal Social Insurance Office (BSV), Pillar 3a contributions are fully deductible up to CHF 7,258.– for employed individuals in 2025 (Swiss Federal Social Insurance Office, 2025).</p>
       
       <p>The following pension-related expenses are deductible:</p>
       <ul class="list-disc pl-6 mb-4">
-        <li>Pillar 3a contributions (maximum CHF 7,056.– for employed individuals)</li>
+        <li>Pillar 3a contributions (maximum CHF 7,258.– for employed individuals)</li>
         <li>Additional voluntary pension contributions to occupational pension funds</li>
         <li>Buying back pension years (Rückkauf von Pensionsjahren)</li>
         <li>Pension fund contributions exceeding mandatory amounts</li>
       </ul>
 
-      <p>For self-employed individuals, the deduction limits are significantly higher. According to Swisslife's 2025 pension guide, Pillar 3a contributions are deductible up to 20% of net income or CHF 35,280.–, whichever is lower (Swisslife, 2025).</p>
+      <p>For self-employed individuals, the deduction limits are significantly higher. According to Swisslife's 2025 pension guide, Pillar 3a contributions are deductible up to 20% of net income or CHF 36,288.–, whichever is lower (Swisslife, 2025).</p>
 
       <h2>Property-Related Deductions</h2>
       <p>Property ownership in Switzerland provides several tax advantages, particularly for maintenance and improvement costs. According to the Swiss Federal Tax Administration, these deductions can significantly reduce your tax burden while maintaining your property's value (Swiss Federal Tax Administration, 2025).</p>
@@ -474,7 +474,7 @@ const blogPosts = [
       <p>Pillar 3a is a private, voluntary pension provision that is encouraged by the Swiss government through significant tax incentives. It complements the state (Pillar 1 - AHV) and occupational (Pillar 2 - Pension Fund) pensions.</p>
 
       <h2>The Biggest Advantage: Tax Deductions</h2>
-      <p>The primary appeal of Pillar 3a is that your annual contributions are fully deductible from your taxable income. For 2025, the maximum contribution limit is CHF 7,056 for employees with a Pillar 2 pension fund.</p>
+      <p>The primary appeal of Pillar 3a is that your annual contributions are fully deductible from your taxable income. For 2025, the maximum contribution limit is CHF 7,258 for employees with a Pillar 2 pension fund.</p>
       
       <h2>How Does It Work?</h2>
       <p>You can open a Pillar 3a account with a bank or an insurance company. There are two main types:</p>
@@ -648,7 +648,7 @@ const blogPosts = [
       <p>Switzerland has a competitive corporate tax system with rates varying by canton. The federal corporate tax rate is 8.5%, with additional cantonal and municipal taxes.</p>
 
       <h2>VAT (Value Added Tax)</h2>
-      <p>Most businesses in Switzerland must register for VAT if their annual turnover exceeds CHF 100,000. The standard VAT rate is 7.7%.</p>
+      <p>Most businesses in Switzerland must register for VAT if their annual turnover exceeds CHF 100,000. The standard VAT rate is 8.1%.</p>
 
       <h2>Tax Incentives for Startups</h2>
       <p>Switzerland offers various tax incentives for startups and innovative businesses, including:</p>
@@ -855,7 +855,7 @@ const blogPosts = [
     difficulty: 'Intermediate',
     featured: true,
     content: `
-      <p class="mb-6 text-lg leading-relaxed">Starting January 1, 2025, Switzerland introduces a groundbreaking new opportunity in retirement planning: the ability to make retroactive contributions to Pillar 3a to close contribution gaps from previous years. This represents a significant enhancement to the Swiss three-pillar pension system and offers new possibilities for optimizing your retirement savings.</p>
+      <p class="mb-6 text-lg leading-relaxed">Since January 1, 2025, Switzerland offers a groundbreaking opportunity in retirement planning: the ability to make retroactive contributions to Pillar 3a to close contribution gaps from previous years. This represents a significant enhancement to the Swiss three-pillar pension system and offers new possibilities for optimizing your retirement savings.</p>
 
       <h2>What Changes in 2025?</h2>
       <p>For the first time in Swiss pension history, insured persons can make retroactive contributions to their Pillar 3a accounts to close contribution gaps from previous years. This new regulation represents an important step toward strengthening private pension provision.</p>
@@ -992,27 +992,27 @@ const blogPosts = [
   {
     id: 'swiss-eigenmietwert-referendum-2025',
     slug: 'swiss-eigenmietwert-referendum-property-tax-changes-2025',
-    title: 'Swiss Eigenmietwert Referendum: Major Property Tax Changes Coming in 2025',
+    title: 'Swiss Eigenmietwert Referendum Approved: What the Property Tax Reform Means for You',
     author: 'HEV Schweiz',
     authorTitle: 'Swiss Homeowners Association',
     date: '2025-01-30',
     category: 'Real Estate',
     tags: ['Eigenmietwert', 'Property Tax', 'Real Estate', 'Referendum', 'Swiss Tax'],
-    summary: 'Understanding the Swiss referendum on abolishing imputed rental value (Eigenmietwert) and its impact on property owners. Learn about the proposed changes, timeline, and what it means for your Swiss property taxes.',
+    summary: 'Swiss voters approved the abolition of imputed rental value (Eigenmietwert) on 28 September 2025. Learn what was decided, the implementation timeline, and what it means for your Swiss property taxes.',
     readTime: '15 min read',
     difficulty: 'Advanced',
     featured: true,
     content: `
-      <p class="mb-6 text-lg leading-relaxed">Switzerland is facing a major tax reform that could fundamentally change how property owners are taxed. The referendum on September 28, 2025, will decide whether to abolish the imputed rental value (Eigenmietwert) system that has been in place for decades. This change would have significant implications for all Swiss property owners, especially expats.</p>
+      <p class="mb-6 text-lg leading-relaxed">Switzerland has approved a major tax reform that will fundamentally change how property owners are taxed. In the referendum of September 28, 2025, voters decided to abolish the imputed rental value (Eigenmietwert) system that had been in place for decades. This change has significant implications for all Swiss property owners, especially expats.</p>
 
-      <h2>What is the Eigenmietwert Referendum About?</h2>
-      <p>The referendum on September 28, 2025, involves two interconnected proposals:</p>
-      
+      <h2>What Was the Eigenmietwert Referendum About?</h2>
+      <p>The referendum of September 28, 2025, involved two interconnected proposals:</p>
+
       <h3>1. Constitutional Amendment: Second Home Property Tax</h3>
-      <p>Voters will decide on a constitutional amendment allowing cantons to introduce special property taxes on second homes (Zweitliegenschaften). This is the only part that appears on the ballot.</p>
+      <p>Voters approved a constitutional amendment allowing cantons to introduce special property taxes on second homes (Zweitliegenschaften). This was the only part that appeared on the ballot.</p>
 
       <h3>2. Federal Law: Abolition of Eigenmietwert</h3>
-      <p>Linked to this constitutional change is a federal law that would abolish the imputed rental value taxation for all owner-occupied properties. This law will automatically come into effect if the constitutional amendment passes.</p>
+      <p>Linked to this constitutional change is a federal law that abolishes the imputed rental value taxation for all owner-occupied properties. Because the constitutional amendment passed, this law will come into effect together with it.</p>
 
       <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
         <p class="text-blue-800"><strong>Important:</strong> There is no separate vote on abolishing the Eigenmietwert because no referendum was called against this federal law. The two proposals are legally linked and can only take effect together.</p>
@@ -1027,8 +1027,8 @@ const blogPosts = [
         <li><strong>Deduct renovation costs</strong> - Energy efficiency improvements and renovations are deductible</li>
       </ul>
 
-      <h2>Proposed Changes: What Would Change?</h2>
-      <p>If the referendum passes, the following changes would occur:</p>
+      <h2>Approved Changes: What Will Change?</h2>
+      <p>Following the approval, the following changes will occur once the reform takes effect:</p>
 
       <h3>For Owner-Occupied Properties</h3>
       <ul>
@@ -1046,7 +1046,7 @@ const blogPosts = [
       </ul>
 
       <h2>Timeline and Implementation</h2>
-      <p>If the referendum passes on September 28, 2025:</p>
+      <p>With the referendum approved on September 28, 2025, the implementation now proceeds as follows:</p>
 
       <h3>Transition Period</h3>
       <p>The Federal Tax Administration (ESTV) has indicated that cantons will be given a transition period of at least 2 years to implement the changes. This means:</p>
@@ -1181,12 +1181,12 @@ const blogPosts = [
       </ul>
 
       <h2>Conclusion</h2>
-      <p>The Swiss Eigenmietwert referendum represents one of the most significant tax reforms in recent Swiss history. The outcome will fundamentally change how property owners are taxed, with winners and losers depending on individual circumstances.</p>
+      <p>The approved Eigenmietwert reform represents one of the most significant tax changes in recent Swiss history. It will fundamentally change how property owners are taxed, with winners and losers depending on individual circumstances.</p>
 
-      <p>For expatriates, the changes could significantly impact their Swiss tax planning and property investment strategies. It's crucial to understand the implications and plan accordingly, regardless of the referendum outcome.</p>
+      <p>For expatriates, the changes could significantly impact Swiss tax planning and property investment strategies. It's crucial to understand the implications and plan ahead of the transition.</p>
 
       <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
-        <p class="text-yellow-800"><strong>Important:</strong> The referendum takes place on September 28, 2025. If passed, changes would likely take effect around 2028. Property owners should start planning now for potential changes.</p>
+        <p class="text-yellow-800"><strong>Important:</strong> The referendum was approved on September 28, 2025. The changes are expected to take effect around 2028 at the earliest; until then the current rules continue to apply. Property owners should start planning now.</p>
       </div>
 
       <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
@@ -1765,7 +1765,7 @@ const blogPosts = [
       <p>Swiss tax law provides a clear legal basis for deducting childcare costs, but the implementation varies significantly between cantons.</p>
 
       <h3>Federal Level: Direct Federal Tax (DBG)</h3>
-      <p>According to <strong>Article 33, Paragraph 3 of the Federal Tax Act (DBG)</strong>, parents can deduct childcare costs for external care up to a certain limit. Starting in 2025, the maximum deduction per child per year is:</p>
+      <p>According to <strong>Article 33, Paragraph 3 of the Federal Tax Act (DBG)</strong>, parents can deduct childcare costs for external care up to a certain limit. Since 2023, the maximum federal deduction per child per year is:</p>
       <ul>
         <li><strong>CHF 25,000 per child</strong> for external childcare costs</li>
         <li><strong>Work-related requirement:</strong> Both parents must be gainfully employed or in education</li>
@@ -2134,7 +2134,7 @@ const blogPosts = [
     id: 'swiss-tax-developments-2025-oecd-minimum-tax',
     slug: 'swiss-tax-developments-2025-oecd-minimum-tax-implementation',
     title: 'Swiss Tax Developments 2025: OECD Minimum Tax Implementation and Corporate Tax Reforms',
-    author: 'Paritca',
+    author: 'Patricia',
     authorTitle: 'Senior Tax Advisor',
     date: '2025-01-20',
     category: 'Corporate Tax',
@@ -2360,7 +2360,7 @@ const blogPosts = [
 
       <h4>Additional Deductions (Documentation Required)</h4>
       <ul class="list-disc pl-6 mb-4">
-        <li>Pillar 3a contributions: Up to CHF 7,056 (employed) or CHF 35,280 (self-employed)</li>
+        <li>Pillar 3a contributions: Up to CHF 7,258 (employed) or CHF 36,288 (self-employed)</li>
         <li>Actual professional expenses exceeding standard deduction</li>
         <li>Actual health insurance premiums</li>
         <li>Childcare costs: Up to CHF 25,000 per child</li>
@@ -2476,20 +2476,20 @@ const blogPosts = [
         <figcaption class="text-sm text-gray-600 mt-2 text-center">Figure 1: Optimizing tax deductions - Photo by <a href="https://unsplash.com/@kellysikkema" class="text-blue-600 hover:underline">Kelly Sikkema</a> on <a href="https://unsplash.com" class="text-blue-600 hover:underline">Unsplash</a></figcaption>
       </figure>
 
-      <h2>1. Pillar 3a Retirement Contributions (Up to CHF 7,056)</h2>
+      <h2>1. Pillar 3a Retirement Contributions (Up to CHF 7,258)</h2>
       <p>The Pillar 3a is Switzerland's voluntary private pension system and offers the largest single tax deduction available to expats:</p>
 
       <h3>Maximum Deduction Amounts (2025)</h3>
       <ul class="list-disc pl-6 mb-4">
-        <li><strong>Employed individuals:</strong> CHF 7,056 per year</li>
-        <li><strong>Self-employed without pension fund:</strong> CHF 35,280 or 20% of net income (whichever is lower)</li>
+        <li><strong>Employed individuals:</strong> CHF 7,258 per year</li>
+        <li><strong>Self-employed without pension fund:</strong> CHF 36,288 or 20% of net income (whichever is lower)</li>
         <li><strong>Married couples:</strong> Each spouse can contribute separately if both have earned income</li>
       </ul>
 
       <h3>Tax Savings Example</h3>
       <p>For someone in Zurich earning CHF 100,000:</p>
       <ul class="list-disc pl-6 mb-4">
-        <li>Full CHF 7,056 contribution = approximately CHF 2,200-2,800 in tax savings</li>
+        <li>Full CHF 7,258 contribution = approximately CHF 2,200-2,800 in tax savings</li>
         <li>Over 30 years of working = CHF 66,000-84,000 in total tax savings</li>
         <li>Plus compound investment returns on the contributed amount</li>
       </ul>
@@ -2566,7 +2566,7 @@ const blogPosts = [
         <li>Full cost of annual or monthly travel passes</li>
         <li>Train, bus, tram subscriptions</li>
         <li>Half-fare card costs can be included</li>
-        <li>Example: Annual GA Travelcard (CHF 3,860) = full deduction</li>
+        <li>Example: Annual GA Travelcard (CHF 3,995) = full deduction</li>
       </ul>
 
       <h3>Private Vehicle</h3>

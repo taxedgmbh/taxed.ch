@@ -145,11 +145,11 @@ const TaxEventsPage = () => {
   const taxEvents = [
     {
       id: 'event-001',
-      title: 'Swiss Tax Law Update 2025',
+      title: 'Swiss Tax Law Update 2027',
       description: 'Comprehensive update on the latest Swiss tax law changes and their impact on businesses and individuals',
       category: 'seminars',
       type: 'upcoming',
-      date: '2025-01-25',
+      date: '2027-01-25',
       time: '09:00 - 17:00',
       location: 'Zurich, Switzerland',
       venue: 'Swissotel Zurich',
@@ -180,7 +180,7 @@ const TaxEventsPage = () => {
       description: 'Hands-on workshop for VAT registration, returns, and compliance requirements',
       category: 'workshops',
       type: 'upcoming',
-      date: '2025-02-15',
+      date: '2027-02-15',
       time: '14:00 - 18:00',
       location: 'Geneva, Switzerland',
       venue: 'Geneva Convention Centre',
@@ -210,7 +210,7 @@ const TaxEventsPage = () => {
       description: 'Advanced conference on international tax planning strategies for multinational businesses',
       category: 'conferences',
       type: 'upcoming',
-      date: '2025-03-20',
+      date: '2027-03-20',
       time: '08:30 - 18:00',
       location: 'Basel, Switzerland',
       venue: 'Basel Congress Centre',
@@ -241,7 +241,7 @@ const TaxEventsPage = () => {
       description: 'Exploring the latest tax technology solutions and digital transformation',
       category: 'conferences',
       type: 'upcoming',
-      date: '2025-04-10',
+      date: '2027-04-10',
       time: '09:00 - 16:00',
       location: 'Lucerne, Switzerland',
       venue: 'Lucerne Culture and Congress Centre',
@@ -272,7 +272,7 @@ const TaxEventsPage = () => {
       description: 'Comprehensive seminar on individual tax planning and optimization strategies',
       category: 'seminars',
       type: 'upcoming',
-      date: '2025-05-05',
+      date: '2027-05-05',
       time: '10:00 - 15:00',
       location: 'Bern, Switzerland',
       venue: 'Bern Congress Centre',
@@ -302,7 +302,7 @@ const TaxEventsPage = () => {
       description: 'Workshop on tax compliance requirements and best practices',
       category: 'workshops',
       type: 'upcoming',
-      date: '2025-06-12',
+      date: '2027-06-12',
       time: '13:00 - 17:00',
       location: 'St. Gallen, Switzerland',
       venue: 'St. Gallen University',
@@ -332,7 +332,7 @@ const TaxEventsPage = () => {
       description: 'Networking event for tax professionals and business owners',
       category: 'networking',
       type: 'upcoming',
-      date: '2025-07-18',
+      date: '2026-09-18',
       time: '18:00 - 21:00',
       location: 'Zurich, Switzerland',
       venue: 'Zurich Marriott Hotel',
@@ -363,7 +363,7 @@ const TaxEventsPage = () => {
       description: 'Online webinar series covering Swiss tax fundamentals',
       category: 'webinars',
       type: 'upcoming',
-      date: '2025-08-01',
+      date: '2026-10-01',
       time: '14:00 - 15:30',
       location: 'Online',
       venue: 'Zoom Webinar',
@@ -648,13 +648,13 @@ const TaxEventsPage = () => {
                 <div className="bg-steel-blue/10 p-6 rounded-xl mb-4">
                   <FileText className="h-12 w-12 text-steel-blue mx-auto" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Swiss Tax Law Update 2025</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Swiss Tax Law Update 2027</h3>
                 <p className="text-gray-600 mb-4">
                   Comprehensive update on the latest Swiss tax law changes and their impact on businesses and individuals.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    January 25, 2025
+                    January 25, 2027
                   </span>
                   <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
                     Zurich, Switzerland

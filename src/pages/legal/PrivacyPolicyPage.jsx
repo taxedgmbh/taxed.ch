@@ -9,26 +9,27 @@ import {
   Users, 
   Globe, 
   Mail, 
-  Phone,
-  Cookie,
-  Settings,
-  CheckCircle,
-  AlertTriangle,
-  FileText,
-  Scale,
-  Clock,
-  MessageSquare,
-  Smartphone,
-  Server,
-  Key,
-  Download,
-  Trash2,
-  Edit,
-  Send,
-  UserCheck,
-  Bell,
-  BarChart3,
-  PieChart
+  Phone, 
+  Cookie, 
+  Settings, 
+  CheckCircle, 
+  AlertTriangle, 
+  FileText, 
+  Scale, 
+  Clock, 
+  MessageSquare, 
+  Smartphone, 
+  Server, 
+  Key, 
+  Download, 
+  Trash2, 
+  Edit, 
+  Send, 
+  UserCheck, 
+  Bell, 
+  BarChart3, 
+  PieChart, 
+  Calendar
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -562,8 +563,8 @@ const PrivacyPolicyPage = () => {
                     </p>
                     <ul className="space-y-2 text-gray-700">
                       <li>• Email: privacy@taxed.ch</li>
-                      <li>• Phone: +41-79-910-7787</li>
-                      <li>• WhatsApp: +41-79-910-7787</li>
+                      <li>• Phone: +41 79 910 77 87</li>
+                      <li>• WhatsApp: +41 79 910 77 87</li>
                       <li>• We will respond within 30 days</li>
                     </ul>
                   </div>
@@ -752,11 +753,11 @@ const PrivacyPolicyPage = () => {
                           </div>
                           <div className="flex items-center">
                             <Phone className="h-5 w-5 text-steel-blue mr-3" />
-                            <span className="text-gray-700">+41-79-910-7787</span>
+                            <span className="text-gray-700">+41 79 910 77 87</span>
                           </div>
                           <div className="flex items-center">
                             <MessageSquare className="h-5 w-5 text-steel-blue mr-3" />
-                            <span className="text-gray-700">WhatsApp: +41-79-910-7787</span>
+                            <span className="text-gray-700">WhatsApp: +41 79 910 77 87</span>
                           </div>
                         </div>
                       </div>

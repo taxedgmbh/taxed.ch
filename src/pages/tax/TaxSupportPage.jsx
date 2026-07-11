@@ -180,7 +180,7 @@ const TaxSupportPage = () => {
     {
       id: 'topic-002',
       title: 'VAT Registration and Returns',
-      description: 'Assistance with VAT registration and monthly returns',
+      description: 'Assistance with VAT registration and quarterly returns',
       category: 'tax',
       difficulty: 'High',
       estimatedTime: '60-120 minutes',
@@ -188,7 +188,7 @@ const TaxSupportPage = () => {
         'Determine VAT registration requirement',
         'Complete registration application',
         'Set up VAT accounting system',
-        'Prepare monthly VAT returns',
+        'Prepare quarterly VAT returns',
         'Submit returns and payments'
       ],
       resources: [

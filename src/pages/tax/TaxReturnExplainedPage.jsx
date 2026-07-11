@@ -162,7 +162,7 @@ const TaxReturnExplainedPage = () => {
       name: 'Professional Expenses',
       icon: Briefcase,
       description: 'Work-related expenses that can be deducted',
-      maxAmount: 'CHF 2,000',
+      maxAmount: '3% of net salary (min. CHF 2,000, max. CHF 4,000 flat rate)',
       examples: [
         'Professional training and education',
         'Work-related travel expenses',
@@ -196,7 +196,7 @@ const TaxReturnExplainedPage = () => {
       name: 'Family Expenses',
       icon: Users,
       description: 'Family-related expenses and childcare costs',
-      maxAmount: 'CHF 10,000 per child',
+      maxAmount: 'Up to CHF 25,500 per child (federal; cantonal limits vary)',
       examples: [
         'Childcare expenses',
         'School fees',
@@ -219,7 +219,7 @@ const TaxReturnExplainedPage = () => {
         'Property maintenance',
         'Home insurance',
         'Property taxes',
-        'Rent (in some cases)',
+        'Energy-saving renovations',
         'Home office expenses'
       ],
       color: 'bg-orange-100',
@@ -313,7 +313,7 @@ const TaxReturnExplainedPage = () => {
     },
     {
       date: 'June 30',
-      description: 'Final deadline with penalty',
+      description: 'Final deadline (late-filing penalties apply)',
       importance: 'High',
       icon: AlertTriangle,
       color: 'text-red-600'
@@ -636,8 +636,8 @@ const TaxReturnExplainedPage = () => {
                   title: 'Pension Assets',
                   icon: Heart,
                   color: 'bg-yellow-500',
-                  items: ['BVG assets', 'Private pension', 'Life insurance', 'Annuities'],
-                  taxRate: '0.3-1.0% per year'
+                  items: ['Pillar 2 (BVG) and pillar 3a assets are exempt while held in the pension', 'Cash-value life insurance (pillar 3b) is taxable', 'Annuity surrender values may be taxable'],
+                  taxRate: 'Exempt (BVG/3a) or 0.3-1.0% (3b)'
                 },
                 {
                   title: 'Liabilities',
@@ -835,13 +835,13 @@ const TaxReturnExplainedPage = () => {
                   <h4 className="font-semibold text-gray-900 mb-4">Federal Tax</h4>
                   <div className="space-y-2">
                     {[
-                      { range: 'CHF 0 - 14,500', rate: '0.77%' },
-                      { range: 'CHF 14,501 - 31,600', rate: '0.88%' },
-                      { range: 'CHF 31,601 - 41,400', rate: '2.64%' },
-                      { range: 'CHF 41,401 - 55,200', rate: '2.97%' },
-                      { range: 'CHF 55,201 - 72,800', rate: '5.94%' },
-                      { range: 'CHF 72,801 - 78,100', rate: '6.60%' },
-                      { range: 'CHF 78,101+', rate: '8.80%' }
+                      { range: 'CHF 0 - 15,000', rate: '0% (tax-free)' },
+                      { range: 'CHF 15,001 - 32,800', rate: '0.77%' },
+                      { range: 'CHF 32,801 - 42,900', rate: '0.88%' },
+                      { range: 'CHF 42,901 - 57,200', rate: '2.64%' },
+                      { range: 'CHF 57,201 - 75,200', rate: '2.97%' },
+                      { range: 'CHF 75,201 - 81,000', rate: '5.94%' },
+                      { range: 'Higher brackets', rate: 'up to 11.5% (max.)' }
                     ].map((bracket, idx) => (
                       <div key={idx} className="flex justify-between text-sm">
                         <span className="text-gray-600">{bracket.range}</span>
@@ -862,8 +862,8 @@ const TaxReturnExplainedPage = () => {
                   <h4 className="font-semibold text-gray-900 mb-4">Municipal Tax</h4>
                   <div className="bg-green-50 rounded-lg p-4">
                     <p className="text-sm text-gray-600 mb-2">Varies by municipality</p>
-                    <p className="text-lg font-bold text-green-600">0.5-3%</p>
-                    <p className="text-xs text-gray-500">of cantonal tax</p>
+                    <p className="text-lg font-bold text-green-600">50-130%</p>
+                    <p className="text-xs text-gray-500">of the base cantonal tax</p>
                   </div>
                 </div>
               </div>

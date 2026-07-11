@@ -549,7 +549,7 @@ const Pillar3aCalculator = () => {
     if (!income || !age) return;
 
     // Pillar 3a limits and calculations
-    const maxContribution = formData.contributionType === 'employee' ? 7056 : 35328;
+    const maxContribution = formData.contributionType === 'employee' ? 7258 : 36288;
     const taxRate = 0.25; // Approximate marginal tax rate
     
     // Calculate tax savings

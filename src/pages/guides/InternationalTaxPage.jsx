@@ -142,7 +142,7 @@ const InternationalTaxPage = () => {
   const residencyRules = [
     {
       title: 'Physical Presence Test',
-      description: 'You are considered a Swiss tax resident if you spend more than 90 days in Switzerland',
+      description: 'You are considered a Swiss tax resident if you stay 30 days or more with gainful employment, or 90 days or more without gainful employment',
       details: [
         'Count all days spent in Switzerland during the tax year',
         'Include partial days (arrival and departure days count)',
@@ -185,7 +185,7 @@ const InternationalTaxPage = () => {
         'Tax treaty benefits must be claimed',
         'Proper documentation required',
         'Residency certificate needed',
-        'Form 8233 (US) or equivalent required'
+        'Swiss refund or treaty relief claim form required'
       ],
       icon: CreditCard
     },
@@ -198,7 +198,7 @@ const InternationalTaxPage = () => {
         'Tax treaty benefits must be claimed',
         'Proper documentation required',
         'Residency certificate needed',
-        'Form 8233 (US) or equivalent required'
+        'Swiss refund or treaty relief claim form required'
       ],
       icon: Banknote
     },
@@ -211,7 +211,7 @@ const InternationalTaxPage = () => {
         'Tax treaty benefits must be claimed',
         'Proper documentation required',
         'Residency certificate needed',
-        'Form 8233 (US) or equivalent required'
+        'Swiss refund or treaty relief claim form required'
       ],
       icon: FileText
     },
@@ -224,7 +224,7 @@ const InternationalTaxPage = () => {
         'Tax treaty benefits must be claimed',
         'Proper documentation required',
         'Residency certificate needed',
-        'Form 8233 (US) or equivalent required'
+        'Swiss refund or treaty relief claim form required'
       ],
       icon: GraduationCap
     }

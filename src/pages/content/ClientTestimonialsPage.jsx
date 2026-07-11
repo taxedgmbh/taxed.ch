@@ -211,7 +211,7 @@ const ClientTestimonialsPage = () => {
   const stats = [
     { label: 'Happy Clients', value: '500+', icon: Users },
     { label: 'Average Savings', value: 'CHF 3,200', icon: DollarSign },
-    { label: 'Success Rate', value: '99.8%', icon: CheckCircle },
+    { label: 'Success Rate', value: '98%', icon: CheckCircle },
     { label: 'Years Experience', value: '15+', icon: Award }
   ];
 

@@ -4,11 +4,29 @@ import { motion } from 'framer-motion';
 import { Calendar, Clock, AlertTriangle, CheckCircle, Download, Bell, FileText, Users, Building, Globe } from 'lucide-react';
 
 const TaxDeadlinesPage = () => {
-  const [selectedYear, setSelectedYear] = useState(2025);
+  const currentYear = new Date().getFullYear();
+  const [selectedYear, setSelectedYear] = useState(currentYear);
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const currentYear = new Date().getFullYear();
   const years = [currentYear - 1, currentYear, currentYear + 1];
+
+  // Given recurring occurrences ({ month, day }, 1-based month), find the next
+  // one on or after today so the page never shows a passed deadline.
+  const getNextOccurrence = (occurrences) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const candidates = occurrences.flatMap(({ month, day }) => [
+      new Date(today.getFullYear(), month - 1, day),
+      new Date(today.getFullYear() + 1, month - 1, day)
+    ]);
+    return candidates.filter((d) => d >= today).sort((a, b) => a - b)[0];
+  };
+
+  const formatDate = (date) =>
+    date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  const getDaysRemaining = (date) =>
+    Math.ceil((date - new Date()) / (1000 * 60 * 60 * 24));
 
   const categories = [
     { id: 'all', name: 'All Deadlines', icon: Calendar },
@@ -23,14 +41,13 @@ const TaxDeadlinesPage = () => {
       id: 1,
       title: 'Individual Tax Return Submission',
       description: 'Deadline for submitting individual tax returns to Swiss tax authorities',
-      date: 'March 31, 2025',
+      occurrences: [{ month: 3, day: 31 }],
       category: 'individual',
       priority: 'high',
       status: 'upcoming',
-      daysRemaining: 173,
       icon: Users,
       details: [
-        'Complete tax return form (Form 204)',
+        'Complete your cantonal tax return',
         'Attach all required supporting documents',
         'Submit electronically or by mail',
         'Late submission penalty: CHF 100-500'
@@ -45,14 +62,13 @@ const TaxDeadlinesPage = () => {
       id: 2,
       title: 'Corporate Tax Return',
       description: 'Deadline for corporate tax returns for Swiss companies',
-      date: 'March 31, 2025',
+      occurrences: [{ month: 3, day: 31 }],
       category: 'corporate',
       priority: 'high',
       status: 'upcoming',
-      daysRemaining: 173,
       icon: Building,
       details: [
-        'Complete corporate tax return (Form 200)',
+        'Complete the corporate tax return for your canton',
         'Attach financial statements and audit reports',
         'Submit to cantonal tax authorities',
         'Late submission penalty: CHF 500-2,000'
@@ -66,18 +82,22 @@ const TaxDeadlinesPage = () => {
     {
       id: 3,
       title: 'VAT Return Submission',
-      description: 'Monthly/quarterly VAT return submission deadline',
-      date: 'January 31, 2025',
+      description: 'Quarterly VAT returns are due 60 days after the end of each quarter',
+      occurrences: [
+        { month: 2, day: 28 },
+        { month: 5, day: 30 },
+        { month: 8, day: 29 },
+        { month: 11, day: 29 }
+      ],
       category: 'vat',
       priority: 'medium',
       status: 'upcoming',
-      daysRemaining: 113,
       icon: FileText,
       details: [
-        'Submit VAT return for previous period',
+        'Submit VAT return for the previous quarter',
         'Pay any VAT due to tax authorities',
-        'File electronically through ESTV portal',
-        'Late submission penalty: CHF 50-200'
+        'File electronically through the FTA ePortal',
+        'Late payment triggers default interest'
       ],
       tips: [
         'Set up automatic reminders',
@@ -89,11 +109,10 @@ const TaxDeadlinesPage = () => {
       id: 4,
       title: 'Quellensteuer Adjustment',
       description: 'Deadline for withholding tax adjustments and refunds',
-      date: 'March 31, 2025',
+      occurrences: [{ month: 3, day: 31 }],
       category: 'individual',
       priority: 'high',
       status: 'upcoming',
-      daysRemaining: 173,
       icon: Users,
       details: [
         'Submit Quellensteuer adjustment request',
@@ -111,11 +130,10 @@ const TaxDeadlinesPage = () => {
       id: 5,
       title: 'International Tax Reporting',
       description: 'Deadline for international tax compliance (FATCA, CRS)',
-      date: 'June 30, 2025',
+      occurrences: [{ month: 6, day: 30 }],
       category: 'international',
       priority: 'medium',
       status: 'upcoming',
-      daysRemaining: 264,
       icon: Globe,
       details: [
         'Submit FATCA reporting to IRS',
@@ -133,17 +151,16 @@ const TaxDeadlinesPage = () => {
       id: 6,
       title: 'Tax Payment Deadline',
       description: 'Final deadline for tax payments to avoid penalties',
-      date: 'December 31, 2025',
+      occurrences: [{ month: 12, day: 31 }],
       category: 'individual',
       priority: 'high',
       status: 'upcoming',
-      daysRemaining: 83,
       icon: Clock,
       details: [
         'Pay any outstanding tax liabilities',
         'Avoid late payment penalties',
         'Consider installment payment options',
-        'Late payment penalty: 5% per year'
+        'Late payment accrues default interest (rate set annually)'
       ],
       tips: [
         'Set up automatic payments',
@@ -153,12 +170,16 @@ const TaxDeadlinesPage = () => {
     }
   ];
 
-  const filteredDeadlines = deadlines.filter(deadline => {
-    if (selectedCategory !== 'all' && deadline.category !== selectedCategory) {
-      return false;
-    }
-    return true;
-  });
+  const filteredDeadlines = deadlines
+    .filter(deadline => selectedCategory === 'all' || deadline.category === selectedCategory)
+    .map(deadline => {
+      const nextDate = getNextOccurrence(deadline.occurrences);
+      return {
+        ...deadline,
+        date: formatDate(nextDate),
+        daysRemaining: getDaysRemaining(nextDate)
+      };
+    });
 
   const getPriorityColor = (priority) => {
     switch (priority) {
@@ -182,10 +203,10 @@ const TaxDeadlinesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Swiss Tax Deadlines 2025 - Important Dates & Reminders | Taxed GmbH</title>
-        <meta name="description" content="Stay compliant with Swiss tax deadlines. Complete calendar of individual, corporate, VAT, and international tax deadlines for 2025. Get reminders and avoid penalties." />
-        <meta property="og:title" content="Swiss Tax Deadlines 2025 - Important Dates & Reminders | Taxed GmbH" />
-        <meta property="og:description" content="Stay compliant with Swiss tax deadlines. Complete calendar of individual, corporate, VAT, and international tax deadlines for 2025. Get reminders and avoid penalties." />
+        <title>{`Swiss Tax Deadlines ${currentYear} - Important Dates & Reminders | Taxed GmbH`}</title>
+        <meta name="description" content={`Stay compliant with Swiss tax deadlines. Complete calendar of individual, corporate, VAT, and international tax deadlines for ${currentYear}. Get reminders and avoid penalties.`} />
+        <meta property="og:title" content={`Swiss Tax Deadlines ${currentYear} - Important Dates & Reminders | Taxed GmbH`} />
+        <meta property="og:description" content={`Stay compliant with Swiss tax deadlines. Complete calendar of individual, corporate, VAT, and international tax deadlines for ${currentYear}. Get reminders and avoid penalties.`} />
         <link rel="canonical" href="https://taxed.ch/tax-deadlines" />
       </Helmet>
 
@@ -199,7 +220,7 @@ const TaxDeadlinesPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Swiss Tax Deadlines 2025
+              Swiss Tax Deadlines {currentYear}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
               Stay compliant with all Swiss tax deadlines. Never miss an important date with our comprehensive calendar and automated reminders.

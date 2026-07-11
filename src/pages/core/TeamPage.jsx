@@ -49,7 +49,7 @@ const TeamPage = () => {
       languages: ["French", "English"],
       image: null,
       initials: "PF",
-      bio: "Experienced tax return preparer providing bilingual support for French and English speaking clients."
+      bio: "Experienced tax return preparer providing bilingual support for French- and English-speaking clients."
     }
   ];
 
@@ -57,7 +57,7 @@ const TeamPage = () => {
     { number: "500+", label: "Clients Served", icon: Users },
     { number: "15+", label: "Years Experience", icon: Calendar },
     { number: "98%", label: "Success Rate", icon: CheckCircle },
-    { number: "5★", label: "Average Rating", icon: Star }
+    { number: "4.9★", label: "Average Rating", icon: Star }
   ];
 
   return (

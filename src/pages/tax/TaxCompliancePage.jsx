@@ -191,19 +191,19 @@ const TaxCompliancePage = () => {
         'Transfer pricing documentation',
         'International tax reporting'
       ],
-      deadlines: ['March 31', 'Monthly', 'Various', 'Various', 'Various'],
+      deadlines: ['March 31', 'Quarterly', 'Various', 'Various', 'Various'],
       icon: Building
     },
     {
       category: 'VAT Compliance',
       requirements: [
         'VAT registration and deregistration',
-        'Monthly/quarterly VAT returns',
+        'Quarterly VAT returns (monthly on request)',
         'VAT payment obligations',
         'VAT record keeping',
         'VAT audit preparation'
       ],
-      deadlines: ['Various', 'Monthly', 'Monthly', 'Ongoing', 'As needed'],
+      deadlines: ['Various', 'Quarterly', 'Quarterly', 'Ongoing', 'As needed'],
       icon: Calculator
     }
   ];

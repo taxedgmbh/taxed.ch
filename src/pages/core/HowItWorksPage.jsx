@@ -63,9 +63,9 @@ const HowItWorksPage = () => {
     <>
       <Helmet>
         <title>How It Works | Taxed GmbH - Simple 3-Step Swiss Tax Filing Process</title>
-        <meta name="description" content="Simple 3-step process: Book free consultation, upload documents securely, we file your return. Fast, secure, and stress-free Swiss tax filing." />
+        <meta name="description" content="Simple 3-step process: Choose your package, upload documents securely, we file your return. Fast, secure, and stress-free Swiss tax filing." />
         <meta property="og:title" content="How It Works | Taxed GmbH - Simple 3-Step Swiss Tax Filing Process" />
-        <meta property="og:description" content="Simple 3-step process: Book free consultation, upload documents securely, we file your return. Fast, secure, and stress-free Swiss tax filing." />
+        <meta property="og:description" content="Simple 3-step process: Choose your package, upload documents securely, we file your return. Fast, secure, and stress-free Swiss tax filing." />
       </Helmet>
 
       <section className="py-20 bg-light-gray-bg-1">

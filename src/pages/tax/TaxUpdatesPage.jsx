@@ -40,7 +40,7 @@ import {
 
 const TaxUpdatesPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedYear, setSelectedYear] = useState(2025);
+  const [selectedYear, setSelectedYear] = useState(2026);
   const [searchTerm, setSearchTerm] = useState('');
 
   const categories = [
@@ -52,9 +52,35 @@ const TaxUpdatesPage = () => {
     { id: 'legislation', name: 'Legislation', icon: FileText }
   ];
 
-  const years = [2023, 2024, 2025];
+  const years = [2023, 2024, 2025, 2026];
 
   const taxUpdates = [
+    {
+      id: 'update-2026-001',
+      title: 'Imputed Rental Value to Be Abolished After 2025 Referendum',
+      description: 'Swiss voters approved the abolition of the imputed rental value (Eigenmietwert) system in the September 2025 referendum',
+      category: 'legislation',
+      date: '2026-01-15',
+      priority: 'high',
+      impact: 'All Swiss homeowners',
+      summary: 'On 28 September 2025, Swiss voters approved the reform package that abolishes the taxation of imputed rental value on owner-occupied homes. Implementation details are still being finalized, and the changes are not expected to take effect before 2028.',
+      details: [
+        'Imputed rental value will no longer be taxed on owner-occupied primary residences',
+        'Deductions for mortgage interest and property maintenance will be significantly restricted',
+        'Cantons may introduce a special property tax on second homes',
+        'Entry into force is expected no earlier than 2028',
+        'Transitional rules are still being drafted'
+      ],
+      implications: [
+        'Homeowners with low mortgages will generally benefit',
+        'Highly leveraged owners should review their financing strategy',
+        'Consider the timing of major renovations while deductions still apply',
+        'Second-home owners should monitor cantonal property tax plans'
+      ],
+      effectiveDate: '2028-01-01',
+      source: 'Swiss Federal Chancellery referendum results',
+      icon: FileText
+    },
     {
       id: 'update-2025-001',
       title: 'New Corporate Tax Rates for 2025',
@@ -91,8 +117,8 @@ const TaxUpdatesPage = () => {
       impact: 'All VAT-registered businesses',
       summary: 'Switzerland introduces new VAT categories and rate adjustments for digital services, e-commerce, and cross-border transactions.',
       details: [
-        'New 2.5% rate for essential digital services',
-        'Updated 7.7% rate for standard digital services',
+        'Reduced 2.6% rate applies to essential digital services',
+        'Standard 8.1% rate applies to other digital services',
         'New e-commerce VAT registration requirements',
         'Updated cross-border VAT rules',
         'New digital service provider obligations'
@@ -349,10 +375,10 @@ const TaxUpdatesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Latest Swiss Tax Updates & Law Changes 2025 | Taxed GmbH</title>
-        <meta name="description" content="Stay updated with the latest Swiss tax law changes, updates, and new regulations for 2025. Get expert analysis and implications for your tax situation." />
-        <meta property="og:title" content="Latest Swiss Tax Updates & Law Changes 2025 | Taxed GmbH" />
-        <meta property="og:description" content="Stay updated with the latest Swiss tax law changes, updates, and new regulations for 2025. Get expert analysis and implications for your tax situation." />
+        <title>Latest Swiss Tax Updates & Law Changes 2026 | Taxed GmbH</title>
+        <meta name="description" content="Stay updated with the latest Swiss tax law changes, updates, and new regulations for 2026. Get expert analysis and implications for your tax situation." />
+        <meta property="og:title" content="Latest Swiss Tax Updates & Law Changes 2026 | Taxed GmbH" />
+        <meta property="og:description" content="Stay updated with the latest Swiss tax law changes, updates, and new regulations for 2026. Get expert analysis and implications for your tax situation." />
         <link rel="canonical" href="https://taxed.ch/tax-updates" />
       </Helmet>
 

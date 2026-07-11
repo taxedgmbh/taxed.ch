@@ -76,7 +76,7 @@ const AboutPage = () => {
     {
       name: 'Patricia Marie Fangon',
       role: 'Tax Return Preparer',
-      description: 'Patricia Marie Fangon is an experienced tax return preparer providing bilingual support for French and English speaking clients. She helps manage client documentation and the preparation of tax-related information.',
+      description: 'Patricia Marie Fangon is an experienced tax return preparer providing bilingual support for French- and English-speaking clients. She helps manage client documentation and the preparation of tax-related information.',
       email: 'info@taxed.ch',
       image: null,
       initials: 'PF',
@@ -182,7 +182,7 @@ const AboutPage = () => {
   const stats = [
     { number: '500+', label: 'Happy Clients', icon: Users, color: 'text-blue-600' },
     { number: '98%', label: 'Success Rate', icon: CheckCircle, color: 'text-green-600' },
-    { number: '10+', label: 'Years Experience', icon: Clock, color: 'text-purple-600' },
+    { number: '15+', label: 'Years Experience', icon: Clock, color: 'text-purple-600' },
     { number: '3', label: 'Expert Team Members', icon: Award, color: 'text-orange-600' }
   ];
 
@@ -200,7 +200,7 @@ const AboutPage = () => {
     {
       icon: Languages,
       title: 'Multilingual',
-      description: 'Our team speaks German, English, French, Spanish, and Italian to serve international clients.'
+      description: 'Our team speaks German, English, and French to serve international clients.'
     },
     {
       icon: Shield,
@@ -707,7 +707,7 @@ const AboutPage = () => {
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Phone className="h-5 w-5 text-blue-200" />
-                  <span>info@taxed.ch</span>
+                  <span>+41 79 910 77 87</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Mail className="h-5 w-5 text-blue-200" />

@@ -92,8 +92,8 @@ const TaxGlossaryPage = () => {
         'Financed through payroll contributions (Art. 33 AHVG)',
         'Provides retirement and survivor benefits (Art. 14-32 AHVG)',
         'Contribution rate: 8.7% of salary (split between employee and employer)',
-        'Minimum contribution: CHF 525 per year (Art. 33a AHVG)',
-        'Tax-deductible contributions up to CHF 6,768 per year',
+        'Minimum contribution: CHF 530 per year for non-employed persons',
+        'Contributions are fully tax-deductible',
         'Voluntary contributions possible for self-employed persons'
       ],
       relatedTerms: ['IV', 'EO', 'BVG', 'Pension', 'Social Insurance'],
@@ -115,17 +115,17 @@ const TaxGlossaryPage = () => {
     {
       id: 'term-002',
       term: 'Bundessteuer (Federal Tax)',
-      definition: 'Taxes levied by the Swiss federal government on income and wealth according to DBG',
+      definition: 'Taxes levied by the Swiss federal government on income according to DBG',
       category: 'individual',
       letter: 'B',
       details: [
-        'Direct federal tax on income and wealth (Art. 1 DBG)',
-        'Progressive tax rates for individuals (Art. 14 DBG)',
-        'Flat rate for corporations: 8.5% (Art. 21 DBG)',
+        'Direct federal tax on income (Art. 1 DBG)',
+        'Progressive tax rates for individuals (Art. 36 DBG)',
+        'Flat rate for corporations: 8.5% (Art. 68 DBG)',
         'Collected by cantonal tax authorities (Art. 2 DBG)',
-        'Taxable income includes worldwide income (Art. 3 DBG)',
-        'Wealth tax on net assets above CHF 100,000 (Art. 14 DBG)',
-        'Tax rates range from 0.77% to 11.5% for individuals'
+        'Taxable income includes worldwide income for Swiss residents',
+        'No federal wealth tax — wealth tax is levied only at cantonal and communal level',
+        'Marginal rates for individuals reach a maximum of 11.5%'
       ],
       relatedTerms: ['Kantonssteuer', 'Gemeindesteuer', 'Einkommenssteuer', 'Vermögenssteuer', 'DBG'],
       icon: Building,
@@ -150,7 +150,7 @@ const TaxGlossaryPage = () => {
       category: 'individual',
       letter: 'B',
       details: [
-        'Mandatory occupational pension for employees earning above CHF 21,510',
+        'Mandatory occupational pension for employees earning above CHF 22,680 per year',
         'Financed through employer and employee contributions',
         'Provides retirement, disability, and survivor benefits',
         'Managed by pension funds (Pensionskassen)',
@@ -339,9 +339,9 @@ const TaxGlossaryPage = () => {
       category: 'vat',
       letter: 'M',
       details: [
-        'Standard rate: 7.7%',
-        'Reduced rate: 2.5% for essential goods',
-        'Special rate: 3.7% for accommodation',
+        'Standard rate: 8.1%',
+        'Reduced rate: 2.6% for essential goods',
+        'Special rate: 3.8% for accommodation',
         'Registration required above CHF 100,000 turnover',
         'Monthly or quarterly returns required'
       ],
@@ -414,18 +414,18 @@ const TaxGlossaryPage = () => {
     },
     {
       id: 'term-018',
-      term: 'Quellensteuer (Withholding Tax)',
-      definition: 'Tax withheld at source from certain types of income',
+      term: 'Quellensteuer (Tax at Source)',
+      definition: 'Income tax deducted directly from the salary of foreign employees without a C permit',
       category: 'individual',
       letter: 'Q',
       details: [
-        'Withheld from dividends, interest, and royalties',
-        'Rate: 35% for Swiss residents',
-        'Can be reduced through tax treaties',
-        'Credited against annual tax liability',
-        'Important for investment income'
+        'Deducted monthly from gross salary by the employer',
+        'Applies to foreign workers without a C permit and to cross-border commuters',
+        'Rates vary by canton, income, marital status, and number of children',
+        'Residents earning above CHF 120,000 must additionally file an ordinary tax return',
+        'Adjustments and corrections can be requested by March 31 of the following year'
       ],
-      relatedTerms: ['Dividend', 'Interest', 'Tax Treaty', 'Investment Income'],
+      relatedTerms: ['Verrechnungssteuer', 'Tax Return', 'Work Permit', 'Cross-Border Commuter'],
       icon: CreditCard,
       importance: 'High'
     },
@@ -513,18 +513,18 @@ const TaxGlossaryPage = () => {
     },
     {
       id: 'term-023',
-      term: 'Verrechnungssteuer (Withholding Tax)',
-      definition: 'Alternative term for withholding tax in Switzerland',
+      term: 'Verrechnungssteuer (Anticipatory Tax)',
+      definition: 'Federal withholding tax of 35% levied on Swiss dividend and interest income',
       category: 'individual',
       letter: 'V',
       details: [
-        'Alternative term for withholding tax',
-        'Same as Quellensteuer',
-        'Withheld from certain income types',
-        'Can be reduced through tax treaties',
-        'Important for investment income'
+        'Withheld at source on dividends, bank interest, and lottery winnings',
+        'Rate: 35%',
+        'Fully refundable for Swiss residents who correctly declare the income',
+        'Foreign residents may reclaim part or all of it under tax treaties',
+        'Not the same as Quellensteuer, which is the tax at source on employment income'
       ],
-      relatedTerms: ['Withholding Tax', 'Quellensteuer', 'Investment Income', 'Tax Treaty'],
+      relatedTerms: ['Quellensteuer', 'Dividend', 'Investment Income', 'Tax Treaty'],
       icon: CreditCard,
       importance: 'Medium'
     },
@@ -544,23 +544,6 @@ const TaxGlossaryPage = () => {
       relatedTerms: ['Tax Residency', 'Domicile', 'Tax Liability', 'Tax Planning'],
       icon: Home,
       importance: 'High'
-    },
-    {
-      id: 'term-025',
-      term: 'Xenon (Foreigner)',
-      definition: 'Foreign person for tax purposes',
-      category: 'individual',
-      letter: 'X',
-      details: [
-        'Foreign person for tax purposes',
-        'May have different tax treatment',
-        'Important for tax residency',
-        'Affects tax rates and deductions',
-        'Subject to specific rules'
-      ],
-      relatedTerms: ['Foreigner', 'Tax Residency', 'International Tax', 'Expatriate'],
-      icon: Globe,
-      importance: 'Low'
     },
     {
       id: 'term-026',
@@ -702,8 +685,8 @@ const TaxGlossaryPage = () => {
         'Persons with Swiss residence (Art. 1 AHVG)',
         'Self-employed persons (Art. 1 AHVG)',
         'Contribution period: from age 20 to retirement age',
-        'Minimum contribution: CHF 525 per year (Art. 33a AHVG)',
-        'Maximum contribution: CHF 6,768 per year (Art. 33 AHVG)',
+        'Minimum contribution for non-employed persons: CHF 530 per year',
+        'For employees, contributions are due on the entire salary without a ceiling',
         'Voluntary contributions possible for gaps in coverage'
       ],
       relatedTerms: ['AHV', 'Contribution', 'Social Insurance', 'Pension'],
@@ -724,13 +707,12 @@ const TaxGlossaryPage = () => {
       category: 'individual',
       letter: 'A',
       details: [
-        'Full pension: CHF 1,195 per month (Art. 14 AHVG)',
-        'Minimum pension: CHF 1,195 per month (Art. 14 AHVG)',
-        'Maximum pension: CHF 2,390 per month (Art. 14 AHVG)',
-        'Retirement age: 65 for men, 64 for women (Art. 15 AHVG)',
-        'Early retirement possible from age 58 (Art. 16 AHVG)',
-        'Late retirement increases pension (Art. 17 AHVG)',
-        'Pension calculated based on average income (Art. 18 AHVG)'
+        'Minimum full pension: CHF 1,260 per month',
+        'Maximum full pension: CHF 2,520 per month',
+        'Reference age: 65 for men and women (being phased in for women under the AHV 21 reform)',
+        'Early withdrawal possible from age 63 (age 62 for women of the transitional generation)',
+        'Deferring the pension up to age 70 increases it',
+        'Pension calculated based on average income and contribution years'
       ],
       relatedTerms: ['AHV', 'Pension', 'Retirement', 'Social Insurance'],
       icon: Heart,
@@ -776,13 +758,11 @@ const TaxGlossaryPage = () => {
       category: 'individual',
       letter: 'A',
       details: [
-        'Current rate: 8.7% of gross salary (Art. 33 AHVG)',
-        'Split between employee and employer: 4.35% each (Art. 33 AHVG)',
-        'Self-employed pay full 8.7% (Art. 33 AHVG)',
-        'Rate can be adjusted by Federal Council (Art. 33 AHVG)',
-        'Minimum contribution: CHF 525 per year (Art. 33a AHVG)',
-        'Maximum contribution: CHF 6,768 per year (Art. 33 AHVG)',
-        'Contribution calculated on salary up to CHF 88,200 (Art. 33 AHVG)'
+        'Current AHV rate: 8.7% of gross salary (10.6% including IV and EO)',
+        'Split equally between employee and employer',
+        'Self-employed pay up to 10% AHV/IV/EO on a sliding scale',
+        'No upper salary limit — contributions are due on the entire salary',
+        'Minimum contribution for non-employed persons: CHF 530 per year'
       ],
       relatedTerms: ['AHV', 'Contribution Rate', 'Social Insurance', 'Salary'],
       icon: Calculator,
@@ -802,8 +782,8 @@ const TaxGlossaryPage = () => {
       category: 'individual',
       letter: 'A',
       details: [
-        'Minimum contribution: CHF 525 per year (Art. 33a AHVG)',
-        'Applies to persons with low income (Art. 33a AHVG)',
+        'Minimum contribution: CHF 530 per year',
+        'Applies to non-employed persons and persons with low income',
         'Ensures basic AHV coverage (Art. 33a AHVG)',
         'Paid by self-employed persons (Art. 33a AHVG)',
         'Paid by persons with gaps in employment (Art. 33a AHVG)',
@@ -824,19 +804,16 @@ const TaxGlossaryPage = () => {
     {
       id: 'term-037',
       term: 'AHV-Maximalbeitrag (AHV Maximum Contribution)',
-      definition: 'Maximum annual contribution to AHV according to Art. 33 AHVG',
+      definition: 'Maximum annual AHV contribution — only applies to non-employed persons',
       category: 'individual',
       letter: 'A',
       details: [
-        'Maximum contribution: CHF 6,768 per year (Art. 33 AHVG)',
-        'Based on maximum insurable salary (Art. 33 AHVG)',
-        'Salary ceiling: CHF 88,200 per year (Art. 33 AHVG)',
-        'Contribution rate: 8.7% of salary (Art. 33 AHVG)',
-        'Split between employee and employer (Art. 33 AHVG)',
-        'No additional contributions above ceiling (Art. 33 AHVG)',
-        'Tax-deductible contribution (Art. 33 AHVG)'
+        'For employees there is NO salary ceiling — AHV contributions are due on the full salary',
+        'Non-employed persons pay between CHF 530 and CHF 26,500 per year depending on wealth and pension income',
+        'AHV contribution rate for employees: 8.7% of salary, split equally with the employer',
+        'Contributions are tax-deductible'
       ],
-      relatedTerms: ['AHV', 'Maximum Contribution', 'Salary Ceiling', 'Tax Deduction'],
+      relatedTerms: ['AHV', 'Maximum Contribution', 'Non-Employed Persons', 'Tax Deduction'],
       icon: Calculator,
       importance: 'High',
       officialSources: [
@@ -854,13 +831,11 @@ const TaxGlossaryPage = () => {
       category: 'individual',
       letter: 'A',
       details: [
-        'Voluntary contributions to fill coverage gaps (Art. 33a AHVG)',
-        'Minimum contribution: CHF 525 per year (Art. 33a AHVG)',
-        'Maximum contribution: CHF 6,768 per year (Art. 33a AHVG)',
-        'Tax-deductible contribution (Art. 33a AHVG)',
-        'Improves pension calculation (Art. 33a AHVG)',
-        'Must be paid within 5 years (Art. 33a AHVG)',
-        'Can be paid retroactively (Art. 33a AHVG)'
+        'Missing contributions can be paid retroactively for up to 5 years',
+        'Minimum contribution: CHF 530 per year',
+        'Closing gaps improves the pension calculation',
+        'Contributions are tax-deductible',
+        'Swiss citizens and EU/EFTA nationals living abroad may join the voluntary AHV under certain conditions'
       ],
       relatedTerms: ['AHV', 'Voluntary Contribution', 'Coverage Gap', 'Pension'],
       icon: Heart,
@@ -880,13 +855,12 @@ const TaxGlossaryPage = () => {
       category: 'individual',
       letter: 'A',
       details: [
-        'Contribution year: January 1 to December 31 (Art. 33 AHVG)',
-        'Contributions calculated annually (Art. 33 AHVG)',
-        'Minimum contribution: CHF 525 per year (Art. 33a AHVG)',
-        'Maximum contribution: CHF 6,768 per year (Art. 33 AHVG)',
-        'Contribution rate: 8.7% of salary (Art. 33 AHVG)',
-        'Split between employee and employer (Art. 33 AHVG)',
-        'Tax-deductible in contribution year (Art. 33 AHVG)'
+        'Contribution year: January 1 to December 31',
+        'Contributions calculated annually',
+        'Minimum contribution for non-employed persons: CHF 530 per year',
+        'AHV contribution rate: 8.7% of salary, with no upper salary limit',
+        'Split equally between employee and employer',
+        'Tax-deductible in the contribution year'
       ],
       relatedTerms: ['AHV', 'Contribution Year', 'Calendar Year', 'Tax Deduction'],
       icon: Calendar,
@@ -954,25 +928,25 @@ const TaxGlossaryPage = () => {
     {
       id: 'term-042',
       term: 'MWSTG-Steuersatz (MWSTG Tax Rate)',
-      definition: 'VAT rates under the Federal Act on Value Added Tax according to Art. 10 MWSTG',
+      definition: 'VAT rates under the Federal Act on Value Added Tax according to Art. 25 MWSTG',
       category: 'vat',
       letter: 'M',
       details: [
-        'Standard rate: 7.7% (Art. 10 MWSTG)',
-        'Reduced rate: 2.5% for essential goods (Art. 10 MWSTG)',
-        'Special rate: 3.7% for accommodation (Art. 10 MWSTG)',
-        'Rates can be adjusted by Federal Council (Art. 10 MWSTG)',
-        'Rates apply to all taxable supplies (Art. 10 MWSTG)',
-        'Rates published in Federal Gazette (Art. 10 MWSTG)',
-        'Rates effective from January 1 (Art. 10 MWSTG)'
+        'Standard rate: 8.1% (Art. 25 MWSTG)',
+        'Reduced rate: 2.6% for essential goods (Art. 25 MWSTG)',
+        'Special rate: 3.8% for accommodation (Art. 25 MWSTG)',
+        'Current rates in force since 1 January 2024',
+        'Rates apply to all taxable supplies (Art. 25 MWSTG)',
+        'Rates published in the classified compilation (SR 641.20)',
+        'Rate changes take effect from January 1'
       ],
       relatedTerms: ['MWSTG', 'VAT Rate', 'Tax Rate', 'Value Added Tax'],
       icon: Calculator,
       importance: 'High',
       officialSources: [
         {
-          name: 'Federal Act on Value Added Tax (MWSTG) - Art. 10',
-          url: 'https://www.fedlex.admin.ch/eli/cc/2009/783/de#art_10',
+          name: 'Federal Act on Value Added Tax (MWSTG) - Art. 25',
+          url: 'https://www.fedlex.admin.ch/eli/cc/2009/783/de#art_25',
           description: 'Official Swiss federal law on VAT rates'
         }
       ]
@@ -1135,7 +1109,7 @@ const TaxGlossaryPage = () => {
     },
     {
       id: 'term-049',
-      term: 'Steuerermäßigung (Tax Reduction)',
+      term: 'Steuerermässigung (Tax Reduction)',
       definition: 'Reductions in Swiss tax liability according to Art. 22-30 DBG',
       category: 'individual',
       letter: 'S',

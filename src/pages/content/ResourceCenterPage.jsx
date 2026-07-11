@@ -54,7 +54,7 @@ const ResourceCenterPage = () => {
   const taxGuides = [
     {
       id: 'swiss-tax-guide-2025',
-      title: 'Complete Swiss Tax Guide 2025',
+      title: 'Complete Swiss Tax Guide 2026',
       description: 'Comprehensive guide covering all aspects of Swiss taxation including federal, cantonal, and communal taxes.',
       category: 'Tax Guide',
       icon: FileText,
@@ -308,7 +308,7 @@ const ResourceCenterPage = () => {
                 </div>
                 <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full">
                   <Clock className="w-4 h-4" />
-                  <span>Updated 2025</span>
+                  <span>Updated 2026</span>
                 </div>
               </div>
             </div>

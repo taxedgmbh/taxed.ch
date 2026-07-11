@@ -65,7 +65,7 @@ const TaxPlanningGuidePage = () => {
       considerations: [
         'Cash flow requirements',
         'Future tax rate changes',
-        'Alternative minimum tax implications',
+        'Cantonal differences in capital gains treatment',
         'Social security considerations'
       ]
     },
@@ -109,13 +109,13 @@ const TaxPlanningGuidePage = () => {
       strategies: [
         'Maximize 3rd pillar contributions',
         'Optimize 2nd pillar withdrawals',
-        'Plan Roth conversion strategies',
+        'Plan pension buy-in strategies',
         'Consider foreign retirement accounts'
       ],
       examples: [
         'Contribute maximum to 3rd pillar',
         'Time 2nd pillar withdrawals',
-        'Convert traditional to Roth accounts',
+        'Stagger pillar 2 and 3a withdrawals across tax years',
         'Evaluate foreign pension options'
       ],
       considerations: [
@@ -695,9 +695,9 @@ const TaxPlanningGuidePage = () => {
   return (
     <>
       <Helmet>
-        <title>Comprehensive Tax Planning Guide 2025 | Taxed GmbH</title>
+        <title>Comprehensive Tax Planning Guide 2026 | Taxed GmbH</title>
         <meta name="description" content="Master Swiss tax planning with our comprehensive guide. Learn strategies for individuals, businesses, expats, and retirement planning to minimize your tax burden." />
-        <meta property="og:title" content="Comprehensive Tax Planning Guide 2025 | Taxed GmbH" />
+        <meta property="og:title" content="Comprehensive Tax Planning Guide 2026 | Taxed GmbH" />
         <meta property="og:description" content="Master Swiss tax planning with our comprehensive guide. Learn strategies for individuals, businesses, expats, and retirement planning to minimize your tax burden." />
         <link rel="canonical" href="https://taxed.ch/tax-planning-guide" />
       </Helmet>

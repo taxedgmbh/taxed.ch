@@ -97,11 +97,11 @@ const TaxTechnologyPage = () => {
         'AI-powered tax optimization'
       ],
       benefits: [
-        'Reduce manual work by 80%',
+        'Significantly reduce manual work',
         'Eliminate compliance errors',
         'Save 20+ hours per month',
-        'Improve accuracy by 95%',
-        'Reduce audit risk by 60%'
+        'Improve accuracy and consistency',
+        'Reduce audit risk'
       ],
       pricing: 'CHF 299/month',
       setup: 'CHF 1,500',
@@ -124,7 +124,7 @@ const TaxTechnologyPage = () => {
         'Audit trail management'
       ],
       benefits: [
-        'Ensure 100% compliance',
+        'Help ensure full compliance',
         'Automate all tax filings',
         'Reduce audit risk',
         'Save compliance costs',
