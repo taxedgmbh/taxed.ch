@@ -72,14 +72,13 @@ const TaxWebinarsPage = () => {
       description: 'Complete guide to Swiss tax system for expatriates and international workers',
       category: 'individual',
       type: 'live',
-      date: '2027-01-20',
+      date: 'On request',
       time: '14:00 CET',
       duration: '90 minutes',
-      instructor: 'Dr. Sarah Müller',
+      instructor: 'Taxed GmbH tax experts',
       level: 'Beginner',
       language: 'English',
       price: 'Free',
-      attendees: 150,
       maxAttendees: 200,
       status: 'upcoming',
       topics: [
@@ -108,14 +107,13 @@ const TaxWebinarsPage = () => {
       description: 'Advanced strategies for optimizing corporate tax position in Switzerland',
       category: 'business',
       type: 'live',
-      date: '2027-01-25',
+      date: 'On request',
       time: '10:00 CET',
       duration: '120 minutes',
-      instructor: 'Prof. Michael Weber',
+      instructor: 'Taxed GmbH tax experts',
       level: 'Advanced',
       language: 'German',
       price: 'CHF 299',
-      attendees: 75,
       maxAttendees: 100,
       status: 'upcoming',
       topics: [
@@ -144,14 +142,13 @@ const TaxWebinarsPage = () => {
       description: 'Complete guide to VAT registration, returns, and compliance requirements',
       category: 'compliance',
       type: 'recorded',
-      date: '2024-12-15',
+      date: 'Recording — on request',
       time: 'On-demand',
       duration: '75 minutes',
-      instructor: 'Anna Schmidt',
+      instructor: 'Taxed GmbH tax experts',
       level: 'Intermediate',
       language: 'German',
       price: 'CHF 199',
-      attendees: 0,
       maxAttendees: 'Unlimited',
       status: 'available',
       topics: [
@@ -180,14 +177,13 @@ const TaxWebinarsPage = () => {
       description: 'Advanced international tax planning for multinational businesses',
       category: 'international',
       type: 'series',
-      date: '2027-02-01',
+      date: 'On request',
       time: '16:00 CET',
       duration: '180 minutes',
-      instructor: 'Dr. Thomas Müller',
+      instructor: 'Taxed GmbH tax experts',
       level: 'Expert',
       language: 'English',
       price: 'CHF 599',
-      attendees: 25,
       maxAttendees: 50,
       status: 'upcoming',
       topics: [
@@ -216,14 +212,13 @@ const TaxWebinarsPage = () => {
       description: 'Specialized tax planning strategies for wealthy individuals',
       category: 'planning',
       type: 'live',
-      date: '2027-01-30',
+      date: 'On request',
       time: '18:00 CET',
       duration: '105 minutes',
-      instructor: 'Dr. Lisa Weber',
+      instructor: 'Taxed GmbH tax experts',
       level: 'Advanced',
       language: 'English',
       price: 'CHF 399',
-      attendees: 40,
       maxAttendees: 60,
       status: 'upcoming',
       topics: [
@@ -252,14 +247,13 @@ const TaxWebinarsPage = () => {
       description: 'Essential guide to Swiss tax deadlines and compliance requirements',
       category: 'compliance',
       type: 'recorded',
-      date: '2024-11-20',
+      date: 'Recording — on request',
       time: 'On-demand',
       duration: '60 minutes',
-      instructor: 'Markus Fischer',
+      instructor: 'Taxed GmbH tax experts',
       level: 'Beginner',
       language: 'German',
       price: 'Free',
-      attendees: 0,
       maxAttendees: 'Unlimited',
       status: 'available',
       topics: [
@@ -288,14 +282,13 @@ const TaxWebinarsPage = () => {
       description: 'Modern approaches to tax compliance using digital tools and automation',
       category: 'compliance',
       type: 'live',
-      date: '2027-02-05',
+      date: 'On request',
       time: '11:00 CET',
       duration: '90 minutes',
-      instructor: 'Tech Tax Solutions',
+      instructor: 'Taxed GmbH tax experts',
       level: 'Intermediate',
       language: 'English',
       price: 'CHF 249',
-      attendees: 60,
       maxAttendees: 100,
       status: 'upcoming',
       topics: [
@@ -324,14 +317,13 @@ const TaxWebinarsPage = () => {
       description: 'Essential tax planning strategies for small and medium businesses',
       category: 'business',
       type: 'recorded',
-      date: '2024-10-15',
+      date: 'Recording — on request',
       time: 'On-demand',
       duration: '80 minutes',
-      instructor: 'Business Tax Experts',
+      instructor: 'Taxed GmbH tax experts',
       level: 'Intermediate',
       language: 'German',
       price: 'CHF 149',
-      attendees: 0,
       maxAttendees: 'Unlimited',
       status: 'available',
       topics: [
@@ -552,7 +544,7 @@ const TaxWebinarsPage = () => {
                       </div>
                       <div className="flex items-center space-x-2">
                         <Users className="h-4 w-4 text-gray-500" />
-                        <span className="text-sm text-gray-600">Attendees: {webinar.attendees}/{webinar.maxAttendees}</span>
+                        <span className="text-sm text-gray-600">Group size: up to {webinar.maxAttendees} participants</span>
                       </div>
                     </div>
                     <div className="text-2xl font-bold text-steel-blue mb-2">{webinar.price}</div>
@@ -571,15 +563,15 @@ const TaxWebinarsPage = () => {
                     </ul>
                     <div className="space-y-2">
                       {webinar.status === 'upcoming' ? (
-                        <button className="w-full bg-steel-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue/90 transition-colors flex items-center justify-center">
+                        <a href="/contact" className="w-full bg-steel-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue/90 transition-colors flex items-center justify-center">
                           <Calendar className="h-4 w-4 mr-2" />
-                          Register Now
-                        </button>
+                          Enquire Now
+                        </a>
                       ) : (
-                        <button className="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
+                        <a href="/contact" className="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
                           <PlayCircle className="h-4 w-4 mr-2" />
-                          Watch Now
-                        </button>
+                          Request Recording
+                        </a>
                       )}
                       <button className="w-full border-2 border-steel-blue text-steel-blue px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue hover:text-white transition-colors flex items-center justify-center">
                         <Info className="h-4 w-4 mr-2" />
@@ -656,12 +648,12 @@ const TaxWebinarsPage = () => {
                 <div className="text-center">
                   <div className="text-3xl font-bold text-steel-blue mb-2">CHF 999</div>
                   <div className="text-sm text-gray-600 mb-4">Complete Series</div>
-                  <button className="w-full bg-steel-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue/90 transition-colors mb-2">
-                    Register for Series
-                  </button>
-                  <button className="w-full border-2 border-steel-blue text-steel-blue px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue hover:text-white transition-colors">
-                    Learn More
-                  </button>
+                  <a href="/contact" className="block w-full bg-steel-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue/90 transition-colors mb-2">
+                    Enquire Now
+                  </a>
+                  <a href="/contact" className="block w-full border-2 border-steel-blue text-steel-blue px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue hover:text-white transition-colors">
+                    Request Details
+                  </a>
                 </div>
               </div>
             </div>

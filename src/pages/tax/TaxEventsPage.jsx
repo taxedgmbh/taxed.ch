@@ -145,17 +145,16 @@ const TaxEventsPage = () => {
   const taxEvents = [
     {
       id: 'event-001',
-      title: 'Swiss Tax Law Update 2027',
+      title: 'Swiss Tax Law Update Seminar',
       description: 'Comprehensive update on the latest Swiss tax law changes and their impact on businesses and individuals',
       category: 'seminars',
       type: 'upcoming',
-      date: '2027-01-25',
+      date: 'Dates on request',
       time: '09:00 - 17:00',
       location: 'Zurich, Switzerland',
-      venue: 'Swissotel Zurich',
+      venue: 'Venue announced upon registration',
       price: 'CHF 299',
       capacity: 150,
-      registered: 120,
       status: 'open',
       features: [
         'Latest tax law changes',
@@ -163,11 +162,6 @@ const TaxEventsPage = () => {
         'Q&A session',
         'Networking lunch',
         'Certificate of attendance'
-      ],
-      speakers: [
-        'Dr. Sarah Müller - Tax Law Expert',
-        'Prof. Michael Weber - Corporate Tax Specialist',
-        'Anna Schmidt - International Tax Advisor'
       ],
       icon: FileText,
       difficulty: 'Intermediate',
@@ -180,13 +174,12 @@ const TaxEventsPage = () => {
       description: 'Hands-on workshop for VAT registration, returns, and compliance requirements',
       category: 'workshops',
       type: 'upcoming',
-      date: '2027-02-15',
+      date: 'Dates on request',
       time: '14:00 - 18:00',
       location: 'Geneva, Switzerland',
-      venue: 'Geneva Convention Centre',
+      venue: 'Venue announced upon registration',
       price: 'CHF 199',
       capacity: 50,
-      registered: 35,
       status: 'open',
       features: [
         'VAT registration process',
@@ -194,10 +187,6 @@ const TaxEventsPage = () => {
         'Compliance requirements',
         'Practical exercises',
         'Take-home materials'
-      ],
-      speakers: [
-        'Markus Fischer - VAT Specialist',
-        'Lisa Weber - Compliance Expert'
       ],
       icon: Calculator,
       difficulty: 'Beginner',
@@ -210,13 +199,12 @@ const TaxEventsPage = () => {
       description: 'Advanced conference on international tax planning strategies for multinational businesses',
       category: 'conferences',
       type: 'upcoming',
-      date: '2027-03-20',
+      date: 'Dates on request',
       time: '08:30 - 18:00',
       location: 'Basel, Switzerland',
-      venue: 'Basel Congress Centre',
+      venue: 'Venue announced upon registration',
       price: 'CHF 599',
       capacity: 300,
-      registered: 250,
       status: 'open',
       features: [
         'International tax strategies',
@@ -224,11 +212,6 @@ const TaxEventsPage = () => {
         'Tax treaty benefits',
         'Case studies',
         'Networking dinner'
-      ],
-      speakers: [
-        'Dr. Thomas Müller - International Tax Expert',
-        'Prof. Lisa Weber - Transfer Pricing Specialist',
-        'Markus Fischer - Tax Treaty Advisor'
       ],
       icon: Globe,
       difficulty: 'Advanced',
@@ -241,13 +224,12 @@ const TaxEventsPage = () => {
       description: 'Exploring the latest tax technology solutions and digital transformation',
       category: 'conferences',
       type: 'upcoming',
-      date: '2027-04-10',
+      date: 'Dates on request',
       time: '09:00 - 16:00',
       location: 'Lucerne, Switzerland',
-      venue: 'Lucerne Culture and Congress Centre',
+      venue: 'Venue announced upon registration',
       price: 'CHF 399',
       capacity: 200,
-      registered: 180,
       status: 'open',
       features: [
         'Tax technology trends',
@@ -255,11 +237,6 @@ const TaxEventsPage = () => {
         'Automation solutions',
         'Technology demonstrations',
         'Vendor exhibitions'
-      ],
-      speakers: [
-        'Tech Tax Solutions - Technology Experts',
-        'Dr. Sarah Müller - Digital Tax Specialist',
-        'Prof. Michael Weber - Tax Technology Advisor'
       ],
       icon: Zap,
       difficulty: 'Intermediate',
@@ -272,13 +249,12 @@ const TaxEventsPage = () => {
       description: 'Comprehensive seminar on individual tax planning and optimization strategies',
       category: 'seminars',
       type: 'upcoming',
-      date: '2027-05-05',
+      date: 'Dates on request',
       time: '10:00 - 15:00',
       location: 'Bern, Switzerland',
-      venue: 'Bern Congress Centre',
+      venue: 'Venue announced upon registration',
       price: 'CHF 149',
       capacity: 100,
-      registered: 75,
       status: 'open',
       features: [
         'Tax planning strategies',
@@ -286,10 +262,6 @@ const TaxEventsPage = () => {
         'Retirement planning',
         'Investment tax considerations',
         'Q&A session'
-      ],
-      speakers: [
-        'Anna Schmidt - Individual Tax Specialist',
-        'Dr. Lisa Weber - Tax Planning Expert'
       ],
       icon: Users,
       difficulty: 'Beginner',
@@ -302,13 +274,12 @@ const TaxEventsPage = () => {
       description: 'Workshop on tax compliance requirements and best practices',
       category: 'workshops',
       type: 'upcoming',
-      date: '2027-06-12',
+      date: 'Dates on request',
       time: '13:00 - 17:00',
       location: 'St. Gallen, Switzerland',
-      venue: 'St. Gallen University',
+      venue: 'Venue announced upon registration',
       price: 'CHF 179',
       capacity: 40,
-      registered: 30,
       status: 'open',
       features: [
         'Compliance requirements',
@@ -316,10 +287,6 @@ const TaxEventsPage = () => {
         'Risk management',
         'Practical exercises',
         'Compliance checklist'
-      ],
-      speakers: [
-        'Markus Fischer - Compliance Specialist',
-        'Dr. Sarah Müller - Risk Management Expert'
       ],
       icon: Shield,
       difficulty: 'Intermediate',
@@ -332,13 +299,12 @@ const TaxEventsPage = () => {
       description: 'Networking event for tax professionals and business owners',
       category: 'networking',
       type: 'upcoming',
-      date: '2026-09-18',
+      date: 'Dates on request',
       time: '18:00 - 21:00',
       location: 'Zurich, Switzerland',
-      venue: 'Zurich Marriott Hotel',
+      venue: 'Venue announced upon registration',
       price: 'CHF 49',
       capacity: 80,
-      registered: 60,
       status: 'open',
       features: [
         'Professional networking',
@@ -346,11 +312,6 @@ const TaxEventsPage = () => {
         'Cocktail reception',
         'Guest speakers',
         'Business opportunities'
-      ],
-      speakers: [
-        'Industry Leaders',
-        'Tax Professionals',
-        'Business Owners'
       ],
       icon: Globe,
       difficulty: 'All Levels',
@@ -363,13 +324,12 @@ const TaxEventsPage = () => {
       description: 'Online webinar series covering Swiss tax fundamentals',
       category: 'webinars',
       type: 'upcoming',
-      date: '2026-10-01',
+      date: 'Dates on request',
       time: '14:00 - 15:30',
       location: 'Online',
-      venue: 'Zoom Webinar',
+      venue: 'Venue announced upon registration',
       price: 'Free',
       capacity: 500,
-      registered: 350,
       status: 'open',
       features: [
         'Live online presentation',
@@ -377,10 +337,6 @@ const TaxEventsPage = () => {
         'Recording available',
         'Downloadable materials',
         'Certificate of attendance'
-      ],
-      speakers: [
-        'Dr. Sarah Müller - Tax Expert',
-        'Prof. Michael Weber - Tax Specialist'
       ],
       icon: Video,
       difficulty: 'Beginner',
@@ -585,7 +541,7 @@ const TaxEventsPage = () => {
                       </div>
                       <div className="flex items-center space-x-2 text-sm text-gray-600">
                         <Users className="h-4 w-4 text-purple-500" />
-                        <span>{event.registered}/{event.capacity} registered</span>
+                        <span>Limited to {event.capacity} participants</span>
                       </div>
                       <div className="flex items-center space-x-2 text-sm text-gray-600">
                         <Globe className="h-4 w-4 text-orange-500" />
@@ -607,14 +563,14 @@ const TaxEventsPage = () => {
                       ))}
                     </ul>
                     <div className="space-y-2">
-                      <button className="w-full bg-steel-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue/90 transition-colors">
+                      <a href="/contact" className="block text-center w-full bg-steel-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue/90 transition-colors">
                         <Calendar className="h-4 w-4 mr-2 inline-block" />
-                        Register Now
-                      </button>
-                      <button className="w-full border-2 border-steel-blue text-steel-blue px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue hover:text-white transition-colors">
+                        Enquire Now
+                      </a>
+                      <a href="/contact" className="block text-center w-full border-2 border-steel-blue text-steel-blue px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue hover:text-white transition-colors">
                         <ExternalLink className="h-4 w-4 mr-2 inline-block" />
-                        Learn More
-                      </button>
+                        Request Details
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -648,13 +604,13 @@ const TaxEventsPage = () => {
                 <div className="bg-steel-blue/10 p-6 rounded-xl mb-4">
                   <FileText className="h-12 w-12 text-steel-blue mx-auto" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Swiss Tax Law Update 2027</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Swiss Tax Law Update Seminar</h3>
                 <p className="text-gray-600 mb-4">
                   Comprehensive update on the latest Swiss tax law changes and their impact on businesses and individuals.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    January 25, 2027
+                    Next date to be announced
                   </span>
                   <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
                     Zurich, Switzerland
@@ -685,12 +641,12 @@ const TaxEventsPage = () => {
                 <div className="text-center">
                   <div className="text-3xl font-bold text-steel-blue mb-2">CHF 299</div>
                   <div className="text-sm text-gray-600 mb-4">Early Bird Price</div>
-                  <button className="w-full bg-steel-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue/90 transition-colors mb-2">
-                    Register Now
-                  </button>
-                  <button className="w-full border-2 border-steel-blue text-steel-blue px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue hover:text-white transition-colors">
-                    Learn More
-                  </button>
+                  <a href="/contact" className="block w-full bg-steel-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue/90 transition-colors mb-2">
+                    Enquire Now
+                  </a>
+                  <a href="/contact" className="block w-full border-2 border-steel-blue text-steel-blue px-6 py-3 rounded-lg font-semibold hover:bg-steel-blue hover:text-white transition-colors">
+                    Request Details
+                  </a>
                 </div>
               </div>
             </div>

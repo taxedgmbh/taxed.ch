@@ -9,43 +9,277 @@
             <link>https://www.taxed.ch</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 09 Feb 2026 18:55:42 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 12 Jul 2026 17:21:52 GMT</lastBuildDate>
         <atom:link href="https://www.taxed.ch/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 09 Feb 2026 18:55:42 GMT</pubDate>
+        <pubDate>Sun, 12 Jul 2026 17:21:52 GMT</pubDate>
         <copyright><![CDATA[© 2026 Taxed GmbH]]></copyright>
         <language><![CDATA[en]]></language>
         <item>
-            <title><![CDATA[Swiss Tax Guide for Expats 2024]]></title>
-            <description><![CDATA[Complete guide to Swiss tax obligations for expatriates living and working in Switzerland.]]></description>
-            <link>https://www.taxed.ch/blog/swiss-tax-guide-expats-2024</link>
-            <guid isPermaLink="false">swiss-tax-guide-expats-2024</guid>
-            <category><![CDATA[Expat Taxes]]></category>
-            <category><![CDATA[Swiss Tax]]></category>
-            <category><![CDATA[Guide]]></category>
-            <dc:creator><![CDATA[Taxed GmbH Team]]></dc:creator>
-            <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+            <title><![CDATA[Eigenmietwert Explained: The Complete Guide to Imputed Rental Value in Switzerland]]></title>
+            <description><![CDATA[A comprehensive guide to Eigenmietwert (imputed rental value) in Switzerland. Learn what it is, how it's calculated, what deductions you can claim, and practical strategies to optimize your tax situation as a Swiss homeowner.]]></description>
+            <link>https://www.taxed.ch/blog/eigenmietwert-imputed-rental-value-switzerland-complete-guide</link>
+            <guid isPermaLink="false">eigenmietwert-imputed-rental-value-switzerland-complete-guide</guid>
+            <category><![CDATA[Eigenmietwert]]></category>
+            <category><![CDATA[Imputed Rental Value]]></category>
+            <category><![CDATA[Property Tax]]></category>
+            <category><![CDATA[Homeowner Tax]]></category>
+            <category><![CDATA[Mortgage Deductions]]></category>
+            <category><![CDATA[Swiss Real Estate]]></category>
+            <category><![CDATA[Tax Planning]]></category>
+            <dc:creator><![CDATA[Emanuel Flury]]></dc:creator>
+            <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Understanding Quellensteuer: Withholding Tax in Switzerland]]></title>
-            <description><![CDATA[Everything you need to know about Quellensteuer and how it affects foreign workers in Switzerland.]]></description>
-            <link>https://www.taxed.ch/blog/quellensteuer-withholding-tax-switzerland</link>
-            <guid isPermaLink="false">quellensteuer-withholding-tax-switzerland</guid>
+            <title><![CDATA[Swiss Tax Return Guide 2025: Complete Step-by-Step Tutorial]]></title>
+            <description><![CDATA[Complete step-by-step guide to filing your Swiss tax return in 2025. Learn about deadlines, required documents, deductions, and the entire tax filing process for expatriates and residents.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-tax-return-guide-2025-complete-step-by-step-tutorial</link>
+            <guid isPermaLink="false">swiss-tax-return-guide-2025-complete-step-by-step-tutorial</guid>
+            <category><![CDATA[Swiss Tax Return]]></category>
+            <category><![CDATA[Tax Filing]]></category>
+            <category><![CDATA[Tax Guide 2025]]></category>
+            <category><![CDATA[Expats]]></category>
+            <category><![CDATA[Steuererklärung]]></category>
+            <dc:creator><![CDATA[Emanuel Flury]]></dc:creator>
+            <pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Top 10 Tax Deductions for Expats in Switzerland 2025]]></title>
+            <description><![CDATA[Maximize your tax savings in Switzerland! Discover the top 10 tax deductions specifically available to expatriates, including often-missed opportunities that could save you thousands of francs.]]></description>
+            <link>https://www.taxed.ch/blog/top-10-tax-deductions-expats-switzerland-2025</link>
+            <guid isPermaLink="false">top-10-tax-deductions-expats-switzerland-2025</guid>
+            <category><![CDATA[Tax Deductions]]></category>
+            <category><![CDATA[Expats]]></category>
+            <category><![CDATA[Tax Savings]]></category>
+            <category><![CDATA[Switzerland 2025]]></category>
+            <category><![CDATA[Tax Optimization]]></category>
+            <dc:creator><![CDATA[Patricia]]></dc:creator>
+            <pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Kita Costs and Tax Deductions: Complete Guide for Parents 2025]]></title>
+            <description><![CDATA[Complete guide to Swiss Kita costs and tax deductions for parents. Learn about federal and cantonal regulations, maximum deductions, and practical tips for optimizing your tax situation.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-kita-costs-tax-deductions-guide-parents-2025</link>
+            <guid isPermaLink="false">swiss-kita-costs-tax-deductions-guide-parents-2025</guid>
+            <category><![CDATA[Kita Costs]]></category>
+            <category><![CDATA[Tax Deductions]]></category>
+            <category><![CDATA[Childcare]]></category>
+            <category><![CDATA[Swiss Tax Law]]></category>
+            <category><![CDATA[Family Finance]]></category>
+            <dc:creator><![CDATA[Treuhand-Suche]]></dc:creator>
+            <pubDate>Mon, 03 Feb 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Agricultural Tariffs: Can Switzerland Reduce Tariffs for Better USA Trade Deal?]]></title>
+            <description><![CDATA[Understanding Switzerland's agricultural tariff system and its potential impact on USA trade negotiations. Learn about the implications for Swiss farmers, consumers, and food safety standards.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-agricultural-tariffs-usa-trade-negotiations-2025</link>
+            <guid isPermaLink="false">swiss-agricultural-tariffs-usa-trade-negotiations-2025</guid>
+            <category><![CDATA[Agricultural Tariffs]]></category>
+            <category><![CDATA[USA Trade]]></category>
+            <category><![CDATA[Switzerland]]></category>
+            <category><![CDATA[Trade Negotiations]]></category>
+            <category><![CDATA[Food Safety]]></category>
+            <dc:creator><![CDATA[SwissInfo]]></dc:creator>
+            <pubDate>Sun, 02 Feb 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Switzerland-USA FATCA Agreement: How the Tax Dispute Was Resolved in 2013]]></title>
+            <description><![CDATA[Understanding the historic 2013 Switzerland-USA tax agreement that resolved the banking dispute and implemented FATCA. Learn about the impact on Swiss banks, US taxpayers, and cross-border tax compliance.]]></description>
+            <link>https://www.taxed.ch/blog/switzerland-usa-fatca-agreement-tax-dispute-resolution-2013</link>
+            <guid isPermaLink="false">switzerland-usa-fatca-agreement-tax-dispute-resolution-2013</guid>
+            <category><![CDATA[FATCA]]></category>
+            <category><![CDATA[USA]]></category>
+            <category><![CDATA[Switzerland]]></category>
+            <category><![CDATA[Tax Dispute]]></category>
+            <category><![CDATA[Banking]]></category>
+            <category><![CDATA[Cross-Border]]></category>
+            <dc:creator><![CDATA[SwissInfo]]></dc:creator>
+            <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Eigenmietwert Referendum Approved: What the Property Tax Reform Means for You]]></title>
+            <description><![CDATA[Swiss voters approved the abolition of imputed rental value (Eigenmietwert) on 28 September 2025. Learn what was decided, the implementation timeline, and what it means for your Swiss property taxes.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-eigenmietwert-referendum-property-tax-changes-2025</link>
+            <guid isPermaLink="false">swiss-eigenmietwert-referendum-property-tax-changes-2025</guid>
+            <category><![CDATA[Eigenmietwert]]></category>
+            <category><![CDATA[Property Tax]]></category>
+            <category><![CDATA[Real Estate]]></category>
+            <category><![CDATA[Referendum]]></category>
+            <category><![CDATA[Swiss Tax]]></category>
+            <dc:creator><![CDATA[HEV Schweiz]]></dc:creator>
+            <pubDate>Thu, 30 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Retroactive Pillar 3a Contributions: New Opportunities for Swiss Retirement Planning 2025]]></title>
+            <description><![CDATA[Discover the new 2025 rules allowing retroactive Pillar 3a contributions to close contribution gaps. Learn about eligibility, limits, and tax benefits for optimizing your Swiss retirement savings.]]></description>
+            <link>https://www.taxed.ch/blog/retroactive-pillar-3a-contributions-switzerland-2025</link>
+            <guid isPermaLink="false">retroactive-pillar-3a-contributions-switzerland-2025</guid>
+            <category><![CDATA[Pillar 3a]]></category>
+            <category><![CDATA[Retroactive Contributions]]></category>
+            <category><![CDATA[Tax Deduction]]></category>
+            <category><![CDATA[Retirement Planning]]></category>
+            <category><![CDATA[BVV3]]></category>
+            <dc:creator><![CDATA[TREUHAND|SUISSE]]></dc:creator>
+            <pubDate>Sat, 25 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tax-Deductible Expenses in Switzerland: 2025 Guide for Individuals]]></title>
+            <description><![CDATA[A comprehensive guide to tax-deductible expenses for individuals in Switzerland. Learn about professional expenses, pension contributions, property costs, donations, and expat-specific deductions.]]></description>
+            <link>https://www.taxed.ch/blog/tax-deductible-expenses-switzerland-2025-guide-individuals</link>
+            <guid isPermaLink="false">tax-deductible-expenses-switzerland-2025-guide-individuals</guid>
+            <category><![CDATA[Tax Deductions]]></category>
+            <category><![CDATA[Switzerland]]></category>
+            <category><![CDATA[Individual Tax]]></category>
+            <category><![CDATA[Expenses]]></category>
+            <category><![CDATA[2025]]></category>
+            <dc:creator><![CDATA[Patricia]]></dc:creator>
+            <pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Flexible Retirement in Switzerland: Tax Implications and Planning Strategies 2025]]></title>
+            <description><![CDATA[Understanding flexible retirement options in Switzerland and their tax implications. Learn about partial pension withdrawals, tax optimization strategies, and the upcoming 2027 tax changes.]]></description>
+            <link>https://www.taxed.ch/blog/flexible-retirement-switzerland-tax-implications-2025</link>
+            <guid isPermaLink="false">flexible-retirement-switzerland-tax-implications-2025</guid>
+            <category><![CDATA[Flexible Retirement]]></category>
+            <category><![CDATA[Pension]]></category>
+            <category><![CDATA[BVG]]></category>
+            <category><![CDATA[Tax Planning]]></category>
+            <category><![CDATA[Partial Retirement]]></category>
+            <dc:creator><![CDATA[Dr. Peter Lang]]></dc:creator>
+            <pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Tax Developments 2025: OECD Minimum Tax Implementation and Corporate Tax Reforms]]></title>
+            <description><![CDATA[Comprehensive analysis of Switzerland's implementation of the OECD minimum tax (Pillar 2), corporate tax rate developments, and their impact on Swiss businesses and international tax planning.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-tax-developments-2025-oecd-minimum-tax-implementation</link>
+            <guid isPermaLink="false">swiss-tax-developments-2025-oecd-minimum-tax-implementation</guid>
+            <category><![CDATA[OECD Minimum Tax]]></category>
+            <category><![CDATA[Pillar 2]]></category>
+            <category><![CDATA[Corporate Tax]]></category>
+            <category><![CDATA[Switzerland]]></category>
+            <category><![CDATA[2025]]></category>
+            <category><![CDATA[Tax Reform]]></category>
+            <dc:creator><![CDATA[Patricia]]></dc:creator>
+            <pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Understanding Swiss Tax at Source (Quellensteuer) in 2025]]></title>
+            <description><![CDATA[A comprehensive guide to Swiss tax at source system for expats. Learn who is affected, how it's calculated, and when you might be eligible for a refund.]]></description>
+            <link>https://www.taxed.ch/blog/understanding-swiss-tax-at-source-quellensteuer-2025</link>
+            <guid isPermaLink="false">understanding-swiss-tax-at-source-quellensteuer-2025</guid>
             <category><![CDATA[Quellensteuer]]></category>
-            <category><![CDATA[Withholding Tax]]></category>
-            <category><![CDATA[Foreign Workers]]></category>
-            <dc:creator><![CDATA[Taxed GmbH Team]]></dc:creator>
-            <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
+            <category><![CDATA[Expat Tax]]></category>
+            <category><![CDATA[Switzerland]]></category>
+            <category><![CDATA[Tax at Source]]></category>
+            <dc:creator><![CDATA[Elena Schmidt]]></dc:creator>
+            <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Digital Tax Filing: The Future of Swiss Tax Returns]]></title>
-            <description><![CDATA[How digitalization is transforming the Swiss tax filing process and what it means for taxpayers.]]></description>
-            <link>https://www.taxed.ch/blog/digital-tax-filing-switzerland</link>
-            <guid isPermaLink="false">digital-tax-filing-switzerland</guid>
-            <category><![CDATA[Digital Filing]]></category>
-            <category><![CDATA[Tax Technology]]></category>
-            <category><![CDATA[Swiss Tax]]></category>
-            <dc:creator><![CDATA[Taxed GmbH Team]]></dc:creator>
-            <pubDate>Fri, 05 Jan 2024 00:00:00 GMT</pubDate>
+            <title><![CDATA[Cryptocurrency Taxation in Switzerland: Complete Guide 2025]]></title>
+            <description><![CDATA[Everything you need to know about cryptocurrency taxation in Switzerland. Learn how to report crypto gains, losses, and comply with Swiss tax regulations.]]></description>
+            <link>https://www.taxed.ch/blog/cryptocurrency-taxation-in-switzerland-2025</link>
+            <guid isPermaLink="false">cryptocurrency-taxation-in-switzerland-2025</guid>
+            <category><![CDATA[Cryptocurrency]]></category>
+            <category><![CDATA[Bitcoin]]></category>
+            <category><![CDATA[Digital Assets]]></category>
+            <category><![CDATA[Capital Gains]]></category>
+            <dc:creator><![CDATA[Michael Chen]]></dc:creator>
+            <pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Complete Guide to Pillar 3a Pension for Expats in Switzerland]]></title>
+            <description><![CDATA[Discover how the Pillar 3a pension plan can significantly reduce your Swiss tax bill and help you build wealth for the future. A must-read for any expat.]]></description>
+            <link>https://www.taxed.ch/blog/expat-guide-to-pillar-3a-pension-in-switzerland-2025</link>
+            <guid isPermaLink="false">expat-guide-to-pillar-3a-pension-in-switzerland-2025</guid>
+            <category><![CDATA[Pillar 3a]]></category>
+            <category><![CDATA[Pension]]></category>
+            <category><![CDATA[Savings]]></category>
+            <category><![CDATA[Tax Deduction]]></category>
+            <dc:creator><![CDATA[Lukas Weber]]></dc:creator>
+            <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Wealth Tax: Complete Guide for Expats 2025]]></title>
+            <description><![CDATA[Understand how Swiss wealth tax works, what assets are included, and how to optimize your wealth tax burden as an expat in Switzerland.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-wealth-tax-complete-guide-2025</link>
+            <guid isPermaLink="false">swiss-wealth-tax-complete-guide-2025</guid>
+            <category><![CDATA[Wealth Tax]]></category>
+            <category><![CDATA[Assets]]></category>
+            <category><![CDATA[Vermögenssteuer]]></category>
+            <category><![CDATA[Tax Planning]]></category>
+            <dc:creator><![CDATA[Sarah Müller]]></dc:creator>
+            <pubDate>Wed, 08 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Navigating Swiss Real Estate Tax for Expats in 2025]]></title>
+            <description><![CDATA[Owning property in Switzerland or abroad has significant tax implications. This guide covers imputed rental value, wealth tax, and deductible costs for expat homeowners.]]></description>
+            <link>https://www.taxed.ch/blog/navigating-swiss-real-estate-tax-for-expats-2025</link>
+            <guid isPermaLink="false">navigating-swiss-real-estate-tax-for-expats-2025</guid>
+            <category><![CDATA[Real Estate]]></category>
+            <category><![CDATA[Property Tax]]></category>
+            <category><![CDATA[Wealth Tax]]></category>
+            <category><![CDATA[Eigenmietwert]]></category>
+            <dc:creator><![CDATA[Elena Schmidt]]></dc:creator>
+            <pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Expat Tax Planning Strategies for Switzerland 2025]]></title>
+            <description><![CDATA[Strategic tax planning tips for expats in Switzerland. Learn how to minimize your tax burden while staying compliant with Swiss tax laws.]]></description>
+            <link>https://www.taxed.ch/blog/expat-tax-planning-strategies-switzerland-2025</link>
+            <guid isPermaLink="false">expat-tax-planning-strategies-switzerland-2025</guid>
+            <category><![CDATA[Tax Planning]]></category>
+            <category><![CDATA[Expat]]></category>
+            <category><![CDATA[Optimization]]></category>
+            <category><![CDATA[Strategy]]></category>
+            <dc:creator><![CDATA[David Johnson]]></dc:creator>
+            <pubDate>Fri, 03 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Business Tax Guide for Expats: Starting a Business in 2025]]></title>
+            <description><![CDATA[Complete guide to Swiss business taxation for expats. Learn about corporate tax rates, VAT, and tax obligations when starting a business in Switzerland.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-business-tax-guide-for-expats-2025</link>
+            <guid isPermaLink="false">swiss-business-tax-guide-for-expats-2025</guid>
+            <category><![CDATA[Business Tax]]></category>
+            <category><![CDATA[Entrepreneurship]]></category>
+            <category><![CDATA[Company Formation]]></category>
+            <category><![CDATA[VAT]]></category>
+            <dc:creator><![CDATA[Anna Weber]]></dc:creator>
+            <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Inheritance Tax: Complete Guide for Expats 2025]]></title>
+            <description><![CDATA[Understanding Swiss inheritance tax laws and how they affect expats. Learn about tax rates, exemptions, and planning strategies for wealth transfer.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-inheritance-tax-guide-2025</link>
+            <guid isPermaLink="false">swiss-inheritance-tax-guide-2025</guid>
+            <category><![CDATA[Inheritance Tax]]></category>
+            <category><![CDATA[Estate Planning]]></category>
+            <category><![CDATA[Succession]]></category>
+            <category><![CDATA[Wealth Transfer]]></category>
+            <dc:creator><![CDATA[Robert Klein]]></dc:creator>
+            <pubDate>Sat, 28 Dec 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Health Insurance Tax Deductions: Maximize Your Savings 2025]]></title>
+            <description><![CDATA[Learn how to maximize your Swiss health insurance tax deductions. Understand what medical expenses are deductible and how to claim them.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-health-insurance-tax-deductions-2025</link>
+            <guid isPermaLink="false">swiss-health-insurance-tax-deductions-2025</guid>
+            <category><![CDATA[Health Insurance]]></category>
+            <category><![CDATA[Tax Deduction]]></category>
+            <category><![CDATA[Krankenkasse]]></category>
+            <category><![CDATA[Medical Expenses]]></category>
+            <dc:creator><![CDATA[Maria Garcia]]></dc:creator>
+            <pubDate>Wed, 25 Dec 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swiss Education Tax Benefits for Expats: Save on School Fees 2025]]></title>
+            <description><![CDATA[Discover the tax benefits available for education expenses in Switzerland. Learn how to deduct school fees, language courses, and professional development costs.]]></description>
+            <link>https://www.taxed.ch/blog/swiss-education-tax-benefits-expats-2025</link>
+            <guid isPermaLink="false">swiss-education-tax-benefits-expats-2025</guid>
+            <category><![CDATA[Education]]></category>
+            <category><![CDATA[School Fees]]></category>
+            <category><![CDATA[Tax Deduction]]></category>
+            <category><![CDATA[International Schools]]></category>
+            <dc:creator><![CDATA[Jennifer Lee]]></dc:creator>
+            <pubDate>Sun, 22 Dec 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
