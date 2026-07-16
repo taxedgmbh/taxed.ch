@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches: [main]
-    # Only source changes need a rebuild. The Auto-build commit touches only
+    # Only source changes need a rebuild (deploy via SSH once HOSTINGER_SSH_KEY is set). The Auto-build commit touches only
     # dist/ and generated public files, which are excluded here so it cannot
     # re-trigger this workflow (same loop-guard as eflury.com's deploy).
     paths:
