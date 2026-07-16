@@ -11,6 +11,7 @@ import {
   getRewrittenNews,
   scheduleDailyNewsUpdate
 } from '@/services/newsService';
+import NewsletterSignupForm from '@/components/forms/NewsletterSignupForm';
 
 // Helper functions (moved outside component for NewsCard access)
 const formatDate = (dateString) => {
@@ -239,18 +240,8 @@ const NewsPage = () => {
               Get the latest Swiss tax news and updates delivered to your inbox
             </p>
             <div className="max-w-2xl mx-auto">
-              {/* HubSpot Newsletter Signup Form */}
-              <div className="hubspot-newsletter-container bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                <iframe 
-                  src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
-                  width="100%"
-                  height="300"
-                  frameBorder="0"
-                  scrolling="no"
-                  title="Taxed GmbH Newsletter Signup - News"
-                  className="border-0 rounded-lg"
-                  style={{ minHeight: '300px' }}
-                />
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <NewsletterSignupForm variant="dark" />
               </div>
             </div>
           </div>

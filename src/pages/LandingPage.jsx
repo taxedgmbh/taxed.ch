@@ -40,6 +40,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { websiteSchema } from '@/utils/structuredData';
+import HubSpotContactForm from '@/components/forms/HubSpotContactForm';
 
 const LandingPage = () => {
   // Respect user's motion preferences for accessibility
@@ -513,14 +514,7 @@ const LandingPage = () => {
 
                   {/* HubSpot Form - Right Side */}
                   <div className="lg:col-span-3 bg-white rounded-xl p-4 sm:p-6 shadow-inner">
-                    <iframe
-                      src="https://share-eu1.hsforms.com/1xA0NQrALToW5NH7CkatXWA2ds4ox"
-                      width="100%"
-                      frameBorder="0"
-                      scrolling="auto"
-                      title="Free Tax Assessment Form"
-                      className="border-0 rounded-lg w-full min-h-[1100px] sm:min-h-[950px]"
-                    />
+                    <HubSpotContactForm />
                   </div>
                 </div>
               </div>
