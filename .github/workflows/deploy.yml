@@ -55,14 +55,40 @@ jobs:
             git push
           fi
 
-      - name: Trigger Hostinger deployment
+      - name: Deploy dist/ to Hostinger via SSH
+        env:
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          SSH_HOST: fr-int-web965.main-hosting.eu
+          SSH_PORT: '65002'
+          SSH_USER: u497646184
+          DEPLOY_PATH: domains/taxed.ch/public_html
+        run: |
+          if [ -z "$SSH_KEY" ]; then
+            echo "HOSTINGER_SSH_KEY secret is not set - skipping SSH deploy."
+            echo "Add the deploy private key as a repository secret to enable automatic deployment."
+            exit 0
+          fi
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          echo "Verifying remote deploy path..."
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "test -d $DEPLOY_PATH" || {
+            echo "::error::Remote path $DEPLOY_PATH not found - listing domains for diagnosis"
+            ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "ls domains" || true
+            exit 1
+          }
+          echo "Syncing dist/ to $DEPLOY_PATH ..."
+          rsync -az -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" dist/ "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
+          echo "Deployment complete."
+
+      - name: Trigger Hostinger webhook (legacy fallback)
         continue-on-error: true
         env:
           WEBHOOK_URL: ${{ secrets.HOSTINGER_WEBHOOK_URL }}
         run: |
-          echo "Triggering Hostinger deployment..."
           if [ -z "$WEBHOOK_URL" ]; then
-            echo "Warning: HOSTINGER_WEBHOOK_URL secret is not set"
+            echo "HOSTINGER_WEBHOOK_URL secret is not set - skipping webhook"
             exit 0
           fi
           HTTP_CODE=$(curl -sS -X POST "$WEBHOOK_URL" \
@@ -71,8 +97,3 @@ jobs:
             -d '{"ref": "refs/heads/main"}' \
             -o /dev/null -w "%{http_code}" 2>&1) || true
           echo "Webhook response: $HTTP_CODE"
-          if [ "$HTTP_CODE" -ge 200 ] 2>/dev/null && [ "$HTTP_CODE" -lt 300 ] 2>/dev/null; then
-            echo "Deployment triggered successfully"
-          else
-            echo "Warning: Webhook issue (code: $HTTP_CODE) - please verify HOSTINGER_WEBHOOK_URL secret"
-          fi
