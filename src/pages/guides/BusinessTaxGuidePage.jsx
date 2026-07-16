@@ -55,63 +55,63 @@ const BusinessTaxGuidePage = () => {
   const corporateTaxRates = [
     {
       canton: 'Zurich',
-      corporateRate: '18.2%',
-      municipalRate: '7.5%',
-      totalRate: '25.7%',
-      description: 'Most business-friendly canton with competitive rates',
+      corporateRate: '7.8%',
+      municipalRate: '11.8%',
+      totalRate: '~19.6%',
+      description: 'Switzerland\'s largest business hub — rates slightly above the Swiss average',
       icon: TrendingUp
     },
     {
       canton: 'Geneva',
-      corporateRate: '13.8%',
-      municipalRate: '8.5%',
-      totalRate: '22.3%',
-      description: 'International business hub with moderate rates',
+      corporateRate: '7.8%',
+      municipalRate: '6.2%',
+      totalRate: '~14.0%',
+      description: 'International business hub with competitive rates',
       icon: Globe
     },
     {
       canton: 'Basel-City',
-      corporateRate: '13.0%',
-      municipalRate: '6.0%',
-      totalRate: '19.0%',
-      description: 'Lowest corporate tax rates in Switzerland',
+      corporateRate: '7.8%',
+      municipalRate: '5.2%',
+      totalRate: '~13.0%',
+      description: 'Pharma and life-sciences hub with low rates',
       icon: Award
     },
     {
       canton: 'Bern',
-      corporateRate: '21.6%',
-      municipalRate: '8.0%',
-      totalRate: '29.6%',
-      description: 'Capital city with standard rates',
+      corporateRate: '7.8%',
+      municipalRate: '13.2%',
+      totalRate: '~21.0%',
+      description: 'Capital region — among the higher cantonal rates',
       icon: Building
     },
     {
       canton: 'Lucerne',
-      corporateRate: '12.3%',
-      municipalRate: '6.5%',
-      totalRate: '18.8%',
-      description: 'Attractive rates for business development',
+      corporateRate: '7.8%',
+      municipalRate: '4.3%',
+      totalRate: '~12.1%',
+      description: 'One of the lowest corporate tax rates in Switzerland',
       icon: Zap
     }
   ];
 
   const vatRates = [
     {
-      rate: '7.7%',
+      rate: '8.1%',
       description: 'Standard VAT rate',
       applies: 'Most goods and services',
       examples: ['Retail sales', 'Professional services', 'Restaurant meals'],
       icon: CreditCard
     },
     {
-      rate: '2.5%',
+      rate: '2.6%',
       description: 'Reduced VAT rate',
       applies: 'Essential goods and services',
       examples: ['Food and beverages', 'Books and newspapers', 'Public transport'],
       icon: Home
     },
     {
-      rate: '3.7%',
+      rate: '3.8%',
       description: 'Special VAT rate',
       applies: 'Accommodation services',
       examples: ['Hotel stays', 'Holiday rentals', 'Conference facilities'],
@@ -130,7 +130,7 @@ const BusinessTaxGuidePage = () => {
     {
       title: 'Corporate Tax Return',
       description: 'Annual corporate tax return filing requirements',
-      deadline: 'March 31, 2025',
+      deadline: 'March 31, 2026',
       frequency: 'Annual',
       requirements: [
         'Complete corporate tax return (Form 200)',
@@ -377,15 +377,15 @@ const BusinessTaxGuidePage = () => {
                       <div className="grid md:grid-cols-3 gap-4">
                         <div className="text-center">
                           <div className="text-2xl font-bold text-steel-blue">{canton.corporateRate}</div>
-                          <div className="text-sm text-gray-600">Corporate Rate</div>
+                          <div className="text-sm text-gray-600">Federal (effective)</div>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-steel-blue">{canton.municipalRate}</div>
-                          <div className="text-sm text-gray-600">Municipal Rate</div>
+                          <div className="text-sm text-gray-600">Cantonal & Municipal</div>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-green-600">{canton.totalRate}</div>
-                          <div className="text-sm text-gray-600">Total Rate</div>
+                          <div className="text-sm text-gray-600">Total Effective Rate</div>
                         </div>
                       </div>
                     </div>
@@ -462,19 +462,19 @@ const BusinessTaxGuidePage = () => {
                   <ul className="space-y-3">
                     <li className="flex justify-between items-center">
                       <span className="text-gray-700">AHV/IV/EO (Old Age & Survivors Insurance)</span>
-                      <span className="font-semibold text-steel-blue">8.7%</span>
+                      <span className="font-semibold text-steel-blue">5.3%</span>
                     </li>
                     <li className="flex justify-between items-center">
                       <span className="text-gray-700">Unemployment Insurance (ALV)</span>
                       <span className="font-semibold text-steel-blue">1.1%</span>
                     </li>
                     <li className="flex justify-between items-center">
-                      <span className="text-gray-700">Accident Insurance (UV)</span>
-                      <span className="font-semibold text-steel-blue">0.5%</span>
+                      <span className="text-gray-700">Non-occupational Accident Insurance (NBU)</span>
+                      <span className="font-semibold text-steel-blue">~1-2%</span>
                     </li>
                     <li className="flex justify-between items-center">
-                      <span className="text-gray-700">Non-occupational Accident Insurance</span>
-                      <span className="font-semibold text-steel-blue">0.5%</span>
+                      <span className="text-gray-700">Occupational Pension (BVG)</span>
+                      <span className="font-semibold text-steel-blue">varies by age</span>
                     </li>
                   </ul>
                 </div>
@@ -483,19 +483,19 @@ const BusinessTaxGuidePage = () => {
                   <ul className="space-y-3">
                     <li className="flex justify-between items-center">
                       <span className="text-gray-700">AHV/IV/EO (Old Age & Survivors Insurance)</span>
-                      <span className="font-semibold text-steel-blue">8.7%</span>
+                      <span className="font-semibold text-steel-blue">5.3%</span>
                     </li>
                     <li className="flex justify-between items-center">
                       <span className="text-gray-700">Unemployment Insurance (ALV)</span>
                       <span className="font-semibold text-steel-blue">1.1%</span>
                     </li>
                     <li className="flex justify-between items-center">
-                      <span className="text-gray-700">Accident Insurance (UV)</span>
-                      <span className="font-semibold text-steel-blue">0.5%</span>
+                      <span className="text-gray-700">Occupational Accident Insurance (BU)</span>
+                      <span className="font-semibold text-steel-blue">~0.5%</span>
                     </li>
                     <li className="flex justify-between items-center">
-                      <span className="text-gray-700">Non-occupational Accident Insurance</span>
-                      <span className="font-semibold text-steel-blue">0.5%</span>
+                      <span className="text-gray-700">Occupational Pension (BVG)</span>
+                      <span className="font-semibold text-steel-blue">at least 50% of total</span>
                     </li>
                   </ul>
                 </div>
@@ -636,9 +636,9 @@ const BusinessTaxGuidePage = () => {
   return (
     <>
       <Helmet>
-        <title>Complete Business Tax Guide for Switzerland 2025 | Taxed GmbH</title>
+        <title>Complete Business Tax Guide for Switzerland 2026 | Taxed GmbH</title>
         <meta name="description" content="Comprehensive business tax guide for Swiss companies. Learn about corporate tax, VAT, payroll tax, and international tax planning strategies." />
-        <meta property="og:title" content="Complete Business Tax Guide for Switzerland 2025 | Taxed GmbH" />
+        <meta property="og:title" content="Complete Business Tax Guide for Switzerland 2026 | Taxed GmbH" />
         <meta property="og:description" content="Comprehensive business tax guide for Swiss companies. Learn about corporate tax, VAT, payroll tax, and international tax planning strategies." />
         <link rel="canonical" href="https://taxed.ch/business-tax-guide" />
       </Helmet>

@@ -233,7 +233,7 @@ const LandingPage = () => {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                 "opens": "09:00",
-                "closes": "17:00"
+                "closes": "18:00"
               }
             ],
             "currenciesAccepted": "CHF",
@@ -483,7 +483,7 @@ const LandingPage = () => {
                     <ul className="space-y-4">
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                        <span>Save up to 80% compared to Big 4 firms</span>
+                        <span>Save up to 60% compared to Big 4 firms</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />

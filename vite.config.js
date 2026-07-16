@@ -12,13 +12,20 @@ export default defineConfig({
         main: './index.html'
       },
       output: {
-        manualChunks: {
-          // Vendor chunks
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-ui': ['framer-motion', 'lucide-react', '@radix-ui/react-slot'],
-          'vendor-helmet': ['react-helmet'],
-          // Firebase chunk
-          'vendor-firebase': ['firebase/app', 'firebase/auth', 'firebase/firestore', 'firebase/storage'],
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+          if (/node_modules\/(react|react-dom|react-router|react-router-dom|scheduler)\//.test(id)) {
+            return 'vendor-react';
+          }
+          if (/node_modules\/(framer-motion|lucide-react|@radix-ui)\//.test(id)) {
+            return 'vendor-ui';
+          }
+          if (id.includes('node_modules/react-helmet')) {
+            return 'vendor-helmet';
+          }
+          if (/node_modules\/(@firebase|firebase)\//.test(id)) {
+            return 'vendor-firebase';
+          }
         }
       }
     }

@@ -40,6 +40,7 @@ const LawSectionPage = () => {
 
   const years = [
     { id: 'all', name: 'All Years' },
+    { id: '2026', name: '2026' },
     { id: '2025', name: '2025' },
     { id: '2024', name: '2024' },
     { id: '2023', name: '2023' },
@@ -129,7 +130,7 @@ const LawSectionPage = () => {
     },
     {
       id: 6,
-      title: "Geneva Canton Tax Law (LIFD)",
+      title: "Geneva Canton Tax Law (LIPP)",
       category: "cantonal",
       year: "2024",
       description: "Cantonal tax law for the Canton of Geneva, including specific provisions for international organizations.",

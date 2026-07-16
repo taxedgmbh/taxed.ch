@@ -86,7 +86,7 @@ const AdvancedTaxToolsPage = () => {
         { label: 'Swiss Income', type: 'number', placeholder: 'Swiss income amount' },
         { label: 'Foreign Income', type: 'number', placeholder: 'Foreign income amount' },
         { label: 'Residence Status', type: 'select', options: ['Swiss Resident', 'Non-Resident', 'Part-Year'] },
-        { label: 'Tax Year', type: 'select', options: ['2024', '2023', '2022'] }
+        { label: 'Tax Year', type: 'select', options: ['2026', '2025', '2024'] }
       ],
       outputs: [
         { label: 'Tax Treaty Benefits', value: 'Available', color: 'text-green-600' },
@@ -170,7 +170,7 @@ const AdvancedTaxToolsPage = () => {
         { label: 'Expected Return', type: 'select', options: ['Conservative (3%)', 'Moderate (5%)', 'Aggressive (7%)'] }
       ],
       outputs: [
-        { label: 'Optimal Contribution', value: 'CHF 7,056', color: 'text-green-600' },
+        { label: 'Optimal Contribution', value: 'CHF 7,258', color: 'text-green-600' },
         { label: 'Tax Savings', value: 'CHF 2,500', color: 'text-blue-600' },
         { label: 'Retirement Income', value: 'CHF 120,000', color: 'text-green-600' },
         { label: 'Pension Gap', value: 'CHF 30,000', color: 'text-yellow-600' }

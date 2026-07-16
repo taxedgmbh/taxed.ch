@@ -285,7 +285,7 @@ const NotFoundPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                   <Phone className="h-6 w-6 mx-auto mb-2 text-blue-200" />
-                  <p className="text-sm text-blue-100">info@taxed.ch</p>
+                  <p className="text-sm text-blue-100">+41 79 910 77 87</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                   <Mail className="h-6 w-6 mx-auto mb-2 text-blue-200" />
@@ -293,7 +293,7 @@ const NotFoundPage = () => {
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                   <MessageCircle className="h-6 w-6 mx-auto mb-2 text-blue-200" />
-                  <p className="text-sm text-blue-100">Email Chat</p>
+                  <p className="text-sm text-blue-100">Email Us</p>
                 </div>
               </div>
               

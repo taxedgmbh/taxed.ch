@@ -382,7 +382,7 @@ const ServicesPage = () => {
             </h2>
             <p className="text-xl text-dark-gray/80 max-w-3xl mx-auto">
               Download expert tax guides, checklists, and templates to help you navigate Swiss taxation. 
-              All resources are free and updated for 2025.
+              All resources are free and updated for 2026.
             </p>
           </motion.div>
 

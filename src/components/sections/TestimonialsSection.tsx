@@ -62,7 +62,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ classN
       name: 'Sarah Johnson',
       company: 'Johnson Consulting',
       position: 'Independent Consultant',
-      content: 'I was overwhelmed with Swiss tax regulations as an expat. Emmanuel and his team made everything clear and helped me optimize my tax situation. I saved money and gained peace of mind. Excellent service!',
+      content: 'I was overwhelmed with Swiss tax regulations as an expat. Emanuel and his team made everything clear and helped me optimize my tax situation. I saved money and gained peace of mind. Excellent service!',
       rating: 5,
       image: '/images/testimonials/sarah-johnson.jpg',
       industry: 'Consulting',

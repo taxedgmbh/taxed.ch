@@ -35,7 +35,7 @@ const ExpatTaxGuidePage = () => {
   const residencyRules = [
     {
       title: 'Physical Presence Test',
-      description: 'You are considered a Swiss tax resident if you spend more than 90 days in Switzerland',
+      description: 'You are considered a Swiss tax resident if you stay 30 days or more with gainful employment, or 90 days or more without gainful employment',
       details: [
         'Count all days spent in Switzerland during the tax year',
         'Include partial days (arrival and departure days count)',
@@ -96,7 +96,7 @@ const ExpatTaxGuidePage = () => {
     {
       title: 'Investment Income',
       description: 'Dividends, interest, capital gains, and rental income',
-      taxRate: 'Flat rate 35% withholding tax (may be reduced)',
+      taxRate: '35% anticipatory tax on dividends/interest (refundable if declared); private capital gains are generally tax-free',
       details: [
         'Swiss source dividends subject to 35% withholding tax',
         'Foreign dividends may be subject to Swiss tax',
@@ -170,28 +170,28 @@ const ExpatTaxGuidePage = () => {
     {
       title: 'Form 204 - Individual Tax Return',
       description: 'Main tax return form for individuals',
-      deadline: 'March 31, 2025',
+      deadline: 'March 31, 2026',
       required: 'All Swiss tax residents',
       icon: FileText
     },
     {
       title: 'Form 204A - Simplified Tax Return',
       description: 'Simplified form for simple tax situations',
-      deadline: 'March 31, 2025',
+      deadline: 'March 31, 2026',
       required: 'Taxpayers with simple income',
       icon: FileText
     },
     {
       title: 'Form 204B - Tax Return for Non-Residents',
       description: 'Form for non-residents with Swiss source income',
-      deadline: 'March 31, 2025',
+      deadline: 'March 31, 2026',
       required: 'Non-residents with Swiss income',
       icon: FileText
     },
     {
       title: 'Form 204C - Tax Return for Couples',
       description: 'Joint tax return for married couples',
-      deadline: 'March 31, 2025',
+      deadline: 'March 31, 2026',
       required: 'Married couples (optional)',
       icon: FileText
     }
@@ -498,9 +498,9 @@ const ExpatTaxGuidePage = () => {
   return (
     <>
       <Helmet>
-        <title>Complete Expat Tax Guide for Switzerland 2025 | Taxed GmbH</title>
+        <title>Complete Expat Tax Guide for Switzerland 2026 | Taxed GmbH</title>
         <meta name="description" content="Comprehensive guide for expatriates in Switzerland. Learn about tax residency, income tax, double taxation treaties, forms, and tax planning strategies." />
-        <meta property="og:title" content="Complete Expat Tax Guide for Switzerland 2025 | Taxed GmbH" />
+        <meta property="og:title" content="Complete Expat Tax Guide for Switzerland 2026 | Taxed GmbH" />
         <meta property="og:description" content="Comprehensive guide for expatriates in Switzerland. Learn about tax residency, income tax, double taxation treaties, forms, and tax planning strategies." />
         <link rel="canonical" href="https://taxed.ch/expat-tax-guide" />
       </Helmet>

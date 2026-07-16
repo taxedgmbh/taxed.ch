@@ -79,20 +79,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ className = '' }
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
-      details: ['+41 44 123 45 67', '+41 79 123 45 67'],
+      details: ['+41 79 910 77 87'],
       description: 'Call us for immediate assistance'
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email',
-      details: ['info@taxedgmbh.ch', 'support@taxedgmbh.ch'],
+      details: ['info@taxed.ch'],
       description: 'Send us your questions anytime'
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Office',
-      details: ['Bahnhofstrasse 123', '8001 Zurich, Switzerland'],
-      description: 'Visit us in the heart of Zurich'
+      details: ['Biel/Bienne', 'Switzerland'],
+      description: 'Serving clients across Switzerland'
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -384,7 +384,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ className = '' }
                   <div className="text-center">
                     <MapPin className="w-8 h-8 text-gray-400 mx-auto mb-2" />
                     <p className="text-gray-500">Interactive Map</p>
-                    <p className="text-sm text-gray-400">Bahnhofstrasse 123, Zurich</p>
+                    <p className="text-sm text-gray-400">Biel/Bienne, Switzerland</p>
                   </div>
                 </div>
               </Card>

@@ -40,7 +40,7 @@ import {
 
 const TaxUpdatesPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedYear, setSelectedYear] = useState(2025);
+  const [selectedYear, setSelectedYear] = useState(2026);
   const [searchTerm, setSearchTerm] = useState('');
 
   const categories = [
@@ -52,269 +52,165 @@ const TaxUpdatesPage = () => {
     { id: 'legislation', name: 'Legislation', icon: FileText }
   ];
 
-  const years = [2023, 2024, 2025];
+  const years = [2023, 2024, 2025, 2026];
 
   const taxUpdates = [
     {
-      id: 'update-2025-001',
-      title: 'New Corporate Tax Rates for 2025',
-      description: 'Swiss Federal Council announces updated corporate tax rates and cantonal variations for 2025',
-      category: 'corporate',
-      date: '2025-01-15',
-      priority: 'high',
-      impact: 'All Swiss companies',
-      summary: 'The Federal Council has updated corporate tax rates for 2025, with significant changes in several cantons including Zurich, Geneva, and Basel-City.',
-      details: [
-        'Zurich corporate tax rate reduced to 18.2% (from 19.2%)',
-        'Geneva corporate tax rate increased to 13.8% (from 13.2%)',
-        'Basel-City maintains lowest rate at 13.0%',
-        'New tax incentives for R&D investments',
-        'Updated transfer pricing documentation requirements'
-      ],
-      implications: [
-        'Companies should review their tax planning strategies',
-        'Consider relocating to more tax-friendly cantons',
-        'Update transfer pricing documentation',
-        'Review R&D investment opportunities'
-      ],
-      effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Tax Administration',
-      icon: Building
-    },
-    {
-      id: 'update-2025-002',
-      title: 'VAT Rate Changes and New Categories',
-      description: 'Updated VAT rates and new categories for digital services and e-commerce',
-      category: 'vat',
-      date: '2025-01-10',
-      priority: 'high',
-      impact: 'All VAT-registered businesses',
-      summary: 'Switzerland introduces new VAT categories and rate adjustments for digital services, e-commerce, and cross-border transactions.',
-      details: [
-        'New 2.5% rate for essential digital services',
-        'Updated 7.7% rate for standard digital services',
-        'New e-commerce VAT registration requirements',
-        'Updated cross-border VAT rules',
-        'New digital service provider obligations'
-      ],
-      implications: [
-        'Review VAT registration requirements',
-        'Update pricing for digital services',
-        'Implement new VAT collection systems',
-        'Train staff on new VAT rules'
-      ],
-      effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Tax Administration',
-      icon: Calculator
-    },
-    {
-      id: 'update-2025-003',
-      title: 'Individual Tax Deduction Limits Increased',
-      description: 'Increased deduction limits for individual taxpayers in 2025',
-      category: 'individual',
-      date: '2025-01-05',
-      priority: 'medium',
-      impact: 'All individual taxpayers',
-      summary: 'Swiss tax authorities have increased deduction limits for various expenses including medical costs, education, and home office expenses.',
-      details: [
-        'Medical expense deduction limit increased to CHF 2,500',
-        'Education expense deduction limit increased to CHF 1,500',
-        'Home office deduction limit increased to CHF 1,200',
-        'New deduction for digital health services',
-        'Updated travel expense deduction rates'
-      ],
-      implications: [
-        'Review and update expense documentation',
-        'Consider timing of major expenses',
-        'Update tax planning strategies',
-        'Take advantage of new deductions'
-      ],
-      effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Tax Administration',
-      icon: Users
-    },
-    {
-      id: 'update-2025-004',
-      title: 'New International Tax Treaty with United States',
-      description: 'Updated tax treaty between Switzerland and the United States',
-      category: 'international',
-      date: '2024-12-20',
-      priority: 'high',
-      impact: 'US-Swiss cross-border transactions',
-      summary: 'The updated US-Switzerland tax treaty includes new provisions for digital services, cryptocurrency, and enhanced information exchange.',
-      details: [
-        'New provisions for digital service taxation',
-        'Updated cryptocurrency tax treatment',
-        'Enhanced information exchange requirements',
-        'New dispute resolution procedures',
-        'Updated withholding tax rates'
-      ],
-      implications: [
-        'Review cross-border transaction structures',
-        'Update tax planning for US operations',
-        'Implement new reporting requirements',
-        'Consider cryptocurrency tax implications'
-      ],
-      effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Department of Finance',
-      icon: Globe
-    },
-    {
-      id: 'update-2025-005',
-      title: 'Payroll Tax and Social Security Updates',
-      description: 'Updated payroll tax rates and social security contribution limits',
-      category: 'individual',
-      date: '2024-12-15',
-      priority: 'medium',
-      impact: 'All employers and employees',
-      summary: 'Swiss authorities have updated payroll tax rates and social security contribution limits for 2025.',
-      details: [
-        'AHV/IV/EO contribution rate increased to 8.7%',
-        'Unemployment insurance rate increased to 1.1%',
-        'New contribution limits for high earners',
-        'Updated payroll tax calculation methods',
-        'New reporting requirements for employers'
-      ],
-      implications: [
-        'Update payroll systems and calculations',
-        'Review employee compensation structures',
-        'Implement new reporting requirements',
-        'Consider tax optimization strategies'
-      ],
-      effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Social Insurance Office',
-      icon: CreditCard
-    },
-    {
-      id: 'update-2025-006',
-      title: 'Digital Tax Compliance Requirements',
-      description: 'New digital tax compliance and reporting requirements',
+      id: 'update-2026-001',
+      title: 'Imputed Rental Value to Be Abolished After 2025 Referendum',
+      description: 'Swiss voters approved the abolition of the imputed rental value (Eigenmietwert) system in the September 2025 referendum',
       category: 'legislation',
-      date: '2024-12-10',
+      date: '2026-01-15',
       priority: 'high',
-      impact: 'All businesses',
-      summary: 'Switzerland introduces new digital tax compliance requirements including electronic filing, digital signatures, and automated reporting.',
+      impact: 'All Swiss homeowners',
+      summary: 'On 28 September 2025, Swiss voters approved the reform package that abolishes the taxation of imputed rental value on owner-occupied homes. Implementation details are still being finalized, and the changes are not expected to take effect before 2028.',
       details: [
-        'Mandatory electronic tax return filing',
-        'Digital signature requirements',
-        'Automated tax calculation systems',
-        'New data protection requirements',
-        'Updated audit and compliance procedures'
+        'Imputed rental value will no longer be taxed on owner-occupied primary residences',
+        'Deductions for mortgage interest and property maintenance will be significantly restricted',
+        'Cantons may introduce a special property tax on second homes',
+        'Entry into force is expected no earlier than 2028',
+        'Transitional rules are still being drafted'
       ],
       implications: [
-        'Implement digital tax systems',
-        'Train staff on new procedures',
-        'Update data protection measures',
-        'Prepare for automated reporting'
+        'Homeowners with low mortgages will generally benefit',
+        'Highly leveraged owners should review their financing strategy',
+        'Consider the timing of major renovations while deductions still apply',
+        'Second-home owners should monitor cantonal property tax plans'
       ],
-      effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Tax Administration',
+      effectiveDate: '2028-01-01',
+      source: 'Swiss Federal Chancellery referendum results',
       icon: FileText
     },
     {
-      id: 'update-2025-007',
-      title: 'Environmental Tax Incentives',
-      description: 'New tax incentives for environmental and sustainable investments',
+      id: 'update-2025-001',
+      title: 'Retroactive Pillar 3a Buy-Ins Possible From 2025',
+      description: 'Contribution gaps from 2025 onwards can be closed retroactively for up to ten years',
       category: 'individual',
-      date: '2024-12-05',
-      priority: 'medium',
-      impact: 'Individual and corporate taxpayers',
-      summary: 'Switzerland introduces new tax incentives for environmental investments, renewable energy, and sustainable business practices.',
-      details: [
-        'Tax credits for renewable energy investments',
-        'Deductions for environmental certifications',
-        'Incentives for electric vehicle purchases',
-        'Tax benefits for sustainable building improvements',
-        'New green investment tax breaks'
-      ],
-      implications: [
-        'Consider environmental investments',
-        'Review sustainable business practices',
-        'Take advantage of new tax incentives',
-        'Update investment strategies'
-      ],
-      effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Office for the Environment',
-      icon: Heart
-    },
-    {
-      id: 'update-2025-008',
-      title: 'Cryptocurrency Tax Treatment',
-      description: 'Updated tax treatment for cryptocurrency and digital assets',
-      category: 'individual',
-      date: '2024-11-30',
+      date: '2025-01-08',
       priority: 'high',
-      impact: 'Cryptocurrency investors and businesses',
-      summary: 'Switzerland clarifies tax treatment for cryptocurrency transactions, mining, and digital asset investments.',
+      impact: 'All individuals with pillar 3a accounts',
+      summary: 'Since 1 January 2025, anyone with AHV-liable income in Switzerland can retroactively close pillar 3a contribution gaps that arise from 2025 onwards, going back up to ten years. Buy-ins are fully tax-deductible in addition to the regular annual contribution.',
       details: [
-        'Clear tax treatment for cryptocurrency trading',
-        'Updated mining income taxation',
-        'New reporting requirements for digital assets',
-        'Tax treatment for DeFi transactions',
-        'Updated capital gains tax rules'
+        'Applies to contribution gaps arising from 2025 onwards',
+        'Gaps can be closed up to ten years later',
+        'Buy-in requires AHV-liable income in the year of the gap and the year of the buy-in',
+        'Buy-ins are tax-deductible in addition to the regular annual maximum',
+        'Maximum buy-in per year equals the small contribution limit'
       ],
       implications: [
-        'Review cryptocurrency tax obligations',
-        'Implement proper record keeping',
-        'Consider tax optimization strategies',
-        'Update investment documentation'
+        'Review your contribution history from 2025 onwards',
+        'Plan buy-ins for high-income years to maximize tax savings',
+        'Keep documentation of AHV-liable income',
+        'Combine with regular contributions for maximum deduction'
       ],
       effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Tax Administration',
-      icon: Zap
+      source: 'Swiss Federal Council / BSV',
+      icon: TrendingUp
     },
     {
-      id: 'update-2025-009',
-      title: 'Real Estate Tax Updates',
-      description: 'Updated tax rules for real estate investments and transactions',
+      id: 'update-2025-002',
+      title: 'Pillar 3a Maximum Contribution Raised to CHF 7,258',
+      description: 'Updated pension parameters for 2025 including pillar 3a limits and BVG thresholds',
       category: 'individual',
-      date: '2024-11-25',
+      date: '2025-01-03',
       priority: 'medium',
-      impact: 'Real estate investors and property owners',
-      summary: 'Switzerland updates tax rules for real estate investments, including new deduction limits and reporting requirements.',
+      impact: 'All employees and self-employed persons',
+      summary: 'For 2025, the pillar 3a maximum contribution rises to CHF 7,258 for employees with a pension fund and CHF 36,288 (max. 20% of net income) for those without. BVG parameters were adjusted accordingly.',
       details: [
-        'Updated mortgage interest deduction limits',
-        'New property tax calculation methods',
-        'Updated rental income taxation',
-        'New reporting requirements for property sales',
-        'Updated capital gains tax for real estate'
+        'Pillar 3a maximum with pension fund: CHF 7,258',
+        'Pillar 3a maximum without pension fund: CHF 36,288 (max. 20% of net income)',
+        'BVG entry threshold: CHF 22,680',
+        'BVG coordination deduction: CHF 26,460',
+        'Minimum AHV contribution for non-employed persons: CHF 530'
       ],
       implications: [
-        'Review real estate tax strategies',
-        'Update property investment planning',
-        'Consider timing of property transactions',
-        'Implement new reporting requirements'
+        'Adjust standing orders to the new maximum',
+        'Self-employed should recalculate their 20% limit',
+        'Review BVG coverage for part-time employees',
+        'Update payroll parameters for 2025'
       ],
       effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Tax Administration',
-      icon: Home
+      source: 'Swiss Federal Social Insurance Office (BSV)',
+      icon: Calculator
     },
     {
-      id: 'update-2025-010',
-      title: 'International Tax Reporting Requirements',
-      description: 'Enhanced international tax reporting and compliance requirements',
-      category: 'international',
-      date: '2024-11-20',
+      id: 'update-2024-001',
+      title: 'VAT Rates Increased to 8.1% / 2.6% / 3.8%',
+      description: 'Swiss VAT rates rose on 1 January 2024 to finance the AHV reform',
+      category: 'vat',
+      date: '2024-01-02',
       priority: 'high',
-      impact: 'International businesses and expatriates',
-      summary: 'Switzerland enhances international tax reporting requirements including CRS, FATCA, and country-by-country reporting.',
+      impact: 'All VAT-registered businesses and consumers',
+      summary: 'Following the AHV 21 vote, Swiss VAT rates increased on 1 January 2024: the standard rate from 7.7% to 8.1%, the reduced rate from 2.5% to 2.6%, and the special accommodation rate from 3.7% to 3.8%.',
       details: [
-        'Enhanced CRS reporting requirements',
-        'Updated FATCA compliance procedures',
-        'New country-by-country reporting rules',
-        'Enhanced information exchange procedures',
-        'Updated penalty structures for non-compliance'
+        'Standard rate: 8.1% (previously 7.7%)',
+        'Reduced rate for essential goods: 2.6% (previously 2.5%)',
+        'Special rate for accommodation: 3.8% (previously 3.7%)',
+        'Net tax rates for the simplified method were adjusted accordingly',
+        'The additional revenue is earmarked for AHV financing'
       ],
       implications: [
-        'Review international tax compliance',
-        'Implement enhanced reporting systems',
-        'Consider tax structure optimization',
-        'Prepare for increased scrutiny'
+        'Update invoicing, tills, and accounting systems',
+        'Check contracts spanning the rate change',
+        'Apply the correct rate based on the date of supply',
+        'Review net tax rate method elections'
       ],
-      effectiveDate: '2025-01-01',
-      source: 'Swiss Federal Department of Finance',
-      icon: Globe
-    }
+      effectiveDate: '2024-01-01',
+      source: 'Swiss Federal Tax Administration (FTA)',
+      icon: Calculator
+    },
+    {
+      id: 'update-2024-002',
+      title: 'AHV 21 Reform in Force: Reference Age 65 for All',
+      description: 'Unified reference age and flexible retirement options since 1 January 2024',
+      category: 'individual',
+      date: '2024-01-05',
+      priority: 'high',
+      impact: 'All employees, particularly women born 1961-1969',
+      summary: 'The AHV 21 reform took effect on 1 January 2024. The reference age for women rises stepwise to 65 from 2025, retirement becomes more flexible, and the transitional generation receives compensation measures.',
+      details: [
+        'Uniform reference age of 65 for men and women (phased in for women from 2025)',
+        'Pension can be drawn flexibly between 63 and 70',
+        'Partial pension withdrawal is possible',
+        'Compensation supplements for women of the transitional generation (born 1961-1969)',
+        'Working beyond 65 can now improve the pension'
+      ],
+      implications: [
+        'Women born 1961-1969 should review their retirement planning',
+        'Consider partial retirement options',
+        'Evaluate whether deferring the pension pays off',
+        'Employers should update HR and payroll processes'
+      ],
+      effectiveDate: '2024-01-01',
+      source: 'Swiss Federal Social Insurance Office (BSV)',
+      icon: Users
+    },
+    {
+      id: 'update-2024-003',
+      title: 'OECD Minimum Tax: 15% for Large Multinationals',
+      description: 'Switzerland applies the OECD/G20 minimum tax to large corporate groups since 2024',
+      category: 'corporate',
+      date: '2024-01-10',
+      priority: 'medium',
+      impact: 'Multinational groups with revenue above EUR 750 million',
+      summary: 'Following the June 2023 constitutional vote, Switzerland introduced a qualified domestic minimum top-up tax (QDMTT) of 15% for large multinational groups from 1 January 2024. SMEs and purely domestic companies are not affected.',
+      details: [
+        'Applies to groups with consolidated revenue of EUR 750 million or more',
+        'Implemented as a domestic top-up tax (QDMTT)',
+        'Ordinary cantonal and federal profit taxes remain unchanged',
+        'Cantons keep the majority of the additional revenue',
+        'International top-up elements (IIR) applied from 2025'
+      ],
+      implications: [
+        'Affected groups must calculate their effective tax rate per jurisdiction',
+        'Review group structures and intercompany arrangements',
+        'SMEs below the threshold are not affected',
+        'Monitor cantonal responses such as location incentives'
+      ],
+      effectiveDate: '2024-01-01',
+      source: 'Swiss Federal Department of Finance (FDF)',
+      icon: Building
+    },
   ];
 
   const filteredUpdates = taxUpdates.filter(update => {
@@ -349,10 +245,10 @@ const TaxUpdatesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Latest Swiss Tax Updates & Law Changes 2025 | Taxed GmbH</title>
-        <meta name="description" content="Stay updated with the latest Swiss tax law changes, updates, and new regulations for 2025. Get expert analysis and implications for your tax situation." />
-        <meta property="og:title" content="Latest Swiss Tax Updates & Law Changes 2025 | Taxed GmbH" />
-        <meta property="og:description" content="Stay updated with the latest Swiss tax law changes, updates, and new regulations for 2025. Get expert analysis and implications for your tax situation." />
+        <title>Latest Swiss Tax Updates & Law Changes 2026 | Taxed GmbH</title>
+        <meta name="description" content="Stay updated with the latest Swiss tax law changes, updates, and new regulations for 2026. Get expert analysis and implications for your tax situation." />
+        <meta property="og:title" content="Latest Swiss Tax Updates & Law Changes 2026 | Taxed GmbH" />
+        <meta property="og:description" content="Stay updated with the latest Swiss tax law changes, updates, and new regulations for 2026. Get expert analysis and implications for your tax situation." />
         <link rel="canonical" href="https://taxed.ch/tax-updates" />
       </Helmet>
 
