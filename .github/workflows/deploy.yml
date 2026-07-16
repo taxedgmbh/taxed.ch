@@ -1,0 +1,78 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+    # Only source changes need a rebuild. The Auto-build commit touches only
+    # dist/ and generated public files, which are excluded here so it cannot
+    # re-trigger this workflow (same loop-guard as eflury.com's deploy).
+    paths:
+      - 'src/**'
+      - 'index.html'
+      - 'tools/**'
+      - 'public/**'
+      - '!public/rss.xml'
+      - '!public/llms.txt'
+      - 'vite.config.js'
+      - 'tailwind.config.js'
+      - 'postcss.config.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Commit and push built files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist public/rss.xml public/llms.txt
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-build: deploy site"
+            git push
+          fi
+
+      - name: Trigger Hostinger deployment
+        continue-on-error: true
+        env:
+          WEBHOOK_URL: ${{ secrets.HOSTINGER_WEBHOOK_URL }}
+        run: |
+          echo "Triggering Hostinger deployment..."
+          if [ -z "$WEBHOOK_URL" ]; then
+            echo "Warning: HOSTINGER_WEBHOOK_URL secret is not set"
+            exit 0
+          fi
+          HTTP_CODE=$(curl -sS -X POST "$WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -H "X-GitHub-Event: push" \
+            -d '{"ref": "refs/heads/main"}' \
+            -o /dev/null -w "%{http_code}" 2>&1) || true
+          echo "Webhook response: $HTTP_CODE"
+          if [ "$HTTP_CODE" -ge 200 ] 2>/dev/null && [ "$HTTP_CODE" -lt 300 ] 2>/dev/null; then
+            echo "Deployment triggered successfully"
+          else
+            echo "Warning: Webhook issue (code: $HTTP_CODE) - please verify HOSTINGER_WEBHOOK_URL secret"
+          fi
