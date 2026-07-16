@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import ShareButton from '@/components/ui/ShareButton';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import NewsletterSignupForm from '@/components/forms/NewsletterSignupForm';
 
 const BlogPostCard = ({ post, index, featured = false, gridSize = 'normal' }) => {
   const getDifficultyColor = (difficulty) => {
@@ -350,19 +351,7 @@ const BlogPage = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Get the latest Swiss tax insights delivered to your inbox
                     </p>
-                    {/* HubSpot Newsletter Signup Form */}
-                    <div className="hubspot-newsletter-container">
-                      <iframe 
-                        src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
-                        width="100%"
-                        height="250"
-                        frameBorder="0"
-                        scrolling="no"
-                        title="Taxed GmbH Newsletter Signup - Blog"
-                        className="border-0 rounded-lg"
-                        style={{ minHeight: '250px' }}
-                      />
-                    </div>
+                    <NewsletterSignupForm />
                   </CardContent>
                 </Card>
               </div>

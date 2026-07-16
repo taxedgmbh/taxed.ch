@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { 
+import NewsletterSignupForm from '@/components/forms/NewsletterSignupForm';
   Mail, 
   Send, 
   CheckCircle, 
@@ -123,19 +124,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({ className 
                   </motion.div>
                 )}
 
-                {/* HubSpot Newsletter Signup Form */}
-                <div className="hubspot-newsletter-container">
-                  <iframe 
-                    src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
-                    width="100%"
-                    height="400"
-                    frameBorder="0"
-                    scrolling="no"
-                    title="Taxed GmbH Newsletter Signup"
-                    className="border-0 rounded-lg"
-                    style={{ minHeight: '400px', backgroundColor: 'transparent' }}
-                  />
-                </div>
+                <NewsletterSignupForm variant="dark" />
 
                 <p className="text-sm text-blue-200 mt-4">
                   We respect your privacy. Unsubscribe at any time.

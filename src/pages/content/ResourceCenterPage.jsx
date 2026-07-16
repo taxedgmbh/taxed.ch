@@ -22,6 +22,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import NewsletterSignupForm from '@/components/forms/NewsletterSignupForm';
 
 const ResourceCenterPage = () => {
   const [email, setEmail] = useState('');
@@ -328,19 +329,7 @@ const ResourceCenterPage = () => {
                 </p>
               </div>
               
-              {/* HubSpot Newsletter Signup Form */}
-              <div className="hubspot-newsletter-container">
-                <iframe 
-                  src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
-                  width="100%"
-                  height="350"
-                  frameBorder="0"
-                  scrolling="no"
-                  title="Taxed GmbH Newsletter Signup - Resources"
-                  className="border-0 rounded-lg"
-                  style={{ minHeight: '350px' }}
-                />
-              </div>
+              <NewsletterSignupForm />
               <div className="text-center mt-4">
                 <Button 
                   onClick={() => {

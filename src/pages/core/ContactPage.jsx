@@ -31,6 +31,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/components/ui/use-toast';
+import HubSpotContactForm from '@/components/forms/HubSpotContactForm';
+import NewsletterSignupForm from '@/components/forms/NewsletterSignupForm';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -433,19 +435,7 @@ const ContactPage = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-8">
-                  {/* HubSpot Embedded Form */}
-                  <div className="hubspot-form-container">
-                    <iframe 
-                      src="https://share-eu1.hsforms.com/1xA0NQrALToW5NH7CkatXWA2ds4ox"
-                      width="100%"
-                      height="800"
-                      frameBorder="0"
-                      scrolling="yes"
-                      title="Taxed GmbH Contact Form"
-                      className="border-0 rounded-lg"
-                      style={{ minHeight: '800px' }}
-                    />
-                  </div>
+                  <HubSpotContactForm />
                   
                   {/* Security Notice */}
                   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-6">
@@ -633,19 +623,7 @@ const ContactPage = () => {
                   </p>
                 </div>
 
-                {/* HubSpot Newsletter Signup Form */}
-                <div className="hubspot-newsletter-container">
-                  <iframe 
-                    src="https://share-eu1.hsforms.com/1uITtAEHOS8OOaBP67HZnYQ2ds4ox"
-                    width="100%"
-                    height="400"
-                    frameBorder="0"
-                    scrolling="no"
-                    title="Taxed GmbH Newsletter Signup - Contact Page"
-                    className="border-0 rounded-lg"
-                    style={{ minHeight: '400px', backgroundColor: 'transparent' }}
-                  />
-                </div>
+                <NewsletterSignupForm variant="dark" />
 
                 <p className="text-sm text-blue-200 mt-4">
                   We respect your privacy. Unsubscribe at any time.
