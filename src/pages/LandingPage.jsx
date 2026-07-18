@@ -160,27 +160,6 @@ const LandingPage = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Sarah Müller",
-      role: "Expat from Germany",
-      content: "Taxed GmbH made my Swiss tax filing incredibly simple. The digital process was smooth and their expertise saved me money.",
-      rating: 5
-    },
-    {
-      name: "James Wilson",
-      role: "International Consultant",
-      content: "Professional service with transparent pricing. They handled my complex international income situation perfectly.",
-      rating: 5
-    },
-    {
-      name: "Maria Rodriguez",
-      role: "Tech Professional",
-      content: "The client portal is fantastic. I can track everything online and communicate easily with my tax expert.",
-      rating: 5
-    }
-  ];
-
   return (
     <>
       <Helmet>
@@ -640,7 +619,7 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* Testimonials Section - Fixed Contrast */}
+        {/* Why Clients Choose Us - verifiable facts only */}
         <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-700 to-blue-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -651,35 +630,50 @@ const LandingPage = () => {
               className="text-center mb-12 sm:mb-16"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-                What Our Clients Say
+                Why Clients Choose Us
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto">
-                Join hundreds of satisfied clients who trust Taxed GmbH with their Swiss tax needs.
+                Hundreds of expats and businesses across Switzerland trust Taxed GmbH with their taxes.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-              {testimonials.map((testimonial, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              {[
+                {
+                  icon: DollarSign,
+                  title: 'Flat-Rate Pricing',
+                  text: 'Transparent packages from CHF 249 — the price you see is the price you pay.'
+                },
+                {
+                  icon: Lock,
+                  title: 'Secure Client Portal',
+                  text: 'Upload documents and track your return online, protected end to end.'
+                },
+                {
+                  icon: MapPin,
+                  title: 'Swiss-Based Team',
+                  text: 'Real experts in Biel/Bienne serving clients across all 26 cantons.'
+                },
+                {
+                  icon: Globe,
+                  title: 'Three Languages',
+                  text: 'Advice in English, German, and French — built for international clients.'
+                }
+              ].map((item, index) => (
                 <motion.div
-                  key={testimonial.name}
+                  key={item.title}
                   initial={fadeInUp.initial}
                   whileInView={fadeInUp.whileInView}
                   transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <Card className="h-full bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-colors">
-                    <CardContent className="p-6 sm:p-8">
-                      <div className="flex mb-4" role="img" aria-label={`${testimonial.rating} star rating`}>
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 text-yellow-300 fill-current" aria-hidden="true" />
-                        ))}
+                    <CardContent className="p-6 sm:p-8 text-center">
+                      <div className="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <item.icon className="h-6 w-6 text-white" aria-hidden="true" />
                       </div>
-                      <Quote className="h-8 w-8 text-white/80 mb-4" aria-hidden="true" />
-                      <p className="text-white mb-6 italic text-sm sm:text-base">"{testimonial.content}"</p>
-                      <div>
-                        <div className="font-semibold text-white">{testimonial.name}</div>
-                        <div className="text-gray-200 text-sm">{testimonial.role}</div>
-                      </div>
+                      <h3 className="font-semibold text-white mb-2">{item.title}</h3>
+                      <p className="text-gray-200 text-sm">{item.text}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
