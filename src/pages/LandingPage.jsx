@@ -244,57 +244,6 @@ const LandingPage = () => {
               "https://www.facebook.com/taxedgmbh",
               "https://twitter.com/taxedgmbh"
             ],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "3",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Sarah Müller"
-                },
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "reviewBody": "Taxed GmbH made my Swiss tax filing incredibly simple. The digital process was smooth and their expertise saved me money.",
-                "datePublished": "2024-03-15"
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "James Wilson"
-                },
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "reviewBody": "Professional service with transparent pricing. They handled my complex international income situation perfectly.",
-                "datePublished": "2024-05-22"
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Maria Rodriguez"
-                },
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "reviewBody": "The client portal is fantastic. I can track everything online and communicate easily with my tax expert.",
-                "datePublished": "2024-07-10"
-              }
-            ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "Tax Services",

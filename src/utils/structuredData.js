@@ -51,13 +51,6 @@ export const organizationSchema = {
     "name": "Switzerland"
   },
   "priceRange": "CHF 249 - CHF 799",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Tax Services",
@@ -146,50 +139,6 @@ export const websiteSchema = {
     "query-input": "required name=search_term_string"
   }
 };
-
-/**
- * Review Schema Generator
- * Creates individual review structured data
- */
-export const generateReviewSchema = (review) => ({
-  "@type": "Review",
-  "author": {
-    "@type": "Person",
-    "name": review.author
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": review.rating,
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "reviewBody": review.text,
-  "datePublished": review.date
-});
-
-/**
- * Sample Reviews for Homepage
- */
-export const sampleReviews = [
-  {
-    author: "Sarah Müller",
-    rating: "5",
-    text: "Taxed GmbH made my Swiss tax filing incredibly simple. As an American expat, I was overwhelmed by the forms, but they handled everything professionally and got me a CHF 1,200 refund!",
-    date: "2024-03-15"
-  },
-  {
-    author: "James Chen",
-    rating: "5",
-    text: "Best tax service in Switzerland! They understand the complexities of international income and helped me optimize my deductions. Saved me over CHF 3,000.",
-    date: "2024-02-28"
-  },
-  {
-    author: "Maria Rodriguez",
-    rating: "5",
-    text: "Professional, efficient, and affordable. I've been using Taxed GmbH for 3 years and wouldn't trust anyone else with my Swiss taxes.",
-    date: "2024-01-10"
-  }
-];
 
 /**
  * HowTo Schema Generator
@@ -423,8 +372,6 @@ export default {
   organizationSchema,
   websiteSchema,
   localBusinessSchema,
-  sampleReviews,
-  generateReviewSchema,
   generateHowToSchema,
   generateServiceSchema,
   generateFAQSchema,
