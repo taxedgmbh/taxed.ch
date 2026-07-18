@@ -1,9 +1,9 @@
 // Bing Search Engine Optimization Utilities
 
-// Initialize Microsoft Clarity for Bing insights
-export const initializeBingAnalytics = () => {
-  // Clarity is already loaded via the script tag
-};
+// Placeholder for Bing analytics initialization.
+// Microsoft Clarity is not currently installed; the trackBingEvent guard
+// below activates automatically if a Clarity snippet is ever added.
+export const initializeBingAnalytics = () => {};
 
 // Submit URL to Bing for immediate indexing
 export const submitToBingIndexing = async (url) => {
