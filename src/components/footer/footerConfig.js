@@ -36,7 +36,6 @@ export const footerSections = [
       { name: "Our Team", href: "/team", description: "Meet our tax experts" },
       { name: "Industry Specializations", href: "/industry-specializations", description: "Sector expertise" },
       { name: "Advanced Tax Tools", href: "/advanced-tax-tools", description: "Professional analysis tools" },
-      { name: "Client Testimonials", href: "/testimonials", description: "Client success stories" },
       { name: "Business Tax Guide", href: "/business-tax-guide", description: "Corporate tax guidance" },
       { name: "International Tax", href: "/international-tax", description: "Cross-border tax services" },
     ]

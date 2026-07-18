@@ -56,7 +56,6 @@ const ResourceCenterPage = React.lazy(() => import('@/pages/content/ResourceCent
 const NewsPage = React.lazy(() => import('@/pages/content/NewsPage'));
 const CaseStudiesPage = React.lazy(() => import('@/pages/content/CaseStudiesPage'));
 const IndustrySpecializationsPage = React.lazy(() => import('@/pages/content/IndustrySpecializationsPage'));
-const ClientTestimonialsPage = React.lazy(() => import('@/pages/content/ClientTestimonialsPage'));
 
 // Blog pages
 const BlogPage = React.lazy(() => import('@/pages/blog/BlogPage'));
@@ -193,7 +192,7 @@ function App() {
           {/* Phase 1 Critical Pages */}
           <Route path="/tax-deadlines" element={<TaxDeadlinesPage />} />
           <Route path="/expat-tax-guide" element={<ExpatTaxGuidePage />} />
-          <Route path="/testimonials" element={<ClientTestimonialsPage />} />
+          <Route path="/testimonials" element={<Navigate to="/about" replace />} />
           <Route path="/tax-planning-guide" element={<TaxPlanningGuidePage />} />
           
           {/* Phase 2 Professional Pages */}

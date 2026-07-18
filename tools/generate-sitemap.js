@@ -18,7 +18,6 @@ const staticPages = [
   { path: '/careers', priority: '0.6', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
   { path: '/case-studies', priority: '0.7', changefreq: 'monthly' },
-  { path: '/testimonials', priority: '0.6', changefreq: 'monthly' },
   { path: '/industry-specializations', priority: '0.6', changefreq: 'monthly' },
   { path: '/partnership', priority: '0.5', changefreq: 'monthly' },
   { path: '/calculators', priority: '0.8', changefreq: 'monthly' },
