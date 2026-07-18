@@ -33,7 +33,7 @@ const Footer = () => {
               Ready to Simplify Your Swiss Taxes?
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Join thousands of expats who trust Taxed GmbH for their Swiss tax filing.
+              Join 500+ expats who trust Taxed GmbH for their Swiss tax filing.
               Get started today with our transparent, flat-rate service.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
