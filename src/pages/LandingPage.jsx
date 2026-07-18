@@ -276,12 +276,13 @@ const LandingPage = () => {
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={fadeInUp.initial}
             animate={fadeInUp.animate}
             transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
-            className="text-white"
+            className="text-white text-center lg:text-left"
           >
             <div className="mb-6">
               <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-gray-900 shadow-lg">
@@ -290,19 +291,19 @@ const LandingPage = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
               Expert Swiss Tax
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
                 Solutions
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-white max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-white max-w-4xl mx-auto lg:mx-0 leading-relaxed">
               Professional tax consulting services for expatriates and businesses.
               <span className="block mt-2">Advanced tools, secure client portal, and expert guidance for all your Swiss tax needs.</span>
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
                 asChild
                 size="lg"
@@ -327,7 +328,33 @@ const LandingPage = () => {
                 Free Assessment
               </Button>
             </div>
+          </motion.div>
 
+          {/* Branded illustration (desktop) */}
+          <motion.div
+            initial={fadeIn.initial}
+            animate={fadeIn.animate}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 1, delay: 0.2 }}
+            className="hidden lg:flex justify-center"
+          >
+            <img
+              src="/images/hero-illustration.svg"
+              alt=""
+              aria-hidden="true"
+              width="560"
+              height="457"
+              decoding="async"
+              className="w-full max-w-[560px] h-auto"
+            />
+          </motion.div>
+          </div>
+
+          <motion.div
+            initial={fadeInUp.initial}
+            animate={fadeInUp.animate}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8, delay: 0.3 }}
+            className="text-white mt-12 lg:mt-16"
+          >
             {/* Stats - Better Responsive Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
