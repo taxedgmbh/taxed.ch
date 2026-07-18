@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Mail, ShoppingCart, Search } from 'lucide-react';
+import { Menu, X, Mail, ShoppingCart, Search, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
 import { MegaMenu, SearchModal, navigation } from '@/components/header/index';
@@ -9,9 +9,16 @@ import { MegaMenu, SearchModal, navigation } from '@/components/header/index';
 const Header = ({ isLandingPage }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [expandedSection, setExpandedSection] = useState(null);
   const { cartItems, setIsCartOpen } = useCart();
   const location = useLocation();
   const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+  // Close the mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setExpandedSection(null);
+  }, [location.pathname]);
 
   const getLinkClass = (href) => {
     return `px-4 py-3 min-h-[44px] inline-flex items-center rounded-lg text-base font-medium transition-all duration-200 ${
@@ -57,11 +64,11 @@ const Header = ({ isLandingPage }) => {
                   fetchpriority="high"
                 />
               </div>
-              <div>
-                <div className="text-xl font-bold text-gray-900 group-hover:text-steel-blue transition-colors">
+              <div className="min-w-0">
+                <div className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-steel-blue transition-colors whitespace-nowrap leading-tight">
                   Taxed GmbH
                 </div>
-                <div className="text-base text-gray-500">Swiss Tax Experts</div>
+                <div className="hidden sm:block text-sm text-gray-500 whitespace-nowrap leading-tight">Swiss Tax Experts</div>
               </div>
             </Link>
           </div>
@@ -82,11 +89,11 @@ const Header = ({ isLandingPage }) => {
           </div>
 
           {/* Right side actions */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
             <Button
               variant="ghost"
               size="icon"
-              className="hidden md:flex"
+              className="hidden sm:inline-flex"
               onClick={() => setIsSearchOpen(true)}
               aria-label="Search"
             >
@@ -110,7 +117,7 @@ const Header = ({ isLandingPage }) => {
 
             <Button
               asChild
-              className="bg-gradient-to-r from-steel-blue to-blue-600 hover:from-blue-700 hover:to-blue-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+              className="hidden min-[400px]:inline-flex bg-gradient-to-r from-steel-blue to-blue-600 hover:from-blue-700 hover:to-blue-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 px-3 sm:px-4 whitespace-nowrap"
             >
               <Link to="/contact">Get Started</Link>
             </Button>
@@ -137,42 +144,73 @@ const Header = ({ isLandingPage }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-white border-t border-gray-200 overflow-hidden"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-4 space-y-1 max-h-[calc(100vh-8rem)] overflow-y-auto">
+              {/* Search (icon is hidden in the bar on small phones) */}
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsSearchOpen(true);
+                }}
+                className="sm:hidden flex items-center w-full space-x-3 text-base font-medium text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
+              >
+                <Search className="h-5 w-5" />
+                <span>Search</span>
+              </button>
+
               {navigation.map((navItem) => (
                 <div key={navItem.name}>
                   {navItem.type === 'mega' ? (
                     <div>
-                      <div className="text-base font-semibold text-gray-900 mb-3">
-                        {navItem.name}
-                      </div>
-                      <div className="space-y-2 ml-4">
-                        {navItem.items.map((section, sectionIndex) => (
-                          <div key={sectionIndex}>
-                            <div className="text-base font-medium text-gray-500 uppercase tracking-wide mb-2">
-                              {section.title}
-                            </div>
-                            <div className="space-y-1 ml-4">
-                              {section.items.map((item, itemIndex) => (
-                                <Link
-                                  key={itemIndex}
-                                  to={item.href}
-                                  className="block text-base text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
-                                  onClick={() => setIsMobileMenuOpen(false)}
+                      {navItem.items.map((section) => {
+                        const isExpanded = expandedSection === section.title;
+                        return (
+                          <div key={section.title} className="border-b border-gray-100 last:border-b-0">
+                            <button
+                              type="button"
+                              onClick={() => setExpandedSection(isExpanded ? null : section.title)}
+                              aria-expanded={isExpanded}
+                              className="flex items-center justify-between w-full text-base font-semibold text-gray-900 py-3 min-h-[44px]"
+                            >
+                              <span>{section.title}</span>
+                              <ChevronDown
+                                className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                              />
+                            </button>
+                            <AnimatePresence initial={false}>
+                              {isExpanded && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: 'auto', opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="overflow-hidden"
                                 >
-                                  {item.name}
-                                </Link>
-                              ))}
-                            </div>
+                                  <div className="pb-2">
+                                    {section.items.map((item) => (
+                                      <Link
+                                        key={item.href + item.name}
+                                        to={item.href}
+                                        className="block text-base text-gray-600 hover:text-steel-blue py-2.5 pl-4 min-h-[44px] flex items-center"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
                           </div>
-                        ))}
-                      </div>
+                        );
+                      })}
                     </div>
                   ) : (
                     <Link
                       to={navItem.href}
-                      className="block text-base font-medium text-gray-700 hover:text-steel-blue py-3 min-h-[44px]"
+                      className="block text-base font-semibold text-gray-900 hover:text-steel-blue py-3 min-h-[44px] border-b border-gray-100"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {navItem.name}
@@ -180,6 +218,18 @@ const Header = ({ isLandingPage }) => {
                   )}
                 </div>
               ))}
+
+              {/* Primary CTA */}
+              <div className="pt-4">
+                <Button
+                  asChild
+                  className="w-full bg-gradient-to-r from-steel-blue to-blue-600 hover:from-blue-700 hover:to-blue-800 text-white font-semibold min-h-[48px]"
+                >
+                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                    Get Started
+                  </Link>
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}

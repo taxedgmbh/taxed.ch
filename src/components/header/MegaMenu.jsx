@@ -37,7 +37,7 @@ const getIcon = (name) => {
     'Law Section': Scale,
   };
   const Icon = icons[name] || ArrowRight;
-  return <Icon className="w-5 h-5" />;
+  return <Icon className="w-5 h-5 text-white" />;
 };
 
 const getSectionColor = (title) => {
@@ -56,6 +56,31 @@ const MegaMenu = ({ navItem }) => {
   const [menuPosition, setMenuPosition] = useState({ left: '50%', transform: 'translateX(-50%)' });
   const menuRef = useRef(null);
   const triggerRef = useRef(null);
+  const closeTimer = useRef(null);
+
+  const openMenu = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setIsOpen(true);
+  };
+
+  // Delay closing so the pointer can cross the gap between trigger and panel
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setIsOpen(false), 150);
+  };
+
+  // Close when clicking anywhere outside the menu
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (isOpen && menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('pointerdown', handleOutsideClick);
+    return () => document.removeEventListener('pointerdown', handleOutsideClick);
+  }, [isOpen]);
+
+  useEffect(() => () => closeTimer.current && clearTimeout(closeTimer.current), []);
 
   const calculateMenuPosition = () => {
     if (triggerRef.current) {
@@ -89,16 +114,6 @@ const MegaMenu = ({ navItem }) => {
   useEffect(() => {
     if (isOpen) {
       calculateMenuPosition();
-
-      if (menuRef.current) {
-        const focusableElements = menuRef.current.querySelectorAll(
-          'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
-        );
-
-        if (focusableElements.length > 0) {
-          focusableElements[0].focus();
-        }
-      }
     }
   }, [isOpen]);
 
@@ -122,8 +137,8 @@ const MegaMenu = ({ navItem }) => {
   return (
     <div
       className="relative"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={openMenu}
+      onMouseLeave={scheduleClose}
       onKeyDown={handleKeyDown}
       ref={menuRef}
     >
@@ -134,7 +149,7 @@ const MegaMenu = ({ navItem }) => {
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label={`${navItem.name} menu`}
-        onFocus={() => setIsOpen(true)}
+        onClick={() => setIsOpen((open) => !open)}
       >
         {navItem.name}
         <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
@@ -165,18 +180,20 @@ const MegaMenu = ({ navItem }) => {
                   <h2 className="text-lg font-bold mb-1">{navItem.name}</h2>
                   <p className="text-blue-100 text-xs">Swiss tax solutions</p>
                 </div>
-                <div className="flex space-x-2">
+                <div className="flex flex-wrap gap-1 justify-end">
                   {navItem.items.map((section, index) => (
                     <button
                       key={index}
                       onClick={() => setActiveSection(index)}
-                      className={`p-2 rounded-lg transition-all duration-200 ${
+                      aria-label={`Show ${section.title}`}
+                      aria-pressed={activeSection === index}
+                      className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
                         activeSection === index
-                          ? 'bg-white/20 text-white'
+                          ? 'bg-white/25 text-white'
                           : 'text-blue-100 hover:bg-white/10'
                       }`}
                     >
-                      {section.title.charAt(0)}
+                      {section.title.split(' ')[0]}
                     </button>
                   ))}
                 </div>
