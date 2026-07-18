@@ -335,7 +335,7 @@ const LandingPage = () => {
             initial={fadeIn.initial}
             animate={fadeIn.animate}
             transition={prefersReducedMotion ? { duration: 0 } : { duration: 1, delay: 0.2 }}
-            className="hidden lg:flex justify-center"
+            className="flex justify-center mt-2 lg:mt-0"
           >
             <img
               src="/images/hero-illustration.svg"
@@ -344,7 +344,7 @@ const LandingPage = () => {
               width="560"
               height="457"
               decoding="async"
-              className="w-full max-w-[560px] h-auto"
+              className="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[560px] h-auto"
             />
           </motion.div>
           </div>
