@@ -66,7 +66,6 @@ const SitemapPage = () => {
       <Helmet>
         <title>Sitemap - Taxed GmbH | Swiss Tax Consulting</title>
         <meta name="description" content="Complete sitemap of Taxed GmbH website. Find all pages and sections of our Swiss tax consulting services." />
-        <meta name="keywords" content="sitemap, website structure, navigation, Taxed GmbH, Swiss tax consulting" />
       </Helmet>
 
       <div className="min-h-screen bg-gray-50">

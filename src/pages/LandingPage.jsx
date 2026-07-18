@@ -165,7 +165,6 @@ const LandingPage = () => {
       <Helmet>
         <title>Taxed GmbH | Professional Swiss Tax Services for Expats & Businesses</title>
         <meta name="description" content="Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Professional client portal, advanced tools, and comprehensive tax solutions." />
-        <meta name="keywords" content="Swiss tax services, tax consultant Switzerland, Steuererklärung Schweiz, expat taxes, Quellensteuer, Swiss tax return, Steuerberater Zürich, professional tax filing, Swiss tax planning, international tax Switzerland, tax optimization, digital tax filing" />
         <meta property="og:title" content="Taxed GmbH | Professional Swiss Tax Services for Expats & Businesses" />
         <meta property="og:description" content="Leading Swiss tax consulting firm offering expert services for expatriates and businesses. Professional client portal, advanced tools, and comprehensive tax solutions." />
         <link rel="canonical" href="https://taxed.ch" />
@@ -219,9 +218,8 @@ const LandingPage = () => {
             "currenciesAccepted": "CHF",
             "paymentAccepted": "Cash, Credit Card, Bank Transfer",
             "sameAs": [
-              "https://www.linkedin.com/company/taxed-gmbh",
               "https://www.facebook.com/taxedgmbh",
-              "https://twitter.com/taxedgmbh"
+              "https://www.instagram.com/taxed_gmbh"
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -261,6 +259,18 @@ const LandingPage = () => {
 
       {/* Hero Section - Improved Contrast and Responsiveness */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-steel-blue via-blue-600 to-blue-800">
+        {/* Swiss scenery (Lauterbrunnen, Unsplash) as a subtle backdrop under the brand gradient */}
+        <img
+          src="/images/hero-switzerland.jpg"
+          alt=""
+          aria-hidden="true"
+          width="1600"
+          height="1066"
+          decoding="async"
+          fetchpriority="low"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-steel-blue/70 via-blue-600/60 to-blue-800/70"></div>
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 opacity-30" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`

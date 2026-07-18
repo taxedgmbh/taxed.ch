@@ -58,17 +58,15 @@ export const footerSections = [
 ];
 
 export const socialLinks = [
-  { name: "LinkedIn", href: "https://linkedin.com/company/taxed-gmbh", icon: Linkedin },
-  { name: "Twitter", href: "https://twitter.com/taxed_gmbh", icon: Twitter },
   { name: "Facebook", href: "https://facebook.com/taxedgmbh", icon: Facebook },
   { name: "Instagram", href: "https://instagram.com/taxed_gmbh", icon: Instagram },
 ];
 
 export const certifications = [
-  { name: "Swiss Tax Expert", icon: Award },
-  { name: "GDPR Compliant", icon: Shield },
-  { name: "Data Protection", icon: Shield },
-  { name: "Swiss Quality", icon: Award },
+  { name: "Swiss Tax Experts", icon: Award, href: "/team" },
+  { name: "GDPR & FADP Compliant", icon: Shield, href: "/privacy-policy" },
+  { name: "Data Protection", icon: Shield, href: "/security" },
+  { name: "Registered Swiss GmbH", icon: Award, href: "https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-350.820.923", external: true },
 ];
 
 export default { footerSections, socialLinks, certifications };

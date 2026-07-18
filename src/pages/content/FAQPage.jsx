@@ -150,7 +150,6 @@ const FAQPage = () => {
       <Helmet>
         <title>FAQ - Frequently Asked Questions | Taxed GmbH</title>
         <meta name="description" content="Find answers to common questions about Swiss taxes, expat tax filing, deductions, and more. Expert guidance for your tax questions." />
-        <meta name="keywords" content="Swiss tax FAQ, tax questions Switzerland, expat tax help, Quellensteuer questions, Swiss tax filing help, tax deductions Switzerland, Swiss tax advice" />
         <meta property="og:title" content="FAQ - Frequently Asked Questions | Taxed GmbH" />
         <meta property="og:description" content="Find answers to common questions about Swiss taxes, expat tax filing, deductions, and more. Expert guidance for your tax questions." />
         <link rel="canonical" href="https://taxed.ch/faq" />

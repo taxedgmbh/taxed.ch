@@ -24,7 +24,6 @@ const TermsOfServicePage = () => {
       <Helmet>
         <title>Terms of Service - Taxed GmbH | Swiss Tax Consulting</title>
         <meta name="description" content="Terms of Service for Taxed GmbH. Read our terms and conditions for using our Swiss tax consulting and filing services." />
-        <meta name="keywords" content="terms of service, terms and conditions, AGB, Swiss tax services, Taxed GmbH" />
         <link rel="canonical" href="https://taxed.ch/terms" />
 
         <meta property="og:title" content="Terms of Service - Taxed GmbH" />

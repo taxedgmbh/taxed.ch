@@ -284,7 +284,6 @@ const ResourceCenterPage = () => {
       <Helmet>
         <title>Resource Center - Free Swiss Tax Guides & Templates | Taxed GmbH</title>
         <meta name="description" content="Download free Swiss tax guides, checklists, and templates. Expert resources for individuals and businesses in Switzerland." />
-        <meta name="keywords" content="Swiss tax guides, tax templates, tax checklists, free downloads, Switzerland taxation" />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">

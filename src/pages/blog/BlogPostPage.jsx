@@ -137,7 +137,6 @@ const BlogPostPage = () => {
       <Helmet>
         <title>{`${post.title} | Taxed GmbH Blog`}</title>
         <meta name="description" content={post.summary} />
-        <meta name="keywords" content={post.tags.join(", ")} />
         <meta property="og:title" content={`${post.title} | Taxed GmbH Blog`} />
         <meta property="og:description" content={post.summary} />
         <meta property="og:image" content={post.imageUrl} />

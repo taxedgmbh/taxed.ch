@@ -8,7 +8,6 @@ const AccessibilityPage = () => {
       <Helmet>
         <title>Accessibility - Taxed GmbH | Swiss Tax Consulting</title>
         <meta name="description" content="Accessibility information for Taxed GmbH website. Learn about our commitment to making our services accessible to all users." />
-        <meta name="keywords" content="accessibility, WCAG, inclusive design, Taxed GmbH, Swiss tax consulting" />
       </Helmet>
 
       <div className="min-h-screen bg-gray-50">
