@@ -65,7 +65,6 @@ const TeamPage = () => {
       <Helmet>
         <title>Our Team - Taxed GmbH | Expert Swiss Tax Advisors</title>
         <meta name="description" content="Meet our team of expert Swiss tax advisors. Experienced professionals specializing in expat taxes, international tax law, and digital asset taxation." />
-        <meta name="keywords" content="Swiss tax advisors, tax experts, expat tax specialists, international tax consultants, Taxed GmbH team" />
         <link rel="canonical" href="https://taxed.ch/team" />
       </Helmet>
 

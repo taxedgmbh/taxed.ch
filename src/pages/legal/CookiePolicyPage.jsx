@@ -51,7 +51,6 @@ const CookiePolicyPage = () => {
       <Helmet>
         <title>Cookie Policy - Taxed GmbH | Swiss Tax Consulting</title>
         <meta name="description" content="Cookie Policy for Taxed GmbH. Learn how we use cookies on our website and how you can manage your preferences." />
-        <meta name="keywords" content="cookie policy, cookies, privacy, Swiss data protection, Taxed GmbH" />
         <link rel="canonical" href="https://taxed.ch/cookies" />
 
         <meta property="og:title" content="Cookie Policy - Taxed GmbH" />

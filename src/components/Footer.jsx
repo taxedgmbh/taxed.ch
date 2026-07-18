@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone,
@@ -12,12 +12,14 @@ import {
   Globe,
   FileText,
   Settings,
-  Map
+  Map,
+  ChevronDown
 } from 'lucide-react';
 import { InteractiveMap, footerSections, socialLinks, certifications } from '@/components/footer/index';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [openSection, setOpenSection] = useState(null);
 
   const handleLinkClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -127,12 +129,30 @@ const Footer = () => {
               <div className="mb-8">
                 <h4 className="text-base font-semibold text-gray-400 uppercase tracking-wide mb-4">Certifications & Standards</h4>
                 <div className="grid grid-cols-2 gap-3">
-                  {certifications.map((cert, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-base text-gray-400">
-                      <cert.icon className="h-4 w-4 text-steel-blue" />
-                      <span>{cert.name}</span>
-                    </div>
-                  ))}
+                  {certifications.map((cert) =>
+                    cert.external ? (
+                      <a
+                        key={cert.name}
+                        href={cert.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-base text-gray-400 hover:text-white transition-colors min-h-[44px]"
+                      >
+                        <cert.icon className="h-4 w-4 text-steel-blue flex-shrink-0" />
+                        <span>{cert.name}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        key={cert.name}
+                        to={cert.href}
+                        onClick={handleLinkClick}
+                        className="flex items-center space-x-2 text-base text-gray-400 hover:text-white transition-colors min-h-[44px]"
+                      >
+                        <cert.icon className="h-4 w-4 text-steel-blue flex-shrink-0" />
+                        <span>{cert.name}</span>
+                      </Link>
+                    )
+                  )}
                 </div>
               </div>
 
@@ -158,17 +178,36 @@ const Footer = () => {
 
             {/* Footer Links */}
             <div className="lg:col-span-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
                 {footerSections.map((section) => (
-                  <div key={section.title}>
-                    <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                  <div key={section.title} className="border-b border-gray-800 md:border-b-0">
+                    {/* Mobile: collapsible section header */}
+                    <button
+                      type="button"
+                      onClick={() => setOpenSection(openSection === section.title ? null : section.title)}
+                      aria-expanded={openSection === section.title}
+                      className="md:hidden w-full flex items-center justify-between text-lg font-semibold text-white py-4 min-h-[44px]"
+                    >
+                      <span className="flex items-center">
+                        {section.title === "Services" && <Settings className="h-5 w-5 mr-2 text-steel-blue" />}
+                        {section.title === "Resources" && <FileText className="h-5 w-5 mr-2 text-steel-blue" />}
+                        {section.title === "Experience" && <Award className="h-5 w-5 mr-2 text-steel-blue" />}
+                        {section.title === "Company" && <Users className="h-5 w-5 mr-2 text-steel-blue" />}
+                        {section.title}
+                      </span>
+                      <ChevronDown
+                        className={`h-5 w-5 text-gray-500 transition-transform duration-200 ${openSection === section.title ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {/* Desktop: static section header */}
+                    <h3 className="hidden md:flex text-lg font-semibold text-white mb-6 items-center">
                       {section.title === "Services" && <Settings className="h-5 w-5 mr-2 text-steel-blue" />}
                       {section.title === "Resources" && <FileText className="h-5 w-5 mr-2 text-steel-blue" />}
                       {section.title === "Experience" && <Award className="h-5 w-5 mr-2 text-steel-blue" />}
                       {section.title === "Company" && <Users className="h-5 w-5 mr-2 text-steel-blue" />}
                       {section.title}
                     </h3>
-                    <ul className="space-y-4">
+                    <ul className={`space-y-4 pb-4 md:pb-0 ${openSection === section.title ? 'block' : 'hidden'} md:block`}>
                       {section.links.map((link) => (
                         <li key={link.name}>
                           <Link

@@ -59,7 +59,6 @@ const PrivacyPolicyPage = () => {
       <Helmet>
         <title>Privacy Policy - Taxed GmbH | GDPR & WhatsApp API Compliant</title>
         <meta name="description" content="Comprehensive privacy policy for Taxed GmbH covering GDPR compliance, WhatsApp API usage, data protection, and your rights. Swiss tax consulting with full transparency." />
-        <meta name="keywords" content="privacy policy, GDPR, WhatsApp API, data protection, Swiss law, personal data, Taxed GmbH, transparency" />
         <link rel="canonical" href="https://taxed.ch/privacy-policy" />
         
         {/* Open Graph */}

@@ -111,7 +111,6 @@ const NewsPage = () => {
       <Helmet>
         <title>Swiss Tax News & Updates | Taxed GmbH</title>
         <meta name="description" content="Stay updated with the latest Swiss tax news, policy changes, and regulatory updates. AI-powered news aggregation with expert analysis." />
-        <meta name="keywords" content="Swiss tax news, tax updates, Swiss tax law, tax policy, Switzerland tax changes" />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
