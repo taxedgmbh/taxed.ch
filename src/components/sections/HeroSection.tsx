@@ -95,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
               </div>
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5 text-blue-500" />
-                <span className="text-sm text-gray-600">500+ Happy Clients</span>
+                <span className="text-sm text-gray-600">Registered Swiss GmbH</span>
               </div>
             </motion.div>
           </motion.div>

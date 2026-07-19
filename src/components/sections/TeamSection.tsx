@@ -45,9 +45,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
       location: 'Biel/Bienne, Switzerland',
       email: 'info@taxed.ch',
       linkedin: 'https://linkedin.com/in/emanuel-flury',
-      specialties: ['Swiss Tax Filing', 'Expat Services', 'Tax Optimization'],
-      rating: 4.9,
-      clients: 500
+      specialties: ['Swiss Tax Filing', 'Expat Services', 'Tax Optimization']
     },
     {
       id: 'angela-samson',
@@ -60,9 +58,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
       location: 'Biel/Bienne, Switzerland',
       email: 'info@taxed.ch',
       linkedin: '',
-      specialties: ['Individual Tax Returns', 'Tax Compliance', 'Client Support'],
-      rating: 4.8,
-      clients: 100
+      specialties: ['Individual Tax Returns', 'Tax Compliance', 'Client Support']
     },
     {
       id: 'patricia-fangon',
@@ -75,9 +71,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
       location: 'Biel/Bienne, Switzerland',
       email: 'info@taxed.ch',
       linkedin: '',
-      specialties: ['Individual Tax Returns', 'Bilingual Support', 'Client Relations'],
-      rating: 4.8,
-      clients: 100
+      specialties: ['Individual Tax Returns', 'Bilingual Support', 'Client Relations']
     }
   ];
 
@@ -150,14 +144,6 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
                       </div>
                     </div>
                   )}
-
-                  {/* Rating Badge */}
-                  <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 shadow-lg">
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-semibold">{member.rating}</span>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Member Info */}
@@ -211,14 +197,10 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
                   </div>
 
                   {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4 mb-4 text-center">
+                  <div className="grid grid-cols-1 gap-4 mb-4 text-center">
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="text-lg font-bold text-gray-900">{member.experience}</div>
                       <div className="text-base text-gray-600">Experience</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-3">
-                      <div className="text-lg font-bold text-gray-900">{member.clients}+</div>
-                      <div className="text-base text-gray-600">Happy Clients</div>
                     </div>
                   </div>
 
@@ -269,16 +251,16 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ className = '' }) => {
               <div className="text-blue-100">Years Combined Experience</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-blue-100">Happy Clients</div>
+              <div className="text-4xl font-bold mb-2">26</div>
+              <div className="text-blue-100">Cantons Served</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">100%</div>
               <div className="text-blue-100">Swiss Certified</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <div className="text-blue-100">Client Support</div>
+              <div className="text-4xl font-bold mb-2">3</div>
+              <div className="text-blue-100">Working Languages</div>
             </div>
           </div>
         </motion.div>

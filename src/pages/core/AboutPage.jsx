@@ -58,7 +58,7 @@ const AboutPage = () => {
       expertise: ['Swiss Taxation', 'Expat Tax Services', 'Tax Optimization', 'Business Strategy'],
       education: 'Swiss Tax Advisory Certification',
       languages: ['German', 'English', 'French'],
-      achievements: ['Swiss Certified Tax Expert', '500+ Happy Clients', '98% Success Rate']
+      achievements: ['Swiss Certified Tax Expert', 'Founder of Taxed GmbH', 'Advises in English, German & French']
     },
     {
       name: 'Angela Samson',
@@ -129,7 +129,7 @@ const AboutPage = () => {
     {
       year: '2024',
       title: 'Expansion & Growth',
-      description: 'Enhanced digital platforms and grew client base to 500+ happy clients across Switzerland',
+      description: 'Enhanced digital platforms and expanded services for clients across Switzerland',
       icon: TrendingUp
     },
     {
@@ -180,8 +180,8 @@ const AboutPage = () => {
   ];
 
   const stats = [
-    { number: '500+', label: 'Happy Clients', icon: Users, color: 'text-blue-600' },
-    { number: '98%', label: 'Success Rate', icon: CheckCircle, color: 'text-green-600' },
+    { number: '2021', label: 'Founded in Biel/Bienne', icon: Users, color: 'text-blue-600' },
+    { number: '26', label: 'Cantons Served', icon: CheckCircle, color: 'text-green-600' },
     { number: '15+', label: 'Years Experience', icon: Clock, color: 'text-purple-600' },
     { number: '3', label: 'Expert Team Members', icon: Award, color: 'text-orange-600' }
   ];
@@ -213,9 +213,9 @@ const AboutPage = () => {
     <>
       <Helmet>
         <title>About Us | Taxed GmbH - Expert Swiss Tax Consulting Team</title>
-        <meta name="description" content="Meet the expert team at Taxed GmbH. Founded by Emanuel Flury in Biel/Bienne, Switzerland, we specialize in making Swiss tax filing simple for expats with 15+ years of experience and 500+ happy clients." />
+        <meta name="description" content="Meet the expert team at Taxed GmbH. Founded by Emanuel Flury in Biel/Bienne, Switzerland, we specialize in making Swiss tax filing simple for expats with 15+ years of experience and service in English, German, and French." />
         <meta property="og:title" content="About Us | Taxed GmbH - Expert Swiss Tax Consulting Team" />
-        <meta property="og:description" content="Meet the expert team at Taxed GmbH. Founded by Emanuel Flury in Biel/Bienne, Switzerland, we specialize in making Swiss tax filing simple for expats with 15+ years of experience and 500+ happy clients." />
+        <meta property="og:description" content="Meet the expert team at Taxed GmbH. Founded by Emanuel Flury in Biel/Bienne, Switzerland, we specialize in making Swiss tax filing simple for expats with 15+ years of experience and service in English, German, and French." />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
@@ -241,7 +241,7 @@ const AboutPage = () => {
             </h1>
             <p className="text-xl lg:text-2xl max-w-4xl mx-auto mb-8 text-blue-100">
               Leading Swiss tax consulting firm specializing in expatriate services, 
-              with 15+ years of experience and 500+ happy clients across Switzerland.
+              with 15+ years of experience serving clients across Switzerland.
             </p>
             <div className="flex flex-wrap justify-center gap-8">
               {stats.map((stat, index) => (
@@ -671,7 +671,7 @@ const AboutPage = () => {
               Ready to Experience Swiss Excellence?
             </h2>
             <p className="text-xl mb-8 text-white/80">
-              Join 500+ satisfied clients who trust Taxed GmbH for their Swiss tax needs.
+              Work with a registered Swiss firm that makes tax filing simple, transparent, and fully digital.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

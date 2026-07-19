@@ -35,8 +35,8 @@ const Footer = () => {
               Ready to Simplify Your Swiss Taxes?
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Join 500+ expats who trust Taxed GmbH for their Swiss tax filing.
-              Get started today with our transparent, flat-rate service.
+              Swiss tax filing for expatriates and businesses — fully digital, transparently
+              priced, and handled by a registered Swiss firm.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -102,7 +102,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <div className="text-base font-medium">info@taxed.ch</div>
-                    <div className="text-base text-gray-500">24/7 support</div>
+                    <div className="text-base text-gray-500">Reply within one business day</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
@@ -300,7 +300,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Users className="h-4 w-4 text-blue-400" />
-                  <span>500+ Happy Clients</span>
+                  <span>Serving all 26 cantons</span>
                 </div>
               </div>
               <div className="text-base text-gray-500">

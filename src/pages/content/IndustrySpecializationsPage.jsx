@@ -439,46 +439,6 @@ const IndustrySpecializationsPage = () => {
                 </p>
             </motion.div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-steel-blue mb-2">{selectedIndustryData.stats.clients}+</div>
-                <div className="text-sm text-gray-600">Happy Clients</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-steel-blue mb-2">{selectedIndustryData.stats.averageSavings}</div>
-                <div className="text-sm text-gray-600">Average Savings</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-steel-blue mb-2">{selectedIndustryData.stats.satisfaction}/5</div>
-                <div className="text-sm text-gray-600">Client Rating</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-steel-blue mb-2">{selectedIndustryData.stats.yearsExperience}+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
-              </motion.div>
-              </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Challenges */}
               <motion.div
@@ -558,41 +518,6 @@ const IndustrySpecializationsPage = () => {
                             <selectedIndustryData.icon className="h-5 w-5 text-white" />
                           </div>
                           <h4 className="font-semibold text-dark-gray">{service}</h4>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                  ))}
-              </div>
-            </motion.div>
-
-            {/* Case Studies */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-16"
-            >
-              <h3 className="text-2xl font-bold text-dark-gray text-center mb-8">
-                Success Stories in {selectedIndustryData.name}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {selectedIndustryData.caseStudies.map((study, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
-                  >
-                    <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                      <CardHeader>
-                        <CardTitle className="text-lg text-dark-gray">{study.title}</CardTitle>
-                        <p className="text-gray-600">{study.description}</p>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-500">Tax Savings</span>
-                          <span className="text-lg font-bold text-green-600">{study.savings}</span>
                         </div>
                       </CardContent>
                     </Card>

@@ -84,9 +84,9 @@ const TaxSupportPage = () => {
     {
       id: 'channel-001',
       name: 'Live Chat Support',
-      description: 'Get instant help from our support team',
-      availability: '24/7',
-      responseTime: 'Under 2 minutes',
+      description: 'Get help from our support team during business hours',
+      availability: 'Mon-Fri 9AM-6PM CET',
+      responseTime: 'During business hours',
       features: [
         'Real-time chat support',
         'File sharing capability',
@@ -119,8 +119,8 @@ const TaxSupportPage = () => {
       id: 'channel-003',
       name: 'Email Support',
       description: 'Detailed support via email',
-      availability: '24/7',
-      responseTime: 'Within 4 hours',
+      availability: 'Anytime',
+      responseTime: 'Within one business day',
       features: [
         'Detailed email responses',
         'Document attachments',
@@ -319,7 +319,7 @@ const TaxSupportPage = () => {
     },
     {
       question: 'How do I contact support?',
-      answer: 'You can contact our support team through live chat, phone, email, or video call. Live chat is available 24/7, while phone and video support is available during business hours.',
+      answer: 'You can contact our support team through live chat, phone, email, or video call. Live chat, phone, and video support are available during business hours, and emails are answered within one business day.',
       category: 'general',
       helpful: 98
     },

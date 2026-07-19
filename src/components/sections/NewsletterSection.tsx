@@ -59,9 +59,9 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({ className 
   ];
 
   const stats = [
-    { number: '2,500+', label: 'Subscribers' },
-    { number: '95%', label: 'Satisfaction Rate' },
-    { number: 'Weekly', label: 'Updates' }
+    { number: 'Weekly', label: 'Tax Updates' },
+    { number: 'Free', label: 'No Spam Ever' },
+    { number: '1-Click', label: 'Unsubscribe' }
   ];
 
   return (
@@ -206,12 +206,11 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({ className 
                   </div>
                   <div>
                     <div className="font-semibold text-white">Join Our Community</div>
-                    <div className="text-blue-100 text-sm">2,500+ smart taxpayers</div>
+                    <div className="text-blue-100 text-sm">Swiss tax insights, every week</div>
                   </div>
                 </div>
                 <p className="text-blue-100 text-sm">
-                  "The newsletter has helped me save over CHF 5,000 in taxes this year alone. 
-                  The tips are practical and easy to implement." - Sarah M.
+                  Practical tax tips, deadline reminders, and plain-English analysis of Swiss tax changes — written by our advisory team.
                 </p>
               </motion.div>
             </motion.div>

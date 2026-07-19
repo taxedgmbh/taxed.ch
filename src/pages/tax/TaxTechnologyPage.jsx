@@ -511,26 +511,10 @@ const TaxTechnologyPage = () => {
                         <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(solution.status)}`}>
                           {solution.status.toUpperCase()}
                         </span>
-                        <div className="flex items-center space-x-1">
-                          {Array.from({ length: 5 }, (_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-4 w-4 ${
-                                i < Math.floor(solution.rating)
-                                  ? 'text-yellow-400 fill-current'
-                                  : 'text-gray-300'
-                              }`}
-                            />
-                          ))}
-                          <span className="text-sm text-gray-600 ml-1">({solution.rating})</span>
-                        </div>
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{solution.name}</h3>
                       <p className="text-gray-600 mb-3">{solution.description}</p>
                       <div className="flex flex-wrap gap-2">
-                        <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
-                          {solution.users} users
-                        </span>
                         <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
                           {solution.pricing}
                         </span>

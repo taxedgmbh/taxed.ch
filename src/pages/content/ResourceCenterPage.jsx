@@ -230,16 +230,6 @@ const ResourceCenterPage = () => {
                 )}
               </div>
             </div>
-            <div className="text-right text-sm text-gray-500">
-              <div className="flex items-center space-x-1">
-                <Download className="w-4 h-4" />
-                <span>{resource.downloads}</span>
-              </div>
-              <div className="flex items-center space-x-1 mt-1">
-                <Star className="w-4 h-4 text-yellow-400" />
-                <span>{resource.rating}</span>
-              </div>
-            </div>
           </div>
           <CardTitle className="text-lg font-semibold text-dark-gray mt-3">
             {resource.title}

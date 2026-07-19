@@ -65,7 +65,7 @@ const AdvancedTaxToolsPage = () => {
         { label: 'Optimal Tax Strategy', value: 'Pillar 3a + Deductions', color: 'text-green-600' },
         { label: 'Potential Savings', value: 'CHF 15,000', color: 'text-blue-600' },
         { label: 'Risk Level', value: 'Low', color: 'text-green-600' },
-        { label: 'Compliance Score', value: '98%', color: 'text-green-600' }
+        { label: 'Compliance Score', value: 'High', color: 'text-green-600' }
       ]
     },
     {
@@ -261,22 +261,22 @@ const AdvancedTaxToolsPage = () => {
             <Card className="text-center">
               <CardContent className="p-6">
                 <Zap className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">10,000+</p>
-                <p className="text-sm text-gray-600">Calculations Run</p>
+                <p className="text-2xl font-bold text-gray-900">Free</p>
+                <p className="text-sm text-gray-600">No Registration Needed</p>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-6">
                 <TrendingUp className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">CHF 2M+</p>
-                <p className="text-sm text-gray-600">Total Savings Identified</p>
+                <p className="text-2xl font-bold text-gray-900">Instant</p>
+                <p className="text-sm text-gray-600">Results in Your Browser</p>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-6">
                 <Users className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">1,500+</p>
-                <p className="text-sm text-gray-600">Active Users</p>
+                <p className="text-2xl font-bold text-gray-900">Private</p>
+                <p className="text-sm text-gray-600">Your Data Stays Local</p>
               </CardContent>
             </Card>
           </motion.div>

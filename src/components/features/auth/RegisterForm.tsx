@@ -165,7 +165,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
             Create Your Account
           </h2>
           <p className="text-gray-600">
-            Join 500+ clients who trust us with their tax needs
+            Create your secure account to manage your Swiss tax filing
           </p>
         </motion.div>
 

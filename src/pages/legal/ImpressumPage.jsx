@@ -58,7 +58,7 @@ const ImpressumPage = () => {
                       <div>
                         <p className="font-medium">Email</p>
                         <p>info@taxed.ch</p>
-                        <p className="text-sm text-gray-500">24/7 support available</p>
+                        <p className="text-sm text-gray-500">Reply within one business day</p>
                       </div>
                     </div>
                     
