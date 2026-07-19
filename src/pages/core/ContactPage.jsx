@@ -204,16 +204,14 @@ const ContactPage = () => {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Skip the Big 4
+              Talk to a
               <br />
-              <span className="text-yellow-400">Get Swiss Tax Experts</span>
-              <br />
-              <span className="text-4xl lg:text-5xl">At Transparent Flat Rates</span>
+              <span className="text-yellow-400">Swiss Tax Expert</span>
             </h1>
             
             <p className="text-xl lg:text-2xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              Why pay Big 4 prices for junior staff when you can get <strong>direct access to senior Swiss tax experts</strong> 
-              at a fraction of the cost? <strong>Response within one business day, personalized service, Swiss precision.</strong>
+              Direct access to senior Swiss tax experts — personal service, transparent
+              flat rates, and a <strong>response within one business day</strong>.
             </p>
 
             {/* Primary CTAs */}
@@ -413,7 +411,7 @@ const ContactPage = () => {
               Get Your Free Tax Consultation
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Skip the Big 4 wait times. Get direct access to our senior Swiss tax experts for a personalized consultation.
+              Get direct access to our senior Swiss tax experts for a personalized consultation.
             </p>
           </motion.div>
 
@@ -689,9 +687,9 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Final Maximum CTA Section */}
-      <section className="relative py-32 bg-gradient-to-br from-red-600 via-red-700 to-red-800 overflow-hidden">
-        <div className="absolute inset-0 bg-black/30"></div>
+      {/* Final CTA Section */}
+      <section className="relative py-32 bg-gradient-to-br from-steel-blue via-blue-700 to-blue-800 overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
         
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -704,25 +702,25 @@ const ContactPage = () => {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
               <Zap className="w-5 h-5 text-yellow-400 mr-2" />
-              <span className="text-sm font-semibold">Limited Time: Free Consultation + 10% Discount</span>
+              <span className="text-sm font-semibold">Free Initial Consultation</span>
             </div>
             
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Don't Let Big 4 Bureaucracy
+              Ready to Simplify
               <br />
-              <span className="text-yellow-400">Cost You Money</span>
+              <span className="text-yellow-400">Your Swiss Taxes?</span>
             </h2>
             
-            <p className="text-xl lg:text-2xl mb-12 text-red-100 max-w-4xl mx-auto leading-relaxed">
-              Every day you wait is money lost. <strong>Get expert Swiss tax help now</strong> and save thousands 
-              compared to Big 4 rates. <strong>Free consultation + 10% discount for new clients.</strong>
+            <p className="text-xl lg:text-2xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
+              Start with a <strong>free initial consultation</strong> — we review your situation
+              and confirm your flat rate before any work begins.
             </p>
 
             {/* Final CTAs */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Button 
                 size="lg" 
-                className="bg-white text-red-600 hover:bg-gray-100 text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
+                className="bg-white text-steel-blue hover:bg-gray-100 text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
                 onClick={handleEmailClick}
               >
                 <Mail className="mr-3 h-6 w-6" />
@@ -732,8 +730,8 @@ const ContactPage = () => {
                 size="lg" 
                 className="bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200 font-bold"
                 onClick={() => {
-                  const subject = encodeURIComponent('Free Consultation + 10% Discount');
-                  const body = encodeURIComponent("Hello Taxed GmbH,\n\nI want the free consultation + 10% discount! Help me skip the Big 4 and get expert Swiss tax assistance.");
+                  const subject = encodeURIComponent('Free Initial Consultation');
+                  const body = encodeURIComponent("Hello Taxed GmbH,\n\nI would like to arrange a free initial consultation about my Swiss tax situation.");
                   const emailUrl = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
                   window.open(emailUrl, '_blank');
                 }}
@@ -746,29 +744,26 @@ const ContactPage = () => {
             {/* Final Trust Indicators */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">FREE</div>
-                <div className="text-sm text-red-200">Consultation</div>
+                <div className="text-3xl font-bold text-yellow-400">Free</div>
+                <div className="text-sm text-blue-200">Initial Consultation</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">10%</div>
-                <div className="text-sm text-red-200">Discount</div>
+                <div className="text-3xl font-bold text-yellow-400">CHF 249</div>
+                <div className="text-sm text-blue-200">Flat Rates From</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-yellow-400">1 Day</div>
-                <div className="text-sm text-red-200">Response Time</div>
+                <div className="text-sm text-blue-200">Response Time</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-yellow-400">26</div>
-                <div className="text-sm text-red-200">Cantons Served</div>
+                <div className="text-sm text-blue-200">Cantons Served</div>
               </div>
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-lg text-red-200 mb-4">
-                <strong>Don't wait!</strong> Tax deadlines don't wait for Big 4 bureaucracy.
-              </p>
-              <p className="text-sm text-red-300">
-                *Free consultation includes 30-minute expert review of your tax situation. 10% discount applies to first-time clients.
+              <p className="text-sm text-blue-200">
+                The free initial consultation is a short expert review of your tax situation — no obligation.
               </p>
             </div>
           </motion.div>
