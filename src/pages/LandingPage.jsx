@@ -277,7 +277,7 @@ const LandingPage = () => {
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={fadeInUp.initial}
@@ -330,21 +330,26 @@ const LandingPage = () => {
             </div>
           </motion.div>
 
-          {/* Branded illustration (desktop) */}
+          {/* Branded illustration - gentle float + hover response */}
           <motion.div
             initial={fadeIn.initial}
             animate={fadeIn.animate}
             transition={prefersReducedMotion ? { duration: 0 } : { duration: 1, delay: 0.2 }}
             className="flex justify-center mt-2 lg:mt-0"
           >
-            <img
+            <motion.img
               src="/images/hero-illustration.svg"
               alt=""
               aria-hidden="true"
               width="560"
               height="457"
               decoding="async"
-              className="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[560px] h-auto"
+              className="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[560px] h-auto cursor-pointer drop-shadow-2xl"
+              animate={prefersReducedMotion ? {} : { y: [0, -12, 0], rotate: [0, 0.6, 0, -0.6, 0] }}
+              transition={prefersReducedMotion ? {} : { duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              whileHover={prefersReducedMotion ? {} : { scale: 1.05, rotate: -1.5 }}
+              whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
+              onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}
             />
           </motion.div>
           </div>
@@ -376,22 +381,6 @@ const LandingPage = () => {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={fadeIn.initial}
-          animate={fadeIn.animate}
-          transition={prefersReducedMotion ? { duration: 0 } : { delay: 1, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          aria-label="Scroll down for more content"
-        >
-          <motion.div
-            animate={prefersReducedMotion ? {} : { y: [0, 10, 0] }}
-            transition={prefersReducedMotion ? {} : { duration: 2, repeat: Infinity }}
-            className="text-white"
-          >
-            <ChevronRight className="h-6 w-6 rotate-90" aria-hidden="true" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* Main Content */}
