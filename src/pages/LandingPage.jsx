@@ -31,6 +31,8 @@ import {
   Eye,
   Download,
   Newspaper,
+  Upload,
+  Send,
   BookOpen,
   Scale,
   UserCheck,
@@ -72,6 +74,29 @@ const LandingPage = () => {
     { label: "Flat rate from CHF 249", detail: "No hidden fees", icon: CheckCircle },
     { label: "English · German · French", detail: "International team", icon: Users },
     { label: "Secure client portal", detail: "Fully digital filing", icon: Clock }
+  ];
+
+  const processSteps = [
+    {
+      title: "Tell us about you",
+      text: "Send the free assessment form. We confirm your flat rate — before any work starts.",
+      icon: FileText
+    },
+    {
+      title: "Upload securely",
+      text: "Share your documents through the encrypted client portal, from anywhere.",
+      icon: Upload
+    },
+    {
+      title: "We prepare your return",
+      text: "Our experts complete your filing and check every deduction you're entitled to.",
+      icon: Calculator
+    },
+    {
+      title: "Review & file",
+      text: "You approve online — we submit to your canton and handle the follow-up.",
+      icon: Send
+    }
   ];
 
   const services = [
@@ -133,33 +158,6 @@ const LandingPage = () => {
       icon: Scale,
       link: "/law",
       features: ["PDF Downloads", "Searchable", "Categorized", "Updated"]
-    }
-  ];
-
-  const features = [
-    {
-      title: "Professional Client Portal",
-      description: "Secure dashboard for document management and communication",
-      icon: Lock,
-      link: "/client-portal"
-    },
-    {
-      title: "Expert Team Profiles",
-      description: "Meet our certified tax experts with proven track records",
-      icon: UserCheck,
-      link: "/team"
-    },
-    {
-      title: "Industry Specializations",
-      description: "Deep expertise across various sectors and industries",
-      icon: Building,
-      link: "/industry-specializations"
-    },
-    {
-      title: "Advanced Tax Tools",
-      description: "Sophisticated analysis and planning tools for complex cases",
-      icon: PieChart,
-      link: "/advanced-tax-tools"
     }
   ];
 
@@ -302,8 +300,7 @@ const LandingPage = () => {
             </h1>
 
             <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-white max-w-4xl mx-auto lg:mx-0 leading-relaxed">
-              Professional tax consulting services for expatriates and businesses.
-              <span className="block mt-2">Advanced tools, secure client portal, and expert guidance for all your Swiss tax needs.</span>
+              Flat-rate Swiss tax filing for expatriates and businesses — fully digital, personally handled.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -359,19 +356,19 @@ const LandingPage = () => {
             className="text-white mt-12 lg:mt-16"
           >
             {/* Verifiable facts, stated once */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
               {stats.map((fact, index) => (
                 <motion.div
                   key={fact.label}
                   initial={fadeInUp.initial}
                   animate={fadeInUp.animate}
                   transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl px-4 py-3 text-left"
+                  className="flex items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-left"
                 >
                   <fact.icon className="h-5 w-5 text-yellow-300 flex-shrink-0" aria-hidden="true" />
                   <div className="min-w-0">
-                    <div className="text-sm font-semibold text-white leading-tight">{fact.label}</div>
-                    <div className="text-xs text-blue-100">{fact.detail}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-white leading-tight">{fact.label}</div>
+                    <div className="hidden sm:block text-xs text-blue-100">{fact.detail}</div>
                   </div>
                 </motion.div>
               ))}
@@ -399,6 +396,78 @@ const LandingPage = () => {
 
       {/* Main Content */}
       <main id="main-content">
+        {/* How It Works - visual process */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white" aria-labelledby="how-it-works-heading">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-10 sm:mb-14"
+            >
+              <h2 id="how-it-works-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                How Filing With Us Works
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                Four steps. Everything online, one fixed price.
+              </p>
+            </motion.div>
+
+            <div className="relative">
+              {/* Connector line - desktop */}
+              <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-steel-blue/15 via-steel-blue/40 to-steel-blue/15" aria-hidden="true"></div>
+
+              <ol className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6 list-none">
+                {processSteps.map((step, index) => (
+                  <motion.li
+                    key={step.title}
+                    initial={fadeInUp.initial}
+                    whileInView={fadeInUp.whileInView}
+                    transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.5, delay: index * 0.12 }}
+                    viewport={{ once: true }}
+                    className="relative flex lg:flex-col items-start lg:items-center gap-4 lg:gap-0 lg:text-center"
+                  >
+                    {/* Connector line - mobile */}
+                    {index < processSteps.length - 1 && (
+                      <div className="lg:hidden absolute left-8 top-[4.5rem] -bottom-6 w-0.5 bg-steel-blue/15" aria-hidden="true"></div>
+                    )}
+
+                    <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-steel-blue to-blue-700 text-white flex items-center justify-center shadow-lg lg:mb-5">
+                      <step.icon className="h-7 w-7" aria-hidden="true" />
+                      <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand-red text-white text-xs font-bold flex items-center justify-center shadow">
+                        {index + 1}
+                      </span>
+                    </div>
+
+                    <div className="pt-1 lg:pt-0 lg:px-2">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1.5">{step.title}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{step.text}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ol>
+            </div>
+
+            <motion.div
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mt-10 sm:mt-12"
+            >
+              <Button
+                size="lg"
+                className="bg-steel-blue hover:bg-blue-700 text-white px-8"
+                onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Start with step 1 — it's free
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Lead Capture Section - After Hero */}
         <section className="py-12 sm:py-16 lg:py-20 bg-gray-50" id="get-started">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -504,8 +573,7 @@ const LandingPage = () => {
                 Professional Tax Services
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-                Comprehensive Swiss tax solutions designed for expatriates and businesses.
-                Expert guidance, transparent pricing, and digital-first approach.
+                Swiss tax solutions for expatriates and businesses — expert, transparent, digital.
               </p>
             </motion.div>
 
@@ -554,8 +622,7 @@ const LandingPage = () => {
                 Free Tools & Resources
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-                Access our comprehensive suite of tax tools, calculators, and resources.
-                Everything you need to understand and optimize your Swiss tax situation.
+                Free calculators, guides, and updates to understand your Swiss tax situation.
               </p>
             </motion.div>
 
@@ -579,7 +646,7 @@ const LandingPage = () => {
                         <div className="flex-1">
                           <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{tool.title}</h3>
                           <p className="text-gray-700 mb-4 text-sm sm:text-base">{tool.description}</p>
-                          <div className="flex flex-wrap gap-2 mb-4">
+                          <div className="hidden sm:flex flex-wrap gap-2 mb-4">
                             {tool.features.map((feature, idx) => (
                               <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-900 text-xs sm:text-sm rounded-full font-medium">
                                 {feature}
@@ -592,62 +659,6 @@ const LandingPage = () => {
                             aria-label={`Access ${tool.title} now`}
                           >
                             Access Now <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
-                          </Link>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Features Section - Improved Responsiveness */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={fadeInUp.initial}
-              whileInView={fadeInUp.whileInView}
-              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Professional Features
-              </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-                Enterprise-level tools and services that rival the Big 4 consulting firms.
-                Secure, professional, and designed for serious tax optimization.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={fadeInUp.initial}
-                  whileInView={fadeInUp.whileInView}
-                  transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="h-full hover:shadow-xl transition-all duration-300 group focus-within:ring-2 focus-within:ring-blue-500">
-                    <CardContent className="p-6 sm:p-8">
-                      <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0">
-                          <div className="p-3 bg-gradient-to-r from-blue-700 to-blue-600 rounded-lg text-white group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
-                            <feature.icon className="h-6 w-6" />
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                          <p className="text-gray-700 mb-4 text-sm sm:text-base">{feature.description}</p>
-                          <Link
-                            to={feature.link}
-                            className="inline-flex items-center text-blue-800 hover:text-blue-900 font-medium focus:outline-none focus:underline py-2 min-h-[44px]"
-                            aria-label={`Explore ${feature.title} feature`}
-                          >
-                            Explore Feature <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
                           </Link>
                         </div>
                       </div>
