@@ -251,30 +251,6 @@ const PartnershipPage = () => {
     }
   ];
 
-  const successStories = [
-    {
-      partner: 'Swiss Financial Advisory',
-      type: 'Referral Partnership',
-      result: 'CHF 150,000 in additional revenue',
-      timeline: '12 months',
-      icon: Building
-    },
-    {
-      partner: 'International Law Firm',
-      type: 'Strategic Partnership',
-      result: '50% increase in client base',
-      timeline: '18 months',
-      icon: Globe
-    },
-    {
-      partner: 'Technology Solutions Provider',
-      type: 'Technology Partnership',
-      result: 'Streamlined tax processes',
-      timeline: '6 months',
-      icon: Globe
-    }
-  ];
-
   return (
     <>
       <Helmet>

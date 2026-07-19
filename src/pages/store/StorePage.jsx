@@ -136,7 +136,7 @@ const StorePage = () => {
         'Advanced tax optimization',
         'Electronic filing with tax authorities',
         'Final tax return copy',
-        'Priority support (same-day response)',
+        'Priority support (response within one business day)',
         'Phone consultation (60 min)',
         'Video consultation available',
         'Audit support included',
@@ -176,9 +176,9 @@ const StorePage = () => {
     <>
       <Helmet>
         <title>Swiss Tax Return Packages | Taxed GmbH - Save up to CHF 400</title>
-        <meta name="description" content="Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages. Limited time savings!" />
+        <meta name="description" content="Get your Swiss tax return done by certified experts at transparent flat rates. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages." />
         <meta property="og:title" content="Swiss Tax Return Packages | Taxed GmbH - Save up to CHF 400" />
-        <meta property="og:description" content="Get your Swiss tax return done by certified experts at 60% lower rates than Big 4. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages. Limited time savings!" />
+        <meta property="og:description" content="Get your Swiss tax return done by certified experts at transparent flat rates. Choose from Basic (CHF 249), Standard (CHF 449), or Premium (CHF 799) packages." />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
@@ -210,26 +210,26 @@ const StorePage = () => {
             
             <p className="text-xl lg:text-2xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
               Skip the Big 4 bureaucracy and get your Swiss taxes done by <strong>certified experts</strong> 
-              at <strong>60% lower rates</strong>. Choose your package and get started today.
+              at <strong>transparent flat rates</strong>. Choose your package and get started today.
             </p>
 
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">500+</div>
-                <div className="text-sm text-blue-200">Happy Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">98%</div>
-                <div className="text-sm text-blue-200">Success Rate</div>
+                <div className="text-3xl font-bold text-yellow-400">CHF 249</div>
+                <div className="text-sm text-blue-200">Packages From</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-yellow-400">15+</div>
                 <div className="text-sm text-blue-200">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">24h</div>
-                <div className="text-sm text-blue-200">Response Time</div>
+                <div className="text-3xl font-bold text-yellow-400">26</div>
+                <div className="text-sm text-blue-200">Cantons Served</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-yellow-400">3</div>
+                <div className="text-sm text-blue-200">Working Languages</div>
               </div>
             </div>
 
@@ -479,12 +479,12 @@ const StorePage = () => {
                 <div className="text-sm text-red-200">Discount</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">24h</div>
-                <div className="text-sm text-red-200">Response</div>
+                <div className="text-3xl font-bold text-yellow-400">1 Day</div>
+                <div className="text-sm text-red-200">Response Time</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">500+</div>
-                <div className="text-sm text-red-200">Happy Clients</div>
+                <div className="text-3xl font-bold text-yellow-400">26</div>
+                <div className="text-sm text-red-200">Cantons Served</div>
               </div>
             </div>
 

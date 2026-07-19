@@ -262,41 +262,6 @@ const CaseStudiesPage = () => {
           </motion.div>
 
           {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
-          >
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <DollarSign className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">CHF 295K+</p>
-                <p className="text-sm text-gray-600">Total Tax Savings</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Users className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">500+</p>
-                <p className="text-sm text-gray-600">Happy Clients</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Clock className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">1,200+</p>
-                <p className="text-sm text-gray-600">Hours Saved</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Award className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-                <p className="text-2xl font-bold text-gray-900">4.9/5</p>
-                <p className="text-sm text-gray-600">Client Satisfaction</p>
-              </CardContent>
-            </Card>
-          </motion.div>
         </div>
       </section>
 

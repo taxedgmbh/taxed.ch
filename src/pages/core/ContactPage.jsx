@@ -181,9 +181,9 @@ const ContactPage = () => {
     <>
       <Helmet>
         <title>Get Expert Swiss Tax Help Now | Taxed GmbH - Better Than Big 4</title>
-        <meta name="description" content="Skip the Big 4 bureaucracy. Get direct access to senior Swiss tax experts at 60% lower rates. Email info@taxed.ch for professional consultation." />
+        <meta name="description" content="Contact Taxed GmbH — direct access to senior Swiss tax experts at transparent flat rates. Email info@taxed.ch for a professional consultation." />
         <meta property="og:title" content="Get Expert Swiss Tax Help Now | Taxed GmbH - Better Than Big 4" />
-        <meta property="og:description" content="Skip the Big 4 bureaucracy. Get direct access to senior Swiss tax experts at 60% lower rates. Email info@taxed.ch for professional consultation." />
+        <meta property="og:description" content="Contact Taxed GmbH — direct access to senior Swiss tax experts at transparent flat rates. Email info@taxed.ch for a professional consultation." />
       </Helmet>
 
       {/* Hero Section - Maximum CTA */}
@@ -200,7 +200,7 @@ const ContactPage = () => {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
               <Star className="w-5 h-5 text-yellow-400 mr-2" />
-              <span className="text-sm font-semibold">Swiss Tax Experts • 15+ Years Experience • 500+ Happy Clients</span>
+              <span className="text-sm font-semibold">Swiss Tax Experts • 15+ Years Experience • Transparent Flat Rates</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -208,12 +208,12 @@ const ContactPage = () => {
               <br />
               <span className="text-yellow-400">Get Swiss Tax Experts</span>
               <br />
-              <span className="text-4xl lg:text-5xl">60% Lower Rates</span>
+              <span className="text-4xl lg:text-5xl">At Transparent Flat Rates</span>
             </h1>
             
             <p className="text-xl lg:text-2xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
               Why pay Big 4 prices for junior staff when you can get <strong>direct access to senior Swiss tax experts</strong> 
-              at a fraction of the cost? <strong>Same-day response, personalized service, Swiss precision.</strong>
+              at a fraction of the cost? <strong>Response within one business day, personalized service, Swiss precision.</strong>
             </p>
 
             {/* Primary CTAs */}
@@ -231,7 +231,7 @@ const ContactPage = () => {
                 className="bg-steel-blue hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-200"
                 onClick={() => {
                   const subject = encodeURIComponent('Swiss Tax Consulting Inquiry');
-                  const body = encodeURIComponent("Hello Taxed GmbH,\n\nI want to skip the Big 4 and get expert Swiss tax help at 60% lower rates. Can you help me?");
+                  const body = encodeURIComponent("Hello Taxed GmbH,\n\nI would like expert Swiss tax help at a transparent flat rate. Can you help me?");
                   const emailUrl = `mailto:info@taxed.ch?subject=${subject}&body=${body}`;
                   window.open(emailUrl, '_blank');
                 }}
@@ -244,20 +244,20 @@ const ContactPage = () => {
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">98%</div>
-                <div className="text-sm text-blue-200">Success Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">24h</div>
-                <div className="text-sm text-blue-200">Response Time</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">60%</div>
-                <div className="text-sm text-blue-200">Cost Savings</div>
-              </div>
-              <div className="text-center">
                 <div className="text-3xl font-bold text-yellow-400">15+</div>
                 <div className="text-sm text-blue-200">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-yellow-400">26</div>
+                <div className="text-sm text-blue-200">Cantons Served</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-yellow-400">3</div>
+                <div className="text-sm text-blue-200">Working Languages</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-yellow-400">CHF 249</div>
+                <div className="text-sm text-blue-200">Flat Rates From</div>
               </div>
             </div>
           </motion.div>
@@ -505,11 +505,11 @@ const ContactPage = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-dark-gray font-medium">60% lower rates than Big 4</span>
+                      <span className="text-dark-gray font-medium">Transparent flat rates — no hourly billing</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-dark-gray font-medium">Same-day response guaranteed</span>
+                      <span className="text-dark-gray font-medium">Response within one business day</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-600" />
@@ -517,11 +517,11 @@ const ContactPage = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-dark-gray font-medium">500+ satisfied clients</span>
+                      <span className="text-dark-gray font-medium">Service in English, German & French</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-dark-gray font-medium">98% success rate</span>
+                      <span className="text-dark-gray font-medium">Secure digital client portal</span>
                     </div>
                   </div>
                 </CardContent>
@@ -672,16 +672,16 @@ const ContactPage = () => {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                  <div className="text-2xl font-bold text-white">2,500+</div>
-                  <div className="text-blue-100 text-sm">Subscribers</div>
-                </div>
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                  <div className="text-2xl font-bold text-white">95%</div>
-                  <div className="text-blue-100 text-sm">Satisfaction</div>
-                </div>
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
                   <div className="text-2xl font-bold text-white">Weekly</div>
-                  <div className="text-blue-100 text-sm">Updates</div>
+                  <div className="text-blue-100 text-sm">Tax Updates</div>
+                </div>
+                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-2xl font-bold text-white">Free</div>
+                  <div className="text-blue-100 text-sm">No Spam Ever</div>
+                </div>
+                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-2xl font-bold text-white">1-Click</div>
+                  <div className="text-blue-100 text-sm">Unsubscribe</div>
                 </div>
               </div>
             </motion.div>
@@ -754,12 +754,12 @@ const ContactPage = () => {
                 <div className="text-sm text-red-200">Discount</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">24h</div>
-                <div className="text-sm text-red-200">Response</div>
+                <div className="text-3xl font-bold text-yellow-400">1 Day</div>
+                <div className="text-sm text-red-200">Response Time</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">500+</div>
-                <div className="text-sm text-red-200">Happy Clients</div>
+                <div className="text-3xl font-bold text-yellow-400">26</div>
+                <div className="text-sm text-red-200">Cantons Served</div>
               </div>
             </div>
 

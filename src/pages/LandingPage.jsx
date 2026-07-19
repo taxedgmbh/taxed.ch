@@ -40,6 +40,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { websiteSchema } from '@/utils/structuredData';
+import blogIndex from '@/data/blogIndex.json';
 import HubSpotContactForm from '@/components/forms/HubSpotContactForm';
 
 const LandingPage = () => {
@@ -64,11 +65,13 @@ const LandingPage = () => {
     ? {}
     : { initial: { opacity: 0 }, animate: { opacity: 1 } };
 
+  const latestPosts = blogIndex.slice(0, 3);
+
   const stats = [
-    { number: "500+", label: "Happy Clients", icon: Users },
-    { number: "98%", label: "Success Rate", icon: CheckCircle },
-    { number: "24/7", label: "Support", icon: Clock },
-    { number: "CHF 0", label: "Hidden Fees", icon: Shield }
+    { label: "Registered Swiss GmbH", detail: "Biel/Bienne", icon: Shield },
+    { label: "Flat rate from CHF 249", detail: "No hidden fees", icon: CheckCircle },
+    { label: "English · German · French", detail: "International team", icon: Users },
+    { label: "Secure client portal", detail: "Fully digital filing", icon: Clock }
   ];
 
   const services = [
@@ -355,21 +358,21 @@ const LandingPage = () => {
             transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8, delay: 0.3 }}
             className="text-white mt-12 lg:mt-16"
           >
-            {/* Stats - Better Responsive Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
-              {stats.map((stat, index) => (
+            {/* Verifiable facts, stated once */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
+              {stats.map((fact, index) => (
                 <motion.div
-                  key={stat.label}
+                  key={fact.label}
                   initial={fadeInUp.initial}
                   animate={fadeInUp.animate}
                   transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
+                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl px-4 py-3 text-left"
                 >
-                  <div className="flex items-center justify-center mb-2">
-                    <stat.icon className="h-6 sm:h-8 w-6 sm:w-8 text-yellow-300" aria-hidden="true" />
+                  <fact.icon className="h-5 w-5 text-yellow-300 flex-shrink-0" aria-hidden="true" />
+                  <div className="min-w-0">
+                    <div className="text-sm font-semibold text-white leading-tight">{fact.label}</div>
+                    <div className="text-xs text-blue-100">{fact.detail}</div>
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-white">{stat.number}</div>
-                  <div className="text-xs sm:text-sm text-white">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -441,7 +444,7 @@ const LandingPage = () => {
                         </p>
                         <div className="flex flex-wrap gap-2">
                           <span className="px-2 py-1 bg-white text-gray-900 rounded-full text-xs font-medium shadow-sm">10+ Years Experience</span>
-                          <span className="px-2 py-1 bg-white text-gray-900 rounded-full text-xs font-medium shadow-sm">500+ Clients</span>
+                          <span className="px-2 py-1 bg-white text-gray-900 rounded-full text-xs font-medium shadow-sm">Swiss Based</span>
                         </div>
                       </div>
                     </div>
@@ -449,7 +452,7 @@ const LandingPage = () => {
                     <ul className="space-y-4">
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                        <span>Save up to 60% compared to Big 4 firms</span>
+                        <span>Boutique attention at transparent flat rates</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
@@ -457,7 +460,7 @@ const LandingPage = () => {
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                        <span>500+ satisfied expat clients</span>
+                        <span>Fully digital process — file from anywhere</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
@@ -465,7 +468,7 @@ const LandingPage = () => {
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                        <span>Response within 24 hours guaranteed</span>
+                        <span>Response within one business day</span>
                       </li>
                     </ul>
 
@@ -670,7 +673,7 @@ const LandingPage = () => {
                 Why Clients Choose Us
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto">
-                Hundreds of expats and businesses across Switzerland trust Taxed GmbH with their taxes.
+                Built for expatriates and businesses that expect precision, discretion, and clear pricing.
               </p>
             </motion.div>
 
@@ -719,6 +722,68 @@ const LandingPage = () => {
           </div>
         </section>
 
+        {/* Latest Insights - thought leadership */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={fadeInUp.initial}
+              whileInView={fadeInUp.whileInView}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.8 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4"
+            >
+              <div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                  Latest Swiss Tax Insights
+                </h2>
+                <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
+                  Analysis and guidance from our advisory practice — reforms, deadlines, and planning opportunities.
+                </p>
+              </div>
+              <Link
+                to="/blog"
+                className="inline-flex items-center text-steel-blue font-semibold hover:text-blue-700 transition-colors whitespace-nowrap min-h-[44px]"
+              >
+                All insights
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+              </Link>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {latestPosts.map((post, index) => (
+                <motion.div
+                  key={post.slug}
+                  initial={fadeInUp.initial}
+                  whileInView={fadeInUp.whileInView}
+                  transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    to={`/blog/${post.slug}`}
+                    className="group block h-full bg-gray-50 hover:bg-white border border-gray-200 hover:border-steel-blue/40 rounded-2xl p-6 transition-all duration-200 hover:shadow-lg"
+                  >
+                    <div className="flex items-center gap-3 mb-4 text-sm">
+                      <span className="px-3 py-1 bg-steel-blue/10 text-steel-blue rounded-full font-medium">
+                        {post.category}
+                      </span>
+                      <span className="text-gray-500">
+                        {new Date(post.date).toLocaleDateString('en-CH', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-steel-blue transition-colors leading-snug mb-4">
+                      {post.title}
+                    </h3>
+                    <span className="inline-flex items-center text-sm font-medium text-steel-blue">
+                      Read analysis
+                      <ArrowRight className="ml-1.5 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                    </span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section - Fixed Contrast */}
         <section className="py-12 sm:py-16 lg:py-20 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -732,8 +797,8 @@ const LandingPage = () => {
                 Ready to Optimize Your Swiss Taxes?
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto">
-                Join hundreds of expatriates and businesses who trust Taxed GmbH for their Swiss tax needs.
-                Professional service, transparent pricing, and expert guidance.
+                Fixed prices, a clear digital process, and personal service from a Swiss team.
+                Start your tax filing today.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -762,20 +827,7 @@ const LandingPage = () => {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">500+</div>
-                  <div className="text-gray-300 text-sm sm:text-base">Happy Clients</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">98%</div>
-                  <div className="text-gray-300 text-sm sm:text-base">Success Rate</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">24/7</div>
-                  <div className="text-gray-300 text-sm sm:text-base">Support Available</div>
-                </div>
-              </div>
+
             </motion.div>
           </div>
         </section>

@@ -131,7 +131,7 @@ const PricingPage = () => {
         'Advanced tax optimization',
         'Electronic filing with tax authorities',
         'Final tax return copy',
-        'Priority support (same-day response)',
+        'Priority support (response within one business day)',
         'Phone consultation (60 min)',
         'Video consultation available',
         'Audit support included',
@@ -983,7 +983,7 @@ const PricingPage = () => {
             </div>
 
             <div className="mt-8 text-sm text-blue-200">
-              <p>✨ Free consultation included • 🔒 Secure & confidential • ⚡ Same-day response</p>
+              <p>✨ Free consultation included • 🔒 Secure & confidential • ⚡ Response within one business day</p>
             </div>
           </motion.div>
         </div>

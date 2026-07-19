@@ -54,10 +54,10 @@ const TeamPage = () => {
   ];
 
   const stats = [
-    { number: "500+", label: "Clients Served", icon: Users },
     { number: "15+", label: "Years Experience", icon: Calendar },
-    { number: "98%", label: "Success Rate", icon: CheckCircle },
-    { number: "4.9★", label: "Average Rating", icon: Star }
+    { number: "3", label: "Tax Professionals", icon: Users },
+    { number: "26", label: "Cantons Served", icon: CheckCircle },
+    { number: "EN·DE·FR", label: "Working Languages", icon: Star }
   ];
 
   return (

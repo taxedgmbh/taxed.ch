@@ -60,9 +60,8 @@ const popularTags = [
 
 const authors = [
   'Emanuel Flury',
-  'Sarah Müller',
-  'Michael Weber',
-  'Lisa Chen'
+  'Patricia Marie Fangon',
+  'Taxed GmbH Editorial Team'
 ];
 
 const sortOptions = [

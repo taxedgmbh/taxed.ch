@@ -97,7 +97,6 @@ const TaxRecoveryPage = () => {
     { id: 'overview', name: 'Overview', icon: Target },
     { id: 'services', name: 'Recovery Services', icon: Shield },
     { id: 'process', name: 'Our Process', icon: Workflow },
-    { id: 'success', name: 'Success Stories', icon: Star },
     { id: 'fees', name: 'Fees & Costs', icon: DollarSign },
     { id: 'contact', name: 'Get Started', icon: Phone }
   ];
@@ -200,30 +199,6 @@ const TaxRecoveryPage = () => {
     }
   ];
 
-  const successStories = [
-    {
-      client: 'International Executive',
-      issue: 'CHF 45,000 in overpaid withholding tax',
-      result: 'Full recovery of CHF 45,000',
-      timeline: '4 months',
-      icon: Users
-    },
-    {
-      client: 'Swiss Corporation',
-      issue: 'CHF 120,000 in penalty charges',
-      result: 'Reduced to CHF 15,000 (87% reduction)',
-      timeline: '3 months',
-      icon: Building
-    },
-    {
-      client: 'Expatriate Family',
-      issue: 'CHF 25,000 in tax overpayments',
-      result: 'Full recovery with interest',
-      timeline: '5 months',
-      icon: Globe
-    }
-  ];
-
   return (
     <>
       <Helmet>
@@ -317,7 +292,7 @@ const TaxRecoveryPage = () => {
                         <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
                         <div>
                           <h4 className="font-semibold text-gray-900">Proven Track Record</h4>
-                          <p className="text-gray-600">Successfully recovered millions for our clients</p>
+                          <p className="text-gray-600">Experienced in recovering overpaid Swiss taxes and penalties</p>
                         </div>
                       </li>
                       <li className="flex items-start space-x-3">
@@ -331,58 +306,26 @@ const TaxRecoveryPage = () => {
                   </div>
                   <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl">
                     <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      Recovery Statistics
+                      Recovery Support at a Glance
                     </h3>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-green-600">95%</div>
-                        <div className="text-sm text-gray-600">Success Rate</div>
+                        <div className="text-3xl font-bold text-green-600">15+</div>
+                        <div className="text-sm text-gray-600">Years Experience</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-green-600">CHF 2.8M</div>
-                        <div className="text-sm text-gray-600">Total Recovered</div>
+                        <div className="text-3xl font-bold text-green-600">26</div>
+                        <div className="text-sm text-gray-600">Cantons Covered</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-green-600">4.2</div>
-                        <div className="text-sm text-gray-600">Months Average</div>
+                        <div className="text-3xl font-bold text-green-600">0%</div>
+                        <div className="text-sm text-gray-600">Upfront Fees</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-green-600">200+</div>
-                        <div className="text-sm text-gray-600">Cases Handled</div>
+                        <div className="text-3xl font-bold text-green-600">EN·DE·FR</div>
+                        <div className="text-sm text-gray-600">Working Languages</div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                {/* Success Stories */}
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Recent Success Stories</h3>
-                  <div className="grid md:grid-cols-3 gap-6">
-                    {successStories.map((story, index) => (
-                      <Card key={index} className="border-l-4 border-l-green-500">
-                        <CardHeader>
-                          <div className="flex items-center space-x-3">
-                            <story.icon className="w-8 h-8 text-green-600" />
-                            <div>
-                              <CardTitle className="text-lg">{story.client}</CardTitle>
-                              <CardDescription>{story.issue}</CardDescription>
-                            </div>
-                          </div>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="space-y-2">
-                            <div className="flex justify-between">
-                              <span className="text-sm text-gray-600">Result:</span>
-                              <span className="text-sm font-semibold text-green-600">{story.result}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-sm text-gray-600">Timeline:</span>
-                              <span className="text-sm font-bold text-green-600">{story.timeline}</span>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -474,51 +417,6 @@ const TaxRecoveryPage = () => {
                         <p className="text-gray-600">{step.description}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </motion.div>
-            </TabsContent>
-
-            {/* Success Section */}
-            <TabsContent value="success">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="space-y-8"
-              >
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Recovery Success Stories</h3>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
-                    Real examples of successful tax recoveries for our clients.
-                  </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8">
-                  {successStories.map((story, index) => (
-                    <Card key={index} className="hover:shadow-lg transition-shadow">
-                      <CardHeader>
-                        <div className="flex items-center space-x-3">
-                          <story.icon className="w-8 h-8 text-green-600" />
-                          <div>
-                            <CardTitle className="text-lg">{story.client}</CardTitle>
-                            <CardDescription>{story.issue}</CardDescription>
-                          </div>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-2">
-                          <div className="flex justify-between">
-                            <span className="text-sm text-gray-600">Recovery Result:</span>
-                            <span className="text-sm font-semibold text-green-600">{story.result}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-sm text-gray-600">Timeline:</span>
-                            <span className="text-sm font-bold text-green-600">{story.timeline}</span>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
                   ))}
                 </div>
               </motion.div>

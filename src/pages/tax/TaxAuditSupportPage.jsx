@@ -148,7 +148,7 @@ const TaxAuditSupportPage = () => {
       title: 'Emergency Audit Support',
       description: 'Immediate support for urgent audit situations',
       features: [
-        '24/7 emergency consultation',
+        'Priority emergency consultation',
         'Rapid document preparation',
         'Immediate representation',
         'Crisis management'
@@ -230,30 +230,6 @@ const TaxAuditSupportPage = () => {
     }
   ];
 
-  const successStories = [
-    {
-      client: 'International Tech Company',
-      issue: 'VAT audit with CHF 2.3M in questioned deductions',
-      result: 'Reduced liability by 85% to CHF 345,000',
-      savings: 'CHF 1,955,000',
-      icon: Building
-    },
-    {
-      client: 'Expatriate Executive',
-      issue: 'Complex international tax audit',
-      result: 'Complete resolution with no additional tax',
-      savings: 'CHF 120,000',
-      icon: Users
-    },
-    {
-      client: 'Swiss Manufacturing Firm',
-      issue: 'Transfer pricing audit',
-      result: 'Negotiated favorable settlement',
-      savings: 'CHF 890,000',
-      icon: Globe
-    }
-  ];
-
   return (
     <>
       <Helmet>
@@ -290,7 +266,7 @@ const TaxAuditSupportPage = () => {
               </Badge>
               <Badge variant="secondary" className="px-4 py-2">
                 <Clock className="w-4 h-4 mr-2" />
-                24/7 Emergency Support
+                Priority Emergency Support
               </Badge>
               <Badge variant="secondary" className="px-4 py-2">
                 <CheckCircle className="w-4 h-4 mr-2" />
@@ -346,8 +322,8 @@ const TaxAuditSupportPage = () => {
                       <li className="flex items-start space-x-3">
                         <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
                         <div>
-                          <h4 className="font-semibold text-gray-900">24/7 Support</h4>
-                          <p className="text-gray-600">Emergency support when you need it most</p>
+                          <h4 className="font-semibold text-gray-900">Rapid Response</h4>
+                          <p className="text-gray-600">Priority handling for urgent audit deadlines</p>
                         </div>
                       </li>
                       <li className="flex items-start space-x-3">
@@ -361,58 +337,26 @@ const TaxAuditSupportPage = () => {
                   </div>
                   <div className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-xl">
                     <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      Audit Support Statistics
+                      Audit Support at a Glance
                     </h3>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-red-600">95%</div>
-                        <div className="text-sm text-gray-600">Success Rate</div>
+                        <div className="text-3xl font-bold text-red-600">15+</div>
+                        <div className="text-sm text-gray-600">Years Experience</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-red-600">CHF 2.3M</div>
-                        <div className="text-sm text-gray-600">Average Savings</div>
+                        <div className="text-3xl font-bold text-red-600">26</div>
+                        <div className="text-sm text-gray-600">Cantons Covered</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-red-600">24h</div>
+                        <div className="text-3xl font-bold text-red-600">1 Day</div>
                         <div className="text-sm text-gray-600">Response Time</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-red-600">500+</div>
-                        <div className="text-sm text-gray-600">Audits Handled</div>
+                        <div className="text-3xl font-bold text-red-600">EN·DE·FR</div>
+                        <div className="text-sm text-gray-600">Working Languages</div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                {/* Success Stories */}
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Recent Success Stories</h3>
-                  <div className="grid md:grid-cols-3 gap-6">
-                    {successStories.map((story, index) => (
-                      <Card key={index} className="border-l-4 border-l-red-500">
-                        <CardHeader>
-                          <div className="flex items-center space-x-3">
-                            <story.icon className="w-8 h-8 text-red-600" />
-                            <div>
-                              <CardTitle className="text-lg">{story.client}</CardTitle>
-                              <CardDescription>{story.issue}</CardDescription>
-                            </div>
-                          </div>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="space-y-2">
-                            <div className="flex justify-between">
-                              <span className="text-sm text-gray-600">Result:</span>
-                              <span className="text-sm font-semibold text-green-600">{story.result}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-sm text-gray-600">Savings:</span>
-                              <span className="text-sm font-bold text-red-600">{story.savings}</span>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
                   </div>
                 </div>
               </motion.div>
