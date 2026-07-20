@@ -1,10 +1,10 @@
 /**
  * WhatsApp Lead Tracker
- * Logs every WhatsApp click to Firestore (whatsapp_leads collection)
- * Uses REST API to avoid SDK dependency issues with named database
+ * Logs every WhatsApp click to our own backend (/api/whatsapp-lead.php),
+ * which stores the lead on the server and notifies info@taxed.ch.
+ * (The previous Firestore integration was rejected by security rules,
+ * so no lead was ever stored.)
  */
-
-const FIRESTORE_BASE = 'https://firestore.googleapis.com/v1/projects/taxedgmbh/databases/taxedgmbh/documents';
 
 interface LeadData {
   source: string;
@@ -16,27 +16,22 @@ interface LeadData {
 export function trackWhatsAppClick(data: LeadData): void {
   try {
     const params = new URLSearchParams(window.location.search);
-    const payload = {
-      fields: {
-        timestamp: { timestampValue: new Date().toISOString() },
-        page: { stringValue: data.page || window.location.pathname },
-        referrer: { stringValue: document.referrer || 'direct' },
-        userAgent: { stringValue: navigator.userAgent },
-        screenSize: { stringValue: `${screen.width}x${screen.height}` },
-        language: { stringValue: navigator.language || 'unknown' },
-        source: { stringValue: data.source },
-        phoneNumber: { stringValue: data.phoneNumber || '' },
-        utmSource: { stringValue: params.get('utm_source') || '' },
-        utmMedium: { stringValue: params.get('utm_medium') || '' },
-        utmCampaign: { stringValue: params.get('utm_campaign') || '' },
-      },
-    };
+    const lead = JSON.stringify({
+      page: data.page || window.location.pathname + window.location.search,
+      referrer: document.referrer || 'direct',
+      userAgent: navigator.userAgent,
+      screenSize: `${screen.width}x${screen.height}`,
+      language: navigator.language || 'unknown',
+      source: data.source,
+      utmSource: params.get('utm_source') || '',
+      utmMedium: params.get('utm_medium') || '',
+      utmCampaign: params.get('utm_campaign') || '',
+    });
 
-    fetch(`${FIRESTORE_BASE}/whatsapp_leads`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    }).catch(() => {});
+    // sendBeacon survives the page losing focus when WhatsApp opens
+    if (!(navigator.sendBeacon && navigator.sendBeacon('/api/whatsapp-lead.php', lead))) {
+      fetch('/api/whatsapp-lead.php', { method: 'POST', body: lead, keepalive: true }).catch(() => {});
+    }
   } catch {
     // Silent fail — never block the user
   }
