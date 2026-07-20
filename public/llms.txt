@@ -13,7 +13,7 @@
 - [Page Not Found - 404 | Taxed GmbH](/notfound): The page you
 - [Partnership Opportunities | Taxed GmbH - Strategic Tax Consulting Partnerships](/partnership): Join our network of strategic partners. Referral partnerships, strategic collaborations, and technology integrations. Grow your business with Taxed GmbH.
 - [Payment Successful | Taxed GmbH](/success): Your payment was successful. Thank you for your purchase.
-- [Privacy Policy - Taxed GmbH | GDPR & WhatsApp API Compliant](/privacypolicy): Comprehensive privacy policy for Taxed GmbH covering GDPR compliance, WhatsApp API usage, data protection, and your rights. Swiss tax consulting with full transparency.
+- [Privacy Policy - Taxed GmbH | GDPR & Swiss FADP Compliant](/privacypolicy): Comprehensive privacy policy for Taxed GmbH covering GDPR and Swiss FADP compliance, data protection, and your rights. Swiss tax consulting with full transparency.
 - [Sitemap - Taxed GmbH | Swiss Tax Consulting](/sitemap): Complete sitemap of Taxed GmbH website. Find all pages and sections of our Swiss tax consulting services.
 - [Swiss Tax Calculators | Taxed GmbH - Calculate Your Swiss Taxes](/taxcalculator): Free Swiss tax calculators for expats. Calculate income tax, wealth tax, Pillar 3a optimization, and more. Get accurate estimates for your Swiss tax obligations.
 - [Swiss Tax Forum | Taxed GmbH](/forumpagesimple): No description available
