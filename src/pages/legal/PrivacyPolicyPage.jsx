@@ -45,7 +45,7 @@ const PrivacyPolicyPage = () => {
     { id: 'data-security', title: 'Data Security', icon: Lock },
     { id: 'your-rights', title: 'Your Rights', icon: UserCheck },
     { id: 'cookies', title: 'Cookies', icon: Cookie },
-    { id: 'whatsapp', title: 'WhatsApp API', icon: MessageSquare },
+    { id: 'whatsapp', title: 'WhatsApp & Messaging', icon: MessageSquare },
     { id: 'contact', title: 'Contact Us', icon: Phone }
   ];
 
@@ -57,13 +57,13 @@ const PrivacyPolicyPage = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy - Taxed GmbH | GDPR & WhatsApp API Compliant</title>
-        <meta name="description" content="Comprehensive privacy policy for Taxed GmbH covering GDPR compliance, WhatsApp API usage, data protection, and your rights. Swiss tax consulting with full transparency." />
+        <title>Privacy Policy - Taxed GmbH | GDPR & Swiss FADP Compliant</title>
+        <meta name="description" content="Comprehensive privacy policy for Taxed GmbH covering GDPR and Swiss FADP compliance, data protection, and your rights. Swiss tax consulting with full transparency." />
         <link rel="canonical" href="https://taxed.ch/privacy-policy" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Privacy Policy - Taxed GmbH | GDPR & WhatsApp API Compliant" />
-        <meta property="og:description" content="Comprehensive privacy policy covering GDPR compliance, WhatsApp API usage, and data protection for Swiss tax consulting services." />
+        <meta property="og:title" content="Privacy Policy - Taxed GmbH | GDPR & Swiss FADP Compliant" />
+        <meta property="og:description" content="Comprehensive privacy policy covering GDPR and Swiss FADP compliance and data protection for Swiss tax consulting services." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://taxed.ch/privacy-policy" />
       </Helmet>
@@ -80,7 +80,7 @@ const PrivacyPolicyPage = () => {
               Privacy Policy
             </h1>
             <p className="text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
-              Your privacy matters. Learn how we protect your data in compliance with GDPR, Swiss law, and WhatsApp API requirements.
+              Your privacy matters. Learn how we protect your data in compliance with GDPR and Swiss data protection law (FADP).
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-blue-200">
               <span className="flex items-center">
@@ -89,7 +89,7 @@ const PrivacyPolicyPage = () => {
               </span>
               <span className="flex items-center">
                 <CheckCircle className="h-4 w-4 mr-1" />
-                WhatsApp API Compliant
+                Swiss FADP Compliant
               </span>
               <span className="flex items-center">
                 <CheckCircle className="h-4 w-4 mr-1" />
@@ -149,7 +149,7 @@ const PrivacyPolicyPage = () => {
                     <p className="text-lg text-gray-700 mb-6">
                       At Taxed GmbH, we are committed to protecting your privacy and ensuring the security of your personal data. 
                       This comprehensive Privacy Policy explains how we collect, use, store, and protect your information in compliance 
-                      with the General Data Protection Regulation (GDPR), Swiss data protection laws, and WhatsApp API requirements.
+                      with the General Data Protection Regulation (GDPR) and Swiss data protection law (FADP).
                     </p>
                     
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
@@ -174,7 +174,7 @@ const PrivacyPolicyPage = () => {
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                        <span>WhatsApp API compliance for secure messaging</span>
+                        <span>WhatsApp contact only when you choose to message us</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
@@ -232,17 +232,16 @@ const PrivacyPolicyPage = () => {
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-yellow-800 mb-3 flex items-center">
                       <AlertTriangle className="h-5 w-5 mr-2" />
-                      WhatsApp API Data
+                      WhatsApp Contact Data
                     </h3>
                     <p className="text-yellow-700 mb-3">
-                      When using our WhatsApp Business API integration:
+                      If you choose to contact us via the WhatsApp button on our website:
                     </p>
                     <ul className="space-y-2 text-yellow-700">
-                      <li>• WhatsApp phone numbers (with consent)</li>
-                      <li>• Message content for tax consultation</li>
-                      <li>• Profile information (name, status)</li>
-                      <li>• Message delivery and read receipts</li>
-                      <li>• Business conversation history</li>
+                      <li>• The chat itself takes place in WhatsApp (Meta) under WhatsApp's own terms and privacy policy</li>
+                      <li>• Your phone number, profile name, and messages become visible to us in our WhatsApp account</li>
+                      <li>• When you click the button, we log technical click data on our own server: page, referrer, browser, language, screen size, and campaign (UTM) parameters</li>
+                      <li>• Our team is notified of the click by email — no message content is included</li>
                     </ul>
                   </div>
                 </CardContent>
@@ -307,17 +306,17 @@ const PrivacyPolicyPage = () => {
                   <div className="bg-steel-blue/10 border border-steel-blue/20 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-steel-blue mb-3 flex items-center">
                       <MessageSquare className="h-5 w-5 mr-2" />
-                      WhatsApp Business API Usage
+                      WhatsApp Usage
                     </h3>
                     <p className="text-gray-700 mb-4">
-                      We use WhatsApp Business API for secure, encrypted communication with our clients:
+                      When you contact us on WhatsApp (+41 79 910 77 87), we use the conversation to:
                     </p>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• Sending tax documents and updates</li>
-                      <li>• Scheduling appointments and reminders</li>
-                      <li>• Providing customer support</li>
-                      <li>• Sharing important tax deadlines</li>
-                      <li>• All messages are end-to-end encrypted</li>
+                      <li>• Answer your questions and provide customer support</li>
+                      <li>• Schedule appointments</li>
+                      <li>• Follow up on your enquiry</li>
+                      <li>• Messages are end-to-end encrypted by WhatsApp itself</li>
+                      <li>• We never send promotional messages via WhatsApp</li>
                     </ul>
                   </div>
                 </CardContent>
@@ -353,7 +352,7 @@ const PrivacyPolicyPage = () => {
                         </li>
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">WhatsApp (for messaging services)</span>
+                          <span className="text-gray-700">WhatsApp / Meta (only if you choose to chat with us there)</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
@@ -450,17 +449,16 @@ const PrivacyPolicyPage = () => {
                   <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-green-800 mb-3 flex items-center">
                       <MessageSquare className="h-5 w-5 mr-2" />
-                      WhatsApp API Security
+                      WhatsApp & Click-Data Security
                     </h3>
                     <p className="text-green-700 mb-3">
-                      Our WhatsApp Business API integration includes additional security measures:
+                      Security measures around our WhatsApp contact channel:
                     </p>
                     <ul className="space-y-2 text-green-700">
-                      <li>• End-to-end encryption for all WhatsApp messages</li>
-                      <li>• Secure API authentication and authorization</li>
-                      <li>• Message content filtering and monitoring</li>
-                      <li>• Compliance with WhatsApp Business API policies</li>
-                      <li>• Regular security updates and patches</li>
+                      <li>• WhatsApp messages are end-to-end encrypted by WhatsApp</li>
+                      <li>• Click data is stored on our own web server in a location that is not publicly accessible</li>
+                      <li>• Click logs contain no message content and no phone numbers</li>
+                      <li>• Access is restricted to Taxed GmbH</li>
                     </ul>
                   </div>
                 </CardContent>
@@ -648,68 +646,63 @@ const PrivacyPolicyPage = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center text-2xl">
                     <MessageSquare className="h-6 w-6 text-steel-blue mr-3" />
-                    WhatsApp Business API Compliance
+                    WhatsApp & Messaging
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-green-800 mb-3 flex items-center">
                       <CheckCircle className="h-5 w-5 mr-2" />
-                      WhatsApp Business API Compliance
+                      How Our WhatsApp Contact Works
                     </h3>
                     <p className="text-green-700 mb-4">
-                      We use WhatsApp Business API in full compliance with Meta's policies and GDPR requirements:
+                      Our website offers a WhatsApp button that opens a chat with us (+41 79 910 77 87).
+                      Using it is entirely your choice:
                     </p>
                     <ul className="space-y-2 text-green-700">
-                      <li>• End-to-end encryption for all messages</li>
-                      <li>• Explicit consent for WhatsApp communications</li>
-                      <li>• Business-only messaging (no promotional content)</li>
-                      <li>• Secure data handling and storage</li>
-                      <li>• Regular compliance audits</li>
+                      <li>• The conversation happens in WhatsApp (Meta) under WhatsApp's own terms and privacy policy</li>
+                      <li>• Messages are end-to-end encrypted by WhatsApp</li>
+                      <li>• We only reply to enquiries you start — no promotional messages</li>
+                      <li>• We do not use the WhatsApp Business API or any automated message processing</li>
                     </ul>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-gray-900">WhatsApp Data Collection</h3>
+                      <h3 className="text-lg font-semibold text-gray-900">What We See When You Chat</h3>
                       <ul className="space-y-3">
                         <li className="flex items-start">
                           <Smartphone className="h-5 w-5 text-blue-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">Phone numbers (with consent)</span>
+                          <span className="text-gray-700">Your phone number and profile name</span>
                         </li>
                         <li className="flex items-start">
                           <MessageSquare className="h-5 w-5 text-blue-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">Message content for tax services</span>
+                          <span className="text-gray-700">The messages you send us</span>
                         </li>
-                        <li className="flex items-start">
-                          <UserCheck className="h-5 w-5 text-blue-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">Profile information (name, status)</span>
-                        </li>
+                      </ul>
+                      <h3 className="text-lg font-semibold text-gray-900 pt-2">What We Log on Our Server</h3>
+                      <ul className="space-y-3">
                         <li className="flex items-start">
                           <Send className="h-5 w-5 text-blue-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">Delivery and read receipts</span>
+                          <span className="text-gray-700">Button-click data: page, referrer, browser, language, screen size, UTM parameters — no message content, no phone number</span>
                         </li>
                       </ul>
                     </div>
 
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-gray-900">WhatsApp Data Usage</h3>
+                      <h3 className="text-lg font-semibold text-gray-900">How We Use It</h3>
                       <ul className="space-y-3">
                         <li className="flex items-start">
-                          <FileText className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">Sending tax documents securely</span>
+                          <Phone className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+                          <span className="text-gray-700">Answering your enquiry and customer support</span>
                         </li>
                         <li className="flex items-start">
                           <Calendar className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                           <span className="text-gray-700">Appointment scheduling</span>
                         </li>
                         <li className="flex items-start">
-                          <Bell className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">Tax deadline reminders</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Phone className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">Customer support</span>
+                          <FileText className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+                          <span className="text-gray-700">Click statistics to understand which pages generate enquiries</span>
                         </li>
                       </ul>
                     </div>
